@@ -162,9 +162,31 @@ def _pick(node, selector: str | None, attr: str | None = None) -> str | None:
 last_enrichment: dict = {}
 
 
+def _page_claims(soup: BeautifulSoup, cfg: dict) -> tuple[dict, list[str]]:
+    """Source-level claims that the listing page must still support.
+
+    The V&A's young people programme states "For young creatives aged 13 - 26"
+    on the listing itself, which is worth applying to every event on it -- but
+    only while the page still says so.  Same discipline as the venue adapter:
+    find the phrase, apply the claim; miss it, and drop it and record that.
+    """
+    rules = cfg.get("page_confirm") or []
+    if not rules:
+        return ({}, [])
+    text = re.sub(r"\s+", " ", soup.get_text(" ", strip=True))
+    claims, missing = {}, []
+    for rule in rules:
+        if rule["phrase"].lower() in text.lower():
+            claims.update(rule["sets"])
+        else:
+            missing.append(rule["phrase"])
+    return (claims, missing)
+
+
 def parse(raw: str, cfg: dict) -> list[Event]:
     sel = cfg["selectors"]
     soup = BeautifulSoup(raw, "lxml")
+    page_claims, page_missing = _page_claims(soup, cfg)
     base = cfg.get("site") or cfg["url"]
     out: list[Event] = []
     for node in soup.select(sel["item"]):
@@ -204,8 +226,13 @@ def parse(raw: str, cfg: dict) -> list[Event]:
         summary = _pick(node, sel.get("summary"))
         price_text = _pick(node, sel.get("price"))
         is_free, price_from, currency = price_info(price_text)
-        age_text = _pick(node, sel.get("age"))
-        age_min, age_max = parse_age_range(" ".join(filter(None, [age_text, title, summary])))
+        age_text = _pick(node, sel.get("age")) or page_claims.get("age_text")
+        age_min, age_max = parse_age_range(
+            " ".join(filter(None, [age_text, title, summary])))
+        if page_claims.get("age_min") is not None:
+            age_min = page_claims["age_min"]
+        if page_claims.get("age_max") is not None:
+            age_max = page_claims["age_max"]
         out.append(Event(
             id=make_id(cfg["key"], url if href else f"{title}|{start}"),
             title=title,
@@ -230,6 +257,10 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             age_text=age_text,
             age_min=age_min,
             age_max=age_max,
+            audiences=list(page_claims.get("audiences", [])),
+            provenance=("the listing page no longer says "
+                        + "; ".join(f"\u201c{p}\u201d" for p in page_missing)
+                        + ", so that claim was dropped") if page_missing else None,
             topics=list(cfg.get("topics", [])),
             careers=infer_careers(title, summary, " ".join(cfg.get("topics", []))),
             work_styles=infer_work_styles(title, summary),

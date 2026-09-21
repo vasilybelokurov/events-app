@@ -130,7 +130,14 @@ def verify_source(cfg: dict, *, root: Path = ROOT, check_entries: bool = True) -
         result["parseable"] = True
         result["events"] = len(events)
         if not events:
-            result["problems"].append("parsed successfully but produced no events")
+            # A knowingly dormant list (a society that has not yet published
+            # next term) would otherwise fail the verifier every week, and a
+            # standing false alarm is worse than no alarm.
+            if cfg.get("expect_events", True):
+                result["problems"].append("parsed successfully but produced no events")
+            else:
+                result["notes"].append(
+                    "no events published yet; the registry says to expect that")
         fetch_outcome = getattr(adapter, "last_fetch", {}) or {}
         if fetch_outcome.get("reachable") is False:
             result["reachable"] = False

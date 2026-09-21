@@ -18,6 +18,9 @@
 #   priority     tie-break during de-duplication (lower wins)
 #   verified     date the adapter was last confirmed against the live source
 #
+#   expect_events  set false for a source that is knowingly dormant, so an
+#                  empty result is reported as a note rather than a failure
+#
 # Optional
 #   hand_written  true if the records are human claims needing periodic
 #                 re-checking; defaults to true for `kind: curated`.  Entries
@@ -358,3 +361,162 @@ sources:
     expect: ["utreach"]
     notes: >
       Family workshops, hands-on activities and public lectures.
+
+  - key: talks_cam_public
+    name: Major Public Lectures in Cambridge
+    kind: ics
+    homepage: https://talks.cam.ac.uk/show/index/5462
+    url: https://talks.cam.ac.uk/show/ics/5462
+    verify_url: https://talks.cam.ac.uk/show/ics/5462
+    docs: https://talks.cam.ac.uk/document/syndicating_talks/
+    terms: https://talks.cam.ac.uk/document/privacy_and_publicity/
+    site: https://talks.cam.ac.uk/show/index/5462
+    city: Cambridge
+    priority: 31
+    verified: 2026-09-22
+    topics: [Public lecture]
+    notes: >
+      The University's aggregator list of lectures open to the general public.
+      As of 2026-09-22 it contains exactly the Darwin College series, so it adds
+      no new events yet and de-duplication collapses the overlap; it is here
+      because it is where other public lectures will appear.
+
+  - key: talks_cam_csar
+    name: Cambridge Society for the Application of Research
+    kind: ics
+    homepage: https://talks.cam.ac.uk/show/index/5366
+    url: https://talks.cam.ac.uk/show/ics/5366
+    verify_url: https://talks.cam.ac.uk/show/ics/5366
+    docs: https://talks.cam.ac.uk/document/syndicating_talks/
+    terms: https://talks.cam.ac.uk/document/privacy_and_publicity/
+    site: https://talks.cam.ac.uk/show/index/5366
+    city: Cambridge
+    priority: 32
+    verified: 2026-09-22
+    topics: [Applied research, Public lecture]
+    expect_events: false
+    notes: >
+      Applied research, engineering, medicine, climate and industry, with an
+      audience that explicitly includes school students.  Dormant as of
+      2026-09-22 (no future talks published), so it contributes nothing yet:
+      `expect_events: false` keeps that from failing the verifier every week.
+
+  - key: wellcome
+    name: Wellcome Collection
+    kind: jsonld
+    homepage: https://wellcomecollection.org/events
+    url: https://api.wellcomecollection.org/content/v0/events?sort=times.startDateTime&sortOrder=desc&pageSize=100
+    verify_url: https://api.wellcomecollection.org/content/v0/events?pageSize=1
+    docs: https://developers.wellcomecollection.org/
+    terms: https://wellcomecollection.org/pages/Wuw19yIAAK1Z3Smm
+    site: https://wellcomecollection.org
+    venue_name: Wellcome Collection, Euston Road
+    city: London
+    lat: 51.5260
+    lon: -0.1337
+    priority: 15
+    verified: 2026-09-22
+    url_template: https://wellcomecollection.org/events/{id}
+    require_url: true
+    notes: >
+      Medicine, health, psychology, society and the art/science boundary -- a
+      different intersection from the other science sources.  A public content
+      API needing no key, read through the generic jsonld adapter because that
+      adapter now walks any JSON document.  Its audience vocabulary ("14+",
+      "14+ (adult required for under-18s)", "Youth event", "Schools") is the
+      best age metadata of any source here after the Royal Institution.
+      Sorted newest-first because the collection runs back to 2007.
+
+  - key: va_young_people
+    name: V&A Young People
+    kind: html_css
+    homepage: https://www.vam.ac.uk/whatson/programmes/young-people
+    url: https://www.vam.ac.uk/whatson/programmes/young-people
+    verify_url: https://www.vam.ac.uk/whatson/programmes/young-people
+    docs: no published interface; CSS selectors below, recorded 2026-09-22
+    terms: https://www.vam.ac.uk/info/terms-conditions
+    site: https://www.vam.ac.uk
+    venue_name: V&A South Kensington
+    city: London
+    lat: 51.4966
+    lon: -0.1722
+    priority: 18
+    verified: 2026-09-22
+    topics: [Design, Art, Craft, Fashion, Digital media, Architecture]
+    selectors:
+      item: .b-event-teaser
+      title: .b-event-teaser__title
+      link: .b-event-teaser__link
+      date: .b-icon-list__item-text
+      summary: .b-event-teaser__description
+      price: .b-event-teaser__footer .b-icon-list__item-text
+    page_confirm:
+      - phrase: "aged 13"
+        sets:
+          age_min: 13
+          age_max: 26
+          age_text: "for young creatives aged 13-26"
+          audiences: [teens]
+    notes: >
+      Workshops and events led by practising creatives in art, design, fashion,
+      digital media, craft, performance and architecture.  The most useful
+      counterweight in the registry to "science therefore scientist": it shows
+      designer, architect, photographer, illustrator, curator, craftsperson.
+      The 13-26 age range is applied only while the programme page states it.
+
+  - key: royal_society
+    name: The Royal Society
+    kind: html_css
+    homepage: https://royalsociety.org/science-events-and-lectures/public/
+    url: https://royalsociety.org/science-events-and-lectures/public/
+    verify_url: https://royalsociety.org/science-events-and-lectures/public/
+    docs: no published interface; CSS selectors below, recorded 2026-09-22
+    terms: https://royalsociety.org/about-us/terms-conditions-policies/
+    site: https://royalsociety.org
+    venue_name: The Royal Society, Carlton House Terrace
+    city: London
+    lat: 51.5063
+    lon: -0.1320
+    priority: 16
+    verified: 2026-09-22
+    topics: [Research science]
+    selectors:
+      item: .card--events
+      title: .card__title
+      link: .card__link
+      date: .card__header-meta
+      price: .card__meta-item
+    notes: >
+      Working research scientists and current research fields, which is a
+      different exposure from the Royal Institution's science communication.
+
+  - key: lse_events
+    name: LSE public events
+    kind: html_css
+    homepage: https://www.lse.ac.uk/events/search-events
+    url: https://www.lse.ac.uk/events/search-events
+    verify_url: https://www.lse.ac.uk/events/search-events
+    docs: no published interface; CSS selectors below, recorded 2026-09-22
+    terms: https://www.lse.ac.uk/lse-information/terms-of-use
+    site: https://www.lse.ac.uk
+    venue_name: London School of Economics
+    city: London
+    lat: 51.5144
+    lon: -0.1165
+    priority: 17
+    verified: 2026-09-22
+    topics: [Economics, Public policy, Law, Politics, Society]
+    selectors:
+      item: .listing-card
+      title: .card__title
+      link: .card__title a
+      date: .card__description
+      summary: .card__description
+      venue: .card__location
+    notes: >
+      The gap this fills: economics, finance, public policy, sociology and law,
+      and with them economist, lawyer, policy analyst, civil servant,
+      statistician, journalist.  Free and open to all.
+      Selector note: the row also carries a styled-components class whose hash
+      changes on every deploy, so `.listing-card` is the one to match.
+

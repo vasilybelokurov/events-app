@@ -14,8 +14,8 @@ from bs4 import BeautifulSoup
 
 from ..careers import infer_careers, infer_work_styles
 from ..http import fetch
-from ..models import (Event, make_id, parse_age_range, parse_uk_datetime,
-                      price_info)
+from ..models import (Event, combine_audience_values, make_id, parse_age_range,
+                      parse_uk_datetime, price_info)
 
 KIND = "jsonld"
 
@@ -37,34 +37,59 @@ def _types(obj: dict) -> set[str]:
     return {str(x).lower() for x in t}
 
 
-def iter_event_objects(blob):
-    """Walk arbitrary JSON-LD and yield objects whose @type is an event."""
+def iter_event_objects(blob, _depth: int = 0):
+    """Walk arbitrary JSON and yield every object whose ``@type`` is an event.
+
+    The walk is general rather than following named keys such as ``@graph``.
+    That matters for JSON islands: Wellcome Collection's 75 events sit at
+    ``props.pageProps...`` inside ``__NEXT_DATA__``, which a key-directed walk
+    never reaches.  Yielding only event-typed objects keeps a broad walk safe,
+    and the depth limit keeps a pathological document from recursing forever.
+    """
+    if _depth > 30:
+        return
     if isinstance(blob, list):
         for item in blob:
-            yield from iter_event_objects(item)
+            yield from iter_event_objects(item, _depth + 1)
     elif isinstance(blob, dict):
-        if "@graph" in blob:
-            yield from iter_event_objects(blob["@graph"])
         if _types(blob) & EVENT_TYPES:
             yield blob
-        for key in ("subEvent", "subEvents", "event", "events", "itemListElement"):
-            if key in blob:
-                yield from iter_event_objects(blob[key])
-        if "item" in blob:
-            yield from iter_event_objects(blob["item"])
+        for value in blob.values():
+            if isinstance(value, (dict, list)):
+                yield from iter_event_objects(value, _depth + 1)
+
+
+#: Script types worth searching.  `application/ld+json` is the standard place,
+#: but a Next.js site puts the same schema.org objects inside its
+#: `__NEXT_DATA__` island instead -- Wellcome Collection publishes dozens of
+#: Event objects that way and none in an ld+json block.
+BLOCK_TYPES = ("application/ld+json", "application/json")
 
 
 def extract_blocks(html: str) -> list:
+    """Every JSON document embedded in (or constituting) the response.
+
+    A plain JSON API response is treated as a single block, so the same
+    adapter reads a schema.org page, a CMS JSON island and a content API
+    without three separate implementations.
+    """
+    text = html.lstrip()
+    if text[:1] in "[{":
+        try:
+            return [json.loads(text)]
+        except json.JSONDecodeError:
+            pass
     soup = BeautifulSoup(html, "lxml")
     blocks = []
-    for tag in soup.find_all("script", type="application/ld+json"):
-        text = tag.string or tag.get_text()
-        if not text:
-            continue
-        try:
-            blocks.append(json.loads(text))
-        except json.JSONDecodeError:
-            continue
+    for script_type in BLOCK_TYPES:
+        for tag in soup.find_all("script", type=script_type):
+            text = tag.string or tag.get_text()
+            if not text or '"Event"' not in text and script_type != "application/ld+json":
+                continue
+            try:
+                blocks.append(json.loads(text))
+            except json.JSONDecodeError:
+                continue
     return blocks
 
 
@@ -80,6 +105,64 @@ def _text(value) -> str | None:
 
 
 _SYMBOL = {"GBP": "\u00a3", "USD": "$", "EUR": "\u20ac"}
+
+
+#: Keys whose entries carry a human label worth keeping as a topic.  Standard
+#: schema.org objects have none of these, so this is a no-op for them; a JSON
+#: island from a CMS often does (Wellcome's "Gallery tour", "Workshop",
+#: "Performance"), and those labels say more about the event than its title.
+_LABEL_KEYS = ("format", "series", "interpretations", "eventFormat")
+
+
+def _labels(value) -> list[str]:
+    """Pull ``label``/``title``/``name`` strings out of a field of any shape."""
+    items = value if isinstance(value, list) else [value]
+    out = []
+    for item in items:
+        if isinstance(item, str):
+            out.append(item)
+        elif isinstance(item, dict):
+            text = item.get("label") or item.get("title") or item.get("name")
+            if isinstance(text, str):
+                out.append(text)
+    return [t.strip() for t in out if t and t.strip()]
+
+
+def _times(obj) -> tuple[str | None, str | None]:
+    """Start/end from a ``times`` array, used when there is no ``startDate``.
+
+    A CMS island commonly models repeat sittings as ``times: [{startDateTime,
+    endDateTime}, ...]``; the earliest is the one to show.
+    """
+    times = obj.get("times")
+    if not isinstance(times, list) or not times:
+        return (None, None)
+    parsed = []
+    for t in times:
+        if not isinstance(t, dict):
+            continue
+        start = parse_uk_datetime(t.get("startDateTime") or t.get("start"))
+        if start:
+            parsed.append((start, parse_uk_datetime(t.get("endDateTime") or t.get("end"))))
+    if not parsed:
+        return (None, None)
+    return min(parsed, key=lambda pair: pair[0])
+
+
+def _templated_url(obj, cfg: dict) -> str | None:
+    """Build a per-event URL from the object's own identifiers.
+
+    Some islands carry no ``url`` at all, which would leave every card pointing
+    at the listing page -- and the link is the authority, so that matters.
+    """
+    template = cfg.get("url_template")
+    if not template:
+        return None
+    fields = {k: v for k, v in obj.items() if isinstance(v, (str, int))}
+    try:
+        return template.format(**fields)
+    except (KeyError, IndexError):
+        return None
 
 
 def _offers(obj) -> tuple[str | None, bool | None, float | None, str | None, str | None]:
@@ -125,17 +208,26 @@ def parse(raw: str, cfg: dict) -> list[Event]:
     seen: set[str] = set()
     for block in extract_blocks(raw):
         for obj in iter_event_objects(block):
-            title = _text(obj.get("name"))
+            title = _text(obj.get("name")) or _text(obj.get("title"))
             start = parse_uk_datetime(obj.get("startDate"))
+            time_end = None
+            if not start:
+                start, time_end = _times(obj)
             if not title or not start:
                 continue
-            url = _text(obj.get("url")) or cfg.get("url", "")
+            url = _text(obj.get("url")) or _templated_url(obj, cfg)
+            if not url and cfg.get("require_url"):
+                # Better to drop a record than to give every card the same
+                # link to the listing page.
+                continue
+            url = url or cfg.get("url", "")
             if url:
                 url = urljoin(cfg.get("site") or cfg.get("url", ""), url)
-            key = f"{title}|{start}"
-            if key in seen:
+            identity = _text(obj.get("@id")) or _text(obj.get("id")) \
+                or f"{title}|{start}"
+            if identity in seen:
                 continue
-            seen.add(key)
+            seen.add(identity)
 
             loc = obj.get("location") or {}
             if isinstance(loc, list):
@@ -154,13 +246,22 @@ def parse(raw: str, cfg: dict) -> list[Event]:
                     lat = lon = None
 
             price_text, is_free, price_from, currency, booking = _offers(obj)
-            age_text = _text(obj.get("typicalAgeRange"))
-            age_min, age_max = parse_age_range(age_text)
+            audience_labels = _labels(obj.get("audiences") or obj.get("audience"))
+            age_text = _text(obj.get("typicalAgeRange")) or (
+                ", ".join(audience_labels) or None)
+            if audience_labels:
+                age_min, age_max, audiences = combine_audience_values(audience_labels)
+            else:
+                age_min, age_max = parse_age_range(age_text)
+                audiences = []
+            topics = list(cfg.get("topics", []))
+            for label_key in _LABEL_KEYS:      # not `key`: that is the id key
+                topics.extend(_labels(obj.get(label_key)))
             summary = _text(obj.get("description"))
-            end = parse_uk_datetime(obj.get("endDate"))
+            end = parse_uk_datetime(obj.get("endDate")) or time_end
             all_day = len(str(obj.get("startDate", ""))) <= 10
             out.append(Event(
-                id=make_id(cfg["key"], obj.get("@id") or key),
+                id=make_id(cfg["key"], identity),
                 title=title,
                 url=url,
                 source=cfg["key"],
@@ -189,8 +290,9 @@ def parse(raw: str, cfg: dict) -> list[Event]:
                 age_text=age_text,
                 age_min=age_min,
                 age_max=age_max,
-                topics=list(cfg.get("topics", [])),
-                careers=infer_careers(title, summary, " ".join(cfg.get("topics", []))),
+                audiences=audiences,
+                topics=sorted(set(topics)),
+                careers=infer_careers(title, summary, " ".join(topics)),
                 work_styles=infer_work_styles(title, summary),
             ))
     return out

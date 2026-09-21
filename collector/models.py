@@ -41,6 +41,8 @@ _AUDIENCE_MAP = {
     "young people 13+": "teens",
     "young people": "teens",
     "teens": "teens",
+    "youth event": "teens",
+    "youth": "teens",
     "adults": "adults",
     "adult": "adults",
     "schools": "schools",
@@ -402,9 +404,25 @@ def parse_date_range(text: str | None, *, default_time: time | None = None
         return (None, None)
     raw = re.sub(r"\s+", " ", str(text)).strip()
 
+    # "On now until Saturday, 28 November 2026" is a run that has already
+    # started; reading it as a single date would put a live exhibition in the
+    # future and mis-sort it.
+    m = re.match(r"^(?:on now\s+)?(?:until|till|through(?:out)?|ends?)\s+(.+)$",
+                 raw, re.I)
+    if m:
+        end = parse_uk_datetime(m.group(1), default_time=default_time)
+        if end:
+            return (parse_uk_datetime(datetime.now(UK).date()), end)
+
     parts = [p.strip(" ,;") for p in _RANGE_SPLIT.split(raw) if p.strip(" ,;")]
     if len(parts) >= 2:
-        left, right = parts[0], parts[-1]
+        left = parts[0]
+        # The right-hand end is the last part that actually looks like a date:
+        # "... to Wednesday 30 September 2026 - 7pm" splits a trailing time off,
+        # and "7pm" is not the end of the run.
+        right = next((p for p in reversed(parts)
+                      if re.search(_MONTHS, p, re.I) or re.search(r"\d{4}", p)
+                      or re.search(r"\d{1,2}[/.]\d{1,2}", p)), parts[-1])
         end = parse_uk_datetime(right, default_time=default_time)
         if end:
             # Borrow the year, and the month when absent, from the right side.

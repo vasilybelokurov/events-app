@@ -659,3 +659,69 @@ class TestPostponedIsNotCancelled:
                            "path": {"alias": "/x"}},
             "relationships": {}}]}
         assert drupal_jsonapi.parse(json.dumps(doc), sources["rigb"])[0].status == "cancelled"
+
+
+class TestEventIdentity:
+    """Every record must have its own id: the browser's saved and dismissed
+    lists are keyed on it.  A label-harvesting loop once shadowed the identity
+    variable, giving all 17 events from one source the same id."""
+
+    ISLAND = """<html><body><script type="application/json" id="__NEXT_DATA__">
+    {"props": {"pageProps": {"events": [
+      {"type": "Event", "id": "aaa", "title": "One",
+       "format": {"label": "Workshop"},
+       "times": [{"startDateTime": "2027-01-01T10:00:00.000Z"}]},
+      {"type": "Event", "id": "bbb", "title": "Two",
+       "format": {"label": "Discussion"},
+       "times": [{"startDateTime": "2027-01-02T10:00:00.000Z"}]},
+      {"type": "Event", "id": "ccc", "title": "Three",
+       "audiences": [{"label": "14+"}],
+       "times": [{"startDateTime": "2027-01-03T10:00:00.000Z"}]}]}}}
+    </script></body></html>"""
+
+    cfg = {"key": "isl", "name": "Island", "site": "https://example.org",
+           "url": "https://example.org/events",
+           "url_template": "https://example.org/events/{id}",
+           "require_url": True}
+
+    def parsed(self):
+        return jsonld.parse(self.ISLAND, self.cfg)
+
+    def test_events_are_found_inside_a_json_island(self):
+        """They sit at props.pageProps.events, which a key-directed walk never
+        reaches."""
+        assert len(self.parsed()) == 3
+
+    def test_each_event_gets_its_own_id(self):
+        ids = [e.id for e in self.parsed()]
+        assert len(set(ids)) == 3, "ids collided"
+
+    def test_urls_are_built_from_the_template(self):
+        assert {e.url for e in self.parsed()} == {
+            "https://example.org/events/aaa",
+            "https://example.org/events/bbb",
+            "https://example.org/events/ccc"}
+
+    def test_times_supply_the_start_when_there_is_no_startdate(self):
+        e = next(x for x in self.parsed() if x.title == "One")
+        assert e.start.startswith("2027-01-01T10:00")
+
+    def test_labels_become_topics(self):
+        e = next(x for x in self.parsed() if x.title == "One")
+        assert "Workshop" in e.topics
+
+    def test_audience_labels_set_the_age(self):
+        e = next(x for x in self.parsed() if x.title == "Three")
+        assert e.age_min == 14
+        assert e.eligibility(14) == "eligible"
+        assert e.eligibility(12) == "excluded"
+
+    def test_require_url_drops_objects_with_no_identifier(self):
+        raw = self.ISLAND.replace('"id": "aaa", ', '')
+        assert len(jsonld.parse(raw, self.cfg)) == 2
+
+    def test_a_plain_json_document_is_read_directly(self):
+        raw = '{"results": [{"type": "Event", "id": "z", "title": "Solo", ' \
+              '"times": [{"startDateTime": "2027-02-01T10:00:00.000Z"}]}]}'
+        events = jsonld.parse(raw, self.cfg)
+        assert len(events) == 1 and events[0].title == "Solo"

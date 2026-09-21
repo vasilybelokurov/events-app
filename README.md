@@ -18,7 +18,7 @@ collector/          Python: adapters -> normalise -> de-duplicate -> events.json
 data/curated/       hand-written entries for things no feed lists
 docs/               the published site (GitHub Pages root)
   data/events.json  the only thing the page loads
-tests/              229 offline tests + 9 live source checks
+tests/              239 offline tests + 9 live source checks
 ```
 
 ## Quick run
@@ -97,11 +97,20 @@ confirmed by anyone. They are now twelve collected sources:
 | Source | Kind | What it gives |
 |---|---|---|
 | [Royal Institution](https://www.rigb.org/whats-on) | `drupal_jsonapi` | ~30 talks with a real age taxonomy, prices and booking links. The venue maintains it. |
-| [University of Cambridge Museums](https://www.museums.cam.ac.uk/whats-on) | `html_css` | ~100 events across the Fitzwilliam, Whipple, Sedgwick, Kettle's Yard, Polar Museum, Zoology and the Botanic Garden, with ages read from each event's own page. |
-| [Darwin College Lecture Series](https://talks.cam.ac.uk/show/index/5358) | `ics` | A free public lecture series. One of ~2400 talks.cam lists. |
+| [University of Cambridge Museums](https://www.museums.cam.ac.uk/whats-on) | `html_css` | ~100 events across eight museums and the Botanic Garden, with ages read from each event's own page. |
+| [Wellcome Collection](https://wellcomecollection.org/events) | `jsonld` | Medicine, health, psychology, society and the art/science boundary, from a public content API. Its audience vocabulary (`14+`, `14+ (adult required for under-18s)`, `Youth event`, `Schools`) is the best age metadata here after the Ri. |
+| [V&A Young People](https://www.vam.ac.uk/whatson/programmes/young-people) | `html_css` | Workshops led by practising creatives: design, fashion, digital media, craft, architecture. **Explicitly for ages 13–26** — the strongest counterweight to "science therefore scientist". |
+| [The Royal Society](https://royalsociety.org/science-events-and-lectures/public/) | `html_css` | Working research scientists and current research fields — different exposure from the Ri's science communication. |
+| [LSE public events](https://www.lse.ac.uk/events/search-events) | `html_css` | Economics, public policy, law, politics, society. Fills the biggest gap: economist, lawyer, policy analyst, civil servant, statistician. |
 | [Hunterian Museum](https://hunterianmuseum.org/whats-on/) | `html_css` | Surgery and medical history: exhibitions, family activities, curator tours. |
+| [Darwin College Lectures](https://talks.cam.ac.uk/show/index/5358), [Major Public Lectures](https://talks.cam.ac.uk/show/index/5462), [CSAR](https://talks.cam.ac.uk/show/index/5366) | `ics` | Cambridge public lecture series. Three of ~2400 talks.cam lists, each a one-line registry entry. |
 | [Cambridge Festival](https://www.festival.cam.ac.uk/events) | `html_css` | Dormant until the next programme is published, then it appears on its own. |
 | [Old Bailey](https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court), [Supreme Court](https://www.supremecourt.uk/tours), [Bank of England Museum](https://www.bankofengland.co.uk/museum), [Science Museum](https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery), [Design Museum](https://designmuseum.org/whats-on), [Cambridge Museum of Technology](https://www.museumoftechnology.com/whats-on/), [Cambridge Engineering](https://www.eng.cam.ac.uk/outreach) | `venue` | Places with nothing to list. Visited every run; see below. |
+
+Probed and rejected, so nobody repeats the work: **Gresham College** renders its
+listing in the browser with no feed and no JSON-LD; the **Institute of Physics**
+and the **Institution of Civil Engineers** return 403 to anything that is not a
+desktop browser. All three are worth revisiting if they publish a feed.
 
 ### Venues with nothing to list
 
@@ -183,6 +192,13 @@ Most venues need no new code. Add a block to `collector/sources.yaml`:
 * **`drupal_jsonapi`** — many UK institutions run Drupal; check
   `https://<host>/jsonapi` for a `node--event` resource before writing
   selectors. It is far more reliable than scraping.
+
+The `jsonld` adapter is the one to try first, and it is broader than its name:
+it reads a `<script type="application/ld+json">` block, a CMS JSON island such
+as Next.js's `__NEXT_DATA__`, **or a plain JSON API response**, walking any of
+them for objects typed as an event. Wellcome Collection needed no new code —
+only `url_template` (to build a per-event link from the object's own id) and
+`require_url` (to drop objects that would otherwise all link to the listing).
 
 Then add a fixture and a test, and run `pytest -m network` to confirm the live
 source behaves.
