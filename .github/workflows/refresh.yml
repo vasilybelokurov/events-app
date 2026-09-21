@@ -58,6 +58,24 @@ jobs:
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
           exit 0
 
+      # A corrupted data file must never reach the site.  This has happened:
+      # a `union` merge driver interleaved two copies of events.json into
+      # something that parsed nowhere.
+      - name: Validate the published data
+        run: |
+          python - <<'CHECK'
+          import json, sys
+          doc = json.load(open("docs/data/events.json"))
+          assert doc["event_count"] == len(doc["events"]), "event_count disagrees"
+          assert doc["sources"], "no sources recorded"
+          seen = set()
+          for r in doc["events"]:
+              assert r["id"] not in seen, f"duplicate id {r['id']}"
+              seen.add(r["id"])
+              assert r["title"] and r["url"], f"incomplete record {r['id']}"
+          print(f"{doc['event_count']} records, {len(doc['sources'])} sources: valid")
+          CHECK
+
       - name: Show what changed
         run: git --no-pager diff --stat -- docs/data/events.json || true
 

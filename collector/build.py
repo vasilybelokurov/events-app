@@ -89,6 +89,9 @@ def collect_source(cfg: dict, *, now: datetime, root: Path) -> tuple[list[Event]
     # enrichment failure shows up in the health panel rather than as missing
     # age data nobody notices.
     meta.update(getattr(adapter, "last_enrichment", {}) or {})
+    # Adapters that can publish something despite a failed fetch say so here,
+    # so the build does not record a success the fetch never earned.
+    meta.update(getattr(adapter, "last_fetch", {}) or {})
     return events, meta
 
 
@@ -136,6 +139,13 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
 
     for cfg in sources:
         prev = prev_reports.get(cfg["key"], {})
+        # The baseline for drop detection is the last count this source is
+        # known to have produced *successfully*, carried across degraded runs.
+        prev_good = prev.get("last_good_count")
+        if prev_good is None:
+            prev_good = prev.get("count", 0) if prev.get("status") == "ok" else 0
+        prev_records = prev_events.get(cfg["key"], [])
+
         report = {
             "key": cfg["key"], "name": cfg["name"], "kind": cfg["kind"],
             # Carried from the registry so every source is listed *and*
@@ -146,7 +156,10 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
             "docs": cfg.get("docs"),
             "terms": cfg.get("terms"),
             "adapter_verified_on": str(cfg.get("verified")) if cfg.get("verified") else None,
-            "count": 0, "status": "ok", "error": None,
+            "count": 0,              # how many records were published
+            "candidate_count": None,  # how many the source offered this run
+            "last_good_count": prev_good,
+            "status": "ok", "error": None,
             "last_attempt": stamp,
             "last_success": prev.get("last_success"),
             "pagination_complete": None,
@@ -162,43 +175,54 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
             report.update(status="fetch_error", error=f"{type(exc).__name__}: {exc}")
             failures.append(f"{cfg['key']}: {report['error']}")
             LOG.error("source %s failed: %s", cfg["key"], exc)
-            kept_prev = prev_events.get(cfg["key"], [])
-            carried.extend(kept_prev)
-            report["count"] = len(kept_prev)
-            report["carried_over"] = len(kept_prev)
+            carried.extend(prev_records)
+            report["count"] = len(prev_records)
+            report["carried_over"] = len(prev_records)
             reports.append(report)
             continue
 
-        kept = [e for e in events
-                if is_current(e, now=now) and (e.start or "") <= horizon]
-        report["count"] = len(kept)
+        candidate = [e for e in events
+                     if is_current(e, now=now) and (e.start or "") <= horizon]
+        report["candidate_count"] = len(candidate)
         report["fetched"] = len(events)
 
-        was = prev.get("count", 0)
-        if was and len(kept) == 0:
+        # A source the adapter could not reach may still yield a useful record
+        # from its configuration, but it has not been verified today.
+        blocked = meta.get("reachable") is False
+        if blocked:
+            report["status"] = "blocked"
+            report["error"] = meta.get("reason")
+        elif prev_good and len(candidate) == 0:
             report["status"] = "empty"
-            failures.append(f"{cfg['key']}: returned 0 events, previously {was}")
-        elif was and len(kept) < was * (1 - DROP_TOLERANCE):
+            failures.append(
+                f"{cfg['key']}: returned 0 events, last good count was {prev_good}")
+        elif prev_good and len(candidate) < prev_good * (1 - DROP_TOLERANCE):
             report["status"] = "shrunk"
             failures.append(
-                f"{cfg['key']}: returned {len(kept)} events, previously {was}")
+                f"{cfg['key']}: returned {len(candidate)} events, "
+                f"last good count was {prev_good}")
         elif report["pagination_complete"] is False:
             report["status"] = "partial"
             failures.append(f"{cfg['key']}: pagination incomplete")
 
         if report["status"] in ("empty", "shrunk", "partial"):
             # Suspicious, or known-incomplete: keep the previous records rather
-            # than publish a hole.  `partial` belongs here because a truncated
-            # crawl looks like a successful one -- it would otherwise replace a
-            # complete dataset and take a fresh `last_success` with it.
-            kept_prev = prev_events.get(cfg["key"], [])
-            carried.extend(kept_prev)
-            report["carried_over"] = len(kept_prev)
+            # than publish a hole, and leave the baseline where it was so the
+            # next run is still compared against a healthy figure.
+            carried.extend(prev_records)
+            report["carried_over"] = len(prev_records)
+            report["count"] = len(prev_records)
         else:
-            report["last_success"] = stamp
-            for e in kept:
+            for e in candidate:
                 e.last_seen = stamp
-            all_events.extend(kept)
+            all_events.extend(candidate)
+            report["count"] = len(candidate)
+            if blocked:
+                # Published, but neither a success nor a new baseline.
+                report["last_good_count"] = prev_good or len(candidate)
+            else:
+                report["last_success"] = stamp
+                report["last_good_count"] = len(candidate)
         reports.append(report)
 
     priority = {s["key"]: s.get("priority", 50) for s in sources}

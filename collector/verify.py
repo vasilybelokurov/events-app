@@ -131,6 +131,13 @@ def verify_source(cfg: dict, *, root: Path = ROOT, check_entries: bool = True) -
         result["events"] = len(events)
         if not events:
             result["problems"].append("parsed successfully but produced no events")
+        fetch_outcome = getattr(adapter, "last_fetch", {}) or {}
+        if fetch_outcome.get("reachable") is False:
+            result["reachable"] = False
+            result["notes"].append(
+                "the venue refused automated access "
+                f"({fetch_outcome.get('reason')}); the record was built from "
+                "configuration only and nothing was confirmed today")
     except Exception as exc:                            # noqa: BLE001
         result["parseable"] = False
         result["problems"].append(f"{type(exc).__name__}: {exc}")

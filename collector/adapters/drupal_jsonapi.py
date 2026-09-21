@@ -202,6 +202,6 @@ def parse(raw: str | dict, cfg: dict) -> list[Event]:
             age_text=age_text,
             topics=sorted(set(topics + etypes)),
             careers=infer_careers(title, summary, " ".join(topics)),
-            work_styles=infer_work_styles(title, summary, " ".join(topics)),
+            work_styles=infer_work_styles(title, summary),
         ))
     return out

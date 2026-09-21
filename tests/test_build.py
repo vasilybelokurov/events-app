@@ -294,3 +294,152 @@ class TestPartialResults:
         stub.meta = {"pagination_complete": False}
         doc = run(paths)
         assert any("pagination incomplete" in w for w in doc["build_warnings"])
+
+
+class TestDegradationBaseline:
+    """Two consecutive failures must not ratchet the baseline down to nothing.
+
+    The bug: drop detection compared against the *previous run's* count, which
+    a degraded run had already set to the bad candidate figure.  So 10 events,
+    then 0 (carried over), then 1 looked like a rise on the failed run and was
+    published as healthy -- ten good records silently replaced by one.
+    """
+
+    def settle(self, stub, paths, n=10):
+        stub.events = [ev(i) for i in range(n)]
+        doc = run(paths)
+        assert doc["sources"][0]["last_good_count"] == n
+        return doc
+
+    def test_empty_then_small_does_not_establish_a_new_baseline(self, stub, paths):
+        self.settle(stub, paths)
+
+        stub.events = []
+        doc = run(paths)
+        assert doc["sources"][0]["status"] == "empty"
+        assert doc["sources"][0]["last_good_count"] == 10, "baseline moved"
+
+        stub.events = [ev(0)]
+        doc = run(paths)
+        report = doc["sources"][0]
+        assert report["status"] == "shrunk", \
+            "1 event against a 10-event baseline is a drop, not a recovery"
+        assert report["count"] == 10, "the last good records were replaced"
+        assert doc["event_count"] == 10
+
+    def test_partial_then_smaller_partial_keeps_the_original_records(self, stub, paths):
+        self.settle(stub, paths)
+
+        # 6 of 10 is not a >50% drop, so `partial` is the reason it is held
+        # back rather than `shrunk`.
+        stub.events = [ev(i) for i in range(6)]
+        stub.meta = {"pagination_complete": False}
+        doc = run(paths)
+        assert doc["sources"][0]["status"] == "partial"
+
+        stub.events = [ev(0), ev(1)]
+        doc = run(paths)
+        assert doc["event_count"] == 10
+        assert doc["sources"][0]["last_good_count"] == 10
+
+    def test_fetch_error_then_a_small_success_is_still_a_drop(self, stub, paths):
+        self.settle(stub, paths)
+
+        stub.error = RuntimeError("venue down")
+        doc = run(paths)
+        assert doc["sources"][0]["status"] == "fetch_error"
+        assert doc["sources"][0]["last_good_count"] == 10
+
+        stub.error = None
+        stub.events = [ev(0), ev(1)]
+        doc = run(paths)
+        assert doc["sources"][0]["status"] == "shrunk"
+        assert doc["event_count"] == 10
+
+    def test_a_genuine_recovery_resets_the_baseline(self, stub, paths):
+        """The safeguard must not become a trap: a source that comes back
+        properly is accepted and becomes the new baseline."""
+        self.settle(stub, paths)
+        stub.events = []
+        run(paths)
+
+        stub.events = [ev(i) for i in range(9)]
+        doc = run(paths)
+        report = doc["sources"][0]
+        assert report["status"] == "ok"
+        assert report["last_good_count"] == 9
+        assert report["last_success"] == doc["generated_at"]
+        assert doc["event_count"] == 9
+
+    def test_candidate_and_published_counts_are_both_reported(self, stub, paths):
+        self.settle(stub, paths)
+        stub.events = [ev(0)]
+        report = run(paths)["sources"][0]
+        assert report["candidate_count"] == 1, "what the source offered"
+        assert report["count"] == 10, "what was actually published"
+
+
+class TestBlockedSource:
+    """A source that could not be reached is never recorded as verified, even
+    when the adapter can still publish something from its configuration."""
+
+    def blocked(self, stub, paths, reason="HTTPError: 403"):
+        stub.meta = {"reachable": False, "reason": reason}
+        return run(paths)["sources"][0]
+
+    def test_status_is_blocked_not_ok(self, stub, paths):
+        stub.events = [ev(1)]
+        assert self.blocked(stub, paths)["status"] == "blocked"
+
+    def test_last_success_is_not_advanced(self, stub, paths):
+        stub.events = [ev(1)]
+        good = run(paths)
+        stamp = good["sources"][0]["last_success"]
+
+        report = self.blocked(stub, paths)
+        assert report["last_success"] == stamp, \
+            "an unreachable source must not claim a fresh verification"
+        assert report["last_attempt"] != stamp, "the attempt should be recorded"
+
+    def test_the_reason_is_recorded(self, stub, paths):
+        stub.events = [ev(1)]
+        assert "403" in self.blocked(stub, paths)["error"]
+
+    def test_the_record_is_still_published(self, stub, paths):
+        """The standing card remains useful; it just says it was not checked."""
+        stub.events = [ev(1)]
+        stub.meta = {"reachable": False, "reason": "HTTPError: 403"}
+        doc = run(paths)
+        assert doc["event_count"] == 1
+
+    def test_being_blocked_is_not_a_build_warning(self, stub, paths):
+        """A venue that always refuses robots would otherwise turn every run
+        red, and a weekly false alarm trains the reader to ignore the report."""
+        stub.events = [ev(1)]
+        doc = run(paths)
+        stub.meta = {"reachable": False, "reason": "HTTPError: 403"}
+        doc = run(paths)
+        assert not doc.get("build_warnings")
+        assert run_cli(paths) == 0
+
+    def test_a_blocked_run_does_not_reset_the_baseline(self, stub, paths):
+        stub.events = [ev(i) for i in range(10)]
+        run(paths)
+        stub.events = [ev(0)]
+        report = self.blocked(stub, paths)
+        assert report["last_good_count"] == 10
+
+
+class TestPublishedFileIntegrity:
+    def test_the_published_file_is_valid_json_with_the_expected_shape(self, stub, paths):
+        """Guard against a corrupted data file reaching the site: a `union`
+        merge driver once interleaved two versions of events.json into
+        something that parsed nowhere."""
+        stub.events = [ev(1), ev(2)]
+        run(paths)
+        doc = json.loads(paths[1].read_text())
+        assert isinstance(doc["events"], list)
+        assert doc["event_count"] == len(doc["events"])
+        for record in doc["events"]:
+            assert record["id"] and record["title"] and record["url"]
+            assert record["last_seen"].endswith("+00:00")

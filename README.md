@@ -18,7 +18,7 @@ collector/          Python: adapters -> normalise -> de-duplicate -> events.json
 data/curated/       hand-written entries for things no feed lists
 docs/               the published site (GitHub Pages root)
   data/events.json  the only thing the page loads
-tests/              217 offline tests + 9 live source checks
+tests/              229 offline tests + 9 live source checks
 ```
 
 ## Quick run

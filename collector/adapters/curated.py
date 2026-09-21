@@ -49,8 +49,7 @@ def parse(raw: str, cfg: dict) -> list[Event]:
                                         for x in item.get("audiences", [])) if a})
         careers = item.get("careers") or infer_careers(
             title, summary, " ".join(item.get("topics", [])))
-        work_styles = item.get("work_styles") or infer_work_styles(
-            title, summary, " ".join(item.get("topics", [])))
+        work_styles = item.get("work_styles") or infer_work_styles(title, summary)
         out.append(Event(
             id=make_id(cfg["key"], item.get("id") or item.get("url") or title),
             title=title,

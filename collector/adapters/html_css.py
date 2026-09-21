@@ -232,7 +232,7 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             age_max=age_max,
             topics=list(cfg.get("topics", [])),
             careers=infer_careers(title, summary, " ".join(cfg.get("topics", []))),
-            work_styles=infer_work_styles(title, summary, " ".join(cfg.get("topics", []))),
+            work_styles=infer_work_styles(title, summary),
         ))
 
     global last_enrichment
@@ -242,6 +242,9 @@ def parse(raw: str, cfg: dict) -> list[Event]:
         # supplies the topic words the listing row omitted.
         event.careers = infer_careers(event.title, event.summary,
                                       " ".join(event.topics))
-        event.work_styles = infer_work_styles(event.title, event.summary,
-                                              " ".join(event.topics))
+        # Deliberately not the source's topics: a publisher bucket such as
+        # "Workshops and talks" would tag a lunchtime lecture as design and
+        # making, which is an artefact of their grouping, not evidence about
+        # what an attendee would be doing.
+        event.work_styles = infer_work_styles(event.title, event.summary)
     return out

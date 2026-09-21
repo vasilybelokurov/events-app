@@ -35,6 +35,12 @@ from ..models import (UK, Event, make_id, map_audience, parse_age_range,
 
 KIND = "venue"
 
+#: Outcome of the most recent :func:`fetch_raw`, read by :mod:`collector.build`
+#: so an unreachable venue is never recorded as a verified success.  Reset on
+#: every fetch; collection is sequential, so the build reads it for the source
+#: it has just collected.
+last_fetch: dict = {}
+
 #: Fields a `confirm` rule is allowed to set.  Anything else is a config error,
 #: caught by the tests rather than silently ignored.
 SETTABLE = frozenset({
@@ -55,11 +61,15 @@ def fetch_raw(cfg: dict, **_) -> str:
     the list and the record says plainly that nothing was confirmed today,
     which is better than dropping the venue or pretending it was checked.
     """
+    global last_fetch
+    last_fetch = {"reachable": True, "reason": None}
     try:
         return fetch(cfg["homepage"])
     except Exception as exc:                            # noqa: BLE001
         if cfg.get("allow_blocked"):
-            return f"<!-- unfetchable: {type(exc).__name__}: {exc} -->"
+            reason = f"{type(exc).__name__}: {exc}"
+            last_fetch = {"reachable": False, "reason": reason}
+            return f"<!-- unfetchable: {reason} -->"
         raise
 
 
@@ -205,9 +215,7 @@ def parse(raw: str, cfg: dict) -> list[Event]:
         careers=infer_careers(title, record.get("summary"),
                               " ".join(record.get("topics", [])),
                               record.get("age_text")),
-        work_styles=infer_work_styles(title, record.get("summary"),
-                                      " ".join(record.get("topics", [])),
-                                      record.get("age_text")),
+        work_styles=infer_work_styles(title, record.get("summary")),
         # The page was read today, so the record is machine-verified as of
         # today -- except when we could not read it at all.
         verified_on=None if (unfetchable or expected_missing) else today,

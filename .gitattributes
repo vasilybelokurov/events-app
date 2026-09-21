@@ -1,9 +1,12 @@
 # docs/data/events.json is a build artifact: the daily workflow rewrites it and
-# pushes, so a local commit will collide with the bot sooner or later.  There is
-# never anything to merge -- the file is regenerated from the sources.
+# pushes, so a local commit will collide with the bot sooner or later.
 #
-# `union` keeps git from stopping the rebase; the file is then rebuilt by
-# `python -m collector.build`, which is what actually resolves it.  Run
-#     git config merge.ours.driver true
-# once if you prefer `merge=ours` semantics instead.
-docs/data/events.json merge=union linguist-generated=true
+# `-merge` marks it unmergeable, so git stops with a conflict instead of trying
+# to combine two versions.  That matters: a `union` driver was tried first and
+# silently interleaved both copies into a file that parsed nowhere, which then
+# got committed.  There is never anything to merge here -- the file is
+# regenerated from the sources:
+#
+#     python -m collector.build && git add docs/data/events.json
+#
+docs/data/events.json -merge linguist-generated=true
