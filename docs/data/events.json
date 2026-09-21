@@ -1,16 +1,10 @@
 {
- "generated_at": "2026-09-21T21:26:57.929297+00:00",
- "timezone": "Europe/London",
- "stale_after_hours": 48,
- "verify_after_days": 90,
- "event_count": 146,
- "oldest_source_success": "2026-09-21T21:26:57.929297+00:00",
- "generated_at": "2026-09-21T21:56:13.714436+00:00",
+ "generated_at": "2026-09-21T21:58:47.493024+00:00",
  "timezone": "Europe/London",
  "stale_after_hours": 48,
  "verify_after_days": 90,
  "event_count": 148,
- "oldest_source_success": "2026-09-21T21:56:13.714436+00:00",
+ "oldest_source_success": "2026-09-21T21:58:47.493024+00:00",
  "sources": [
   {
    "key": "rigb",
@@ -25,10 +19,8 @@
    "count": 30,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:26:57.929297+00:00",
-   "last_success": "2026-09-21T21:26:57.929297+00:00",
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": true,
    "fetched": 31
   },
@@ -45,10 +37,8 @@
    "count": 100,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:26:57.929297+00:00",
-   "last_success": "2026-09-21T21:26:57.929297+00:00",
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "detail_enabled": true,
    "detail_attempted": 100,
@@ -70,10 +60,8 @@
    "count": 8,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:26:57.929297+00:00",
-   "last_success": "2026-09-21T21:26:57.929297+00:00",
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "fetched": 8
   },
@@ -90,10 +78,8 @@
    "count": 0,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:26:57.929297+00:00",
-   "last_success": "2026-09-21T21:26:57.929297+00:00",
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 7
@@ -111,8 +97,8 @@
    "count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -129,8 +115,8 @@
    "count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -147,8 +133,8 @@
    "count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -165,8 +151,8 @@
    "count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -183,8 +169,8 @@
    "count": 4,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 4
@@ -202,8 +188,8 @@
    "count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -220,8 +206,8 @@
    "count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -238,8 +224,8 @@
    "count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T21:56:13.714436+00:00",
-   "last_success": "2026-09-21T21:56:13.714436+00:00",
+   "last_attempt": "2026-09-21T21:58:47.493024+00:00",
+   "last_success": "2026-09-21T21:58:47.493024+00:00",
    "pagination_complete": null,
    "fetched": 1
   }
@@ -280,11 +266,10 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-ed0a22b6da3b",
@@ -314,8 +299,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-be31a5eb4695",
@@ -352,12 +336,11 @@
    "careers": [
     "Earth & geoscience"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-243e4c2acd46",
@@ -388,11 +371,10 @@
    "topics": [
     "Exhibitions and displays"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-3d61396d8aa5",
@@ -426,11 +408,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-b874e44de6a2",
@@ -464,12 +445,11 @@
     "Environment & climate",
     "Film, animation & media"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-b751cf0db2aa",
@@ -505,12 +485,11 @@
     "History & archaeology",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-9cc7bb81811f",
@@ -548,11 +527,10 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-db802a7096d0",
@@ -586,11 +564,10 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "hunterian_museum-c833835f2501",
@@ -625,7 +602,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-f759755dcc45",
@@ -659,13 +636,12 @@
    "careers": [
     "Film, animation & media"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Fieldwork & outdoors",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "bank_of_england_museum-8c1ea8eb56a2",
@@ -697,15 +673,12 @@
     "Finance & economics",
     "History & archaeology"
    ],
-   "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00",
-   "link_status": 200
    "work_styles": [
     "Research & discovery"
    ],
    "provenance": "Built from https://www.bankofengland.co.uk/museum as fetched on 2026-09-21. The page calls itself “Museum”. Confirmed on the page: “Free to visit”; “Monday to Friday, 10am to 5pm”.",
    "verified_on": "2026-09-21",
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_engineering_outreach-f46fbb296147",
@@ -733,16 +706,13 @@
     "Engineering",
     "Teaching & outreach"
    ],
-   "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00",
-   "link_status": 200
    "work_styles": [
     "Design & making",
     "Working with people"
    ],
    "provenance": "Built from https://www.eng.cam.ac.uk/outreach as fetched on 2026-09-21. The page calls itself “Schools and Community Outreach”.",
    "verified_on": "2026-09-21",
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museum_technology-04ee29daeeac",
@@ -776,7 +746,7 @@
    ],
    "provenance": "Built from https://www.museumoftechnology.com/whats-on/ as fetched on 2026-09-21. The page calls itself “Events — Cambridge Museum of Technology”.",
    "verified_on": "2026-09-21",
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "old_bailey-8b62944aa8c4",
@@ -810,9 +780,7 @@
    ],
    "provenance": "Built from https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court as fetched on 2026-09-21. The page calls itself “Central Criminal Court”. Confirmed on the page: “no admission for children under 14”; “photographic identification”.",
    "verified_on": "2026-09-21",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00",
-   "link_status": 200
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "science_museum-97a747036909",
@@ -824,17 +792,14 @@
    "all_day": true,
    "ongoing": false,
    "anytime": true,
-   "when_text": "Open daily; see the museum page for hours",
+   "when_text": "Any time during museum opening hours",
    "status": "scheduled",
-   "summary": "Step into an interactive world of careers and take a peek behind the scenes in our brand new gallery.",
+   "summary": "A gallery built around technician jobs rather than school subjects.\n",
    "venue_name": "Science Museum, Exhibition Road",
    "city": "London",
    "lat": 51.4978,
    "lon": -0.1745,
    "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
    "topics": [
     "Careers",
     "Energy",
@@ -849,16 +814,12 @@
     "Medicine & health",
     "Teaching & outreach"
    ],
-   "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00",
-   "link_status": 403
    "work_styles": [
     "Creative production",
     "Design & making"
    ],
-   "provenance": "Built from https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery as fetched on 2026-09-21. The page calls itself “Technicians: The David Sainsbury Gallery | Science Museum”. Confirmed on the page: “Free entry”; “Open daily”.",
-   "verified_on": "2026-09-21",
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "provenance": "Built from https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery as fetched on 2026-09-21. The page no longer mentions “Technicians”, so it may have been repurposed — check the link. NOT found on the page, so not claimed here: “Free entry”; “Open daily”. The venue refused automated access (HTTPError: 403 Client Error: Forbidden for url: https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery), so nothing was confirmed today — open the link and check.",
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "supreme_court-f670595e50c6",
@@ -889,15 +850,12 @@
     "Politics & public service",
     "Teaching & outreach"
    ],
-   "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00",
-   "link_status": 200
    "work_styles": [
     "Working with people"
    ],
    "provenance": "Built from https://www.supremecourt.uk/tours as fetched on 2026-09-21. The page calls itself “Tours - UK Supreme Court”. Confirmed on the page: “Monday to Friday during term times”.",
    "verified_on": "2026-09-21",
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "design_museum-e2ddddfff9fb",
@@ -933,7 +891,7 @@
    ],
    "provenance": "Built from https://designmuseum.org/whats-on as fetched on 2026-09-21. The page calls itself “What's on”.",
    "verified_on": "2026-09-21",
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-33e86c4ed99d",
@@ -969,8 +927,7 @@
     "Earth & geoscience",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-ca57b53f68c9",
@@ -1006,12 +963,11 @@
     "Earth & geoscience",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-7885ec4ec678",
@@ -1044,51 +1000,11 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-  },
-  {
-   "id": "curated_teen_careers-36134c518731",
-   "title": "Supreme Court of the United Kingdom - public tour",
-   "url": "https://www.supremecourt.uk/tours",
-   "source": "curated_teen_careers",
-   "source_name": "Curated (hand-checked)",
-   "start": "2026-09-25T14:00:00+01:00",
-   "all_day": false,
-   "time_text": "14:00",
-   "ongoing": false,
-   "anytime": true,
-   "when_text": "Fridays, 14:00",
-   "status": "scheduled",
-   "summary": "Friday afternoon guided tour explaining how the Court works and notable cases; live hearings can sometimes be observed from the public gallery.\n",
-   "venue_name": "The Supreme Court, Parliament Square",
-   "city": "London",
-   "lat": 51.5001,
-   "lon": -0.1281,
-   "online": false,
-   "price_text": "Adults GBP 10; under-16s free",
-   "is_free": true,
-   "price_from": 0.0,
-   "audiences": [
-    "adults",
-    "teens"
-   ],
-   "topics": [
-    "Law",
-    "Constitution",
-    "Public service"
-   ],
-   "careers": [
-    "Law & justice",
-    "Politics & public service"
-   ],
-   "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00",
-   "link_status": 200
    "work_styles": [
     "Design & making",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-7dc29f9d4f4e",
@@ -1125,8 +1041,7 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-bfe37ce01ac0",
@@ -1162,13 +1077,12 @@
     "Earth & geoscience",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Enterprise & leadership",
     "Research & discovery",
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-8275d0352a94",
@@ -1208,8 +1122,7 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-8da5c4ae4736",
@@ -1244,11 +1157,10 @@
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-e840ef2bd18b",
@@ -1283,11 +1195,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-8c0e9873d8bd",
@@ -1319,11 +1230,10 @@
     "Family events",
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-1fca761f0d36",
@@ -1360,8 +1270,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-fc4dc86d0fbd",
@@ -1396,13 +1305,12 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-a1672004a12c",
@@ -1435,11 +1343,10 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-c246b4c830d0",
@@ -1476,11 +1383,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-e5ca129c9091",
@@ -1513,8 +1419,7 @@
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-e65c82db5b79",
@@ -1549,11 +1454,10 @@
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-7abe45c5e1b0",
@@ -1581,8 +1485,7 @@
     "families"
    ],
    "age_text": "Families",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-6f7a96b6ffea",
@@ -1623,8 +1526,7 @@
     "Chemistry & materials",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-ffca50158c3d",
@@ -1665,8 +1567,7 @@
     "Environment & climate",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-87853ef4cc0b",
@@ -1705,12 +1606,11 @@
     "Arts & performance",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Data & quantitative analysis",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-1a2dbe4fd934",
@@ -1749,8 +1649,7 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-ffbc9e810a76",
@@ -1786,8 +1685,7 @@
     "Earth & geoscience",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-2d7f2e5a1423",
@@ -1824,11 +1722,10 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-00cc2ddf37b4",
@@ -1865,11 +1762,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-07aaa225dbff",
@@ -1903,11 +1799,10 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-4111a681fab3",
@@ -1940,8 +1835,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-3b2681b036cf",
@@ -1977,11 +1871,10 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-272fb5e4c01a",
@@ -2016,8 +1909,7 @@
     "Arts & performance",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-14cc11f82c4a",
@@ -2051,11 +1943,10 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-f761df9852e5",
@@ -2090,11 +1981,10 @@
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-475b25f701d1",
@@ -2130,8 +2020,7 @@
    "topics": [
     "Talks and shows"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-fc38256ffda8",
@@ -2165,11 +2054,10 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-626c4900ca2e",
@@ -2200,8 +2088,7 @@
    "topics": [
     "Family events"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-10a922c97d3d",
@@ -2236,11 +2123,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-ed596a329c28",
@@ -2272,11 +2158,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-46beb5855851",
@@ -2314,11 +2199,10 @@
    "careers": [
     "Chemistry & materials"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-2a1651991a26",
@@ -2349,11 +2233,10 @@
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-dd5ee74c7f64",
@@ -2391,11 +2274,10 @@
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-ac9ae847bf35",
@@ -2427,11 +2309,10 @@
     "Family events",
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-7c065ee06379",
@@ -2468,44 +2349,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-  },
-  {
-   "id": "curated_teen_careers-c58b3dfb79d9",
-   "title": "LAIKA: Wildwood",
-   "url": "https://designmuseum.org/exhibitions",
-   "source": "curated_teen_careers",
-   "source_name": "Curated (hand-checked)",
-   "start": "2026-10-15T00:00:00+01:00",
-   "end": "2027-01-10T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "status": "scheduled",
-   "summary": "Stop-motion studio LAIKA's process end to end: visual research, character design, puppet fabrication, rapid prototyping, miniature sets, cinematography and animation.\n",
-   "venue_name": "the Design Museum",
-   "city": "London",
-   "lat": 51.4995,
-   "lon": -0.205,
-   "online": false,
-   "audiences": [
-    "adults",
-    "families",
-    "teens"
-   ],
-   "topics": [
-    "Animation",
-    "Design",
-    "Film"
-   ],
-   "careers": [
-    "Design, making & architecture",
-    "Film, animation & media"
-   ],
-   "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00",
-   "link_status": 200
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-9672b1283b34",
@@ -2534,11 +2378,10 @@
     "families"
    ],
    "age_text": "Families, Under 5s",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-54d93db79900",
@@ -2574,11 +2417,10 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-10ec7cddd538",
@@ -2613,12 +2455,11 @@
    "careers": [
     "Business & entrepreneurship"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making",
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-57cca85a3c5b",
@@ -2655,11 +2496,10 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-b5aea6e252e2",
@@ -2700,8 +2540,7 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-05353b07bc7e",
@@ -2739,11 +2578,10 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-2a55152a32f0",
@@ -2771,8 +2609,7 @@
     "families"
    ],
    "age_text": "All ages, Families",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-91087ca9a545",
@@ -2810,11 +2647,10 @@
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-43886420d6ed",
@@ -2855,11 +2691,10 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-dd29a54c9dce",
@@ -2894,12 +2729,11 @@
     "Arts & performance",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-371e9b5ad7a9",
@@ -2932,11 +2766,10 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-3bcf4a620f28",
@@ -2972,8 +2805,7 @@
     "History & archaeology"
    ],
    "provenance": "also listed by cam_museums",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-a7d11c52816f",
@@ -3009,8 +2841,7 @@
     "Earth & geoscience",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-438e110159e5",
@@ -3047,46 +2878,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-  },
-  {
-   "id": "curated_teen_careers-fa302491fc8c",
-   "title": "In Steam - Cambridge Museum of Technology",
-   "url": "https://www.museumoftechnology.com/whats-on/",
-   "source": "curated_teen_careers",
-   "source_name": "Curated (hand-checked)",
-   "start": "2026-10-22T00:00:00+01:00",
-   "all_day": true,
-   "ongoing": false,
-   "anytime": false,
-   "status": "scheduled",
-   "summary": "Restored steam machinery running: mechanical and industrial engineering in operation rather than behind glass.\n",
-   "venue_name": "Cambridge Museum of Technology",
-   "city": "Cambridge",
-   "lat": 52.2115,
-   "lon": 0.1401,
-   "online": false,
-   "audiences": [
-    "families",
-    "teens"
-   ],
-   "topics": [
-    "Mechanical engineering",
-    "Energy",
-    "Industrial history"
-   ],
-   "careers": [
-    "Engineering",
-    "Environment & climate",
-    "History & archaeology"
-   ],
-   "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00",
-   "link_status": 200
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-f4c39d854a1c",
@@ -3123,13 +2918,12 @@
     "Chemistry & materials",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making",
     "Research & discovery",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-06ca6bcfed82",
@@ -3164,13 +2958,12 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-391e8eba48f3",
@@ -3206,11 +2999,10 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-2491c14bc083",
@@ -3247,14 +3039,13 @@
     "Design, making & architecture",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Design & making",
     "Research & discovery",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-cfd1760c0b11",
@@ -3286,8 +3077,7 @@
     "Family events",
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-d740b42077a0",
@@ -3319,11 +3109,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-124255204917",
@@ -3366,12 +3155,11 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-0106d001e1fe",
@@ -3406,11 +3194,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-b2cea78acc1c",
@@ -3441,8 +3228,7 @@
    ],
    "age_min": 12,
    "age_text": "12+",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-4c74cef3b4f9",
@@ -3479,11 +3265,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-4808d738a5ea",
@@ -3514,8 +3299,7 @@
    "topics": [
     "Family events"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-d04fd11ee770",
@@ -3559,11 +3343,10 @@
     "Maths, data & statistics",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-e259ea2b1c6e",
@@ -3598,11 +3381,10 @@
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-649effcc8719",
@@ -3634,11 +3416,10 @@
     "Family events",
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-308b03e236b6",
@@ -3675,11 +3456,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "hunterian_museum-c736074c8a19",
@@ -3712,7 +3492,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-afa0b6c00e10",
@@ -3743,8 +3523,7 @@
    "topics": [
     "Family events"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-461e6949371a",
@@ -3783,11 +3562,10 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-3d51a2da2d5f",
@@ -3825,8 +3603,7 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-45caeadab616",
@@ -3863,11 +3640,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-1e664fedbf88",
@@ -3904,12 +3680,11 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Fieldwork & outdoors",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-8b5cca92eb3a",
@@ -3946,8 +3721,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "hunterian_museum-a9fa172b9d5d",
@@ -3981,7 +3755,7 @@
     "Caring & clinical work",
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-e33563c20dbb",
@@ -4018,8 +3792,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-af399c12b963",
@@ -4056,12 +3829,11 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Fieldwork & outdoors",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-63b240f097c7",
@@ -4098,8 +3870,7 @@
    "careers": [
     "Chemistry & materials"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-fe0ec65c0ebd",
@@ -4135,11 +3906,10 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-61b8e27c0ae5",
@@ -4180,8 +3950,7 @@
     "History & archaeology",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-b2f3fb137de7",
@@ -4221,8 +3990,7 @@
     "Chemistry & materials",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-4f26159db2c0",
@@ -4265,13 +4033,12 @@
     "Physics & space",
     "Politics & public service"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Argument & advocacy",
     "Design & making",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-2340c13745cd",
@@ -4306,11 +4073,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-ac892f965247",
@@ -4342,11 +4108,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-d3c9ac292ac8",
@@ -4386,11 +4151,10 @@
     "Chemistry & materials",
     "Engineering"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-8edcf821e710",
@@ -4431,11 +4195,10 @@
     "Medicine & health",
     "Psychology & neuroscience"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-1f6ced3df955",
@@ -4470,8 +4233,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-67a948be31db",
@@ -4503,8 +4265,7 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-192b691164f8",
@@ -4538,11 +4299,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-c0c8aea85217",
@@ -4584,8 +4344,7 @@
     "Medicine & health",
     "Teaching & outreach"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-e53ccb2f0998",
@@ -4627,8 +4386,7 @@
     "History & archaeology",
     "Maths, data & statistics"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-aaa49af1bdec",
@@ -4672,11 +4430,10 @@
     "Maths, data & statistics",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-f89890760018",
@@ -4718,11 +4475,10 @@
     "Environment & climate",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-44524d9a3101",
@@ -4757,11 +4513,10 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-8dc5f7904f3f",
@@ -4794,11 +4549,10 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-cce8e893be68",
@@ -4831,12 +4585,11 @@
     "Film, animation & media",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-394c4272fa3f",
@@ -4868,11 +4621,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-882644f18884",
@@ -4907,11 +4659,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-91998b05e729",
@@ -4951,11 +4702,10 @@
     "Engineering",
     "Environment & climate"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-e325fc9d0e0e",
@@ -4992,11 +4742,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-049b1922cf6d",
@@ -5032,12 +4781,11 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-86b1d55a9b99",
@@ -5072,11 +4820,10 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-b6f8cfc6c045",
@@ -5113,11 +4860,10 @@
     "Arts & performance",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-ebc036554bd3",
@@ -5149,12 +4895,11 @@
    "topics": [
     "Exhibitions and displays"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-80da67245d01",
@@ -5189,11 +4934,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-868010850a3a",
@@ -5230,11 +4974,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-823ea775d352",
@@ -5271,13 +5014,12 @@
     "Chemistry & materials",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making",
     "Research & discovery",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-8766a6a74e1b",
@@ -5309,8 +5051,7 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-77330ed2452b",
@@ -5342,11 +5083,10 @@
    "topics": [
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-b0bd615c33e9",
@@ -5380,11 +5120,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "hunterian_museum-be8b58037a9f",
@@ -5416,7 +5155,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-894fbb7137ce",
@@ -5449,11 +5188,10 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-5ea512f52b33",
@@ -5487,8 +5225,7 @@
    "topics": [
     "Talks and shows"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "rigb-f42d96ef0713",
@@ -5534,12 +5271,11 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-b1b3e9fcc8bf",
@@ -5575,11 +5311,10 @@
    "careers": [
     "Environment & climate"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-ac4a78bc11d0",
@@ -5614,13 +5349,12 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "talks_cam_darwin-f119efc01440",
@@ -5645,8 +5379,7 @@
    "careers": [
     "Politics & public service"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-605bf757db33",
@@ -5679,12 +5412,11 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-5d7db1cd2ccb",
@@ -5721,11 +5453,10 @@
     "Arts & performance",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "talks_cam_darwin-47e5cd957554",
@@ -5747,8 +5478,7 @@
    "topics": [
     "Public lecture"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-a74b713953dd",
@@ -5785,11 +5515,10 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "talks_cam_darwin-80c80e7c862d",
@@ -5821,7 +5550,6 @@
     "Politics & public service",
     "Psychology & neuroscience"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Argument & advocacy",
     "Creative production",
@@ -5829,7 +5557,7 @@
     "Enterprise & leadership",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "talks_cam_darwin-de3802741656",
@@ -5856,14 +5584,13 @@
     "Maths, data & statistics",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Caring & clinical work",
     "Data & quantitative analysis",
     "Enterprise & leadership",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-f628165706a5",
@@ -5899,12 +5626,11 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "talks_cam_darwin-86cdd5af41fb",
@@ -5931,12 +5657,11 @@
     "Business & entrepreneurship",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Enterprise & leadership",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "cam_museums-a4d31743bbbf",
@@ -5973,11 +5698,10 @@
     "Arts & performance",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "talks_cam_darwin-25529e9f1a95",
@@ -5999,11 +5723,10 @@
    "topics": [
     "Public lecture"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "talks_cam_darwin-fd29aedb6fcf",
@@ -6028,51 +5751,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
-  },
-  {
-   "id": "curated_teen_careers-706091d1fe9e",
-   "title": "Cambridge Festival 2027",
-   "url": "https://www.festival.cam.ac.uk/",
-   "source": "curated_teen_careers",
-   "source_name": "Curated (hand-checked)",
-   "start": "2027-03-10T00:00:00+00:00",
-   "end": "2027-03-25T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "status": "scheduled",
-   "summary": "The broadest single Cambridge option, spanning science, health, technology, environment, humanities, social sciences and the arts. Family Weekend is 13-14 March 2027; the detailed programme is published closer to the date.\n",
-   "venue_name": "University of Cambridge (multiple venues)",
-   "city": "Cambridge",
-   "lat": 52.2043,
-   "lon": 0.1149,
-   "online": false,
-   "price_text": "Mostly free",
-   "is_free": true,
-   "price_from": 0.0,
-   "audiences": [
-    "adults",
-    "families",
-    "teens"
-   ],
-   "topics": [
-    "Science",
-    "Health",
-    "Technology",
-    "Environment",
-    "Humanities",
-    "Social sciences",
-    "Arts"
-   ],
-   "careers": [
-    "Arts & performance",
-    "Environment & climate"
-   ],
-   "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T21:26:57.929297+00:00",
-   "link_status": 200
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   },
   {
    "id": "talks_cam_darwin-0899cc4aa7d0",
@@ -6097,11 +5776,10 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T21:26:57.929297+00:00"
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T21:56:13.714436+00:00"
+   "last_seen": "2026-09-21T21:58:47.493024+00:00"
   }
  ]
 }
