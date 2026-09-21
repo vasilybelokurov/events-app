@@ -162,6 +162,7 @@ button.ghost:hover, .card-foot button:hover, .card-foot a:hover { border-color: 
 .badge.age-eligible { background: var(--good-bg); color: var(--good-ink); }
 .badge.age-unknown { background: var(--warn-bg); color: var(--warn-ink); }
 .badge.alert { background: var(--bad-bg); color: var(--bad-ink); }
+.badge.verified { background: var(--good-bg); color: var(--good-ink); }
 .tag {
   display: inline-block; font-size: .74rem; margin: 2px 4px 0 0;
   padding: 1px 7px; border: 1px solid var(--line); border-radius: 999px;
@@ -181,6 +182,11 @@ td a { color: var(--ink); }
 .health summary { cursor: pointer; font-size: .9rem; color: var(--ink-2); }
 .health table { margin-top: 10px; }
 .note { font-size: .82rem; color: var(--ink-2); }
+.note code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .95em; background: var(--surface-2);
+  padding: 1px 5px; border-radius: 4px;
+}
 .status-ok { color: var(--good-ink); }
 .status-bad { color: var(--bad-ink); font-weight: 600; }
 

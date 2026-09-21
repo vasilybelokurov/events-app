@@ -313,3 +313,118 @@ class TestCurated:
         """
         e = curated.parse(raw, {"key": "c", "name": "C"})[0]
         assert (e.age_min, e.age_max) == (14, None)
+
+
+# ------------------------------------------------------- detail enrichment --
+
+DETAIL_PAGE = """<html><body>
+  <div class="field field--name-field-for-whom field--label-above">
+    <div class="field__label">Who</div>
+    <div class="field__items">
+      <div class="field__item">12+</div>, <div class="field__item">Adults (18+)</div>,
+      <div class="field__item">All ages</div>, <div class="field__item">Families</div>
+    </div>
+  </div>
+  <div class="field field--name-field-price-in-sidebar-">
+    <div class="field__label">Price</div>Free
+  </div>
+  <div class="field field--name-field-event-type">
+    <div class="field__label">What</div>
+    <div class="field__item">Talks and lectures</div>
+  </div>
+  <div class="field field--name-body"><p>A talk about engineering careers.</p></div>
+</body></html>"""
+
+ADULTS_ONLY_PAGE = DETAIL_PAGE.replace(
+    '<div class="field__item">12+</div>, <div class="field__item">Adults (18+)</div>,\n'
+    '      <div class="field__item">All ages</div>, <div class="field__item">Families</div>',
+    '<div class="field__item">Adults (18+)</div>')
+
+LISTING = """<html><body>
+  <div class="views-row">
+    <div class="views-field views-field-title">
+      <a href="/events/one">An event</a></div>
+    <div class="views-field views-field-field-date">
+      <div class="field-content">17/01/2027</div></div>
+  </div>
+</body></html>"""
+
+
+class TestDetailEnrichment:
+    """The Cambridge listing page carries no ages at all, which left the age
+    filter blind over the largest source.  The detail page has them."""
+
+    cfg = {
+        "key": "cam", "name": "Cam", "site": "https://example.org",
+        "url": "https://example.org/whats-on", "city": "Cambridge",
+        "selectors": {"item": ".views-row", "title": ".views-field-title a",
+                      "link": ".views-field-title a",
+                      "date": ".views-field-field-date .field-content"},
+        "detail": {"enabled": True, "selectors": {
+            "age": ".field--name-field-for-whom",
+            "price": ".field--name-field-price-in-sidebar-",
+            "topics": ".field--name-field-event-type",
+            "summary": ".field--name-body"}},
+    }
+
+    def parsed(self, monkeypatch, page=DETAIL_PAGE):
+        monkeypatch.setattr(html_css, "fetch", lambda url, **kw: page)
+        return html_css.parse(LISTING, self.cfg)
+
+    def test_ages_come_from_the_detail_page(self, monkeypatch):
+        e = self.parsed(monkeypatch)[0]
+        assert e.age_text == "12+, Adults (18+), All ages, Families"
+        assert html_css.last_enrichment["detail_ages_added"] == 1
+
+    def test_alternative_audiences_are_unioned_not_intersected(self, monkeypatch):
+        """"12+, Adults (18+), All ages" must not exclude a 14-year-old by
+        taking the 18+ bound from one of the alternatives."""
+        e = self.parsed(monkeypatch)[0]
+        assert (e.age_min, e.age_max) == (None, None)
+        assert e.suits_age(14) is True
+        assert e.eligibility(14) == "eligible"
+
+    def test_an_adults_only_page_does_exclude_a_teenager(self, monkeypatch):
+        e = self.parsed(monkeypatch, ADULTS_ONLY_PAGE)[0]
+        assert e.age_min == 18
+        assert e.eligibility(14) == "excluded"
+
+    def test_separator_commas_do_not_become_values(self, monkeypatch):
+        e = self.parsed(monkeypatch)[0]
+        assert ",," not in (e.age_text or "")
+        assert all(part.strip() for part in e.age_text.split(","))
+
+    def test_labels_are_stripped_from_values(self, monkeypatch):
+        e = self.parsed(monkeypatch)[0]
+        assert not e.age_text.startswith("Who")
+        assert e.price_text == "Free"
+        assert e.is_free is True
+
+    def test_careers_are_rederived_from_enriched_text(self, monkeypatch):
+        """The detail page supplies words the listing row omitted."""
+        e = self.parsed(monkeypatch)[0]
+        assert "Engineering" in e.careers
+
+    def test_a_failing_detail_page_does_not_lose_the_event(self, monkeypatch):
+        def boom(url, **kw):
+            raise RuntimeError("404")
+        monkeypatch.setattr(html_css, "fetch", boom)
+        events = html_css.parse(LISTING, self.cfg)
+        assert len(events) == 1, "the listing event must survive"
+        assert html_css.last_enrichment["detail_failed"] == 1
+
+    def test_enrichment_is_opt_in(self, monkeypatch):
+        monkeypatch.setattr(html_css, "fetch",
+                            lambda url, **kw: pytest.fail("should not fetch"))
+        cfg = {**self.cfg, "detail": {"enabled": False}}
+        events = html_css.parse(LISTING, cfg)
+        assert len(events) == 1
+        assert html_css.last_enrichment == {"detail_enabled": False}
+
+    def test_max_pages_caps_the_fetching(self, monkeypatch):
+        calls = []
+        monkeypatch.setattr(html_css, "fetch",
+                            lambda url, **kw: calls.append(url) or DETAIL_PAGE)
+        cfg = {**self.cfg, "detail": {**self.cfg["detail"], "max_pages": 0}}
+        html_css.parse(LISTING, cfg)
+        assert calls == []

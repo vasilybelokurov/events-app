@@ -1,0 +1,68 @@
+name: Weekly source review
+
+# Upkeep should be a five-minute Monday task, not a memory test.  This verifies
+# every source in the registry and files the results as a single rolling issue,
+# with a checklist of the hand-written claims whose verification has expired.
+on:
+  schedule:
+    - cron: "10 8 * * 1"      # Mondays, after the tests workflow
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Verify every source
+        id: verify
+        env:
+          EVENTS_CONTACT: ${{ github.server_url }}/${{ github.repository }}/issues
+          EVENTS_CACHE_TTL: "0"
+        run: |
+          set +e
+          python -m collector.verify --markdown > review.md
+          echo "status=$?" >> "$GITHUB_OUTPUT"
+          cat review.md
+
+      - name: File or update the review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEEDS_ATTENTION: ${{ steps.verify.outputs.status }}
+        run: |
+          {
+            echo "_Filed automatically by \`.github/workflows/review.yml\`._"
+            echo
+            cat review.md
+            echo
+            echo "---"
+            echo "To clear a checklist item: open the venue page, confirm the dates,"
+            echo "price and age rule, then set \`verified_on: $(date -u +%Y-%m-%d)\` on"
+            echo "that entry in \`data/curated/cambridge_london_teen_careers.yaml\`."
+          } > body.md
+
+          TITLE="Source review: week of $(date -u +%Y-%m-%d)"
+          EXISTING=$(gh issue list --label source-review --state open \
+                       --limit 1 --json number --jq '.[0].number // empty')
+          gh label create source-review --color 0E8A16 \
+             --description "Weekly verification of every event source" 2>/dev/null || true
+
+          if [ -n "$EXISTING" ]; then
+            gh issue edit "$EXISTING" --title "$TITLE" --body-file body.md
+            echo "Updated issue #$EXISTING"
+          elif [ "$NEEDS_ATTENTION" != "0" ]; then
+            gh issue create --title "$TITLE" --body-file body.md --label source-review
+          else
+            echo "Everything verified and no open review issue: nothing to file."
+          fi

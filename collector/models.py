@@ -246,6 +246,61 @@ def parse_time_text(text: str | None) -> tuple[time | None, time | None]:
     return (start, end)
 
 
+def combine_audience_values(values) -> tuple[int | None, int | None, list[str]]:
+    """Combine a list of audience labels with **union** semantics.
+
+    A venue that tags an exhibition "12+, Adults (18+), All ages, Families" is
+    saying it suits any of those, not all of them at once.  Intersecting the
+    bounds would take 18+ from one label and exclude a 14-year-old from an
+    exhibition explicitly marked "All ages", so the widest range wins.
+
+    Returns ``(age_min, age_max, audiences)``.
+
+    >>> combine_audience_values(["12+", "Adults (18+)", "All ages", "Families"])
+    (None, None, ['adults', 'children', 'families', 'teens'])
+    >>> combine_audience_values(["Adults (18+)"])
+    (18, None, ['adults'])
+    >>> combine_audience_values(["5-11"])
+    (5, 11, ['children'])
+    >>> combine_audience_values(["12+"])  # spans a 12-year-old to an adult
+    (12, None, ['adults', 'children', 'teens'])
+    >>> combine_audience_values([])
+    (None, None, [])
+    """
+    labels = [str(v).strip() for v in (values or []) if str(v).strip()]
+    if not labels:
+        return (None, None, [])
+
+    bounds: list[tuple[int | None, int | None]] = []
+    audiences: set[str] = set()
+    for label in labels:
+        low = label.lower()
+        if "all age" in low or "everyone" in low or "any age" in low:
+            bounds.append((None, None))
+            audiences.add("families")
+            continue
+        lo, hi = parse_age_range(label)
+        bounds.append((lo, hi))
+        mapped = map_audience(label)
+        if mapped:
+            audiences.add(mapped)
+        # Numeric labels such as "12+" or "5-11" carry no word to map, so the
+        # audience is derived from the range itself.
+        elif lo is not None or hi is not None:
+            lo_eff = 0 if lo is None else lo
+            hi_eff = 99 if hi is None else hi
+            if lo_eff <= 12:
+                audiences.add("children")
+            if lo_eff <= 17 and hi_eff >= 13:
+                audiences.add("teens")
+            if hi_eff >= 18:
+                audiences.add("adults")
+
+    age_min = None if any(b[0] is None for b in bounds) else min(b[0] for b in bounds)
+    age_max = None if any(b[1] is None for b in bounds) else max(b[1] for b in bounds)
+    return (age_min, age_max, sorted(audiences))
+
+
 def _localise(dt: datetime) -> datetime:
     """Attach Europe/London to a naive datetime, resolving DST edge cases.
 

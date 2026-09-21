@@ -85,13 +85,22 @@
   <section id="results" aria-live="polite"></section>
 
   <details class="health">
-    <summary>Where this came from, and how fresh it is</summary>
+    <summary>Every source, and how fresh it is</summary>
     <div id="sources"></div>
     <p class="note">
-      Each source is collected on a schedule; a source that fails keeps its last
-      good records, labelled with when they were last seen. Prices, ages and
-      opening times are taken from the venue's own listing and can change —
-      the link on each card is the authority, not this page.
+      This is the complete list — nothing reaches this page from a source that
+      is not in it. Each row links to the venue's own listing, to the raw feed
+      the collector reads, and to that source's terms, so any claim here can be
+      traced back and checked. Run <code>python -m collector.verify</code> to
+      have every source fetched, parsed and reported on demand.
+    </p>
+    <p class="note">
+      A source that fails keeps its last good records, labelled with when they
+      were last seen, and the others still refresh. Hand-written entries carry
+      the date a person last confirmed them and are flagged for re-checking
+      after 90 days — a working link is not a verified fact. Prices, ages and
+      opening times come from the venue's listing and change: the link on each
+      card is the authority, not this page.
     </p>
   </details>
 

@@ -62,6 +62,10 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             ongoing=bool(item.get("ongoing")),
             anytime=bool(item.get("anytime")),
             when_text=item.get("when_text"),
+            # The date a human last confirmed this claim against the venue's
+            # own page.  Absent means "never verified", which the page shows.
+            verified_on=(str(item["verified_on"])
+                         if item.get("verified_on") else None),
             summary=summary,
             venue_name=item.get("venue_name"),
             city=item.get("city"),

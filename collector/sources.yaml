@@ -1,15 +1,38 @@
-# Source registry.  Adding a venue should mean adding a block here, not code.
+# Source registry — the single authoritative list of where data comes from.
 #
-# Every block needs: key (stable, used in event ids), name, kind, plus the
-# fields that kind requires.  `priority` breaks ties during de-duplication
-# (lower wins).  `verified` records when I last confirmed the adapter returns
-# sensible data from the live source.
+# EVERY source must be listed here, and every source must be *accessible and
+# verifiable*: `python -m collector.verify` walks this file, fetches each
+# `verify_url`, parses it, and reports what it found.  Nothing may enter
+# events.json from a source that is not in this file.
+#
+# Required of every entry
+#   key          stable; becomes the prefix of every event id from this source
+#   name         shown in the page's source panel
+#   kind         adapter (see collector/adapters/)
+#   homepage     human-facing page a person can open to check the source
+#   verify_url   machine-facing URL the verifier fetches
+#   docs         where the interface is documented, or how it was discovered
+#   terms        licence / terms-of-use page, or "unstated"
+#   priority     tie-break during de-duplication (lower wins)
+#   verified     date the adapter was last confirmed against the live source
+#
+# Optional
+#   hand_written  true if the records are human claims needing periodic
+#                 re-checking; defaults to true for `kind: curated`.  Entries
+#                 of a hand-written source are link-checked on every build and
+#                 their `verified_on` date expires after 90 days.
+#
+# Adding a venue should mean adding a block here, not writing code.
 
 sources:
   - key: rigb
     name: Royal Institution
     kind: drupal_jsonapi
+    homepage: https://www.rigb.org/whats-on
     endpoint: https://www.rigb.org/jsonapi/node/event
+    verify_url: https://www.rigb.org/jsonapi/node/event?page%5Blimit%5D=1
+    docs: https://www.drupal.org/docs/core-modules-and-themes/core-modules/jsonapi-module
+    terms: https://www.rigb.org/terms-and-conditions
     site: https://www.rigb.org
     venue_name: The Royal Institution, 21 Albemarle Street
     city: London
@@ -19,14 +42,20 @@ sources:
     priority: 10
     verified: 2026-09-21
     notes: >
-      Public Drupal JSON:API.  Carries an age taxonomy (Young people 13+,
+      Public Drupal JSON:API, discovered by requesting /jsonapi and looking for
+      a node--event resource.  Carries an age taxonomy (Young people 13+,
       Families, Adults, Children 12 and under), topics, prices and the
-      Eventbrite booking link.
+      Eventbrite booking link.  The most reliable source in this project: it
+      needs no scraping and the venue maintains it.
 
   - key: cam_museums
     name: University of Cambridge Museums
     kind: html_css
+    homepage: https://www.museums.cam.ac.uk/whats-on
     url: https://www.museums.cam.ac.uk/whats-on
+    verify_url: https://www.museums.cam.ac.uk/whats-on
+    docs: no published interface; CSS selectors below, recorded 2026-09-21
+    terms: https://www.museums.cam.ac.uk/terms-and-conditions
     site: https://www.museums.cam.ac.uk
     city: Cambridge
     lat: 52.2035
@@ -44,19 +73,62 @@ sources:
       summary: .views-field-field-description .field-content
       venue: .views-field-field-museum .field-content
       price: .views-field-field-free .field-content
+    detail:
+      enabled: true
+      max_pages: 200
+      selectors:
+        age: .field--name-field-for-whom
+        price: .field--name-field-price-in-sidebar-
+        topics: .field--name-field-event-type
+        time: .field--name-field-time-
+        summary: .field--name-body
     notes: >
       Drupal views listing covering the Fitzwilliam, Whipple, Sedgwick, Kettle's
       Yard, Polar Museum, Museum of Zoology, Botanic Garden and others.  No feed
       and no structured data, so this is selector-based and therefore fragile:
-      build.py fails the build if it stops returning rows.
+      the listing page carries no age information, which is why detail-page
+      enrichment matters here more than anywhere else.
+
+  - key: talks_cam_darwin
+    name: Darwin College Lecture Series
+    kind: ics
+    homepage: https://talks.cam.ac.uk/show/index/5358
+    url: https://talks.cam.ac.uk/show/ics/5358
+    verify_url: https://talks.cam.ac.uk/show/ics/5358
+    docs: https://talks.cam.ac.uk/document/syndicating_talks/
+    terms: https://talks.cam.ac.uk/document/privacy_and_publicity/
+    site: https://talks.cam.ac.uk/show/index/5358
+    city: Cambridge
+    lat: 52.1993
+    lon: 0.1122
+    priority: 30
+    verified: 2026-09-21
+    topics: [Public lecture]
+    notes: >
+      talks.cam.ac.uk publishes every list as iCalendar at
+      /show/ics/<list_id>, documented under "Syndicating talks".  That makes
+      all ~2400 Cambridge talk lists available as one-line entries here: find
+      the list at /index/lists/<letter>/, take its id, and add a block like
+      this one.  Darwin College is the first because it is a free public
+      lecture series pitched at a general audience rather than a research
+      seminar.  Most lists are dormant or postgraduate-only, so check the feed
+      returns future events before adding it.
 
   - key: curated_teen_careers
     name: Curated (hand-checked)
     kind: curated
+    homepage: https://github.com/vasilybelokurov/events-app/blob/main/data/curated/cambridge_london_teen_careers.yaml
     path: data/curated/cambridge_london_teen_careers.yaml
+    verify_url: null          # a local file; the verifier checks each entry's own url
+    docs: data/curated/cambridge_london_teen_careers.yaml
+    terms: n/a (hand-written metadata, links out to each venue)
     priority: 40
     verified: 2026-09-21
     notes: >
-      Standing offers and long exhibitions that have no feed.  Every URL is
-      HTTP-checked at build time; entries whose link does not resolve are
-      marked in the UI.
+      Standing offers and long exhibitions that no feed lists as an "event":
+      the Old Bailey public gallery, the Bank of England Museum, the Supreme
+      Court's Friday tours.  Every entry carries its own `url`, a `provenance`
+      line saying where the claim came from, and a `verified_on` date.  The
+      verifier checks each URL and flags any entry whose verification has
+      expired, because a resolving link does not prove a price or an age rule
+      still holds.

@@ -14,10 +14,11 @@ subject — so every event is tagged with the kinds of work it puts on display.
 collector/          Python: adapters -> normalise -> de-duplicate -> events.json
   sources.yaml      the source registry: add a venue here, not in code
   adapters/         one module per kind of source
+  verify.py         proves every source is listed, reachable and parseable
 data/curated/       hand-written entries for things no feed lists
 docs/               the published site (GitHub Pages root)
   data/events.json  the only thing the page loads
-tests/              116 offline tests + 9 live source checks
+tests/              152 offline tests + 9 live source checks
 ```
 
 ## Quick run
@@ -28,47 +29,96 @@ pip install -r requirements.txt
 
 export EVENTS_CONTACT="you@example.org"        # goes in the User-Agent
 python -m collector.build -v                   # writes docs/data/events.json
+python -m collector.verify                     # check every source on demand
 python -m pytest -q                            # offline suite
-python -m pytest -m network -q                 # check the live sources
+python -m pytest -m network -q                 # hit the live sources
 
 python -m http.server 8000 --directory docs    # then open localhost:8000
 ```
 
-## How it stays up to date
+## How it stays alive
 
-`.github/workflows/refresh.yml` runs the collector daily at 06:15 UTC, commits
-the refreshed `docs/data/events.json`, and **explicitly deploys the Pages
-artifact** — a commit made with `GITHUB_TOKEN` does not itself trigger a Pages
-build, so a commit-only workflow would never update the live site.
+Three scheduled jobs, each answering a different failure:
 
-`.github/workflows/tests.yml` runs the offline suite on every push and the
-live source checks every Monday. Source drift — a venue redesigning its
-listing page — is the main way this project breaks, and the Monday run is what
-catches it.
+| Workflow | When | What it catches |
+|---|---|---|
+| `refresh.yml` | daily 06:15 UTC | New events; publishes and deploys. |
+| `tests.yml` | every push, plus Mondays | Code regressions, and (Mondays) live source drift. |
+| `review.yml` | Mondays 08:10 UTC | Files one rolling issue with every source verified and a checklist of hand-written claims whose verification has expired. |
 
-### What happens when a source breaks
+`refresh.yml` deploys the Pages artifact **explicitly**, because a commit made
+with `GITHUB_TOKEN` does not itself trigger a Pages build — a commit-only
+workflow would never update the live site.
 
-Silence is the enemy, so the build distinguishes three outcomes per source
-(*ok*, *fetch error*, *suspicious result*) and:
+### When a source breaks: degrade, do not freeze
 
-* **carries over** the last good records for a failed source, keeping their
-  original `last_seen`, so the page shows stale-but-labelled data instead of
-  losing half its content;
-* **refuses to publish** when a source that previously returned events now
-  returns none, or loses more than half of them, unless you pass
-  `--allow-drop`;
-* writes the file **atomically**, so a crash cannot leave a half-written
-  `events.json`;
-* publishes `last_success` per source, and the page renders a staleness
-  warning from it — a cron job that never ran cannot report its own absence.
+* Each source records `last_attempt` and `last_success`, and *ok*, *fetch
+  error* and *suspicious result* are tracked separately.
+* A failed source **keeps its last good records**, with their original
+  `last_seen`, so the page shows stale-but-labelled data instead of a hole.
+* **The healthy sources still publish.** One venue being down must not stop the
+  others refreshing.
+* The alarm is the **exit code**, not a withheld file: `collector.build` always
+  writes, and exits non-zero when anything is degraded, which turns the
+  scheduled run red and emails the repository owner. `--allow-drop` accepts a
+  genuine shrinkage and exits zero.
+* Writes are atomic, so a crash cannot leave a half-written `events.json`.
+* The page renders its own staleness warning from `last_success`, because a
+  cron job that never ran cannot report its own absence.
+
+### When a hand-written claim goes stale
+
+A resolving link does not prove a price, an opening time or an age rule still
+holds. So every curated entry carries `verified_on`, the build link-checks it
+on every run, and after 90 days the page badges it **needs re-checking** and
+the Monday issue puts it on a checklist. An entry that has never been confirmed
+shows as **unverified claim** from the start — including the eight that came
+from a ChatGPT conversation and have only had their URLs machine-checked.
 
 ## Sources
 
-| Key | Source | Kind | Notes |
-|---|---|---|---|
-| `rigb` | Royal Institution | `drupal_jsonapi` | Public JSON:API. Carries a real age taxonomy (`Young people 13+`, `Families`, `Adults`, `Children 12 and under`), topics, prices and booking links. The best source here by a distance. |
-| `cam_museums` | University of Cambridge Museums | `html_css` | Fitzwilliam, Whipple, Sedgwick, Kettle's Yard, Polar Museum, Museum of Zoology, Botanic Garden. No feed, so CSS selectors — the fragile one. |
-| `curated_teen_careers` | Hand-checked | `curated` | Standing offers with no feed: Old Bailey public gallery, Bank of England Museum, Supreme Court tours, long exhibitions. |
+**Every source lives in `collector/sources.yaml`, and nothing reaches the page
+from a source that is not in it.** Each entry must declare a `homepage` a
+person can open, a `verify_url` the code can fetch, where the interface is
+documented, and the terms it is used under. The published page renders all of
+it, so any claim on the site can be traced back to its origin.
+
+| Key | Source | Kind | Events | Notes |
+|---|---|---|---|---|
+| `rigb` | [Royal Institution](https://www.rigb.org/whats-on) | `drupal_jsonapi` | ~30 | Public JSON:API with a real age taxonomy (`Young people 13+`, `Families`, `Adults`, `Children 12 and under`), topics, prices and booking links. The venue maintains it; nothing here needs upkeep. |
+| `cam_museums` | [University of Cambridge Museums](https://www.museums.cam.ac.uk/whats-on) | `html_css` | ~100 | Fitzwilliam, Whipple, Sedgwick, Kettle's Yard, Polar Museum, Museum of Zoology, Botanic Garden. CSS selectors plus detail-page enrichment — the fragile one. |
+| `talks_cam_darwin` | [Darwin College Lecture Series](https://talks.cam.ac.uk/show/index/5358) | `ics` | ~8 | Free public lecture series. See below: this one key unlocks ~2400 Cambridge lists. |
+| `curated_teen_careers` | [Hand-checked YAML](data/curated/cambridge_london_teen_careers.yaml) | `curated` | 9 | Standing offers with no feed: Old Bailey public gallery, Bank of England Museum, Supreme Court tours, long exhibitions. |
+
+### Verifying them
+
+```bash
+python -m collector.verify              # table: every source, fetched and parsed
+python -m collector.verify --markdown   # the weekly review issue's body
+python -m collector.verify --only rigb  # one source
+python -m collector.verify --json       # machine-readable
+```
+
+Three questions are asked of each source and kept deliberately apart:
+
+* **Reachable?** Does `verify_url` answer, and with what status.
+* **Parseable?** Does the adapter still understand the response, and how many
+  events come out. A redesigned page answers `200` and yields nothing — it is
+  reachable but not parseable, and that distinction is the whole point.
+* **Current?** For hand-written claims: when did a person last confirm this,
+  and is that within 90 days.
+
+Exit status is zero only when every source passes and nothing is overdue, so it
+works as a CI check. A source with no `verify_url` and no local file is itself
+reported as a failure: *unverifiable* is not an acceptable state.
+
+### Cambridge talks: ~2400 more lists, one line each
+
+`talks.cam.ac.uk` publishes every list as iCalendar at `/show/ics/<list_id>`
+([documented](https://talks.cam.ac.uk/document/syndicating_talks/)). To add one:
+find it under `/index/lists/<letter>/`, take the id from its URL, and copy the
+`talks_cam_darwin` block. Most lists are dormant or postgraduate-only, so check
+the feed returns future events first.
 
 ### Adding a venue
 

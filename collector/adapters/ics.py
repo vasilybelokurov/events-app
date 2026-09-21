@@ -10,6 +10,8 @@ from __future__ import annotations
 import re
 from datetime import datetime, timedelta
 
+from bs4 import BeautifulSoup
+
 from ..careers import infer_careers
 from ..http import fetch
 from ..models import (UK, Event, make_id, parse_age_range, parse_uk_datetime,
@@ -87,6 +89,25 @@ def iter_vevents(text: str):
     return
 
 
+#: Placeholder descriptions some feeds emit; carrying them adds no information.
+_EMPTY_DESCRIPTIONS = {"abstract not available", "no abstract", "tbc", "tba", "n/a"}
+
+
+def _clean_description(text: str | None) -> str | None:
+    """Strip markup from a DESCRIPTION and drop placeholder text.
+
+    talks.cam sends HTML inside the iCalendar DESCRIPTION field (``<p>Abstract
+    not available</p>``), which would otherwise be shown to the reader as-is.
+    """
+    if not text:
+        return None
+    plain = BeautifulSoup(text, "lxml").get_text(" ", strip=True)
+    plain = re.sub(r"\s+", " ", plain).strip()
+    if not plain or plain.lower().rstrip(".") in _EMPTY_DESCRIPTIONS:
+        return None
+    return plain
+
+
 def parse(raw: str, cfg: dict) -> list[Event]:
     out: list[Event] = []
     for ve in iter_vevents(raw):
@@ -114,7 +135,7 @@ def parse(raw: str, cfg: dict) -> list[Event]:
                 # shift() works in local terms, so a duration spanning a clock
                 # change lands on the right wall-clock time.
                 end = shift(start, days=days, hours=hours, minutes=mins)
-        summary = val("DESCRIPTION")
+        summary = _clean_description(val("DESCRIPTION"))
         status = (val("STATUS") or "CONFIRMED").upper()
         if status in ("CANCELLED", "CANCELED"):
             status = "cancelled"

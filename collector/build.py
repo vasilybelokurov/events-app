@@ -4,8 +4,8 @@ Run it locally or from the GitHub Actions cron job::
 
     python -m collector.build --out docs/data/events.json
 
-**Failure policy.** A silent failure is worse than a loud one, and worse still
-is a failure that looks like news.  So:
+**Failure policy: degrade, do not freeze.** A silent failure is worse than a
+loud one, and worse still is a failure that looks like news.  So:
 
 * every source gets ``last_attempt`` and ``last_success`` timestamps, and the
   three outcomes *ok*, *fetch error* and *suspicious result* are recorded
@@ -13,8 +13,14 @@ is a failure that looks like news.  So:
 * when a source fails, its records from the previous build are **carried over
   with their original ``last_seen``**, so the page shows stale-but-labelled
   data rather than losing half its content;
-* a source that used to return events and now returns none (or loses more than
-  :data:`DROP_TOLERANCE` of them) fails the build unless ``--allow-drop``;
+* **the healthy sources are still published.**  One venue being down must not
+  stop the other two refreshing: an earlier version refused to write anything
+  when any source misbehaved, which meant a one-hour outage at one venue froze
+  the whole page for a day;
+* the alarm is the **exit code**, not a withheld file.  ``build()`` always
+  writes; :func:`main` returns non-zero when any source is degraded, which is
+  what turns the scheduled run red and emails whoever owns the repository.
+  ``--allow-drop`` says "yes, that shrinkage is genuine" and exits zero;
 * the page itself renders a staleness warning from ``last_success``, because a
   cron job that never ran cannot report its own absence.
 """
@@ -43,6 +49,11 @@ DROP_TOLERANCE = 0.5
 
 #: How long a source's data may go unrefreshed before the page flags it.
 STALE_AFTER_HOURS = 48
+
+#: How long a hand-written claim stands before it needs re-checking by a human.
+#: Kept here as well as in :mod:`collector.verify` so the published file tells
+#: the page what the policy is.
+VERIFY_AFTER_DAYS = 90
 
 
 def load_sources(path: Path) -> list[dict]:
@@ -73,7 +84,12 @@ def collect_source(cfg: dict, *, now: datetime, root: Path) -> tuple[list[Event]
             meta = (json.loads(raw).get("meta") or {})
         except json.JSONDecodeError:
             meta = {}
-    return adapter.parse(raw, local), meta
+    events = adapter.parse(raw, local)
+    # Adapters that fetch extra pages report what that achieved, so a silent
+    # enrichment failure shows up in the health panel rather than as missing
+    # age data nobody notices.
+    meta.update(getattr(adapter, "last_enrichment", {}) or {})
+    return events, meta
 
 
 def _takes_now(adapter) -> bool:
@@ -99,7 +115,7 @@ def is_current(e: Event, *, now: datetime, grace_hours: int = 6) -> bool:
 
 def build(sources_path: Path, out_path: Path, *, root: Path,
           only: list[str] | None = None, link_check: bool = True,
-          allow_drop: bool = False, horizon_days: int = 400) -> dict:
+          horizon_days: int = 400) -> dict:
     now = datetime.now(UK)
     stamp = now.astimezone(timezone.utc).isoformat()
     sources = load_sources(sources_path)
@@ -122,6 +138,13 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
         prev = prev_reports.get(cfg["key"], {})
         report = {
             "key": cfg["key"], "name": cfg["name"], "kind": cfg["kind"],
+            # Carried from the registry so every source is listed *and*
+            # openable from the page itself, not just from the repository.
+            "homepage": cfg.get("homepage"),
+            "verify_url": cfg.get("verify_url"),
+            "docs": cfg.get("docs"),
+            "terms": cfg.get("terms"),
+            "adapter_verified_on": str(cfg.get("verified")) if cfg.get("verified") else None,
             "count": 0, "status": "ok", "error": None,
             "last_attempt": stamp,
             "last_success": prev.get("last_success"),
@@ -130,6 +153,10 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
         try:
             events, meta = collect_source(cfg, now=now, root=root)
             report["pagination_complete"] = meta.get("pagination_complete")
+            for k in ("detail_enabled", "detail_attempted", "detail_enriched",
+                      "detail_failed", "detail_ages_added"):
+                if k in meta:
+                    report[k] = meta[k]
         except Exception as exc:                        # noqa: BLE001
             report.update(status="fetch_error", error=f"{type(exc).__name__}: {exc}")
             failures.append(f"{cfg['key']}: {report['error']}")
@@ -175,9 +202,13 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
     records = [e.to_dict() for e in events]
 
     if link_check:
+        # Exactly the sources the registry declares hand-written, rather than a
+        # guess from the key's spelling.
+        hand_written_keys = {s["key"] for s in sources
+                             if s.get("hand_written", s["kind"] == "curated")}
         checked: dict[str, dict] = {}
         for rec in records:
-            if not rec.get("source", "").startswith("curated") or not rec.get("url"):
+            if rec.get("source") not in hand_written_keys or not rec.get("url"):
                 continue
             url = rec["url"]
             if url not in checked:
@@ -199,6 +230,7 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
         "generated_at": stamp,
         "timezone": "Europe/London",
         "stale_after_hours": STALE_AFTER_HOURS,
+        "verify_after_days": VERIFY_AFTER_DAYS,
         "event_count": len(records),
         "oldest_source_success": oldest_success,
         "sources": reports,
@@ -206,13 +238,6 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
     }
     if failures:
         doc["build_warnings"] = failures
-
-    if failures and not allow_drop:
-        raise SystemExit(
-            "Build refused to publish; sources look broken:\n  - "
-            + "\n  - ".join(failures)
-            + "\nRe-run with --allow-drop if the change is genuine."
-        )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     tmp = out_path.with_suffix(out_path.suffix + ".tmp")
@@ -230,20 +255,28 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--only", nargs="*", help="only these source keys")
     ap.add_argument("--no-link-check", action="store_true")
     ap.add_argument("--allow-drop", action="store_true",
-                    help="publish even if a source lost events or failed")
+                    help="exit 0 even if a source lost events or failed")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING,
                         format="%(levelname)s %(name)s: %(message)s")
     doc = build(args.sources, args.out, root=root, only=args.only,
-                link_check=not args.no_link_check, allow_drop=args.allow_drop)
+                link_check=not args.no_link_check)
     print(f"{doc['event_count']} events -> {args.out}")
     for s in doc["sources"]:
         flag = "" if s["status"] == "ok" else f"  [{s['status']}: {s['error'] or ''}]"
         carried = f" (+{s['carried_over']} carried over)" if s.get("carried_over") else ""
         print(f"  {s['count']:4d}  {s['key']}{flag}{carried}")
-    for w in doc.get("build_warnings", []):
+    warnings = doc.get("build_warnings", [])
+    for w in warnings:
         print(f"  WARNING {w}")
+    if warnings and not args.allow_drop:
+        # The data is published regardless; a non-zero exit is what raises the
+        # alarm (a red scheduled run, and an email to the repository owner).
+        print("\nOne or more sources are degraded. The healthy ones were still\n"
+              "published and the degraded ones kept their last good records.\n"
+              "Re-run with --allow-drop to accept this as the new normal.")
+        return 1
     return 0
 
 

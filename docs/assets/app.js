@@ -119,6 +119,22 @@ function eligibility(e, age) {
   return 'unknown';
 }
 
+/* A hand-written claim is only as good as the date a human last checked it.
+ * Three states, mirroring collector/verify.py: verified recently, expired, or
+ * never checked. A resolving link is not a verification. */
+function verificationState(e) {
+  if (!e.provenance && !e.verified_on) return null;   // not a curated claim
+  if (!e.verified_on) return { state: 'never', label: 'unverified claim' };
+  const when = parseDate(e.verified_on);
+  if (!when) return { state: 'never', label: 'unverified claim' };
+  const days = Math.floor((Date.now() - when) / DAY);
+  const limit = meta.verify_after_days || 90;
+  if (days > limit) {
+    return { state: 'expired', label: `needs re-checking (${days}d)` };
+  }
+  return { state: 'ok', label: `checked ${days}d ago` };
+}
+
 function isStale(e) {
   const seen = parseDate(e.last_seen);
   if (!seen || !meta.stale_after_hours) return false;
@@ -224,6 +240,9 @@ function renderCard(e) {
   if (e.link_status && e.link_status !== 200) badge(badges, 'alert', 'link ' + e.link_status);
   if (e.link_warning) badge(badges, 'alert', e.link_warning);
   if (isStale(e)) badge(badges, 'alert', 'not reconfirmed recently');
+  const ver = verificationState(e);
+  if (ver && ver.state !== 'ok') badge(badges, 'age-unknown', ver.label);
+  else if (ver) badge(badges, 'verified', ver.label);
 
   const link = node.querySelector('.title');
   link.textContent = e.title;
@@ -474,25 +493,53 @@ function downloadIcs(list) {
 
 /* ---------- freshness & health ---------- */
 
+function linkCell(url, text) {
+  const td = el('td');
+  const href = safeUrl(url);
+  if (href) {
+    const a = el('a', null, text || href);
+    a.href = href;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    td.appendChild(a);
+  } else {
+    td.textContent = text || '—';
+  }
+  return td;
+}
+
+/* Every source is listed here with the links needed to check it: the venue's
+ * own listing, the raw feed the collector reads, and the terms it is used
+ * under. Nothing reaches the page from a source absent from this table. */
 function renderHealth() {
   const box = document.getElementById('sources');
   box.textContent = '';
   const t = el('table');
   const head = el('tr');
-  ['Source', 'Kind', 'Events', 'Status', 'Last refreshed'].forEach((h) => head.appendChild(el('th', null, h)));
+  ['Source', 'Kind', 'Events', 'Status', 'Last refreshed', 'Feed', 'Terms']
+    .forEach((h) => head.appendChild(el('th', null, h)));
   t.appendChild(el('thead')).appendChild(head);
   const body = el('tbody');
   (meta.sources || []).forEach((s) => {
     const tr = el('tr');
-    tr.appendChild(el('td', null, s.name));
+    tr.appendChild(linkCell(s.homepage, s.name));
     tr.appendChild(el('td', null, s.kind));
-    tr.appendChild(el('td', null, String(s.count)));
+    let counts = String(s.count);
+    if (s.detail_enabled) {
+      counts += ` (+${s.detail_ages_added || 0} ages from detail pages`
+        + (s.detail_failed ? `, ${s.detail_failed} failed` : '') + ')';
+    }
+    tr.appendChild(el('td', null, counts));
     const st = el('td', s.status === 'ok' ? 'status-ok' : 'status-bad',
       s.status + (s.error ? ' — ' + s.error : '') +
       (s.carried_over ? ` (${s.carried_over} kept from last good run)` : ''));
     tr.appendChild(st);
     const ls = parseDate(s.last_success);
     tr.appendChild(el('td', null, ls ? ls.toLocaleString('en-GB') : 'never'));
+    tr.appendChild(linkCell(s.verify_url, s.verify_url ? 'raw feed' : 'local file'));
+    const terms = s.terms || '';
+    tr.appendChild(linkCell(terms.startsWith('http') ? terms : null,
+                            terms.startsWith('http') ? 'terms' : (terms || '—')));
     body.appendChild(tr);
   });
   t.appendChild(body);

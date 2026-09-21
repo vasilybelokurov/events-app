@@ -76,6 +76,13 @@ def run(paths, **kw):
     return build_mod.build(src, out, root=root, link_check=False, **kw)
 
 
+def run_cli(paths, *extra):
+    """Invoke the command line, whose exit status is the alarm."""
+    src, out, _ = paths
+    return build_mod.main(["--sources", str(src), "--out", str(out),
+                           "--no-link-check", *extra])
+
+
 class TestHappyPath:
     def test_writes_events_and_a_source_report(self, stub, paths):
         stub.events = [ev(1), ev(2)]
@@ -118,11 +125,19 @@ class TestHorizonAndPastEvents:
 
 
 class TestFailurePolicy:
+    """Degrade, do not freeze.
+
+    An earlier version refused to write anything when any source misbehaved,
+    so a one-hour outage at one venue froze the whole page for a day.  The
+    policy now is: publish the healthy sources, carry the broken one over,
+    and raise the alarm through the exit code.
+    """
+
     def test_fetch_error_is_recorded_not_raised(self, stub, paths):
         stub.events = [ev(1)]
         run(paths)                                  # establish a good build
         stub.error = RuntimeError("venue down")
-        doc = run(paths, allow_drop=True)
+        doc = run(paths)
         report = doc["sources"][0]
         assert report["status"] == "fetch_error"
         assert "venue down" in report["error"]
@@ -133,7 +148,7 @@ class TestFailurePolicy:
         original_seen = first["events"][0]["last_seen"]
 
         stub.error = RuntimeError("venue down")
-        doc = run(paths, allow_drop=True)
+        doc = run(paths)
         assert doc["event_count"] == 2, "a failed source must not erase its events"
         assert doc["sources"][0]["carried_over"] == 2
         assert doc["events"][0]["last_seen"] == original_seen, \
@@ -144,45 +159,77 @@ class TestFailurePolicy:
         good = run(paths)
         stamp = good["sources"][0]["last_success"]
         stub.error = RuntimeError("down")
-        doc = run(paths, allow_drop=True)
+        doc = run(paths)
         assert doc["sources"][0]["last_success"] == stamp
 
-    def test_dropping_to_zero_refuses_to_publish(self, stub, paths):
+    def test_a_dead_source_does_not_stop_the_others_publishing(self, stub, paths, tmp_path):
+        """The regression that matters: one venue being down must not freeze
+        the whole page."""
+        src, out, root = paths
+        second = StubAdapter()
+        second.events = [ev(50), ev(51)]
+        import collector.adapters as adapters_mod
+        adapters_mod.REGISTRY["stub2"] = second
+        try:
+            src.write_text(yaml.safe_dump({"sources": [
+                {"key": "stubby", "name": "Stub source", "kind": STUB_KIND, "priority": 10},
+                {"key": "healthy", "name": "Healthy source", "kind": "stub2", "priority": 20},
+            ]}))
+            stub.events = [ev(1)]
+            run(paths)                              # both good
+
+            stub.error = RuntimeError("down")
+            doc = run(paths)
+            by_key = {s["key"]: s for s in doc["sources"]}
+            assert by_key["stubby"]["status"] == "fetch_error"
+            assert by_key["healthy"]["status"] == "ok"
+            assert by_key["healthy"]["last_success"] == doc["generated_at"]
+            titles = {e["title"] for e in doc["events"]}
+            assert {"Event 50", "Event 51"} <= titles, "healthy source was not published"
+            assert "Event 1" in titles, "failed source's records were not carried over"
+        finally:
+            adapters_mod.REGISTRY.pop("stub2", None)
+
+    def test_dropping_to_zero_is_flagged(self, stub, paths):
         stub.events = [ev(1), ev(2)]
         run(paths)
         stub.events = []
-        with pytest.raises(SystemExit) as exc:
-            run(paths)
-        assert "returned 0 events" in str(exc.value)
+        doc = run(paths)
+        assert doc["sources"][0]["status"] == "empty"
+        assert any("returned 0 events" in w for w in doc["build_warnings"])
 
-    def test_losing_most_events_refuses_to_publish(self, stub, paths):
+    def test_losing_most_events_is_flagged(self, stub, paths):
         stub.events = [ev(i) for i in range(10)]
         run(paths)
         stub.events = [ev(0), ev(1)]
-        with pytest.raises(SystemExit):
-            run(paths)
-
-    def test_allow_drop_publishes_with_a_warning(self, stub, paths):
-        stub.events = [ev(i) for i in range(10)]
-        run(paths)
-        stub.events = [ev(0)]
-        doc = run(paths, allow_drop=True)
-        assert doc["build_warnings"]
+        doc = run(paths)
         assert doc["sources"][0]["status"] == "shrunk"
 
-    def test_a_refused_build_leaves_the_previous_file_intact(self, stub, paths):
-        stub.events = [ev(1), ev(2)]
+    def test_a_suspicious_drop_keeps_the_previous_records(self, stub, paths):
+        stub.events = [ev(i) for i in range(10)]
         run(paths)
-        before = paths[1].read_text()
         stub.events = []
-        with pytest.raises(SystemExit):
-            run(paths)
-        assert paths[1].read_text() == before
+        doc = run(paths)
+        assert doc["event_count"] == 10, "records were dropped instead of carried over"
+        assert doc["sources"][0]["carried_over"] == 10
+
+    def test_degraded_build_exits_nonzero(self, stub, paths, capsys):
+        stub.events = [ev(1), ev(2)]
+        assert run_cli(paths) == 0
+        stub.events = []
+        assert run_cli(paths) == 1, "a degraded source must turn the run red"
+        assert "degraded" in capsys.readouterr().out
+
+    def test_allow_drop_exits_zero(self, stub, paths):
+        stub.events = [ev(1), ev(2)]
+        run_cli(paths)
+        stub.events = []
+        assert run_cli(paths, "--allow-drop") == 0
 
     def test_incomplete_pagination_is_flagged(self, stub, paths):
         stub.events = [ev(1)]
         stub.meta = {"pagination_complete": False}
-        doc = run(paths, allow_drop=True)
+        doc = run(paths)
         assert doc["sources"][0]["status"] == "partial"
 
     def test_first_ever_build_with_no_events_is_allowed(self, stub, paths):
@@ -191,6 +238,25 @@ class TestFailurePolicy:
         doc = run(paths)
         assert doc["event_count"] == 0
         assert doc["sources"][0]["status"] == "ok"
+
+
+class TestRegistryMetadata:
+    def test_source_links_are_published_for_the_page(self, stub, paths, tmp_path):
+        """Every source must be listed *and* openable from the page itself."""
+        src, out, root = paths
+        src.write_text(yaml.safe_dump({"sources": [{
+            "key": "stubby", "name": "Stub source", "kind": STUB_KIND,
+            "homepage": "https://example.org/whats-on",
+            "verify_url": "https://example.org/feed.ics",
+            "terms": "https://example.org/terms",
+            "verified": "2026-09-21", "priority": 10,
+        }]}))
+        stub.events = [ev(1)]
+        report = run(paths)["sources"][0]
+        assert report["homepage"] == "https://example.org/whats-on"
+        assert report["verify_url"] == "https://example.org/feed.ics"
+        assert report["terms"] == "https://example.org/terms"
+        assert report["adapter_verified_on"] == "2026-09-21"
 
 
 class TestFreshness:

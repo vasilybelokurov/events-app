@@ -1,19 +1,25 @@
 {
- "generated_at": "2026-09-21T20:13:57.822865+00:00",
+ "generated_at": "2026-09-21T21:19:14.268875+00:00",
  "timezone": "Europe/London",
  "stale_after_hours": 48,
- "event_count": 139,
- "oldest_source_success": "2026-09-21T20:13:57.822865+00:00",
+ "verify_after_days": 90,
+ "event_count": 146,
+ "oldest_source_success": "2026-09-21T21:19:14.268875+00:00",
  "sources": [
   {
    "key": "rigb",
    "name": "Royal Institution",
    "kind": "drupal_jsonapi",
-   "count": 31,
+   "homepage": "https://www.rigb.org/whats-on",
+   "verify_url": "https://www.rigb.org/jsonapi/node/event?page%5Blimit%5D=1",
+   "docs": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/jsonapi-module",
+   "terms": "https://www.rigb.org/terms-and-conditions",
+   "adapter_verified_on": "2026-09-21",
+   "count": 30,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T20:13:57.822865+00:00",
-   "last_success": "2026-09-21T20:13:57.822865+00:00",
+   "last_attempt": "2026-09-21T21:19:14.268875+00:00",
+   "last_success": "2026-09-21T21:19:14.268875+00:00",
    "pagination_complete": true,
    "fetched": 31
   },
@@ -21,23 +27,55 @@
    "key": "cam_museums",
    "name": "University of Cambridge Museums",
    "kind": "html_css",
+   "homepage": "https://www.museums.cam.ac.uk/whats-on",
+   "verify_url": "https://www.museums.cam.ac.uk/whats-on",
+   "docs": "no published interface; CSS selectors below, recorded 2026-09-21",
+   "terms": "https://www.museums.cam.ac.uk/terms-and-conditions",
+   "adapter_verified_on": "2026-09-21",
    "count": 100,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T20:13:57.822865+00:00",
-   "last_success": "2026-09-21T20:13:57.822865+00:00",
+   "last_attempt": "2026-09-21T21:19:14.268875+00:00",
+   "last_success": "2026-09-21T21:19:14.268875+00:00",
    "pagination_complete": null,
+   "detail_enabled": true,
+   "detail_attempted": 100,
+   "detail_enriched": 100,
+   "detail_failed": 0,
+   "detail_ages_added": 94,
    "fetched": 100
+  },
+  {
+   "key": "talks_cam_darwin",
+   "name": "Darwin College Lecture Series",
+   "kind": "ics",
+   "homepage": "https://talks.cam.ac.uk/show/index/5358",
+   "verify_url": "https://talks.cam.ac.uk/show/ics/5358",
+   "docs": "https://talks.cam.ac.uk/document/syndicating_talks/",
+   "terms": "https://talks.cam.ac.uk/document/privacy_and_publicity/",
+   "adapter_verified_on": "2026-09-21",
+   "count": 8,
+   "status": "ok",
+   "error": null,
+   "last_attempt": "2026-09-21T21:19:14.268875+00:00",
+   "last_success": "2026-09-21T21:19:14.268875+00:00",
+   "pagination_complete": null,
+   "fetched": 8
   },
   {
    "key": "curated_teen_careers",
    "name": "Curated (hand-checked)",
    "kind": "curated",
+   "homepage": "https://github.com/vasilybelokurov/events-app/blob/main/data/curated/cambridge_london_teen_careers.yaml",
+   "verify_url": null,
+   "docs": "data/curated/cambridge_london_teen_careers.yaml",
+   "terms": "n/a (hand-written metadata, links out to each venue)",
+   "adapter_verified_on": "2026-09-21",
    "count": 9,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T20:13:57.822865+00:00",
-   "last_success": "2026-09-21T20:13:57.822865+00:00",
+   "last_attempt": "2026-09-21T21:19:14.268875+00:00",
+   "last_success": "2026-09-21T21:19:14.268875+00:00",
    "pagination_complete": null,
    "fetched": 9
   }
@@ -52,6 +90,7 @@
    "start": "2026-01-17T00:00:00+00:00",
    "end": "2026-12-31T12:00:00+00:00",
    "all_day": true,
+   "time_text": "Time",
    "ongoing": true,
    "anytime": false,
    "status": "scheduled",
@@ -64,10 +103,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "families",
+    "teens"
+   ],
+   "age_text": "12+, Adults (18+), All ages, Families",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-ed0a22b6da3b",
@@ -91,10 +140,13 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-be31a5eb4695",
@@ -105,6 +157,7 @@
    "start": "2026-03-02T00:00:00+00:00",
    "end": "2027-03-02T12:00:00+00:00",
    "all_day": true,
+   "time_text": "Time",
    "ongoing": true,
    "anytime": false,
    "status": "scheduled",
@@ -117,10 +170,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-243e4c2acd46",
@@ -144,7 +207,14 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Exhibitions and displays"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-3d61396d8aa5",
@@ -155,6 +225,7 @@
    "start": "2026-03-28T00:00:00+00:00",
    "end": "2026-12-20T12:00:00+00:00",
    "all_day": true,
+   "time_text": "Time",
    "ongoing": true,
    "anytime": false,
    "status": "scheduled",
@@ -167,10 +238,17 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-b874e44de6a2",
@@ -181,6 +259,7 @@
    "start": "2026-05-22T00:00:00+01:00",
    "end": "2026-10-31T12:00:00+00:00",
    "all_day": true,
+   "time_text": "Time",
    "ongoing": true,
    "anytime": false,
    "status": "scheduled",
@@ -193,12 +272,17 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
    "careers": [
     "Biology, ecology & vets",
     "Environment & climate",
     "Film, animation & media"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-b751cf0db2aa",
@@ -209,6 +293,7 @@
    "start": "2026-07-03T00:00:00+01:00",
    "end": "2027-01-16T12:00:00+00:00",
    "all_day": true,
+   "time_text": "Time",
    "ongoing": true,
    "anytime": false,
    "status": "scheduled",
@@ -221,11 +306,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "History & archaeology",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-9cc7bb81811f",
@@ -263,7 +355,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-db802a7096d0",
@@ -287,10 +379,17 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-f759755dcc45",
@@ -301,6 +400,7 @@
    "start": "2026-09-19T00:00:00+01:00",
    "end": "2027-01-31T12:00:00+00:00",
    "all_day": true,
+   "time_text": "Time",
    "ongoing": true,
    "anytime": false,
    "status": "scheduled",
@@ -313,10 +413,17 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "Film, animation & media"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "curated_teen_careers-209381e63510",
@@ -357,7 +464,7 @@
     "Politics & public service"
    ],
    "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00",
    "link_status": 200
   },
   {
@@ -392,7 +499,7 @@
     "Teaching & outreach"
    ],
    "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00",
    "link_status": 200
   },
   {
@@ -430,7 +537,8 @@
     "Law & justice"
    ],
    "provenance": "Age 14+ minimum, photographic ID required from 1 June 2026, and the guided-tour route confirmed on the City of London Corporation page https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court\n",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00",
+   "verified_on": "2026-09-21",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00",
    "link_status": 200
   },
   {
@@ -476,8 +584,8 @@
     "Teaching & outreach"
    ],
    "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00",
-   "link_status": 403
+   "last_seen": "2026-09-21T21:19:14.268875+00:00",
+   "link_status": 200
   },
   {
    "id": "curated_teen_careers-b2f056497609",
@@ -515,45 +623,8 @@
     "Medicine & health"
    ],
    "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00",
    "link_status": 200
-  },
-  {
-   "id": "rigb-c407bbc09680",
-   "title": "Royal Institution Youth Summit 2026",
-   "url": "https://www.rigb.org/whats-on/royal-institution-youth-summit-2026",
-   "source": "rigb",
-   "source_name": "Royal Institution",
-   "start": "2026-09-21T10:00:00+01:00",
-   "end": "2026-09-21T15:30:00+01:00",
-   "all_day": false,
-   "time_text": "10.00am to 3.30pm",
-   "ongoing": false,
-   "anytime": false,
-   "status": "scheduled",
-   "summary": "Sixth form and college students from around the UK will learn, discuss and critically examine the topic of this year's CHRISTMAS LECTURES, sponsored by CGI.",
-   "venue_name": "The Royal Institution, 21 Albemarle Street",
-   "city": "London",
-   "lat": 51.509,
-   "lon": -0.1422,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "booking_url": "https://www.eventbrite.co.uk/e/royal-institution-youth-summit-2026-tickets-1990478293157?aff=oddtdtcreator&_gl=1*uk2t5u*_up*MQ..*_ga*MTYwNzY3MDYzLjE3ODA5MjgzOTY.*_ga_TQVES5V6SH*czE3ODA5MjgzOTUkbzEkZzAkdDE3ODA5MjgzOTUkajYwJGwwJGgw",
-   "booking": "required",
-   "audiences": [
-    "teens"
-   ],
-   "age_min": 13,
-   "age_text": "Young people 13+",
-   "topics": [
-    "Art, culture and society"
-   ],
-   "careers": [
-    "Arts & performance"
-   ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
   },
   {
    "id": "cam_museums-33e86c4ed99d",
@@ -577,10 +648,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-ca57b53f68c9",
@@ -604,10 +683,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-7885ec4ec678",
@@ -628,7 +715,19 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£10 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 10.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "curated_teen_careers-36134c518731",
@@ -666,7 +765,7 @@
     "Politics & public service"
    ],
    "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00",
    "link_status": 200
   },
   {
@@ -704,7 +803,7 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-bfe37ce01ac0",
@@ -728,10 +827,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-8275d0352a94",
@@ -772,7 +879,7 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-8da5c4ae4736",
@@ -796,10 +903,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "Families",
+   "topics": [
+    "Family events",
+    "Workshops and talks"
+   ],
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-e840ef2bd18b",
@@ -823,10 +938,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-8c0e9873d8bd",
@@ -850,7 +973,15 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "families"
+   ],
+   "age_text": "Families",
+   "topics": [
+    "Family events",
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-1fca761f0d36",
@@ -874,10 +1005,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-fc4dc86d0fbd",
@@ -901,10 +1042,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-a1672004a12c",
@@ -925,7 +1074,19 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£10 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 10.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-c246b4c830d0",
@@ -949,10 +1110,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-e5ca129c9091",
@@ -978,11 +1149,14 @@
    "price_from": 0.0,
    "age_min": 2,
    "age_max": 5,
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-e65c82db5b79",
@@ -1006,11 +1180,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-7abe45c5e1b0",
@@ -1031,7 +1212,14 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "Free with normal Garden admission",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "Families",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-6f7a96b6ffea",
@@ -1073,7 +1261,7 @@
     "Chemistry & materials",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-ffca50158c3d",
@@ -1114,7 +1302,7 @@
     "Environment & climate",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-87853ef4cc0b",
@@ -1153,7 +1341,7 @@
     "Arts & performance",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-1a2dbe4fd934",
@@ -1192,7 +1380,7 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-ffbc9e810a76",
@@ -1216,10 +1404,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-2d7f2e5a1423",
@@ -1243,10 +1439,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-00cc2ddf37b4",
@@ -1270,10 +1476,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-07aaa225dbff",
@@ -1297,7 +1513,17 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "topics": [
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-4111a681fab3",
@@ -1318,10 +1544,19 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "By donation",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "After hours"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-3b2681b036cf",
@@ -1342,10 +1577,22 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£25 (£5 students), booking required",
+   "is_free": false,
+   "price_from": 5.0,
+   "currency": "GBP",
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "After hours",
+    "Concerts and performances"
+   ],
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-272fb5e4c01a",
@@ -1368,11 +1615,19 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Disabled access events"
+   ],
    "careers": [
     "Arts & performance",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-14cc11f82c4a",
@@ -1396,7 +1651,17 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "topics": [
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-f761df9852e5",
@@ -1419,11 +1684,19 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Disabled access events"
+   ],
    "careers": [
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-475b25f701d1",
@@ -1460,7 +1733,7 @@
    "topics": [
     "Talks and shows"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-fc38256ffda8",
@@ -1481,10 +1754,20 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "Free with normal Garden admission",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-626c4900ca2e",
@@ -1505,7 +1788,17 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "Free with normal Garden admission",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Family events"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-10a922c97d3d",
@@ -1526,7 +1819,21 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£18.50 (£16 Friends and Students), booking required",
+   "is_free": false,
+   "price_from": 16.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-ed596a329c28",
@@ -1550,7 +1857,15 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-46beb5855851",
@@ -1588,7 +1903,7 @@
    "careers": [
     "Chemistry & materials"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-2a1651991a26",
@@ -1612,10 +1927,14 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "topics": [
+    "Family events",
+    "Workshops and talks"
+   ],
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-dd5ee74c7f64",
@@ -1639,11 +1958,21 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-ac9ae847bf35",
@@ -1667,7 +1996,15 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "families"
+   ],
+   "age_text": "Families",
+   "topics": [
+    "Family events",
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-7c065ee06379",
@@ -1691,10 +2028,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "curated_teen_careers-c58b3dfb79d9",
@@ -1729,7 +2076,7 @@
     "Film, animation & media"
    ],
    "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00",
    "link_status": 200
   },
   {
@@ -1751,7 +2098,15 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "Free with normal Garden admission",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "children",
+    "families"
+   ],
+   "age_text": "Families, Under 5s",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-54d93db79900",
@@ -1772,10 +2127,22 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£25 (£5 students), booking required",
+   "is_free": false,
+   "price_from": 5.0,
+   "currency": "GBP",
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "After hours",
+    "Concerts and performances"
+   ],
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-10ec7cddd538",
@@ -1799,10 +2166,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Business & entrepreneurship"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-57cca85a3c5b",
@@ -1839,7 +2214,7 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-b5aea6e252e2",
@@ -1881,7 +2256,7 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-05353b07bc7e",
@@ -1920,7 +2295,7 @@
     "History & archaeology",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-2a55152a32f0",
@@ -1941,7 +2316,14 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "Free with normal Garden admission",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages, Families",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-91087ca9a545",
@@ -1965,11 +2347,21 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-43886420d6ed",
@@ -2011,7 +2403,7 @@
     "History & archaeology",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-dd29a54c9dce",
@@ -2035,11 +2427,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "Arts & performance",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-371e9b5ad7a9",
@@ -2060,7 +2459,19 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£15 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 15.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-3bcf4a620f28",
@@ -2084,11 +2495,19 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "children",
+    "families"
+   ],
+   "age_text": "Families, Under 5s",
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "History & archaeology"
    ],
    "provenance": "also listed by cam_museums",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-a7d11c52816f",
@@ -2112,10 +2531,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-438e110159e5",
@@ -2139,10 +2566,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "curated_teen_careers-fa302491fc8c",
@@ -2176,7 +2613,7 @@
     "History & archaeology"
    ],
    "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00",
    "link_status": 200
   },
   {
@@ -2198,11 +2635,23 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£10 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 10.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Chemistry & materials",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-06ca6bcfed82",
@@ -2226,10 +2675,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-391e8eba48f3",
@@ -2250,10 +2707,22 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£25 (£5 students), booking required",
+   "is_free": false,
+   "price_from": 5.0,
+   "currency": "GBP",
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "After hours",
+    "Concerts and performances"
+   ],
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-2491c14bc083",
@@ -2274,12 +2743,23 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "Tickets from £16 / Free for members / Concessions available",
+   "is_free": false,
+   "price_from": 16.0,
+   "currency": "GBP",
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "Arts & performance",
     "Design, making & architecture",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-cfd1760c0b11",
@@ -2300,7 +2780,18 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "Free with normal Garden admission",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "Families",
+   "topics": [
+    "Family events",
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-d740b42077a0",
@@ -2324,7 +2815,15 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-124255204917",
@@ -2368,7 +2867,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-0106d001e1fe",
@@ -2389,7 +2888,21 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£18.50 (£16 Friends and Students), booking required",
+   "is_free": false,
+   "price_from": 16.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-b2cea78acc1c",
@@ -2410,7 +2923,17 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "Free with normal Garden admission",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-4c74cef3b4f9",
@@ -2434,10 +2957,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-4808d738a5ea",
@@ -2461,7 +2994,14 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "families"
+   ],
+   "age_text": "Families",
+   "topics": [
+    "Family events"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-d04fd11ee770",
@@ -2505,7 +3045,7 @@
     "Maths, data & statistics",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-e259ea2b1c6e",
@@ -2529,10 +3069,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "Families",
+   "topics": [
+    "Family events",
+    "Workshops and talks"
+   ],
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-649effcc8719",
@@ -2556,7 +3104,15 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "families"
+   ],
+   "age_text": "Families",
+   "topics": [
+    "Family events",
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-308b03e236b6",
@@ -2577,10 +3133,23 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "FREE, booking required",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-afa0b6c00e10",
@@ -2604,7 +3173,14 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "families"
+   ],
+   "age_text": "Families",
+   "topics": [
+    "Family events"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-461e6949371a",
@@ -2643,7 +3219,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-3d51a2da2d5f",
@@ -2681,7 +3257,7 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-45caeadab616",
@@ -2705,10 +3281,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-1e664fedbf88",
@@ -2732,10 +3318,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "families",
+    "teens"
+   ],
+   "age_text": "12+, 5+, Families",
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-8b5cca92eb3a",
@@ -2759,10 +3355,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "families",
+    "teens"
+   ],
+   "age_text": "5+, All ages, Families",
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-e33563c20dbb",
@@ -2786,10 +3392,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-af399c12b963",
@@ -2813,10 +3429,20 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "families",
+    "teens"
+   ],
+   "age_text": "12+, 5+, Families",
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-63b240f097c7",
@@ -2853,7 +3479,7 @@
    "careers": [
     "Chemistry & materials"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-fe0ec65c0ebd",
@@ -2874,10 +3500,22 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£15 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 15.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-61b8e27c0ae5",
@@ -2919,7 +3557,7 @@
     "History & archaeology",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-b2f3fb137de7",
@@ -2959,7 +3597,7 @@
     "Chemistry & materials",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-4f26159db2c0",
@@ -3002,7 +3640,7 @@
     "Physics & space",
     "Politics & public service"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-2340c13745cd",
@@ -3023,7 +3661,21 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£18.50 (£16 Friends and Students), booking required",
+   "is_free": false,
+   "price_from": 16.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-ac892f965247",
@@ -3047,7 +3699,15 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-d3c9ac292ac8",
@@ -3088,7 +3748,7 @@
     "Chemistry & materials",
     "Engineering"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-8edcf821e710",
@@ -3129,7 +3789,7 @@
     "Medicine & health",
     "Psychology & neuroscience"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-1f6ced3df955",
@@ -3153,10 +3813,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "children",
+    "families"
+   ],
+   "age_text": "Families, Under 5s",
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-67a948be31db",
@@ -3182,10 +3850,13 @@
    "price_from": 0.0,
    "age_min": 2,
    "age_max": 5,
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-192b691164f8",
@@ -3209,10 +3880,17 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages, Families",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-c0c8aea85217",
@@ -3254,7 +3932,7 @@
     "Medicine & health",
     "Teaching & outreach"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-e53ccb2f0998",
@@ -3297,7 +3975,7 @@
     "History & archaeology",
     "Maths, data & statistics"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-aaa49af1bdec",
@@ -3341,7 +4019,7 @@
     "Maths, data & statistics",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-f89890760018",
@@ -3383,7 +4061,7 @@
     "Environment & climate",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-44524d9a3101",
@@ -3407,10 +4085,18 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "After hours",
+    "Concerts and performances"
+   ],
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-8dc5f7904f3f",
@@ -3431,7 +4117,19 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£15 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 15.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-cce8e893be68",
@@ -3452,12 +4150,19 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£15.50 (£12.50 Friends, £7 Students and Open House Cardholders), booking required",
+   "is_free": false,
+   "price_from": 7.0,
+   "currency": "GBP",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Arts & performance",
     "Film, animation & media",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-394c4272fa3f",
@@ -3481,7 +4186,15 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-882644f18884",
@@ -3502,7 +4215,21 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£18.50 (£16 Friends and Students), booking required",
+   "is_free": false,
+   "price_from": 16.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-91998b05e729",
@@ -3542,7 +4269,7 @@
     "Engineering",
     "Environment & climate"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-e325fc9d0e0e",
@@ -3563,10 +4290,23 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "FREE, booking required",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-049b1922cf6d",
@@ -3587,10 +4327,22 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£8 / £5 Students & Open House Community Cardholders",
+   "is_free": false,
+   "price_from": 5.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "After hours"
+   ],
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-86b1d55a9b99",
@@ -3611,10 +4363,21 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "Adult: £24.75/£18.15 Friend or CU student: £22.55/£16.50 4-15 years of age: £17.00/£13.50 3 and under: Free Carer of a disabled person: Free",
+   "is_free": false,
+   "price_from": 13.5,
+   "currency": "GBP",
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-b6f8cfc6c045",
@@ -3635,11 +4398,23 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£15 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 15.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Arts & performance",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-ebc036554bd3",
@@ -3663,7 +4438,15 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Exhibitions and displays"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-80da67245d01",
@@ -3684,7 +4467,21 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£18.50 (£16 Friends and Students), booking required",
+   "is_free": false,
+   "price_from": 16.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-868010850a3a",
@@ -3705,10 +4502,23 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "FREE, booking required",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-823ea775d352",
@@ -3729,11 +4539,23 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£10 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 10.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Chemistry & materials",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-8766a6a74e1b",
@@ -3759,10 +4581,13 @@
    "price_from": 0.0,
    "age_min": 2,
    "age_max": 5,
+   "topics": [
+    "Family events"
+   ],
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-77330ed2452b",
@@ -3786,7 +4611,15 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-b0bd615c33e9",
@@ -3810,10 +4643,17 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "families"
+   ],
+   "age_text": "All ages",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-894fbb7137ce",
@@ -3834,7 +4674,19 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£15 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 15.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-5ea512f52b33",
@@ -3868,7 +4720,7 @@
    "topics": [
     "Talks and shows"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "rigb-f42d96ef0713",
@@ -3915,7 +4767,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-b1b3e9fcc8bf",
@@ -3936,10 +4788,22 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£10 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 10.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Environment & climate"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-ac4a78bc11d0",
@@ -3963,10 +4827,43 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Exhibitions and displays"
+   ],
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
+  },
+  {
+   "id": "talks_cam_darwin-f119efc01440",
+   "title": "Security Cooperation within Government and between Governments - Ms Suzanne Raine, Selwyn College Cambridge",
+   "url": "https://talks.cam.ac.uk/show/index/5358",
+   "source": "talks_cam_darwin",
+   "source_name": "Darwin College Lecture Series",
+   "start": "2027-01-22T17:30:00+00:00",
+   "end": "2027-01-22T18:30:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "venue_name": "Lady Mitchell Hall, Sidgwick Avenue",
+   "city": "Cambridge",
+   "lat": 52.1993,
+   "lon": 0.1122,
+   "online": false,
+   "topics": [
+    "Public lecture"
+   ],
+   "careers": [
+    "Politics & public service"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-605bf757db33",
@@ -3987,7 +4884,19 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "price_text": "£15.50 (£12.50 Friends, £7 Students and Open House Cardholders), booking required",
+   "is_free": false,
+   "price_from": 7.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-5d7db1cd2ccb",
@@ -4008,11 +4917,45 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£10 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 10.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Arts & performance",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
+  },
+  {
+   "id": "talks_cam_darwin-47e5cd957554",
+   "title": "Cooperation in Nature - Professor Stuart West, University of Oxford",
+   "url": "https://talks.cam.ac.uk/show/index/5358",
+   "source": "talks_cam_darwin",
+   "source_name": "Darwin College Lecture Series",
+   "start": "2027-01-29T17:30:00+00:00",
+   "end": "2027-01-29T18:30:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "venue_name": "Lady Mitchell Hall, Sidgwick Avenue",
+   "city": "Cambridge",
+   "lat": 52.1993,
+   "lon": 0.1122,
+   "online": false,
+   "topics": [
+    "Public lecture"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-a74b713953dd",
@@ -4033,10 +4976,82 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "FREE, booking required",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "adults",
+    "children",
+    "teens"
+   ],
+   "age_min": 12,
+   "age_text": "12+, Adults (18+)",
+   "topics": [
+    "Tours and trails"
+   ],
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
+  },
+  {
+   "id": "talks_cam_darwin-80c80e7c862d",
+   "title": "The Economic Architecture of Cooperation - Professor Axel Ockenfels, University of Cologne, Max Planck Institute for Behavioral Economics, Bonn",
+   "url": "https://talks.cam.ac.uk/show/index/5358",
+   "source": "talks_cam_darwin",
+   "source_name": "Darwin College Lecture Series",
+   "start": "2027-02-05T17:30:00+00:00",
+   "end": "2027-02-05T18:30:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Abstract Many social and economic problems arise because individual incentives pull against the common good. Drawing on examples from our own and others' research—market failure, organ shortages, and climate change, among others—this lecture examines why cooperation so often breaks down. It then shows how modern economic instruments can design targeted incentive and decision-making structures that foster cooperative behaviour and, in doing so, open up new paths to solving these problems. Biography Axel Ockenfels is Professor of Economics at the University of Cologne and Founding Director of the Adenauer School of Government, as well as a Director at the Max Planck Institute for Behavioral Economics in Bonn. His research is in economic design and behavioural science, and he collaborates with governments and companies on design and behavioural challenges including vaccine procurement, organ and stem cell donation, energy markets, climate policy, and crisis management. He has served on standing and ad hoc advisory bodies for various German institutions including the Federal Chancellery, several federal ministries, and the Federal Chamber of Physicians (Bundesärztekammer). Ockenfels is a member of the Leopoldina and several other German academies of science. Among his distinctions is the Gottfried Wilhelm Leibniz Prize of the German Research Foundation. Photograph credit: Fabian Stürtz.",
+   "venue_name": "Lady Mitchell Hall, Sidgwick Avenue",
+   "city": "Cambridge",
+   "lat": 52.1993,
+   "lon": 0.1122,
+   "online": false,
+   "topics": [
+    "Public lecture"
+   ],
+   "careers": [
+    "Business & entrepreneurship",
+    "Design, making & architecture",
+    "Environment & climate",
+    "Finance & economics",
+    "Medicine & health",
+    "Politics & public service",
+    "Psychology & neuroscience"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
+  },
+  {
+   "id": "talks_cam_darwin-de3802741656",
+   "title": "Welfare Reform and the Imperative of Cooperation - Sir Andrew Dilnot, Nuffield College Oxford",
+   "url": "https://talks.cam.ac.uk/show/index/5358",
+   "source": "talks_cam_darwin",
+   "source_name": "Darwin College Lecture Series",
+   "start": "2027-02-12T17:30:00+00:00",
+   "end": "2027-02-12T18:30:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Biography Sir Andrew Dilnot is the Non-Executive chair of Oxford University Press. He was the Chair of the Commission on the Funding of Care and Support, which reported in 2011. He was Director of the Institute for Fiscal Studies from 1991 to 2002, Principal of St Hugh’s College, Oxford, from 2002 to 2012, Warden of Nuffield College from 2012 to 2024, and chair of the UK Statistics Authority from 2012 to 2017. He was the founding presenter of BBC Radio 4’s series on the beauty of numbers, ‘More or Less’.",
+   "venue_name": "Lady Mitchell Hall, Sidgwick Avenue",
+   "city": "Cambridge",
+   "lat": 52.1993,
+   "lon": 0.1122,
+   "online": false,
+   "topics": [
+    "Public lecture"
+   ],
+   "careers": [
+    "Maths, data & statistics",
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-f628165706a5",
@@ -4057,10 +5072,49 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£10 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 10.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
+  },
+  {
+   "id": "talks_cam_darwin-86cdd5af41fb",
+   "title": "The Magic of Magnetism - Professor Russell Cowburn, University of Cambridge",
+   "url": "https://talks.cam.ac.uk/show/index/5358",
+   "source": "talks_cam_darwin",
+   "source_name": "Darwin College Lecture Series",
+   "start": "2027-02-19T17:30:00+00:00",
+   "end": "2027-02-19T18:30:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Biography Russell Cowburn is Professor of Experimental Physics at the Cavendish Laboratory of the University of Cambridge, and a Fellow of Darwin College Cambridge. He has research interests in nanotechnology and its application to magnetism, electronics, optics and healthcare. Before returning to Cambridge in 2010 he held positions at the CNRS Paris, University of Durham and Imperial College London. He is the founder of four start-up companies and the inventor of the anti-counterfeiting technology ‘Laser Surface Authentication’. He has had over 60 patents granted, is a frequent invited speaker at international conferences and was one of the 2015 IEEE Magnetics Society Distinguished Lecturers. He has held two ERC grants. He is a Fellow of the Royal Society.",
+   "venue_name": "Lady Mitchell Hall, Sidgwick Avenue",
+   "city": "Cambridge",
+   "lat": 52.1993,
+   "lon": 0.1122,
+   "online": false,
+   "topics": [
+    "Public lecture"
+   ],
+   "careers": [
+    "Business & entrepreneurship",
+    "Physics & space"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "cam_museums-a4d31743bbbf",
@@ -4081,11 +5135,70 @@
    "lat": 52.2035,
    "lon": 0.1179,
    "online": false,
+   "price_text": "£10 & Free for Fitz List",
+   "is_free": false,
+   "price_from": 10.0,
+   "currency": "GBP",
+   "audiences": [
+    "adults"
+   ],
+   "age_min": 18,
+   "age_text": "Adults (18+)",
+   "topics": [
+    "Workshops and talks"
+   ],
    "careers": [
     "Arts & performance",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T20:13:57.822865+00:00"
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
+  },
+  {
+   "id": "talks_cam_darwin-25529e9f1a95",
+   "title": "Cooperation as a Laboratory of Being - Professor Iris van der Tuin, Utrecht University",
+   "url": "https://talks.cam.ac.uk/show/index/5358",
+   "source": "talks_cam_darwin",
+   "source_name": "Darwin College Lecture Series",
+   "start": "2027-02-26T17:30:00+00:00",
+   "end": "2027-02-26T18:30:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "venue_name": "Lady Mitchell Hall, Sidgwick Avenue",
+   "city": "Cambridge",
+   "lat": 52.1993,
+   "lon": 0.1122,
+   "online": false,
+   "topics": [
+    "Public lecture"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
+  },
+  {
+   "id": "talks_cam_darwin-fd29aedb6fcf",
+   "title": "Together Now: Cooperation and Collaboration in Social Art Practice - Mr Harold Offeh, Royal College of Art",
+   "url": "https://talks.cam.ac.uk/show/index/5358",
+   "source": "talks_cam_darwin",
+   "source_name": "Darwin College Lecture Series",
+   "start": "2027-03-05T17:30:00+00:00",
+   "end": "2027-03-05T18:30:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "venue_name": "Lady Mitchell Hall, Sidgwick Avenue",
+   "city": "Cambridge",
+   "lat": 52.1993,
+   "lon": 0.1122,
+   "online": false,
+   "topics": [
+    "Public lecture"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   },
   {
    "id": "curated_teen_careers-706091d1fe9e",
@@ -4127,8 +5240,33 @@
     "Environment & climate"
    ],
    "provenance": "chatgpt-share, unchecked detail",
-   "last_seen": "2026-09-21T20:13:57.822865+00:00",
+   "last_seen": "2026-09-21T21:19:14.268875+00:00",
    "link_status": 200
+  },
+  {
+   "id": "talks_cam_darwin-0899cc4aa7d0",
+   "title": "Cooperation for Nature - Dr Mike Rands, Cambridge Conservation Initiative",
+   "url": "https://talks.cam.ac.uk/show/index/5358",
+   "source": "talks_cam_darwin",
+   "source_name": "Darwin College Lecture Series",
+   "start": "2027-03-12T17:30:00+00:00",
+   "end": "2027-03-12T18:30:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "venue_name": "Lady Mitchell Hall, Sidgwick Avenue",
+   "city": "Cambridge",
+   "lat": 52.1993,
+   "lon": 0.1122,
+   "online": false,
+   "topics": [
+    "Public lecture"
+   ],
+   "careers": [
+    "Biology, ecology & vets"
+   ],
+   "last_seen": "2026-09-21T21:19:14.268875+00:00"
   }
  ]
 }
