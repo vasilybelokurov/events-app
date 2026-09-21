@@ -36,6 +36,13 @@ from .models import UK
 #: A hand-written claim goes stale after this long, however healthy its link.
 VERIFY_AFTER_DAYS = 90
 
+#: Statuses that mean "we were refused", not "the page is gone".  Several
+#: venues (the Science Museum among them) serve 403 to datacentre addresses, so
+#: the same URL reads 200 from a laptop and 403 from a CI runner.  Calling that
+#: a broken link would produce a false alarm every week and train the reader to
+#: ignore the report, which is worse than not reporting at all.
+BLOCKED_STATUSES = frozenset({401, 403, 429})
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -65,6 +72,10 @@ def verify_source(cfg: dict, *, root: Path = ROOT, check_entries: bool = True) -
         "events": None,
         "adapter_verified_on": cfg.get("verified"),
         "problems": [],
+        # Things worth saying that are not failures, such as a venue refusing
+        # automated checks.  Kept apart from `problems` so the exit status and
+        # the weekly issue stay trustworthy.
+        "notes": [],
         "entries": [],
     }
 
@@ -90,7 +101,13 @@ def verify_source(cfg: dict, *, root: Path = ROOT, check_entries: bool = True) -
         if probe["redirected_to_root"]:
             result["problems"].append(
                 f"verify_url redirects to the site home page ({probe['final_url']})")
-        if not result["reachable"]:
+        elif probe["status"] in BLOCKED_STATUSES:
+            # Whether the adapter can still read the source is settled by the
+            # parse check below, which is the authoritative one.
+            result["notes"].append(
+                f"verify_url refused automated checking (HTTP {probe['status']}); "
+                "judged by the parse check instead")
+        elif not result["reachable"]:
             result["problems"].append(f"verify_url returned {probe['status']}")
     elif cfg.get("path"):
         local = root / cfg["path"]
@@ -146,7 +163,9 @@ def verify_source(cfg: dict, *, root: Path = ROOT, check_entries: bool = True) -
                 "provenance": e.provenance,
                 "state": "ok",
             }
-            if probe["status"] != 200:
+            if probe["status"] in BLOCKED_STATUSES:
+                entry["state"] = "link_blocked"
+            elif probe["status"] != 200:
                 entry["state"] = "link_broken"
             elif probe["redirected_to_root"]:
                 entry["state"] = "link_redirected"
@@ -156,7 +175,11 @@ def verify_source(cfg: dict, *, root: Path = ROOT, check_entries: bool = True) -
                 entry["state"] = "verification_expired"
             result["entries"].append(entry)
 
-        overdue = [x for x in result["entries"] if x["state"] != "ok"]
+        overdue = [x for x in result["entries"]
+                   if x["state"] not in ("ok", "link_blocked")]
+        blocked = [x for x in result["entries"] if x["state"] == "link_blocked"]
+        if blocked:
+            result["blocked"] = len(blocked)
         if overdue:
             result["problems"].append(
                 f"{len(overdue)} of {len(result['entries'])} entries need attention")
@@ -184,6 +207,7 @@ def verify_all(sources_path: Path, *, root: Path = ROOT,
 _STATE_TEXT = {
     "ok": "ok",
     "link_broken": "LINK BROKEN",
+    "link_blocked": "link refused automated checking (needs a human to open it)",
     "link_redirected": "LINK REDIRECTED to home page",
     "never_verified": "never verified by a human",
     "verification_expired": "verification expired",
@@ -195,6 +219,8 @@ def format_text(report: dict) -> str:
              f"Checked at: {report['checked_at'][:19]}", ""]
     for r in report["sources"]:
         mark = "PASS" if not r["problems"] else "FAIL"
+        if not r["problems"] and r["notes"]:
+            mark = "PASS*"
         lines.append(f"[{mark}] {r['key']}  ({r['kind']})")
         lines.append(f"       name       {r['name']}")
         lines.append(f"       homepage   {r['homepage']}")
@@ -205,13 +231,15 @@ def format_text(report: dict) -> str:
         lines.append(f"       terms      {r['terms']}")
         for p in r["problems"]:
             lines.append(f"       PROBLEM    {p}")
+        for n in r["notes"]:
+            lines.append(f"       note       {n}")
         for e in r["entries"]:
             if e["state"] == "ok":
                 continue
             age = ("never" if e["verified_days_ago"] is None
                    else f"{e['verified_days_ago']}d ago")
-            lines.append(f"       - {_STATE_TEXT[e['state']]:<32} {e['title'][:44]}"
-                         f"  (verified {age})")
+            lines.append(f"       - {_STATE_TEXT[e['state']]:<52} {e['title'][:40]}"
+                         f"  (HTTP {e['http_status']}, verified {age})")
         lines.append("")
     due = sum(1 for r in report["sources"] for e in r["entries"] if e["state"] != "ok")
     lines.append(f"Hand-written entries needing attention: {due}")
@@ -231,15 +259,19 @@ def format_markdown(report: dict) -> str:
            "|---|---|---|---|---|---|"]
     for r in report["sources"]:
         reach = f"{r['http_status'] or 'local'}"
+        cell = "; ".join(r["problems"])
+        if r["notes"]:
+            cell = "; ".join(filter(None, [cell, "_" + "; ".join(r["notes"]) + "_"]))
         out.append(f"| [{r['name']}]({r['homepage']}) | `{r['kind']}` | {reach} | "
-                   f"{r['events']} | {r['adapter_verified_on']} | "
-                   f"{'; '.join(r['problems']) or '—'} |")
+                   f"{r['events']} | {r['adapter_verified_on']} | {cell or '—'} |")
     todo = [(r, e) for r in report["sources"] for e in r["entries"]
             if e["state"] != "ok"]
     if todo:
         out += ["", "## Hand-written entries to re-check", ""]
         for r, e in todo:
             detail = _STATE_TEXT[e["state"]]
+            if e["http_status"] not in (200, None):
+                detail += f" (HTTP {e['http_status']})"
             if e["verified_days_ago"] is not None:
                 detail += f", last verified {e['verified_days_ago']} days ago"
             out.append(f"- [ ] **{e['title']}** — {detail}. "

@@ -1,0 +1,9 @@
+# docs/data/events.json is a build artifact: the daily workflow rewrites it and
+# pushes, so a local commit will collide with the bot sooner or later.  There is
+# never anything to merge -- the file is regenerated from the sources.
+#
+# `union` keeps git from stopping the rebase; the file is then rebuilt by
+# `python -m collector.build`, which is what actually resolves it.  Run
+#     git config merge.ours.driver true
+# once if you prefer `merge=ours` semantics instead.
+docs/data/events.json merge=union linguist-generated=true

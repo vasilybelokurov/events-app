@@ -18,7 +18,7 @@ collector/          Python: adapters -> normalise -> de-duplicate -> events.json
 data/curated/       hand-written entries for things no feed lists
 docs/               the published site (GitHub Pages root)
   data/events.json  the only thing the page loads
-tests/              152 offline tests + 9 live source checks
+tests/              160 offline tests + 9 live source checks
 ```
 
 ## Quick run
@@ -111,6 +111,13 @@ Three questions are asked of each source and kept deliberately apart:
 Exit status is zero only when every source passes and nothing is overdue, so it
 works as a CI check. A source with no `verify_url` and no local file is itself
 reported as a failure: *unverifiable* is not an acceptable state.
+
+**Refused is not the same as gone.** Several venues (the Science Museum among
+them) serve `403` to datacentre addresses, so the same URL reads `200` from a
+laptop and `403` from a CI runner. Those statuses are reported as *blocked*,
+with a note rather than a failure, and the parse check decides whether the
+source is actually usable. Crying wolf every Monday would train the reader to
+ignore the report, which is worse than not reporting at all.
 
 ### Cambridge talks: ~2400 more lists, one line each
 

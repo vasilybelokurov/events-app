@@ -220,3 +220,48 @@ class TestTheRealRegistry:
         assert len(sources) == len(set(sources))
         for key in sources:
             assert key.replace("_", "").isalnum(), f"{key} is not id-safe"
+
+
+class TestBlockedVersusBroken:
+    """Several venues serve 403 to datacentre addresses, so the same URL reads
+    200 from a laptop and 403 from a CI runner.  Reporting that as a broken
+    link every Monday would train the reader to ignore the report."""
+
+    def _entry(self, stub, status):
+        stub.events = [ev(verified_on=None)]
+        return verify_mod.verify_source(cfg(key="curated_x", hand_written=True))["entries"][0]
+
+    @pytest.mark.parametrize("status", [401, 403, 429])
+    def test_refusal_is_reported_as_blocked(self, stub, monkeypatch, status):
+        monkeypatch.setattr(verify_mod, "check_link",
+                            lambda url: {"status": status, "final_url": url,
+                                         "redirected_to_root": False})
+        assert self._entry(stub, status)["state"] == "link_blocked"
+
+    @pytest.mark.parametrize("status", [404, 410, 500])
+    def test_gone_is_reported_as_broken(self, stub, monkeypatch, status):
+        monkeypatch.setattr(verify_mod, "check_link",
+                            lambda url: {"status": status, "final_url": url,
+                                         "redirected_to_root": False})
+        assert self._entry(stub, status)["state"] == "link_broken"
+
+    def test_a_blocked_link_alone_does_not_fail_the_source(self, stub, monkeypatch):
+        monkeypatch.setattr(verify_mod, "check_link",
+                            lambda url: {"status": 403, "final_url": url,
+                                         "redirected_to_root": False})
+        today = datetime.now(UK).date().isoformat()
+        stub.events = [ev(verified_on=today)]
+        r = verify_mod.verify_source(cfg(key="curated_x", hand_written=True))
+        assert r["problems"] == []
+        assert r["blocked"] == 1
+
+    def test_the_status_code_appears_in_the_report(self, stub, monkeypatch, tmp_path, capsys):
+        monkeypatch.setattr(verify_mod, "check_link",
+                            lambda url: {"status": 403, "final_url": url,
+                                         "redirected_to_root": False})
+        stub.events = [ev(verified_on=None)]
+        path = tmp_path / "sources.yaml"
+        path.write_text(yaml.safe_dump({"sources": [cfg(key="curated_x",
+                                                        hand_written=True)]}))
+        verify_mod.main(["--sources", str(path), "--markdown"])
+        assert "HTTP 403" in capsys.readouterr().out
