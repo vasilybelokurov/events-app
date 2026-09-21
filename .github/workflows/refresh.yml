@@ -40,11 +40,23 @@ jobs:
       - name: Run the offline test suite
         run: python -m pytest -q
 
+      # The collector exits non-zero when a source is degraded, but it has
+      # already written the data by then: healthy sources refreshed and the
+      # broken one kept its last good records.  Letting that exit code stop the
+      # job here would block the commit, the artifact and the deploy -- one
+      # broken venue freezing the whole site, which is the thing this design
+      # exists to avoid.  So the status is captured, publication proceeds, and
+      # the run is failed at the very end by "Report collector health".
       - name: Collect events
+        id: collect
         env:
           EVENTS_CONTACT: ${{ github.server_url }}/${{ github.repository }}/issues
           EVENTS_CACHE_TTL: "0"          # never serve a cached page in CI
-        run: python -m collector.build --out docs/data/events.json -v
+        run: |
+          set +e
+          python -m collector.build --out docs/data/events.json -v
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
 
       - name: Show what changed
         run: git --no-pager diff --stat -- docs/data/events.json || true
@@ -66,8 +78,26 @@ jobs:
         with:
           path: docs
 
+      # Publication has happened; now make the run red so the degradation is
+      # not silent.  `always()` keeps this from being skipped by an earlier
+      # failure, and the deploy job depends on the artifact, not on this.
+      - name: Report collector health
+        if: always()
+        run: |
+          code="${{ steps.collect.outputs.exit_code }}"
+          if [ "$code" != "0" ]; then
+            echo "::error::The collector reported a degraded source (exit $code)."
+            echo "The site was still updated from the healthy sources; see the"
+            echo "build warnings above and the source panel on the page."
+            exit 1
+          fi
+          echo "All sources healthy."
+
   deploy:
+    # Depends on the artifact, not on the health verdict: a degraded source
+    # must not stop the healthy ones reaching the site.
     needs: collect
+    if: always() && needs.collect.result != 'cancelled'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

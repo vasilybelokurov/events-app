@@ -23,6 +23,7 @@ const state = {
   to: '',
   cities: new Set(),
   careers: new Set(),
+  styles: new Set(),
   flags: new Set(),     // free, eligible, saved, online, weekend
 };
 
@@ -175,6 +176,11 @@ function matches(e) {
     if (!cs.some((c) => state.careers.has(c))) return false;
   }
 
+  if (state.styles.size) {
+    const ws = e.work_styles || [];
+    if (!ws.some((w) => state.styles.has(w))) return false;
+  }
+
   const elig = eligibility(e, state.age);
   if (elig === 'excluded') return false;
   if (state.flags.has('eligible') && elig !== 'eligible') return false;
@@ -187,7 +193,8 @@ function matches(e) {
 
   if (state.q) {
     const hay = [e.title, e.summary, e.venue_name, e.city, e.source_name,
-      (e.careers || []).join(' '), (e.topics || []).join(' ')]
+      (e.careers || []).join(' '), (e.work_styles || []).join(' '),
+      (e.topics || []).join(' ')]
       .filter(Boolean).join(' ').toLowerCase();
     for (const term of state.q.toLowerCase().split(/\s+/).filter(Boolean)) {
       if (!hay.includes(term)) return false;
@@ -234,6 +241,14 @@ function renderCard(e) {
   const elig = eligibility(e, state.age);
   if (elig === 'eligible') badge(badges, 'age-eligible', e.age_text || `Suits ${state.age}`);
   else badge(badges, 'age-unknown', 'No stated age limit');
+  /* Audience labels combine as a union, so a show tagged "Children 12 and
+   * under, Families" admits a 14-year-old rather than excluding her. That is
+   * the right rule for eligibility but loses the pitch, so say it plainly
+   * instead of filtering her out of something she may still enjoy. */
+  const aud = e.audiences || [];
+  if (state.age >= 13 && aud.includes('children') && !aud.includes('teens')) {
+    badge(badges, 'age-unknown', 'aimed at younger children');
+  }
   if (e.is_free === true) badge(badges, 'free', 'Free');
   if (e.online) badge(badges, '', 'Online option');
   if (e.status && e.status !== 'scheduled') badge(badges, 'alert', e.status.replace('_', ' '));
@@ -258,7 +273,8 @@ function renderCard(e) {
 
   const tags = node.querySelector('.tags');
   (e.careers || []).forEach((c) => tags.appendChild(el('span', 'tag', c)));
-  tags.appendChild(el('span', 'tag', e.source_name));
+  (e.work_styles || []).forEach((w) => tags.appendChild(el('span', 'tag style', w)));
+  tags.appendChild(el('span', 'tag source', e.source_name));
 
   const bookHref = safeUrl(e.booking_url);
   const book = node.querySelector('.book');
@@ -283,7 +299,8 @@ function renderTable(list) {
   const scroll = el('div', 'table-scroll');
   const t = el('table');
   const head = el('tr');
-  ['When', 'Event', 'Where', 'Age', 'Price', 'Shows you', 'Source'].forEach((h) => {
+  ['When', 'Event', 'Where', 'Age', 'Price', 'Subject', 'Ways of working', 'Source']
+    .forEach((h) => {
     head.appendChild(el('th', null, h));
   });
   t.appendChild(el('thead')).appendChild(head);
@@ -301,6 +318,7 @@ function renderTable(list) {
     tr.appendChild(el('td', null, e.age_text || '—'));
     tr.appendChild(el('td', null, e.price_text || (e.is_free ? 'Free' : '—')));
     tr.appendChild(el('td', null, (e.careers || []).join(', ')));
+    tr.appendChild(el('td', null, (e.work_styles || []).join(', ')));
     tr.appendChild(el('td', null, e.source_name));
     body.appendChild(tr);
   });
@@ -411,7 +429,9 @@ function buildChips() {
 
   const flags = document.getElementById('flags');
   flags.textContent = '';
-  [['eligible', 'Age-suitable only'], ['free', 'Free only'],
+  /* Named for what it does: ineligible events are always excluded, so this
+   * only controls whether events with *unknown* eligibility are shown. */
+  [['eligible', 'Only confirmed suitable'], ['free', 'Free only'],
    ['weekend', 'Weekends only'], ['saved', 'Saved only'],
    ['all-status', 'Include cancelled']].forEach(([k, label]) => {
     chip(flags, label, k, state.flags);
@@ -425,6 +445,15 @@ function buildChips() {
   careers.textContent = '';
   [...careerCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .forEach(([c, n]) => chip(careers, c, c, state.careers, n));
+
+  const styleCounts = new Map();
+  all.forEach((e) => (e.work_styles || []).forEach((w) => {
+    styleCounts.set(w, (styleCounts.get(w) || 0) + 1);
+  }));
+  const styles = document.getElementById('styles');
+  styles.textContent = '';
+  [...styleCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .forEach(([w, n]) => chip(styles, w, w, state.styles, n));
 }
 
 function updateChipCounts() {
@@ -435,6 +464,19 @@ function updateChipCounts() {
     const n = b.querySelector('.n');
     if (n) n.textContent = counts.get(b.dataset.key) || 0;
   });
+  const styleCounts = new Map();
+  base.forEach((e) => (e.work_styles || []).forEach((w) => {
+    styleCounts.set(w, (styleCounts.get(w) || 0) + 1);
+  }));
+  document.querySelectorAll('#styles .chip').forEach((b) => {
+    const n = b.querySelector('.n');
+    if (n) n.textContent = styleCounts.get(b.dataset.key) || 0;
+  });
+  const restore = document.getElementById('restore');
+  if (restore) {
+    restore.hidden = hidden.size === 0;
+    restore.textContent = `Restore ${hidden.size} hidden`;
+  }
 }
 
 /* ---------- calendar export ---------- */
@@ -493,6 +535,26 @@ function downloadIcs(list) {
 
 /* ---------- freshness & health ---------- */
 
+/* Adapter names are implementation detail; the panel says what the source
+ * actually is, and what the reader would be opening. */
+const KIND_LABEL = {
+  drupal_jsonapi: 'JSON:API',
+  html_css: 'HTML listing',
+  ics: 'iCalendar feed',
+  jsonld: 'schema.org markup',
+  venue: 'venue page',
+  curated: 'hand-written',
+};
+
+const FEED_LABEL = {
+  drupal_jsonapi: 'the JSON:API response',
+  html_css: 'the listing page',
+  ics: 'the .ics feed',
+  jsonld: 'the page markup',
+  venue: 'the venue page',
+  curated: 'the YAML file',
+};
+
 function linkCell(url, text) {
   const td = el('td');
   const href = safeUrl(url);
@@ -523,20 +585,37 @@ function renderHealth() {
   (meta.sources || []).forEach((s) => {
     const tr = el('tr');
     tr.appendChild(linkCell(s.homepage, s.name));
-    tr.appendChild(el('td', null, s.kind));
-    let counts = String(s.count);
+    tr.appendChild(el('td', null, KIND_LABEL[s.kind] || s.kind));
+
+    /* The events cell says how the number was arrived at, which differs by
+     * source: a scraped source reports what its detail pages added, and a
+     * hand-written one reports how many of its claims a person has actually
+     * confirmed — the only thing by which that source can be judged. */
+    const counts = el('td');
+    counts.appendChild(el('span', null, String(s.count)));
     if (s.detail_enabled) {
-      counts += ` (+${s.detail_ages_added || 0} ages from detail pages`
-        + (s.detail_failed ? `, ${s.detail_failed} failed` : '') + ')';
+      counts.appendChild(el('span', 'sub',
+        `+${s.detail_ages_added || 0} ages from detail pages`
+        + (s.detail_failed ? `, ${s.detail_failed} page(s) failed` : '')));
     }
-    tr.appendChild(el('td', null, counts));
+    if (s.unverified_entries != null) {
+      const checked = s.verified_entries || 0;
+      counts.appendChild(el('span', s.unverified_entries ? 'sub warn' : 'sub',
+        `${checked} checked by hand, ${s.unverified_entries} unverified`));
+    }
+    tr.appendChild(counts);
+
     const st = el('td', s.status === 'ok' ? 'status-ok' : 'status-bad',
       s.status + (s.error ? ' — ' + s.error : '') +
       (s.carried_over ? ` (${s.carried_over} kept from last good run)` : ''));
     tr.appendChild(st);
     const ls = parseDate(s.last_success);
     tr.appendChild(el('td', null, ls ? ls.toLocaleString('en-GB') : 'never'));
-    tr.appendChild(linkCell(s.verify_url, s.verify_url ? 'raw feed' : 'local file'));
+
+    /* Named for what it actually is, and always a real link: a source whose
+     * data cannot be opened is not "accessible", whatever the table says. */
+    tr.appendChild(linkCell(s.raw_url || s.verify_url, FEED_LABEL[s.kind] || 'source data'));
+
     const terms = s.terms || '';
     tr.appendChild(linkCell(terms.startsWith('http') ? terms : null,
                             terms.startsWith('http') ? 'terms' : (terms || '—')));
@@ -571,6 +650,7 @@ function writeHash() {
   if (state.to) p.set('to', state.to);
   if (state.cities.size) p.set('city', [...state.cities].join('|'));
   if (state.careers.size) p.set('work', [...state.careers].join('|'));
+  if (state.styles.size) p.set('doing', [...state.styles].join('|'));
   if (state.flags.size) p.set('flag', [...state.flags].join('|'));
   const s = p.toString();
   const target = s ? '#' + s : location.pathname;
@@ -591,6 +671,7 @@ function readHash() {
   if (p.get('to')) state.to = p.get('to');
   if (p.get('city')) state.cities = new Set(p.get('city').split('|'));
   if (p.get('work')) state.careers = new Set(p.get('work').split('|'));
+  if (p.get('doing')) state.styles = new Set(p.get('doing').split('|'));
   if (p.get('flag')) state.flags = new Set(p.get('flag').split('|'));
 }
 
@@ -624,11 +705,21 @@ function bind() {
   document.getElementById('reset').addEventListener('click', () => {
     state.q = ''; state.age = 14; state.sort = 'date'; state.view = 'cards';
     state.when = '90'; state.from = ''; state.to = '';
-    state.cities = new Set(); state.careers = new Set(); state.flags = new Set();
-    hidden = new Set(); saveStore();
+    state.cities = new Set(); state.careers = new Set();
+    state.styles = new Set(); state.flags = new Set();
+    // `hidden` is deliberately preserved: dismissing an event is a judgement,
+    // not a filter, and clearing filters should not undo it.  "Restore hidden"
+    // is the control for that.
     q.value = ''; age.value = 14; sort.value = 'date'; view.value = 'cards';
     from.value = ''; to.value = '';
     buildChips(); render();
+  });
+
+  const restore = document.getElementById('restore');
+  restore.addEventListener('click', () => {
+    hidden = new Set();
+    saveStore();
+    render();
   });
 
   document.getElementById('ics').addEventListener('click', () => {

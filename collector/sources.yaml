@@ -11,6 +11,8 @@
 #   kind         adapter (see collector/adapters/)
 #   homepage     human-facing page a person can open to check the source
 #   verify_url   machine-facing URL the verifier fetches
+#   raw_url      optional: the raw source data, linked from the page's source
+#                panel; defaults to verify_url
 #   docs         where the interface is documented, or how it was discovered
 #   terms        licence / terms-of-use page, or "unstated"
 #   priority     tie-break during de-duplication (lower wins)
@@ -114,21 +116,245 @@ sources:
       seminar.  Most lists are dormant or postgraduate-only, so check the feed
       returns future events before adding it.
 
-  - key: curated_teen_careers
-    name: Curated (hand-checked)
-    kind: curated
-    homepage: https://github.com/vasilybelokurov/events-app/blob/main/data/curated/cambridge_london_teen_careers.yaml
-    path: data/curated/cambridge_london_teen_careers.yaml
-    verify_url: null          # a local file; the verifier checks each entry's own url
-    docs: data/curated/cambridge_london_teen_careers.yaml
-    terms: n/a (hand-written metadata, links out to each venue)
+  # ---------------------------------------------------------------------
+  # Cambridge Festival: a real listing, scraped.  The page currently holds
+  # the previous festival's programme, so it contributes nothing until the
+  # 2027 programme is published -- at which point it appears on its own.
+  # ---------------------------------------------------------------------
+  - key: cambridge_festival
+    name: Cambridge Festival
+    kind: html_css
+    homepage: https://www.festival.cam.ac.uk/events
+    url: https://www.festival.cam.ac.uk/events
+    verify_url: https://www.festival.cam.ac.uk/events
+    docs: no published interface; CSS selectors below, recorded 2026-09-21
+    terms: https://www.cam.ac.uk/about-this-site/terms-and-conditions
+    site: https://www.festival.cam.ac.uk
+    venue_name: University of Cambridge (multiple venues)
+    city: Cambridge
+    lat: 52.2043
+    lon: 0.1149
+    priority: 25
+    verified: 2026-09-21
+    selectors:
+      item: .views-row
+      title: h3
+      link: h3 a
+      date: .field-name-field-verbal-dates
+      time: .field-name-field-verbal-dates
+    notes: >
+      Drupal 7 views listing.  The date field is free text ("10:00am-4:00pm on
+      Friday 28 March 2025"), which the normaliser reads for both the date and
+      the times.
+
+  # ---------------------------------------------------------------------
+  # Venues with nothing to list: no feed, no programme, often not "events" at
+  # all.  The collector visits each page every run and asserts only what that
+  # page still says -- see collector/adapters/venue.py.  Each `confirm` phrase
+  # must appear on the page or the claim it carries is dropped.
+  # ---------------------------------------------------------------------
+  - key: old_bailey
+    name: Old Bailey public galleries
+    kind: venue
+    homepage: https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court
+    verify_url: https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court
+    docs: https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court
+    terms: https://www.cityoflondon.gov.uk/about-us/website-information/terms-and-conditions
+    title: Old Bailey public galleries (Central Criminal Court)
+    venue_name: Central Criminal Court, City of London
+    city: London
+    lat: 51.5158
+    lon: -0.1021
     priority: 40
     verified: 2026-09-21
+    schedule: Weekdays when the court is sitting
+    topics: [Law, Criminal justice, Public service]
+    expect: ["public galler"]
+    confirm:
+      - phrase: "no admission for children under 14"
+        sets:
+          age_min: 14
+          age_text: "no admission for children under 14; proof of age may be requested"
+      - phrase: "photographic identification"
+        sets:
+          booking: required
     notes: >
-      Standing offers and long exhibitions that no feed lists as an "event":
-      the Old Bailey public gallery, the Bank of England Museum, the Supreme
-      Court's Friday tours.  Every entry carries its own `url`, a `provenance`
-      line saying where the claim came from, and a `verified_on` date.  The
-      verifier checks each URL and flags any entry whose verification has
-      expired, because a resolving link does not prove a price or an age rule
-      still holds.
+      Real criminal trials from the public gallery.  The 14+ minimum and the
+      photographic-ID requirement are only claimed here while the City of
+      London page still says them.
+
+  - key: supreme_court
+    name: UK Supreme Court tours
+    kind: venue
+    homepage: https://www.supremecourt.uk/tours
+    verify_url: https://www.supremecourt.uk/tours
+    docs: https://www.supremecourt.uk/tours
+    terms: https://www.supremecourt.uk/terms-and-conditions
+    venue_name: The Supreme Court, Parliament Square
+    city: London
+    lat: 51.5001
+    lon: -0.1281
+    priority: 40
+    verified: 2026-09-21
+    schedule: See the Court's tour page for current times
+    topics: [Law, Constitution, Public service]
+    expect: ["tour"]
+    confirm:
+      - phrase: "Monday to Friday during term times"
+        sets:
+          when_text: "Open to the public Monday to Friday during term times; see the page for tour times"
+    notes: >
+      Law, advocacy and constitutional questions.  Note that the widely
+      repeated "Fridays at 2pm, adults GBP 10, under-16s free" is NOT on the
+      Court's own page, so it is deliberately not claimed here.
+
+  - key: bank_of_england_museum
+    name: Bank of England Museum
+    kind: venue
+    homepage: https://www.bankofengland.co.uk/museum
+    verify_url: https://www.bankofengland.co.uk/museum
+    docs: https://www.bankofengland.co.uk/museum
+    terms: https://www.bankofengland.co.uk/legal
+    venue_name: Bank of England Museum, Threadneedle Street
+    city: London
+    lat: 51.5142
+    lon: -0.0885
+    priority: 40
+    verified: 2026-09-21
+    schedule: Weekdays; check the museum page before travelling
+    topics: [Economics, Finance, Public sector]
+    expect: ["Museum"]
+    confirm:
+      - phrase: "Free to visit"
+        sets:
+          price_text: Free
+      - phrase: "Monday to Friday, 10am to 5pm"
+        sets:
+          when_text: "Monday to Friday, 10am to 5pm (last entry 4.30pm)"
+    notes: >
+      Economics, banking and monetary policy.
+
+  - key: science_museum
+    name: Science Museum
+    kind: venue
+    homepage: https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery
+    verify_url: https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery
+    docs: https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery
+    terms: https://www.sciencemuseum.org.uk/terms-and-conditions
+    title: "Technicians: The David Sainsbury Gallery"
+    venue_name: Science Museum, Exhibition Road
+    city: London
+    lat: 51.4978
+    lon: -0.1745
+    priority: 40
+    verified: 2026-09-21
+    allow_blocked: true
+    schedule: Any time during museum opening hours
+    summary: >
+      A gallery built around technician jobs rather than school subjects.
+    topics: [Careers, Engineering, Medicine, Film and media, Energy]
+    expect: ["Technicians"]
+    confirm:
+      - phrase: "Free entry"
+        sets:
+          price_text: Free
+      - phrase: "Open daily"
+        sets:
+          when_text: "Open daily; see the museum page for hours"
+    notes: >
+      The Science Museum serves 403 to anything that is not a desktop browser,
+      so `allow_blocked` keeps the venue in the list while the record says
+      plainly that nothing was confirmed today.
+
+  - key: hunterian_museum
+    name: Hunterian Museum
+    kind: html_css
+    homepage: https://hunterianmuseum.org/whats-on/
+    url: https://hunterianmuseum.org/whats-on/
+    verify_url: https://hunterianmuseum.org/whats-on/
+    docs: no published interface; CSS selectors below, recorded 2026-09-21
+    terms: https://hunterianmuseum.org/privacy-policy/
+    site: https://hunterianmuseum.org
+    venue_name: Hunterian Museum, Royal College of Surgeons
+    city: London
+    lat: 51.5162
+    lon: -0.1173
+    priority: 35
+    verified: 2026-09-21
+    topics: [Medicine, Surgery, History of science]
+    selectors:
+      item: .card
+      title: .card__link
+      link: .card__link
+      date: '[class*="col-start-1"]'
+      time: '[class*="col-start-1"]'
+      summary: '[class*="leading-snug"]'
+      status: .card__cta
+    notes: >
+      Surgery, medical technology and the history of healthcare.  The listing
+      uses utility classes, so the date selector matches on a class fragment
+      rather than a full class name; the date field is free text carrying both
+      ends of a run ("10th September-31st October 2026"), which the range
+      parser reads.  The "Sold out" / "Book now" button is read as status.
+
+  - key: design_museum
+    name: the Design Museum
+    kind: venue
+    homepage: https://designmuseum.org/whats-on
+    verify_url: https://designmuseum.org/whats-on
+    docs: https://designmuseum.org/whats-on
+    terms: https://designmuseum.org/terms-and-conditions
+    venue_name: the Design Museum, Kensington High Street
+    city: London
+    lat: 51.4995
+    lon: -0.2050
+    priority: 40
+    verified: 2026-09-21
+    schedule: See the museum's what's-on page
+    summary: >
+      Design, animation, model-making, costume and digital design: what
+      creative careers actually involve.
+    topics: [Design, Animation, Film]
+    expect: ["Design Museum"]
+    notes: >
+      The what's-on listing is rendered in the browser, so there is nothing to
+      scrape server-side; this is a venue record pointing at it.
+
+  - key: cam_museum_technology
+    name: Cambridge Museum of Technology
+    kind: venue
+    homepage: https://www.museumoftechnology.com/whats-on/
+    verify_url: https://www.museumoftechnology.com/whats-on/
+    docs: https://www.museumoftechnology.com/whats-on/
+    terms: https://www.museumoftechnology.com/privacy-policy/
+    venue_name: Cambridge Museum of Technology, Cheddars Lane
+    city: Cambridge
+    lat: 52.2115
+    lon: 0.1401
+    priority: 40
+    verified: 2026-09-21
+    schedule: See the museum's what's-on page for steaming days
+    topics: [Mechanical engineering, Energy, Industrial history]
+    expect: ["Museum of Technology"]
+    notes: >
+      Restored steam machinery in operation.  Its what's-on page carries no
+      machine-readable dates.
+
+  - key: cam_engineering_outreach
+    name: Cambridge Engineering outreach
+    kind: venue
+    homepage: https://www.eng.cam.ac.uk/outreach
+    verify_url: https://www.eng.cam.ac.uk/outreach
+    docs: https://www.eng.cam.ac.uk/outreach
+    terms: https://www.cam.ac.uk/about-this-site/terms-and-conditions
+    venue_name: Department of Engineering, University of Cambridge
+    city: Cambridge
+    lat: 52.1985
+    lon: 0.1206
+    priority: 40
+    verified: 2026-09-21
+    schedule: Several Saturdays through the year; join the outreach mailing list
+    topics: [Engineering, Outreach]
+    expect: ["utreach"]
+    notes: >
+      Family workshops, hands-on activities and public lectures.

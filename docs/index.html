@@ -70,13 +70,19 @@
     </div>
 
     <fieldset>
-      <legend>Kind of work it shows <span class="hint">(a keyword guess — always check the listing)</span></legend>
+      <legend>Subject <span class="hint">(a keyword guess — always check the listing)</span></legend>
       <div class="chips" id="careers"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Ways of working <span class="hint">(what you would actually be doing, not the subject)</span></legend>
+      <div class="chips" id="styles"></div>
     </fieldset>
 
     <div class="row actions">
       <p id="count" role="status"></p>
       <button type="button" id="reset" class="ghost">Clear filters</button>
+      <button type="button" id="restore" class="ghost" hidden>Restore hidden</button>
       <button type="button" id="ics" class="ghost">Download these as a calendar</button>
       <button type="button" id="share" class="ghost">Copy link to this view</button>
     </div>
@@ -96,11 +102,12 @@
     </p>
     <p class="note">
       A source that fails keeps its last good records, labelled with when they
-      were last seen, and the others still refresh. Hand-written entries carry
-      the date a person last confirmed them and are flagged for re-checking
-      after 90 days — a working link is not a verified fact. Prices, ages and
-      opening times come from the venue's listing and change: the link on each
-      card is the authority, not this page.
+      were last seen, and the others still refresh. Venues with nothing to list
+      — a public gallery, a museum open on weekdays — are visited on every run
+      and only claim what their page still says: an age rule or a price
+      disappears from here when it disappears from the venue's page. Nothing on
+      this site is typed in by hand. Even so, the link on each card is the
+      authority, not this page.
     </p>
   </details>
 

@@ -18,7 +18,7 @@ collector/          Python: adapters -> normalise -> de-duplicate -> events.json
 data/curated/       hand-written entries for things no feed lists
 docs/               the published site (GitHub Pages root)
   data/events.json  the only thing the page loads
-tests/              160 offline tests + 9 live source checks
+tests/              217 offline tests + 9 live source checks
 ```
 
 ## Quick run
@@ -49,6 +49,13 @@ Three scheduled jobs, each answering a different failure:
 `refresh.yml` deploys the Pages artifact **explicitly**, because a commit made
 with `GITHUB_TOKEN` does not itself trigger a Pages build — a commit-only
 workflow would never update the live site.
+
+It also **captures the collector's exit code instead of failing on it**. The
+collector exits non-zero when a source is degraded, but it has already written
+the data by then; letting that stop the job blocked the commit, the artifact
+and the deploy, so one broken venue froze the whole site — exactly what the
+policy below exists to prevent. Publication happens first, and a final
+`Report collector health` step turns the run red afterwards.
 
 ### When a source breaks: degrade, do not freeze
 
@@ -81,14 +88,49 @@ from a ChatGPT conversation and have only had their URLs machine-checked.
 from a source that is not in it.** Each entry must declare a `homepage` a
 person can open, a `verify_url` the code can fetch, where the interface is
 documented, and the terms it is used under. The published page renders all of
-it, so any claim on the site can be traced back to its origin.
+it, so any claim on the site can be traced to its origin in two clicks.
 
-| Key | Source | Kind | Events | Notes |
-|---|---|---|---|---|
-| `rigb` | [Royal Institution](https://www.rigb.org/whats-on) | `drupal_jsonapi` | ~30 | Public JSON:API with a real age taxonomy (`Young people 13+`, `Families`, `Adults`, `Children 12 and under`), topics, prices and booking links. The venue maintains it; nothing here needs upkeep. |
-| `cam_museums` | [University of Cambridge Museums](https://www.museums.cam.ac.uk/whats-on) | `html_css` | ~100 | Fitzwilliam, Whipple, Sedgwick, Kettle's Yard, Polar Museum, Museum of Zoology, Botanic Garden. CSS selectors plus detail-page enrichment — the fragile one. |
-| `talks_cam_darwin` | [Darwin College Lecture Series](https://talks.cam.ac.uk/show/index/5358) | `ics` | ~8 | Free public lecture series. See below: this one key unlocks ~2400 Cambridge lists. |
-| `curated_teen_careers` | [Hand-checked YAML](data/curated/cambridge_london_teen_careers.yaml) | `curated` | 9 | Standing offers with no feed: Old Bailey public gallery, Bank of England Museum, Supreme Court tours, long exhibitions. |
+**Nothing is typed in by hand.** An earlier version carried nine hand-written
+event records; a typed claim rots silently, and eight of the nine were never
+confirmed by anyone. They are now twelve collected sources:
+
+| Source | Kind | What it gives |
+|---|---|---|
+| [Royal Institution](https://www.rigb.org/whats-on) | `drupal_jsonapi` | ~30 talks with a real age taxonomy, prices and booking links. The venue maintains it. |
+| [University of Cambridge Museums](https://www.museums.cam.ac.uk/whats-on) | `html_css` | ~100 events across the Fitzwilliam, Whipple, Sedgwick, Kettle's Yard, Polar Museum, Zoology and the Botanic Garden, with ages read from each event's own page. |
+| [Darwin College Lecture Series](https://talks.cam.ac.uk/show/index/5358) | `ics` | A free public lecture series. One of ~2400 talks.cam lists. |
+| [Hunterian Museum](https://hunterianmuseum.org/whats-on/) | `html_css` | Surgery and medical history: exhibitions, family activities, curator tours. |
+| [Cambridge Festival](https://www.festival.cam.ac.uk/events) | `html_css` | Dormant until the next programme is published, then it appears on its own. |
+| [Old Bailey](https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court), [Supreme Court](https://www.supremecourt.uk/tours), [Bank of England Museum](https://www.bankofengland.co.uk/museum), [Science Museum](https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery), [Design Museum](https://designmuseum.org/whats-on), [Cambridge Museum of Technology](https://www.museumoftechnology.com/whats-on/), [Cambridge Engineering](https://www.eng.cam.ac.uk/outreach) | `venue` | Places with nothing to list. Visited every run; see below. |
+
+### Venues with nothing to list
+
+A public gallery, a museum open on weekdays, a weekly tour: no feed, no
+programme, and not really "events". The `venue` adapter visits the page on
+every run and builds the record from what the page says **today**. Any extra
+claim is declared with the phrase that must still appear:
+
+```yaml
+confirm:
+  - phrase: "no admission for children under 14"
+    sets:
+      age_min: 14
+      age_text: "no admission for children under 14; proof of age may be requested"
+```
+
+Find the phrase, apply the claim. Miss it, and the claim is dropped and the
+omission recorded in `provenance`. **A claim can never outlive the sentence it
+came from** — a stronger guarantee than a link check, which only proves a page
+loads. `expect` phrases catch a page that has been repurposed, and
+`allow_blocked` keeps a venue that refuses automated access (the Science
+Museum serves 403 to anything but a desktop browser) in the list while saying
+plainly that nothing was confirmed.
+
+Worth knowing what this discipline costs: the widely repeated claim that the
+Supreme Court runs Friday 2pm tours at GBP 10 with under-16s free is **not** on
+the Court's own page, so the site does not say it. Two other claims
+(the Science Museum's "ages 11-16", an earlier Old Bailey wording) were dropped
+the same way.
 
 ### Verifying them
 
@@ -172,9 +214,14 @@ Honest limits, because a parent acting on wrong information wastes a day out:
   states that its ordinary talks are designed for 15+ but that younger
   visitors are welcome with parental permission, so an "Adults" label filters
   nothing out on its own.
-* **"Kind of work it shows" is a keyword guess.** It is a discovery aid, not
-  evidence. The keyword lists are in `collector/careers.py` and every
-  false positive found so far is a test case.
+* **The two taxonomies are keyword guesses.** *Subject* says what an event is
+  about; *ways of working* says what you would actually be doing — research,
+  design and making, argument and advocacy, fieldwork, caring, communication.
+  The second axis is the one that matters here, because "this is chemistry"
+  does not help a 14-year-old decide anything, whereas "this is research,
+  making things and quantitative analysis" might. Both are discovery aids, not
+  evidence; the keyword lists are in `collector/careers.py` and every verified
+  false positive is a test case.
 * **Prices are indicative.** `is_free` is only true when nothing on the
   listing costs money: a free child ticket alongside a paid adult ticket is
   not a free outing.
@@ -196,11 +243,15 @@ Honest limits, because a parent acting on wrong information wastes a day out:
 dependencies.
 
 * Filters: full-text search, age, date window (7/30/90 days, everything, or
-  custom), city/online, audience and access flags, career theme.
+  custom), city/online, audience and access flags, subject, ways of working.
+  "Only confirmed suitable" is named for what it does: ineligible events are
+  always hidden, so the control decides whether events with *unknown*
+  eligibility are shown.
 * Sorts: date (grouped by month), title, cheapest first, place, source.
 * Views: cards or table.
 * Saved and "not interested" lists in `localStorage`; filter state in the URL
-  hash, so a view can be shared with "Copy link to this view".
+  hash, so a view can be shared with "Copy link to this view". Clearing filters
+  does not discard dismissed events — "Restore hidden" does that.
 * `.ics` export for one event or for everything currently shown.
 * Collector output is inserted with `textContent` only, and every URL is
   checked against an `http`/`https` allowlist before it becomes an `href`.

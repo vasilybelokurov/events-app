@@ -31,11 +31,11 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-from ..careers import infer_careers
+from ..careers import infer_careers, infer_work_styles
 from ..http import fetch
 from ..models import (Event, combine_audience_values, make_id, map_audience,
-                      parse_age_range, parse_time_text, parse_uk_datetime,
-                      price_info)
+                      parse_age_range, parse_date_range, parse_time_text,
+                      parse_uk_datetime, price_info)
 
 KIND = "html_css"
 
@@ -175,16 +175,30 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             or _pick(node, sel.get("date"))
         time_text = _pick(node, sel.get("time"))
         t_start, t_end = parse_time_text(time_text)
-        start = parse_uk_datetime(date_text, default_time=t_start)
+        # Venues write a run as one string ("10th September-31st October
+        # 2026") with the year only on the right, so a range is tried first:
+        # parsing the left date alone would put a live exhibition in the past.
+        start, end = parse_date_range(date_text, default_time=t_start)
         if not start:
             continue
-        end_text = _pick(node, sel.get("end"), sel.get("end_attr")) \
+        explicit_end = _pick(node, sel.get("end"), sel.get("end_attr")) \
             or _pick(node, sel.get("end"))
-        end = parse_uk_datetime(end_text) if end_text else None
+        if explicit_end:
+            end = parse_uk_datetime(explicit_end) or end
         if end is None and t_end:
-            end = parse_uk_datetime(f"{start[:10]} {t_end.isoformat()}")
+            end = parse_uk_datetime(f"{start[:10]}T{t_end.isoformat()}")
         # A run of more than one day is an exhibition, not a timed event.
         ongoing = bool(end and end[:10] != start[:10])
+
+        status = "scheduled"
+        status_text = (_pick(node, sel.get("status")) or "").lower()
+        if "cancel" in status_text:
+            status = "cancelled"
+        elif "sold out" in status_text:
+            status = "sold_out"
+        elif "postponed" in status_text:
+            status = "postponed"
+
         href = _pick(node, sel.get("link") or sel.get("title"), "href")
         url = urljoin(base, href) if href else base
         summary = _pick(node, sel.get("summary"))
@@ -202,6 +216,7 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             end=end,
             all_day=t_start is None,
             ongoing=ongoing,
+            status=status,
             time_text=time_text,
             summary=summary,
             venue_name=_pick(node, sel.get("venue")) or cfg.get("venue_name"),
@@ -217,6 +232,7 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             age_max=age_max,
             topics=list(cfg.get("topics", [])),
             careers=infer_careers(title, summary, " ".join(cfg.get("topics", []))),
+            work_styles=infer_work_styles(title, summary, " ".join(cfg.get("topics", []))),
         ))
 
     global last_enrichment
@@ -226,4 +242,6 @@ def parse(raw: str, cfg: dict) -> list[Event]:
         # supplies the topic words the listing row omitted.
         event.careers = infer_careers(event.title, event.summary,
                                       " ".join(event.topics))
+        event.work_styles = infer_work_styles(event.title, event.summary,
+                                              " ".join(event.topics))
     return out

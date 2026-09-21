@@ -43,17 +43,43 @@ def _host(url: str) -> str:
     return f"{parts.scheme}://{parts.netloc}"
 
 
+def fetch_robots(host: str) -> urllib.robotparser.RobotFileParser | None:
+    """Fetch and parse ``robots.txt`` for ``host``.
+
+    Deliberately **not** ``RobotFileParser.read()``, which fetches with
+    urllib's own user agent.  Many venues sit behind a WAF that answers
+    ``Python-urllib`` with 403, and ``read()`` treats a 403 on robots.txt as
+    "disallow everything" -- which silently dropped three venues whose
+    robots.txt does not restrict us at all.
+
+    Status handling follows RFC 9309 s2.3.1: 4xx means no robots file applies,
+    so crawling is allowed; 5xx means unavailable, which is treated as a
+    complete disallow.  ``None`` means "no restrictions known".
+    """
+    rp = urllib.robotparser.RobotFileParser()
+    url = host + "/robots.txt"
+    try:
+        resp = requests.get(url, headers={"User-Agent": UA}, timeout=TIMEOUT)
+    except requests.RequestException as exc:           # pragma: no cover - network
+        LOG.warning("robots.txt unreachable for %s (%s); assuming allowed", host, exc)
+        return None
+    if 400 <= resp.status_code < 500:
+        LOG.info("robots.txt for %s returned %s; no restrictions apply",
+                 host, resp.status_code)
+        return None
+    if resp.status_code >= 500:
+        LOG.warning("robots.txt for %s returned %s; treating as disallow-all",
+                    host, resp.status_code)
+        rp.disallow_all = True
+        return rp
+    rp.parse(resp.text.splitlines())
+    return rp
+
+
 def _robots_for(url: str):
     host = _host(url)
     if host not in _robots:
-        rp = urllib.robotparser.RobotFileParser()
-        rp.set_url(host + "/robots.txt")
-        try:
-            rp.read()
-        except Exception as exc:                       # pragma: no cover - network
-            LOG.warning("robots.txt unreadable for %s (%s); assuming allowed", host, exc)
-            rp = None
-        _robots[host] = rp
+        _robots[host] = fetch_robots(host)
     return _robots[host]
 
 

@@ -22,10 +22,10 @@ from urllib.parse import quote, urljoin, urlsplit
 
 from bs4 import BeautifulSoup
 
-from ..careers import infer_careers
+from ..careers import infer_careers, infer_work_styles
 from ..http import fetch
-from ..models import (Event, make_id, map_audience, parse_age_range,
-                      parse_time_text, parse_uk_datetime, price_info, shift)
+from ..models import (Event, combine_audience_values, make_id, parse_time_text,
+                      parse_uk_datetime, price_info, shift)
 
 KIND = "drupal_jsonapi"
 MAX_PAGES = 20
@@ -100,7 +100,8 @@ def _html_to_text(html: str | None, limit: int = 420) -> str | None:
     return text or None
 
 
-_CANCELLED = re.compile(r"\b(cancelled|canceled|postponed)\b", re.I)
+_CANCELLED = re.compile(r"\b(cancelled|canceled)\b", re.I)
+_POSTPONED = re.compile(r"\b(postponed|rescheduled)\b", re.I)
 _SOLD_OUT = re.compile(r"\bsold out\b", re.I)
 
 
@@ -147,10 +148,13 @@ def parse(raw: str | dict, cfg: dict) -> list[Event]:
         price_text = attrs.get("field_prices")
         is_free, price_from, currency = price_info(price_text)
 
+        # The age taxonomy lists the audiences an event suits, so they combine
+        # as a union.  Concatenating them into one string and parsing that gave
+        # "Children 12 and under, Families, Young people 13+" a minimum age of
+        # 13, which is the opposite of what the venue means.
         ages = terms(cfg.get("age_field", "field_age"))
         age_text = ", ".join(ages) or None
-        age_min, age_max = parse_age_range(age_text)
-        audiences = sorted({a for a in (map_audience(x) for x in ages) if a})
+        age_min, age_max, audiences = combine_audience_values(ages)
 
         topics = terms(cfg.get("topic_field", "field_topic"))
         etypes = terms(cfg.get("type_field", "field_event_type"))
@@ -162,6 +166,9 @@ def parse(raw: str | dict, cfg: dict) -> list[Event]:
         status = "scheduled"
         if _CANCELLED.search(blob):
             status = "cancelled"
+        elif _POSTPONED.search(blob):
+            # Materially different from cancelled: it is still going to happen.
+            status = "postponed"
         elif _SOLD_OUT.search(blob):
             status = "sold_out"
 
@@ -195,5 +202,6 @@ def parse(raw: str | dict, cfg: dict) -> list[Event]:
             age_text=age_text,
             topics=sorted(set(topics + etypes)),
             careers=infer_careers(title, summary, " ".join(topics)),
+            work_styles=infer_work_styles(title, summary, " ".join(topics)),
         ))
     return out

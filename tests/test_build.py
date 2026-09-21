@@ -268,3 +268,29 @@ class TestFreshness:
     def test_stale_threshold_is_published_for_the_page(self, stub, paths):
         stub.events = [ev(1)]
         assert run(paths)["stale_after_hours"] == build_mod.STALE_AFTER_HOURS
+
+
+class TestPartialResults:
+    """A truncated crawl looks exactly like a successful one, so it must not
+    replace a complete dataset or earn a fresh `last_success`."""
+
+    def test_a_partial_crawl_keeps_the_previous_records(self, stub, paths):
+        stub.events = [ev(i) for i in range(6)]
+        good = run(paths)
+        stamp = good["sources"][0]["last_success"]
+
+        stub.events = [ev(0), ev(1), ev(2), ev(3)]      # not a >50% drop
+        stub.meta = {"pagination_complete": False}
+        doc = run(paths)
+        report = doc["sources"][0]
+        assert report["status"] == "partial"
+        assert report["carried_over"] == 6, "the complete dataset was replaced"
+        assert doc["event_count"] == 6
+        assert report["last_success"] == stamp, \
+            "an incomplete crawl must not advance last_success"
+
+    def test_a_partial_crawl_is_a_warning(self, stub, paths):
+        stub.events = [ev(1)]
+        stub.meta = {"pagination_complete": False}
+        doc = run(paths)
+        assert any("pagination incomplete" in w for w in doc["build_warnings"])

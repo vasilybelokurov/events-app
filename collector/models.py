@@ -373,6 +373,56 @@ def shift(iso: str, **delta) -> str:
     return _localise(naive).isoformat()
 
 
+_RANGE_SPLIT = re.compile(r"\s*(?:\u2013|\u2014|\u2212|--|\sto\s|\s-\s|(?<=\d)-(?=\d{1,2}\w))\s*")
+
+
+def parse_date_range(text: str | None, *, default_time: time | None = None
+                     ) -> tuple[str | None, str | None]:
+    """Split a written date range into ``(start, end)`` ISO strings.
+
+    Venues write runs as one string, and the year (and often the month) appears
+    only on the right-hand side: "10th September\u201331st October 2026" means
+    September *2026*, not September of the current year.  Parsing only the
+    left-hand date would put a live exhibition in the past and drop it.
+
+    Returns ``(start, None)`` when the text holds a single date.
+
+    >>> parse_date_range("10th September\u201331st October 2026")
+    ('2026-09-10T00:00:00+01:00', '2026-10-31T00:00:00+00:00')
+    >>> parse_date_range("17/01/2026 - 31/12/2026")
+    ('2026-01-17T00:00:00+00:00', '2026-12-31T00:00:00+00:00')
+    >>> parse_date_range("28th October 2026")
+    ('2026-10-28T00:00:00+00:00', None)
+    >>> parse_date_range("Exhibition 10th September 2026")
+    ('2026-09-10T00:00:00+01:00', None)
+    >>> parse_date_range(None)
+    (None, None)
+    """
+    if not text or not str(text).strip():
+        return (None, None)
+    raw = re.sub(r"\s+", " ", str(text)).strip()
+
+    parts = [p.strip(" ,;") for p in _RANGE_SPLIT.split(raw) if p.strip(" ,;")]
+    if len(parts) >= 2:
+        left, right = parts[0], parts[-1]
+        end = parse_uk_datetime(right, default_time=default_time)
+        if end:
+            # Borrow the year, and the month when absent, from the right side.
+            year = end[:4]
+            start = None
+            if not re.search(r"\d{4}", left):
+                has_month = re.search(_MONTHS, left, re.I) or re.search(r"[/.]", left)
+                candidate = f"{left} {year}" if has_month else f"{left} {end[5:7]} {year}"
+                start = parse_uk_datetime(candidate, default_time=default_time)
+            if start is None:
+                start = parse_uk_datetime(left, default_time=default_time)
+            if start and start <= end:
+                return (start, end)
+            if start:
+                return (start, None)
+    return (parse_uk_datetime(raw, default_time=default_time), None)
+
+
 # --------------------------------------------------------------------------
 # Prices
 # --------------------------------------------------------------------------
@@ -471,6 +521,7 @@ class Event:
     age_text: str | None = None
     topics: list[str] = field(default_factory=list)
     careers: list[str] = field(default_factory=list)
+    work_styles: list[str] = field(default_factory=list)
     provenance: str | None = None
     link_status: int | None = None
     verified_on: str | None = None

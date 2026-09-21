@@ -46,6 +46,11 @@ def _key(e: Event) -> tuple:
     """
     if not e.start:
         return ("__unique__", e.id)
+    if e.anytime:
+        # Standing venue records all start "today" and are often titled after
+        # the page ("What's on"), so title+time+city would merge two different
+        # venues.  A venue is only ever itself.
+        return ("__venue__", e.source, e.url)
     return (_norm_title(e.title), e.start[:16], (e.city or "").lower())
 
 

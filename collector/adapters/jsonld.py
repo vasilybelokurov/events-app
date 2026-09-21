@@ -12,7 +12,7 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-from ..careers import infer_careers
+from ..careers import infer_careers, infer_work_styles
 from ..http import fetch
 from ..models import (Event, make_id, parse_age_range, parse_uk_datetime,
                       price_info)
@@ -191,5 +191,6 @@ def parse(raw: str, cfg: dict) -> list[Event]:
                 age_max=age_max,
                 topics=list(cfg.get("topics", [])),
                 careers=infer_careers(title, summary, " ".join(cfg.get("topics", []))),
+                work_styles=infer_work_styles(title, summary, " ".join(cfg.get("topics", []))),
             ))
     return out

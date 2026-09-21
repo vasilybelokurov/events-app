@@ -11,7 +11,7 @@ Each adapter exposes:
 
 from __future__ import annotations
 
-from . import curated, drupal_jsonapi, html_css, ics, jsonld
+from . import curated, drupal_jsonapi, html_css, ics, jsonld, venue
 
 REGISTRY = {
     "drupal_jsonapi": drupal_jsonapi,
@@ -19,6 +19,7 @@ REGISTRY = {
     "ics": ics,
     "html_css": html_css,
     "curated": curated,
+    "venue": venue,
 }
 
 

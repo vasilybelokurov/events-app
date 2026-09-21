@@ -71,8 +71,14 @@ CAREER_KEYWORDS: dict[str, tuple[str, ...]] = {
         "green econom", "energy", "air quality", "ocean", "weather",
     ),
     "History & archaeology": (
-        "history", "historian", "archaeolog", "heritage", "museum", "ancient",
-        "archive", "antiquar",
+        "history", "historian", "archaeolog", "heritage", "museum",
+        "archive", "antiquar", "ancient world", "ancient rome", "ancient greece",
+        "ancient egypt", "medieval",
+    ),
+    "Earth & geoscience": (
+        "geolog", "geoscience", "magma", "volcan", "mineral", "tectonic",
+        "earthquake", "seismic", "palaeoclimate", "glacier", "earth science",
+        "rocks", "strata", "fossil fuel", "polar",
     ),
     "Psychology & neuroscience": (
         "psycholog", "neuro", "brain", "behaviour", "cognitive", "consciousness",
@@ -95,6 +101,82 @@ CAREER_KEYWORDS: dict[str, tuple[str, ...]] = {
         "civil service", "public service",
     ),
 }
+
+
+#: The second axis.  Domain answers "what is this about"; work style answers
+#: "what would I actually be doing" -- which is the question a 14-year-old
+#: choosing A-levels needs help with, and the one a subject label cannot
+#: answer.  An event about batteries is chemistry *and* it is research,
+#: making things and quantitative analysis.
+WORK_STYLE_KEYWORDS: dict[str, tuple[str, ...]] = {
+    "Research & discovery": (
+        "research", "researcher", "discover", "experiment", "laborator",
+        "investigat", "phd", "hypothes", "fieldwork", "expedition", "survey",
+    ),
+    "Data & quantitative analysis": (
+        "data", "statistic", "modelling", "simulation", "machine learning",
+        "algorithm", "computation", "measure", "forecast", "probabilit",
+    ),
+    "Design & making": (
+        "design", "making", "build", "built", "prototyp", "craft", "fabricat",
+        "workshop", "hands-on", "engineer", "construct", "3d printing", "repair",
+    ),
+    "Caring & clinical work": (
+        "clinical", "patient", "nursing", "surgery", "surgeon", "therap",
+        "care", "diagnos", "veterinar", "wellbeing",
+    ),
+    "Writing & communication": (
+        "writing", "writer", "journalis", "communicat", "presenter",
+        "storytelling", "podcast", "broadcast", "interpret", "curator",
+        "curating", "publishing", "explain",
+    ),
+    "Argument & advocacy": (
+        "debate", "argument", "advocacy", "barrister", "trial", "courtroom",
+        "campaign", "negotiat", "policy", "diplomac", "ethic",
+    ),
+    "Working with people": (
+        "outreach", "teaching", "workshop for", "tour", "guided", "volunteer",
+        "community", "family activity", "school group", "mentor",
+    ),
+    "Creative production": (
+        "film", "animation", "performance", "theatre design", "music",
+        "illustrat", "photograph", "exhibition", "costume", "stage design",
+        "puppet",
+    ),
+    "Fieldwork & outdoors": (
+        "fieldwork", "field trip", "expedition", "garden", "wildlife",
+        "conservation", "excavat", "dig", "survey", "outdoor", "habitat",
+    ),
+    "Enterprise & leadership": (
+        "entrepreneur", "start-up", "startup", "business", "management",
+        "leadership", "invest", "found",
+    ),
+}
+
+
+def _match(words, blob: str) -> bool:
+    for w in words:
+        pattern = rf"\b{re.escape(w)}\b" if len(w) <= 4 else rf"\b{re.escape(w)}"
+        if re.search(pattern, blob):
+            return True
+    return False
+
+
+def _blob(texts) -> str:
+    return " " + re.sub(r"\s+", " ", " ".join(t for t in texts if t)).lower() + " "
+
+
+def infer_work_styles(*texts: str | None) -> list[str]:
+    """Return the ways of working the given texts suggest, sorted by name.
+
+    >>> infer_work_styles("Battery research: designing and modelling new materials")
+    ['Data & quantitative analysis', 'Design & making', 'Research & discovery']
+    >>> infer_work_styles("An evening lecture")
+    []
+    """
+    blob = _blob(texts)
+    return sorted(theme for theme, words in WORK_STYLE_KEYWORDS.items()
+                  if _match(words, blob))
 
 
 def infer_careers(*texts: str | None) -> list[str]:

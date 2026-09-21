@@ -14,7 +14,7 @@ from pathlib import Path
 
 import yaml
 
-from ..careers import infer_careers
+from ..careers import infer_careers, infer_work_styles
 from ..models import (Event, make_id, map_audience, parse_age_range,
                       parse_time_text, parse_uk_datetime, price_info)
 
@@ -48,6 +48,8 @@ def parse(raw: str, cfg: dict) -> list[Event]:
         audiences = sorted({a for a in (map_audience(x)
                                         for x in item.get("audiences", [])) if a})
         careers = item.get("careers") or infer_careers(
+            title, summary, " ".join(item.get("topics", [])))
+        work_styles = item.get("work_styles") or infer_work_styles(
             title, summary, " ".join(item.get("topics", [])))
         out.append(Event(
             id=make_id(cfg["key"], item.get("id") or item.get("url") or title),
@@ -83,6 +85,7 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             age_text=age_text,
             topics=list(item.get("topics", [])),
             careers=careers,
+            work_styles=work_styles,
             provenance=item.get("provenance"),
         ))
     return out

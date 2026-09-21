@@ -167,6 +167,13 @@ button.ghost:hover, .card-foot button:hover, .card-foot a:hover { border-color: 
   display: inline-block; font-size: .74rem; margin: 2px 4px 0 0;
   padding: 1px 7px; border: 1px solid var(--line); border-radius: 999px;
 }
+/* Subject and ways-of-working are different axes, so they read differently. */
+.tag.style { border-style: dashed; color: var(--accent); }
+.tag.source { opacity: .7; }
+.sub {
+  display: block; font-size: .78rem; color: var(--ink-2); margin-top: 2px;
+}
+.sub.warn { color: var(--warn-ink); }
 
 table { width: 100%; border-collapse: collapse; font-size: .88rem; background: var(--surface); }
 th, td { text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--line); vertical-align: top; }

@@ -10,7 +10,8 @@ import json
 
 import pytest
 
-from collector.adapters import curated, drupal_jsonapi, html_css, ics, jsonld
+from collector.adapters import (curated, drupal_jsonapi, html_css, ics,
+                                jsonld, venue)
 from collector.adapters import get as get_adapter
 
 
@@ -289,17 +290,29 @@ class TestJsonLd:
 # ----------------------------------------------------------------- curated --
 
 class TestCurated:
-    def test_the_repo_file_parses(self, sources):
-        cfg = dict(sources["curated_teen_careers"])
-        from pathlib import Path
-        root = Path(__file__).resolve().parent.parent
-        raw = (root / cfg["path"]).read_text(encoding="utf-8")
-        evs = curated.parse(raw, cfg)
-        assert len(evs) >= 5
-        for e in evs:
-            assert e.title and e.url.startswith("https://")
-            assert e.provenance, f"{e.title} has no provenance"
-            assert e.start
+    """The `curated` adapter is retained for a hand-written entry, but no
+    hand-typed event claims ship: the registry collects from venues instead
+    (see TestVenue and collector/adapters/venue.py)."""
+
+    CFG = {"key": "curated_x", "name": "Curated"}
+
+    def test_parses_a_hand_written_entry(self):
+        raw = """
+        events:
+          - id: x
+            title: Court visit
+            url: https://example.org/court
+            start: 2027-10-01
+            time_text: "2.30pm - 3.45pm"
+            age_text: under-14s are not admitted
+            verified_on: 2026-09-21
+            provenance: checked against the venue page
+        """
+        e = curated.parse(raw, self.CFG)[0]
+        assert e.title == "Court visit"
+        assert e.start == "2027-10-01T14:30:00+01:00"
+        assert e.verified_on == "2026-09-21"
+        assert e.provenance
 
     def test_explicit_bounds_override_the_text_parser(self):
         raw = """
@@ -311,8 +324,24 @@ class TestCurated:
             age_text: under-14s are not admitted
             age_min: 14
         """
-        e = curated.parse(raw, {"key": "c", "name": "C"})[0]
+        e = curated.parse(raw, self.CFG)[0]
         assert (e.age_min, e.age_max) == (14, None)
+
+    def test_an_unverified_entry_says_so(self):
+        raw = """
+        events:
+          - id: x
+            title: Something
+            url: https://example.org
+            start: 2027-01-01
+        """
+        assert curated.parse(raw, self.CFG)[0].verified_on is None
+
+    def test_no_hand_typed_event_claims_are_shipped(self, sources):
+        """The point of the venue adapter: claims come from venue pages."""
+        assert not any(cfg["kind"] == "curated" for cfg in sources.values()), \
+            "a curated source is back in the registry; every claim it makes " \
+            "needs a human to re-check it"
 
 
 # ------------------------------------------------------- detail enrichment --
@@ -428,3 +457,205 @@ class TestDetailEnrichment:
         cfg = {**self.cfg, "detail": {**self.cfg["detail"], "max_pages": 0}}
         html_css.parse(LISTING, cfg)
         assert calls == []
+
+
+# ------------------------------------------------------------------ venue ---
+
+VENUE_PAGE = """<html><head>
+  <title>Central Criminal Court | City of London</title>
+  <meta property="og:title" content="Central Criminal Court">
+  <meta property="og:description" content="The most famous criminal court in the world.">
+</head><body>
+  <h1>Central Criminal Court</h1>
+  <p>Visitors may watch proceedings from the public galleries.
+     There is no admission for children under 14, and security officers may
+     request proof of age. Access is subject to official photographic
+     identification.</p>
+  <script>var tracking = "no admission for children under 99";</script>
+</body></html>"""
+
+REPURPOSED_PAGE = """<html><head><title>Cost of living support</title></head>
+  <body><h1>Cost of living support</h1><p>Nothing to do with courts.</p></body></html>"""
+
+
+class TestVenue:
+    """A venue record is built from the page as fetched, and may only claim
+    what that page still says."""
+
+    cfg = {
+        "key": "old_bailey", "name": "Old Bailey public galleries",
+        "homepage": "https://example.org/court",
+        "title": "Old Bailey public galleries (Central Criminal Court)",
+        "venue_name": "Central Criminal Court", "city": "London",
+        "schedule": "Weekdays when the court is sitting",
+        "topics": ["Law"],
+        "expect": ["public galler"],
+        "confirm": [
+            {"phrase": "no admission for children under 14",
+             "sets": {"age_min": 14, "age_text": "no admission for children under 14"}},
+            {"phrase": "photographic identification", "sets": {"booking": "required"}},
+        ],
+    }
+
+    def one(self, page=VENUE_PAGE, cfg=None):
+        return venue.parse(page, cfg or self.cfg)[0]
+
+    def test_one_standing_record_per_venue(self):
+        assert len(venue.parse(VENUE_PAGE, self.cfg)) == 1
+
+    def test_it_is_a_standing_offer_not_a_dated_event(self):
+        e = self.one()
+        assert e.anytime is True and e.all_day is True
+        assert e.when_text == "Weekdays when the court is sitting"
+
+    def test_the_registry_names_the_venue_not_the_page(self):
+        """An h1 of "Tours" or "What's on" identifies nothing, and two such
+        pages were previously de-duplicated into each other."""
+        e = self.one()
+        assert e.title == "Old Bailey public galleries (Central Criminal Court)"
+
+    def test_the_page_title_is_still_reported(self):
+        assert "Central Criminal Court" in self.one().provenance
+
+    def test_a_confirmed_phrase_applies_its_claim(self):
+        e = self.one()
+        assert e.age_min == 14
+        assert e.booking == "required"
+        assert e.eligibility(14) == "eligible"
+        assert e.eligibility(13) == "excluded"
+
+    def test_confirmed_phrases_are_named_in_the_provenance(self):
+        p = self.one().provenance
+        assert "Confirmed on the page" in p
+        assert "no admission for children under 14" in p
+
+    def test_an_unconfirmed_claim_is_dropped_and_recorded(self):
+        """The whole point: a claim cannot outlive the sentence it came from."""
+        cfg = {**self.cfg, "confirm": [
+            {"phrase": "under-16s go free", "sets": {"price_text": "Free"}}]}
+        e = self.one(cfg=cfg)
+        assert e.price_text is None
+        assert e.is_free is None
+        assert "NOT found on the page" in e.provenance
+        assert "under-16s go free" in e.provenance
+
+    def test_script_text_cannot_confirm_a_claim(self):
+        """Phrases hidden in JavaScript are not published facts."""
+        cfg = {**self.cfg, "confirm": [
+            {"phrase": "no admission for children under 99",
+             "sets": {"age_min": 99}}]}
+        assert self.one(cfg=cfg).age_min is None
+
+    def test_a_fetched_page_counts_as_verified_today(self):
+        from datetime import datetime
+        from collector.models import UK
+        assert self.one().verified_on == datetime.now(UK).date().isoformat()
+
+    def test_a_repurposed_page_is_not_verified(self):
+        e = self.one(REPURPOSED_PAGE)
+        assert e.verified_on is None
+        assert "may have been repurposed" in e.provenance
+        assert e.age_min is None, "claims must not survive a repurposed page"
+
+    def test_an_unfetchable_page_yields_an_honest_record(self):
+        e = self.one("<!-- unfetchable: HTTPError: 403 -->")
+        assert e.verified_on is None
+        assert "refused automated access" in e.provenance
+        assert e.age_min is None
+        assert e.title.startswith("Old Bailey")
+
+    def test_fetch_raw_reraises_unless_blocking_is_allowed(self, monkeypatch):
+        def boom(url, **kw):
+            raise RuntimeError("403")
+        monkeypatch.setattr(venue, "fetch", boom)
+        with pytest.raises(RuntimeError):
+            venue.fetch_raw(self.cfg)
+        raw = venue.fetch_raw({**self.cfg, "allow_blocked": True})
+        assert "unfetchable" in raw
+
+    def test_a_confirm_rule_cannot_set_an_arbitrary_field(self):
+        cfg = {**self.cfg, "confirm": [
+            {"phrase": "public galler", "sets": {"start": "2027-01-01"}}]}
+        with pytest.raises(venue.VenueConfigError):
+            venue.parse(VENUE_PAGE, cfg)
+
+    def test_careers_are_inferred_from_the_page(self):
+        assert "Law & justice" in self.one().careers
+
+    def test_the_id_is_stable_across_runs(self):
+        assert venue.parse(VENUE_PAGE, self.cfg)[0].id == \
+            venue.parse(REPURPOSED_PAGE, self.cfg)[0].id
+
+
+class TestNoHandTypedClaims:
+    def test_every_registry_source_collects_from_a_url(self, sources):
+        """The requirement: the app goes through venues and collects, rather
+        than shipping typed-in facts."""
+        for key, cfg in sources.items():
+            assert cfg.get("homepage", "").startswith("http"), key
+            assert cfg["kind"] != "curated", \
+                f"{key} ships hand-typed claims instead of collecting them"
+
+
+class TestAudienceUnionInDrupal:
+    """The RI age taxonomy lists the audiences an event suits, so the labels
+    combine as a union.  Concatenating them and parsing the result gave
+    "Children 12 and under, Families, Young people 13+" a minimum age of 13 --
+    the opposite of what the venue means."""
+
+    def node(self, ages):
+        return {
+            "data": [{
+                "attributes": {
+                    "title": "A show",
+                    "field_dates": {"value": "2026-12-01T19:00:00+00:00"},
+                    "path": {"alias": "/whats-on/show"},
+                },
+                "relationships": {
+                    "field_age": {"data": [{"id": f"a{i}"} for i in range(len(ages))]},
+                },
+            }],
+            "included": [{"id": f"a{i}", "type": "taxonomy_term--age",
+                          "attributes": {"name": name}}
+                         for i, name in enumerate(ages)],
+        }
+
+    def parse(self, ages, sources):
+        return drupal_jsonapi.parse(json.dumps(self.node(ages)), sources["rigb"])[0]
+
+    def test_children_and_teens_together_are_not_a_minimum_of_13(self, sources):
+        e = self.parse(["Children 12 and under", "Families", "Young people 13+"], sources)
+        assert (e.age_min, e.age_max) == (None, None)
+        assert e.suits_age(9) and e.suits_age(14)
+
+    def test_a_single_teen_label_still_sets_a_minimum(self, sources):
+        e = self.parse(["Young people 13+"], sources)
+        assert e.age_min == 13
+        assert e.eligibility(12) == "excluded"
+
+    def test_the_audience_list_is_still_populated(self, sources):
+        e = self.parse(["Children 12 and under", "Families"], sources)
+        assert set(e.audiences) == {"children", "families"}
+
+    def test_the_raw_labels_are_kept_for_the_reader(self, sources):
+        e = self.parse(["Adults", "Young people 13+"], sources)
+        assert e.age_text == "Adults, Young people 13+"
+
+
+class TestPostponedIsNotCancelled:
+    def test_postponed_has_its_own_status(self, sources):
+        doc = {"data": [{
+            "attributes": {"title": "POSTPONED: A talk",
+                           "field_dates": {"value": "2026-12-01T19:00:00+00:00"},
+                           "path": {"alias": "/x"}},
+            "relationships": {}}]}
+        e = drupal_jsonapi.parse(json.dumps(doc), sources["rigb"])[0]
+        assert e.status == "postponed", "postponed is still going to happen"
+
+    def test_cancelled_is_unchanged(self, sources):
+        doc = {"data": [{
+            "attributes": {"title": "CANCELLED: A talk",
+                           "field_dates": {"value": "2026-12-01T19:00:00+00:00"},
+                           "path": {"alias": "/x"}},
+            "relationships": {}}]}
+        assert drupal_jsonapi.parse(json.dumps(doc), sources["rigb"])[0].status == "cancelled"

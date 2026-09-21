@@ -31,7 +31,7 @@ import argparse
 import json
 import logging
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
@@ -142,6 +142,7 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
             # openable from the page itself, not just from the repository.
             "homepage": cfg.get("homepage"),
             "verify_url": cfg.get("verify_url"),
+            "raw_url": cfg.get("raw_url") or cfg.get("verify_url"),
             "docs": cfg.get("docs"),
             "terms": cfg.get("terms"),
             "adapter_verified_on": str(cfg.get("verified")) if cfg.get("verified") else None,
@@ -185,8 +186,11 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
             report["status"] = "partial"
             failures.append(f"{cfg['key']}: pagination incomplete")
 
-        if report["status"] in ("empty", "shrunk"):
-            # Suspicious: keep the previous records rather than publish a hole.
+        if report["status"] in ("empty", "shrunk", "partial"):
+            # Suspicious, or known-incomplete: keep the previous records rather
+            # than publish a hole.  `partial` belongs here because a truncated
+            # crawl looks like a successful one -- it would otherwise replace a
+            # complete dataset and take a fresh `last_success` with it.
             kept_prev = prev_events.get(cfg["key"], [])
             carried.extend(kept_prev)
             report["carried_over"] = len(kept_prev)
@@ -201,11 +205,12 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
     events = merge(all_events, priority)
     records = [e.to_dict() for e in events]
 
+    # Exactly the sources the registry declares hand-written, rather than a
+    # guess from the key's spelling.
+    hand_written_keys = {s["key"] for s in sources
+                         if s.get("hand_written", s["kind"] == "curated")}
+
     if link_check:
-        # Exactly the sources the registry declares hand-written, rather than a
-        # guess from the key's spelling.
-        hand_written_keys = {s["key"] for s in sources
-                             if s.get("hand_written", s["kind"] == "curated")}
         checked: dict[str, dict] = {}
         for rec in records:
             if rec.get("source") not in hand_written_keys or not rec.get("url"):
@@ -217,6 +222,27 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
             rec["link_status"] = probe["status"]
             if probe["redirected_to_root"]:
                 rec["link_warning"] = "redirects to the site home page"
+
+    # A hand-written source's row is only meaningful with its verification
+    # tally, since that is the thing a reader has to judge it on.
+    today = now.date()
+    for report in reports:
+        if report["key"] not in hand_written_keys:
+            continue
+        mine = [r for r in records if r.get("source") == report["key"]]
+        fresh = 0
+        for rec in mine:
+            stamp = rec.get("verified_on")
+            if not stamp:
+                continue
+            try:
+                age = (today - date.fromisoformat(str(stamp)[:10])).days
+            except ValueError:
+                continue
+            if age <= VERIFY_AFTER_DAYS:
+                fresh += 1
+        report["verified_entries"] = fresh
+        report["unverified_entries"] = len(mine) - fresh
 
     # Carried-over records keep their original last_seen so the UI can age them.
     known = {r["id"] for r in records}
