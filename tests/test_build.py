@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 from datetime import datetime, timedelta
+from pathlib import Path
 
 import pytest
 import yaml
@@ -16,6 +17,8 @@ import yaml
 from collector import adapters as adapters_mod
 from collector import build as build_mod
 from collector.models import UK, Event, make_id
+
+ROOT = Path(__file__).resolve().parent.parent
 
 STUB_KIND = "stub"
 
@@ -443,3 +446,35 @@ class TestPublishedFileIntegrity:
         for record in doc["events"]:
             assert record["id"] and record["title"] and record["url"]
             assert record["last_seen"].endswith("+00:00")
+
+
+class TestTheRepositoryDataFile:
+    """The committed data file must be valid.
+
+    This exists because a corrupt `docs/data/events.json` was committed and
+    pushed twice: a `union` merge driver interleaved two copies during a rebase,
+    and nothing in the local suite noticed.  The file is a build artifact, so
+    the fix is to regenerate it -- but the suite should refuse to pass while it
+    is broken.
+    """
+
+    PATH = ROOT / "docs/data/events.json"
+
+    @pytest.mark.skipif(not PATH.exists(), reason="no build has run here yet")
+    def test_it_parses_and_is_internally_consistent(self):
+        doc = json.loads(self.PATH.read_text(encoding="utf-8"))
+        assert doc["event_count"] == len(doc["events"])
+        assert doc["sources"], "no sources recorded"
+        ids = [r["id"] for r in doc["events"]]
+        assert len(ids) == len(set(ids)), "duplicate event ids"
+        for record in doc["events"]:
+            assert record["title"] and record["url"], record["id"]
+            assert record["source"] in {s["key"] for s in doc["sources"]}, \
+                f"{record['id']} comes from a source that is not in the registry"
+
+    @pytest.mark.skipif(not PATH.exists(), reason="no build has run here yet")
+    def test_every_published_source_is_in_the_registry(self, sources):
+        doc = json.loads(self.PATH.read_text(encoding="utf-8"))
+        for s in doc["sources"]:
+            assert s["key"] in sources, \
+                f"{s['key']} is published but not in collector/sources.yaml"
