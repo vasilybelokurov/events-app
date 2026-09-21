@@ -1,0 +1,62 @@
+# Source registry.  Adding a venue should mean adding a block here, not code.
+#
+# Every block needs: key (stable, used in event ids), name, kind, plus the
+# fields that kind requires.  `priority` breaks ties during de-duplication
+# (lower wins).  `verified` records when I last confirmed the adapter returns
+# sensible data from the live source.
+
+sources:
+  - key: rigb
+    name: Royal Institution
+    kind: drupal_jsonapi
+    endpoint: https://www.rigb.org/jsonapi/node/event
+    site: https://www.rigb.org
+    venue_name: The Royal Institution, 21 Albemarle Street
+    city: London
+    lat: 51.5090
+    lon: -0.1422
+    limit: 50
+    priority: 10
+    verified: 2026-09-21
+    notes: >
+      Public Drupal JSON:API.  Carries an age taxonomy (Young people 13+,
+      Families, Adults, Children 12 and under), topics, prices and the
+      Eventbrite booking link.
+
+  - key: cam_museums
+    name: University of Cambridge Museums
+    kind: html_css
+    url: https://www.museums.cam.ac.uk/whats-on
+    site: https://www.museums.cam.ac.uk
+    city: Cambridge
+    lat: 52.2035
+    lon: 0.1179
+    priority: 20
+    verified: 2026-09-21
+    selectors:
+      item: .views-row
+      title: .views-field-title a
+      link: .views-field-title a
+      date: .views-field-field-date .field-content
+      time: .views-field-field-event-time .field-content
+      end: .views-field-field-end-date time
+      end_attr: datetime
+      summary: .views-field-field-description .field-content
+      venue: .views-field-field-museum .field-content
+      price: .views-field-field-free .field-content
+    notes: >
+      Drupal views listing covering the Fitzwilliam, Whipple, Sedgwick, Kettle's
+      Yard, Polar Museum, Museum of Zoology, Botanic Garden and others.  No feed
+      and no structured data, so this is selector-based and therefore fragile:
+      build.py fails the build if it stops returning rows.
+
+  - key: curated_teen_careers
+    name: Curated (hand-checked)
+    kind: curated
+    path: data/curated/cambridge_london_teen_careers.yaml
+    priority: 40
+    verified: 2026-09-21
+    notes: >
+      Standing offers and long exhibitions that have no feed.  Every URL is
+      HTTP-checked at build time; entries whose link does not resolve are
+      marked in the UI.

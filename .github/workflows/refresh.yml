@@ -1,0 +1,77 @@
+name: Refresh events and deploy
+
+# Why the deploy step is explicit: a commit made with GITHUB_TOKEN does not
+# trigger a GitHub Pages build, so a cron job that only commits the new JSON
+# would never update the published site.
+on:
+  schedule:
+    - cron: "15 6 * * *"      # 06:15 UTC daily
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - "collector/**"
+      - "data/**"
+      - ".github/workflows/refresh.yml"
+
+permissions:
+  contents: write     # commit the refreshed data file
+  pages: write        # deploy
+  id-token: write     # required by actions/deploy-pages
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run the offline test suite
+        run: python -m pytest -q
+
+      - name: Collect events
+        env:
+          EVENTS_CONTACT: ${{ github.server_url }}/${{ github.repository }}/issues
+          EVENTS_CACHE_TTL: "0"          # never serve a cached page in CI
+        run: python -m collector.build --out docs/data/events.json -v
+
+      - name: Show what changed
+        run: git --no-pager diff --stat -- docs/data/events.json || true
+
+      - name: Commit the refreshed data
+        run: |
+          if git diff --quiet -- docs/data/events.json; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name  "events-app bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/events.json
+          git commit -m "data: refresh events ($(date -u +%Y-%m-%d))"
+          git push
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: collect
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,251 @@
+"""Build ``docs/data/events.json`` from every configured source.
+
+Run it locally or from the GitHub Actions cron job::
+
+    python -m collector.build --out docs/data/events.json
+
+**Failure policy.** A silent failure is worse than a loud one, and worse still
+is a failure that looks like news.  So:
+
+* every source gets ``last_attempt`` and ``last_success`` timestamps, and the
+  three outcomes *ok*, *fetch error* and *suspicious result* are recorded
+  separately;
+* when a source fails, its records from the previous build are **carried over
+  with their original ``last_seen``**, so the page shows stale-but-labelled
+  data rather than losing half its content;
+* a source that used to return events and now returns none (or loses more than
+  :data:`DROP_TOLERANCE` of them) fails the build unless ``--allow-drop``;
+* the page itself renders a staleness warning from ``last_success``, because a
+  cron job that never ran cannot report its own absence.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import logging
+import sys
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+import yaml
+
+from .adapters import get as get_adapter
+from .dedup import merge
+from .http import check_link
+from .models import UK, Event
+
+LOG = logging.getLogger("build")
+
+#: A source that previously worked may not lose more than this fraction of its
+#: events without the build failing.
+DROP_TOLERANCE = 0.5
+
+#: How long a source's data may go unrefreshed before the page flags it.
+STALE_AFTER_HOURS = 48
+
+
+def load_sources(path: Path) -> list[dict]:
+    doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return doc.get("sources", [])
+
+
+def load_previous(out_path: Path) -> dict:
+    """The last published document, used for carry-over and drop detection."""
+    if not out_path.exists():
+        return {}
+    try:
+        return json.loads(out_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def collect_source(cfg: dict, *, now: datetime, root: Path) -> tuple[list[Event], dict]:
+    adapter = get_adapter(cfg["kind"])
+    local = dict(cfg)
+    if "path" in local:                       # curated files are repo-relative
+        local["path"] = str(root / local["path"])
+    raw = adapter.fetch_raw(local, now=now) if _takes_now(adapter) \
+        else adapter.fetch_raw(local)
+    meta = {}
+    if isinstance(raw, str) and raw.lstrip().startswith("{"):
+        try:
+            meta = (json.loads(raw).get("meta") or {})
+        except json.JSONDecodeError:
+            meta = {}
+    return adapter.parse(raw, local), meta
+
+
+def _takes_now(adapter) -> bool:
+    import inspect
+    return "now" in inspect.signature(adapter.fetch_raw).parameters
+
+
+def is_current(e: Event, *, now: datetime, grace_hours: int = 6) -> bool:
+    """Keep future events, and ongoing runs whose end date has not passed."""
+    if e.anytime:
+        return True
+    cutoff = now - timedelta(hours=grace_hours)
+    for value in (e.end, e.start):
+        if not value:
+            continue
+        try:
+            if datetime.fromisoformat(value) >= cutoff:
+                return True
+        except ValueError:
+            continue
+    return False
+
+
+def build(sources_path: Path, out_path: Path, *, root: Path,
+          only: list[str] | None = None, link_check: bool = True,
+          allow_drop: bool = False, horizon_days: int = 400) -> dict:
+    now = datetime.now(UK)
+    stamp = now.astimezone(timezone.utc).isoformat()
+    sources = load_sources(sources_path)
+    if only:
+        sources = [s for s in sources if s["key"] in only]
+
+    previous = load_previous(out_path)
+    prev_reports = {s["key"]: s for s in previous.get("sources", [])}
+    prev_events: dict[str, list[dict]] = {}
+    for raw_event in previous.get("events", []):
+        prev_events.setdefault(raw_event.get("source", ""), []).append(raw_event)
+
+    all_events: list[Event] = []
+    carried: list[dict] = []
+    reports: list[dict] = []
+    failures: list[str] = []
+    horizon = (now + timedelta(days=horizon_days)).isoformat()
+
+    for cfg in sources:
+        prev = prev_reports.get(cfg["key"], {})
+        report = {
+            "key": cfg["key"], "name": cfg["name"], "kind": cfg["kind"],
+            "count": 0, "status": "ok", "error": None,
+            "last_attempt": stamp,
+            "last_success": prev.get("last_success"),
+            "pagination_complete": None,
+        }
+        try:
+            events, meta = collect_source(cfg, now=now, root=root)
+            report["pagination_complete"] = meta.get("pagination_complete")
+        except Exception as exc:                        # noqa: BLE001
+            report.update(status="fetch_error", error=f"{type(exc).__name__}: {exc}")
+            failures.append(f"{cfg['key']}: {report['error']}")
+            LOG.error("source %s failed: %s", cfg["key"], exc)
+            kept_prev = prev_events.get(cfg["key"], [])
+            carried.extend(kept_prev)
+            report["count"] = len(kept_prev)
+            report["carried_over"] = len(kept_prev)
+            reports.append(report)
+            continue
+
+        kept = [e for e in events
+                if is_current(e, now=now) and (e.start or "") <= horizon]
+        report["count"] = len(kept)
+        report["fetched"] = len(events)
+
+        was = prev.get("count", 0)
+        if was and len(kept) == 0:
+            report["status"] = "empty"
+            failures.append(f"{cfg['key']}: returned 0 events, previously {was}")
+        elif was and len(kept) < was * (1 - DROP_TOLERANCE):
+            report["status"] = "shrunk"
+            failures.append(
+                f"{cfg['key']}: returned {len(kept)} events, previously {was}")
+        elif report["pagination_complete"] is False:
+            report["status"] = "partial"
+            failures.append(f"{cfg['key']}: pagination incomplete")
+
+        if report["status"] in ("empty", "shrunk"):
+            # Suspicious: keep the previous records rather than publish a hole.
+            kept_prev = prev_events.get(cfg["key"], [])
+            carried.extend(kept_prev)
+            report["carried_over"] = len(kept_prev)
+        else:
+            report["last_success"] = stamp
+            for e in kept:
+                e.last_seen = stamp
+            all_events.extend(kept)
+        reports.append(report)
+
+    priority = {s["key"]: s.get("priority", 50) for s in sources}
+    events = merge(all_events, priority)
+    records = [e.to_dict() for e in events]
+
+    if link_check:
+        checked: dict[str, dict] = {}
+        for rec in records:
+            if not rec.get("source", "").startswith("curated") or not rec.get("url"):
+                continue
+            url = rec["url"]
+            if url not in checked:
+                checked[url] = check_link(url)
+            probe = checked[url]
+            rec["link_status"] = probe["status"]
+            if probe["redirected_to_root"]:
+                rec["link_warning"] = "redirects to the site home page"
+
+    # Carried-over records keep their original last_seen so the UI can age them.
+    known = {r["id"] for r in records}
+    records.extend(r for r in carried if r.get("id") not in known)
+    records.sort(key=lambda r: (r.get("start") or "9999", r.get("title", "")))
+
+    oldest_success = min(
+        (s["last_success"] for s in reports if s.get("last_success")),
+        default=None)
+    doc = {
+        "generated_at": stamp,
+        "timezone": "Europe/London",
+        "stale_after_hours": STALE_AFTER_HOURS,
+        "event_count": len(records),
+        "oldest_source_success": oldest_success,
+        "sources": reports,
+        "events": records,
+    }
+    if failures:
+        doc["build_warnings"] = failures
+
+    if failures and not allow_drop:
+        raise SystemExit(
+            "Build refused to publish; sources look broken:\n  - "
+            + "\n  - ".join(failures)
+            + "\nRe-run with --allow-drop if the change is genuine."
+        )
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = out_path.with_suffix(out_path.suffix + ".tmp")
+    tmp.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n",
+                   encoding="utf-8")
+    tmp.replace(out_path)                     # atomic publish
+    return doc
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    root = Path(__file__).resolve().parent.parent
+    ap.add_argument("--sources", type=Path, default=root / "collector/sources.yaml")
+    ap.add_argument("--out", type=Path, default=root / "docs/data/events.json")
+    ap.add_argument("--only", nargs="*", help="only these source keys")
+    ap.add_argument("--no-link-check", action="store_true")
+    ap.add_argument("--allow-drop", action="store_true",
+                    help="publish even if a source lost events or failed")
+    ap.add_argument("-v", "--verbose", action="store_true")
+    args = ap.parse_args(argv)
+    logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING,
+                        format="%(levelname)s %(name)s: %(message)s")
+    doc = build(args.sources, args.out, root=root, only=args.only,
+                link_check=not args.no_link_check, allow_drop=args.allow_drop)
+    print(f"{doc['event_count']} events -> {args.out}")
+    for s in doc["sources"]:
+        flag = "" if s["status"] == "ok" else f"  [{s['status']}: {s['error'] or ''}]"
+        carried = f" (+{s['carried_over']} carried over)" if s.get("carried_over") else ""
+        print(f"  {s['count']:4d}  {s['key']}{flag}{carried}")
+    for w in doc.get("build_warnings", []):
+        print(f"  WARNING {w}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

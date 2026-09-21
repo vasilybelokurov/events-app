@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's On — Cambridge &amp; London</title>
+<meta name="description" content="Events in Cambridge and London, filtered by age, place, date and the kind of work they show.">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128197;</text></svg>">
+</head>
+<body>
+<a class="skip" href="#results">Skip to results</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <h1>What's On</h1>
+    <p class="tagline">Cambridge &amp; London, sorted by what kind of work it shows you.</p>
+    <p id="freshness" class="freshness" role="status"></p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="controls" aria-label="Filters">
+    <div class="row">
+      <label class="grow">
+        <span>Search</span>
+        <input type="search" id="q" placeholder="title, venue, description&hellip;" autocomplete="off">
+      </label>
+      <label>
+        <span>Age</span>
+        <input type="number" id="age" min="0" max="99" step="1" value="14" inputmode="numeric">
+      </label>
+      <label>
+        <span>Sort by</span>
+        <select id="sort">
+          <option value="date">Date</option>
+          <option value="title">Title</option>
+          <option value="price">Price (cheapest first)</option>
+          <option value="city">Place</option>
+          <option value="source">Source</option>
+        </select>
+      </label>
+      <label>
+        <span>View</span>
+        <select id="view">
+          <option value="cards">Cards</option>
+          <option value="table">Table</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="row facets">
+      <fieldset>
+        <legend>When</legend>
+        <div class="chips" id="when"></div>
+        <div class="dates">
+          <label><span>From</span><input type="date" id="from"></label>
+          <label><span>To</span><input type="date" id="to"></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Where</legend>
+        <div class="chips" id="cities"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Audience &amp; access</legend>
+        <div class="chips" id="flags"></div>
+      </fieldset>
+    </div>
+
+    <fieldset>
+      <legend>Kind of work it shows <span class="hint">(a keyword guess — always check the listing)</span></legend>
+      <div class="chips" id="careers"></div>
+    </fieldset>
+
+    <div class="row actions">
+      <p id="count" role="status"></p>
+      <button type="button" id="reset" class="ghost">Clear filters</button>
+      <button type="button" id="ics" class="ghost">Download these as a calendar</button>
+      <button type="button" id="share" class="ghost">Copy link to this view</button>
+    </div>
+  </section>
+
+  <section id="results" aria-live="polite"></section>
+
+  <details class="health">
+    <summary>Where this came from, and how fresh it is</summary>
+    <div id="sources"></div>
+    <p class="note">
+      Each source is collected on a schedule; a source that fails keeps its last
+      good records, labelled with when they were last seen. Prices, ages and
+      opening times are taken from the venue's own listing and can change —
+      the link on each card is the authority, not this page.
+    </p>
+  </details>
+
+</main>
+
+<footer class="wrap">
+  <p>Built from public listings and feeds. Times are Europe/London.
+     <a href="https://github.com/">Source &amp; issues</a></p>
+</footer>
+
+<template id="card-tpl">
+  <article class="card">
+    <div class="card-head">
+      <time class="when"></time>
+      <span class="badges"></span>
+    </div>
+    <h3><a class="title" rel="noopener noreferrer"></a></h3>
+    <p class="meta"></p>
+    <p class="summary"></p>
+    <p class="tags"></p>
+    <div class="card-foot">
+      <button type="button" class="save" aria-pressed="false">Save</button>
+      <button type="button" class="hide">Not interested</button>
+      <a class="book" rel="noopener noreferrer">Book</a>
+      <button type="button" class="cal">Add to calendar</button>
+    </div>
+  </article>
+</template>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
