@@ -230,16 +230,67 @@ class TestPagination:
         assert html_css.last_fetch["pagination_complete"] is True
 
     def test_a_truncated_walk_is_reported_not_hidden(self, monkeypatch):
+        calls = []
+
         def fake_fetch(url, **kw):
             n = int(url.split("page=")[1]) if "page=" in url else 1
+            calls.append(n)
             return self._page(f"row{n}")               # every page is new
 
         monkeypatch.setattr(html_css, "fetch", fake_fetch)
         html_css.fetch_raw(self._cfg())
         assert html_css.last_fetch["pagination_complete"] is False
         assert html_css.last_fetch["pages_fetched"] == 4
+        # No probe beyond the budget: its own failure would have taken the
+        # whole source down instead of reporting a partial walk.
+        assert calls == [1, 2, 3, 4]
+
+    def test_a_blank_page_does_not_end_the_walk(self, monkeypatch):
+        """An interstitial served as HTTP 200 looks just like the last page.
+
+        Treating it as the end published a truncated list and called the
+        source healthy -- the one failure this project exists to avoid.
+        """
+        pages = {1: self._page("a", "b"), 2: "<html><body>Unavailable</body></html>",
+                 3: self._page("c", "d"), 4: self._page("e")}
+        calls = []
+
+        def fake_fetch(url, **kw):
+            n = int(url.split("page=")[1]) if "page=" in url else 1
+            calls.append(n)
+            return pages[n]
+
+        monkeypatch.setattr(html_css, "fetch", fake_fetch)
+        raw = html_css.fetch_raw(self._cfg())
+        assert calls == [1, 2, 3, 4]                   # walked past the blank
+        assert "/e/c" in raw and "/e/e" in raw
+        assert html_css.last_fetch["pagination_complete"] is False
+
+    def test_two_blank_pages_stop_the_walk(self, monkeypatch):
+        calls = []
+
+        def fake_fetch(url, **kw):
+            n = int(url.split("page=")[1]) if "page=" in url else 1
+            calls.append(n)
+            return self._page("a") if n == 1 else "<html><body>nothing</body></html>"
+
+        monkeypatch.setattr(html_css, "fetch", fake_fetch)
+        html_css.fetch_raw(self._cfg())
+        assert calls == [1, 2, 3]
+        assert html_css.last_fetch["pagination_complete"] is False
+
+    def test_the_sentinel_cannot_arrive_from_a_page(self, monkeypatch):
+        """A page containing the page-break comment split into two chunks."""
+        poisoned = (self._page("a").replace("</ul>", "")
+                    + html_css.PAGE_BREAK
+                    + '<li><a href="/e/z">z</a></li></ul></body></html>')
+        monkeypatch.setattr(html_css, "fetch", lambda url, **kw: poisoned)
+        raw = html_css.fetch_raw(self._cfg())
+        assert html_css.PAGE_BREAK not in raw
+        assert "/e/z" in raw
 
     def test_a_site_that_ignores_the_parameter_is_not_crawled_forever(self, monkeypatch):
+        """Rows that an earlier page already had *is* a genuine end."""
         monkeypatch.setattr(html_css, "fetch", lambda url, **kw: self._page("a", "b"))
         html_css.fetch_raw(self._cfg())
         assert html_css.last_fetch["pages_fetched"] == 1

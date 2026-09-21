@@ -575,6 +575,8 @@ sources:
         event id.
       * The site's own next-page hrefs accumulate junk parameters
         (`?amp;page=6&page=2`), so `pages.param` drives the walk instead.
+        16 pages as of 2026-09-22; `max_pages` is 25 because exhausting the
+        budget is reported as a truncated walk, not as the end.
       * Dates carry no year ("Saturday 3 January") and write times with a dot
         ("10.30"), which is why `collector.models` grew `_clock_dots` and
         `_roll_yearless`.  Without those, a January event landed in the past

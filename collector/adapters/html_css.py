@@ -83,7 +83,7 @@ def fetch_raw(cfg: dict, **_) -> str:
     """
     global last_fetch
     last_fetch = {}
-    html = fetch(cfg["url"])
+    html = fetch(cfg["url"]).replace(PAGE_BREAK, "")
     pages = cfg.get("pages") or {}
     if not pages:
         return html
@@ -92,18 +92,35 @@ def fetch_raw(cfg: dict, **_) -> str:
     max_pages = int(pages.get("max_pages", 20))
     chunks = [html]
     seen = _row_keys(html, cfg)
-    complete = True
+    complete = False
+    blanks = 0
     for number in range(2, max_pages + 1):
-        page = fetch(_with_page(cfg["url"], param, number))
+        page = fetch(_with_page(cfg["url"], param, number)).replace(PAGE_BREAK, "")
         keys = _row_keys(page, cfg)
+        if not keys:
+            # A page with no rows at all is *not* evidence that the listing
+            # has ended: an interstitial, a rate-limit notice or an error page
+            # served as HTTP 200 looks exactly the same.  Look past one, then
+            # stop -- and do not claim the walk finished, because a source
+            # frozen at its previous records is a loud failure while a
+            # silently truncated list is not.
+            blanks += 1
+            if blanks > 1:
+                break
+            continue
+        blanks = 0
         if not keys - seen:
+            # Rows, but none that an earlier page did not have: the real end
+            # of the listing, or a site that clamps every number to its last
+            # page.  Either way there is nothing further to fetch.
+            complete = True
             break
         seen |= keys
         chunks.append(page)
-    else:
-        complete = not (_row_keys(
-            fetch(_with_page(cfg["url"], param, max_pages + 1)), cfg) - seen)
 
+    # Falling out of the loop means the budget ran out with rows still
+    # arriving.  Report that rather than spending another request on a probe
+    # whose own failure would take the whole source down with it.
     last_fetch = {"pagination_complete": complete, "pages_fetched": len(chunks)}
     return PAGE_BREAK.join(chunks)
 

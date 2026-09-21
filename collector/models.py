@@ -234,7 +234,11 @@ def parse_time_text(text: str | None) -> tuple[time | None, time | None]:
     if not best:
         return (None, None)
     tokens = best[:3]
-    meridiems = [t_[2] for t_ in tokens if t_[2]]
+    # Only the first two tokens are the range being read; a third belongs to
+    # something else, and letting its meridiem govern turned "7 - 8am - 9pm"
+    # into 19:00-20:00.  The third is kept only so an unusable leading token
+    # (a bare day number) can be dropped below without losing a real time.
+    meridiems = [t_[2] for t_ in tokens[:2] if t_[2]]
     fallback = meridiems[-1] if meridiems else None
 
     def to_time(tok, is_end: bool) -> time | None:
@@ -434,7 +438,17 @@ def shift(iso: str, **delta) -> str:
     return _localise(naive).isoformat()
 
 
-_ISO_DATE = re.compile(r"\d{4}-\d{2}-\d{2}(?:[T ]|$)")
+#: A whole string that is one ISO-8601 timestamp.  Matching a mere *prefix*
+#: meant "2026-01-01 - 2026-03-01" short-circuited to its left end.
+_ISO_DATE = re.compile(
+    r"\d{4}-\d{2}-\d{2}"
+    r"(?:[T ]\d{2}:\d{2}(?::\d{2})?(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?)?\s*$")
+#: An ISO-8601 interval.  The "/" form is the standard one and the general
+#: range splitter does not touch it, because "/" is also a date separator.
+_ISO_INTERVAL = re.compile(
+    r"^\s*(?P<a>\d{4}-\d{2}-\d{2}(?:[T ]\S+)?)"
+    r"\s*(?:/|--|\s-\s|\u2013|\u2014|\sto\s)\s*"
+    r"(?P<b>\d{4}-\d{2}-\d{2}(?:[T ]\S+)?)\s*$")
 _RANGE_SPLIT = re.compile(r"\s*(?:\u2013|\u2014|\u2212|--|\sto\s|\s-\s|(?<=\d)-(?=\d{1,2}\w))\s*")
 
 
@@ -516,6 +530,17 @@ def parse_date_range(text: str | None, *, default_time: time | None = None,
         if iso:
             return (iso, None)
 
+    # Two ISO timestamps are a range, and must not fall through to the fuzzy
+    # parser: it returned the left date carrying the *current clock time*.
+    interval = _ISO_INTERVAL.match(raw)
+    if interval:
+        a = parse_uk_datetime(interval["a"], default_time=default_time)
+        b = parse_uk_datetime(interval["b"], default_time=default_time)
+        if a and b and a <= b:
+            return (a, b)
+        if a:
+            return (a, None)
+
     # "On now until Saturday, 28 November 2026" is a run that has already
     # started; reading it as a single date would put a live exhibition in the
     # future and mis-sort it.
@@ -532,7 +557,10 @@ def parse_date_range(text: str | None, *, default_time: time | None = None,
         # The right-hand end is the last part that actually looks like a date:
         # "... to Wednesday 30 September 2026 - 7pm" splits a trailing time off,
         # and "7pm" is not the end of the run.
-        right = next((p for p in reversed(parts)
+        # Only a part to the *right* of the left one can be the end: searching
+        # the whole list let "1 October 2026 1.05pm - 2pm" choose its own left
+        # side as the end, giving an event that ends the instant it starts.
+        right = next((p for p in reversed(parts[1:])
                       if re.search(_MONTHS, p, re.I) or re.search(r"\d{4}", p)
                       or re.search(r"\d{1,2}[/.]\d{1,2}", p)), parts[-1])
         end = parse_uk_datetime(right, default_time=default_time)
@@ -548,6 +576,22 @@ def parse_date_range(text: str | None, *, default_time: time | None = None,
                 start = parse_uk_datetime(left, default_time=default_time)
             if start and start <= end:
                 return _roll_yearless(raw, start, end, assume_future)
+            if start:
+                # "27 December - 5 January" borrowed the year from the right
+                # and so ended before it began; the end is next year's, and
+                # dropping it lost the closing date of every run that spans
+                # New Year.
+                if not re.search(r"\d{4}", raw):
+                    rolled = _roll_year(end)
+                    if rolled and start <= rolled:
+                        return _roll_yearless(raw, start, rolled, assume_future)
+                return _roll_yearless(raw, start, None, assume_future)
+        else:
+            # The right-hand part is not a date: "Wednesday 23 September 2026
+            # 6pm - 7.30pm" is one date with a time range, not a run.  The
+            # left side stands alone rather than the whole string being
+            # abandoned to a fuzzy parse that cannot read two times at once.
+            start = parse_uk_datetime(left, default_time=default_time)
             if start:
                 return _roll_yearless(raw, start, None, assume_future)
     return _roll_yearless(

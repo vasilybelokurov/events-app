@@ -212,11 +212,16 @@ Most venues need no new code. Add a block to `collector/sources.yaml`:
     `date_attr: datetime` believes the machine value and falls back to the
     sentence.
   * **`pages: {param: page, max_pages: 25}`** walks a paginated listing,
-    stopping as soon as a page offers nothing new — which also stops dead a
-    site that serves page 1 for every number. Rows pinned to every page are
-    published once. A walk cut short by `max_pages` is reported as
-    `pagination_complete: false`, which degrades the source rather than
-    quietly publishing a short list.
+    stopping when a page offers rows that earlier pages already had — the
+    real end, and also what a site that serves page 1 for every number looks
+    like. Rows pinned to every page are published once.
+    A page with **no rows at all** is not treated as the end: an interstitial
+    or an error page served as HTTP 200 looks exactly the same, so the walk
+    steps over one and gives up after two, without claiming to have finished.
+    Anything short of a confirmed end — that, or exhausting `max_pages` —
+    reports `pagination_complete: false` and degrades the source, which keeps
+    its last good records and turns the run red. Set `max_pages` comfortably
+    above the real page count, because reaching it is treated as truncation.
 * **`drupal_jsonapi`** — many UK institutions run Drupal; check
   `https://<host>/jsonapi` for a `node--event` resource before writing
   selectors. It is far more reliable than scraping.

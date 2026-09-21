@@ -183,6 +183,25 @@ def test_to_dict_drops_empties():
     assert d["title"] == "t"
 
 
+class TestMeridiemScope:
+    """A meridiem governs its own range, not a later clause."""
+
+    def test_a_third_time_does_not_reinterpret_the_first_pair(self):
+        """Keeping three tokens let "9pm" turn "7 - 8am" into 19:00-20:00."""
+        assert parse_time_text("7 - 8am - 9pm") == (time(7, 0), time(8, 0))
+
+    @pytest.mark.parametrize("text,expected", [
+        ("7 - 8.30pm", (time(19, 0), time(20, 30))),
+        ("10.00am-4.00pm", (time(10, 0), time(16, 0))),
+        ("Doors 6pm; talk 7pm-8pm", (time(19, 0), time(20, 0))),
+        # The third token is still kept, so a bare day number can be dropped.
+        ("Monday 16 18.30 - Monday 23 November 18.30",
+         (time(18, 30), time(18, 30))),
+    ])
+    def test_the_cases_the_third_token_exists_for(self, text, expected):
+        assert parse_time_text(text) == expected
+
+
 class TestListingDatesWithoutAYear:
     """The British Library writes "Saturday 3 January 11.00" and means 2027.
 
@@ -237,11 +256,70 @@ class TestListingDatesWithoutAYear:
         assert start.startswith("2026-10-30")
         assert end.startswith("2027-06-20")
 
+    @pytest.mark.parametrize("text,expected_start", [
+        ("Wednesday 23 September 2026 6pm - 7.30pm", "2026-09-23T18:00"),
+        ("Wednesday 30 September 2026 6pm - 7.15pm", "2026-09-30T18:00"),
+        ("Thursday 1 October 2026 1.05pm - 2pm", "2026-10-01T13:05"),
+    ])
+    def test_a_trailing_time_range_leaves_the_date_intact(self, text, expected_start):
+        """"6pm - 7.30pm" is one date with a time range, not a two-day run.
+
+        The right-hand side is a clock time, so there is no end *date*; the
+        left side has to stand alone.  Abandoning the whole string to a fuzzy
+        parse instead lost two LSE events outright.
+        """
+        start, end = parse_date_range(text)
+        assert start.startswith(expected_start)
+        assert end is None
+
     def test_an_iso_timestamp_is_not_a_range(self):
         """The hyphens in "2027-10-01T09:00:00+01:00" are not a range dash."""
         start, end = parse_date_range("2027-10-01T09:00:00+01:00")
         assert start.startswith("2027-10-01T09:00")
         assert end is None
+
+    @pytest.mark.parametrize("text", [
+        "2026-01-01/2026-03-01",            # the ISO-8601 interval form
+        "2026-01-01 - 2026-03-01",
+        "2026-01-01 \u2013 2026-03-01",
+        "2026-01-01 to 2026-03-01",
+    ])
+    def test_two_iso_timestamps_are_a_range(self, text):
+        """Matching an ISO *prefix* short-circuited these to their left end.
+
+        Worse, the leftover fell through to the fuzzy parser, which returned
+        the left date carrying the current clock time -- a fabricated time on
+        a record that had none.
+        """
+        start, end = parse_date_range(text)
+        assert start == "2026-01-01T00:00:00+00:00"
+        assert end == "2026-03-01T00:00:00+00:00"
+
+    def test_an_iso_interval_keeps_both_times(self):
+        start, end = parse_date_range(
+            "2026-01-01T10:00:00+00:00/2026-03-01T12:00:00+00:00")
+        assert start.startswith("2026-01-01T10:00")
+        assert end.startswith("2026-03-01T12:00")
+
+    @pytest.mark.parametrize("text", [
+        "27 December - 5 January",
+        "31 December - 2 January",
+    ])
+    def test_a_yearless_range_may_cross_new_year(self, text):
+        """The end borrowed the year from the right and so preceded the start.
+
+        The branch that handles that dropped the end entirely, losing the
+        closing date of every run spanning New Year.
+        """
+        start, end = parse_date_range(text)
+        assert start and end
+        assert start < end
+        assert int(end[:4]) == int(start[:4]) + 1
+
+    def test_a_dated_range_crossing_new_year_is_untouched(self):
+        start, end = parse_date_range("27 December 2026 - 5 January 2027")
+        assert start.startswith("2026-12-27")
+        assert end.startswith("2027-01-05")
 
     @pytest.mark.parametrize("text", [
         "Daily",
