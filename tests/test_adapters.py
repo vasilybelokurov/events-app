@@ -121,6 +121,144 @@ class TestHtmlCss:
         assert out == []
 
 
+class TestPaginatedHtmlCss:
+    """The British Library: two fixture pages, sharing two pinned rows."""
+
+    def raw(self, fixture_text):
+        return html_css.PAGE_BREAK.join([
+            fixture_text("british_library_p1.html"),
+            fixture_text("british_library_p2.html"),
+        ])
+
+    def events(self, fixture_text, sources):
+        return html_css.parse(self.raw(fixture_text), sources["british_library"])
+
+    def test_parses_both_pages(self, fixture_text, sources):
+        evs = self.events(fixture_text, sources)
+        titles = {e.title for e in evs}
+        assert "Agatha Christie: A World of Mystery" in titles
+        assert any("social media" in t for t in titles)
+
+    def test_a_row_pinned_to_every_page_is_published_once(self, fixture_text, sources):
+        evs = self.events(fixture_text, sources)
+        pinned = [e for e in evs if e.title.startswith("Agatha Christie")]
+        assert len(pinned) == 1
+        assert len({e.id for e in evs}) == len(evs)
+
+    def test_machine_markup_is_preferred_to_prose(self, fixture_text, sources):
+        """The row carries both; the ISO attribute is the one to believe."""
+        evs = self.events(fixture_text, sources)
+        conquest = next(e for e in evs if e.title.startswith("Conquest"))
+        assert conquest.start.startswith("2027-10-01")
+        assert conquest.end.startswith("2028-02-27")
+        assert conquest.ongoing
+
+    def test_prose_dates_still_parse_when_there_is_no_markup(self, fixture_text, sources):
+        evs = self.events(fixture_text, sources)
+        agatha = next(e for e in evs if e.title.startswith("Agatha Christie"))
+        assert agatha.start.startswith("2026-10-30")
+        assert agatha.end.startswith("2027-06-20")
+
+    def test_an_undated_row_is_dropped_not_invented(self, fixture_text, sources):
+        """"Daily" and "Available Fridays and Sundays" are not dates."""
+        titles = {e.title for e in self.events(fixture_text, sources)}
+        assert "Treasures Tour" not in titles
+        assert "Building Tour" not in titles
+
+    def test_free_is_only_claimed_when_the_row_says_so(self, fixture_text, sources):
+        evs = self.events(fixture_text, sources)
+        free = next(e for e in evs if "social media" in e.title)
+        assert free.is_free is True
+        assert all(e.is_free is not True for e in evs if e.title.startswith("Conquest"))
+
+    def test_links_are_absolute(self, fixture_text, sources):
+        for e in self.events(fixture_text, sources):
+            assert e.url.startswith("https://events.bl.uk")
+
+    def _yearless_row(self, when):
+        return ('<ol><li class="o-grid__item">'
+                '<a class="c-media c-media--event" href="https://events.bl.uk/e/x">'
+                '<h3 class="c-media__title">A talk</h3>'
+                f'<time class="c-media__datetime">{when}</time>'
+                '</a></li></ol>')
+
+    def test_a_yearless_date_is_rolled_forward_only_where_declared(self, sources):
+        """The flag is the whole difference between a listing and an archive."""
+        from datetime import date, timedelta
+        long_past = date.today() - timedelta(days=182)
+        html = self._yearless_row(long_past.strftime("%A %-d %B 11.00"))
+
+        cfg = dict(sources["british_library"])
+        assert cfg["assume_future_dates"] is True
+        assert html_css.parse(html, cfg)[0].start[:4] == str(long_past.year + 1)
+
+        archive = dict(cfg)
+        del archive["assume_future_dates"]
+        assert html_css.parse(html, archive)[0].start[:4] == str(long_past.year)
+
+    def test_a_recurrence_row_is_dropped(self, sources):
+        """"Most Fridays at 11.30" is not a date, so there is no event."""
+        cfg = dict(sources["british_library"])
+        assert html_css.parse(self._yearless_row("Most Fridays at 11.30"), cfg) == []
+
+
+class TestPagination:
+    """fetch_raw's walk, driven by fakes rather than the live site."""
+
+    def _cfg(self):
+        return {"key": "k", "name": "n", "url": "https://x.test/list",
+                "pages": {"param": "page", "max_pages": 4},
+                "selectors": {"item": "li", "title": "a", "link": "a"}}
+
+    def _page(self, *slugs):
+        rows = "".join(f'<li><a href="/e/{s}">{s}</a></li>' for s in slugs)
+        return f"<html><body><ul>{rows}</ul></body></html>"
+
+    def test_stops_when_a_page_adds_nothing_new(self, monkeypatch):
+        pages = {1: self._page("a", "b"), 2: self._page("a", "c"), 3: self._page("a")}
+        calls = []
+
+        def fake_fetch(url, **kw):
+            n = int(url.split("page=")[1]) if "page=" in url else 1
+            calls.append(n)
+            return pages.get(n, self._page("a"))
+
+        monkeypatch.setattr(html_css, "fetch", fake_fetch)
+        raw = html_css.fetch_raw(self._cfg())
+        assert calls == [1, 2, 3]
+        assert raw.count(html_css.PAGE_BREAK) == 1      # pages 1 and 2 kept
+        assert html_css.last_fetch["pagination_complete"] is True
+
+    def test_a_truncated_walk_is_reported_not_hidden(self, monkeypatch):
+        def fake_fetch(url, **kw):
+            n = int(url.split("page=")[1]) if "page=" in url else 1
+            return self._page(f"row{n}")               # every page is new
+
+        monkeypatch.setattr(html_css, "fetch", fake_fetch)
+        html_css.fetch_raw(self._cfg())
+        assert html_css.last_fetch["pagination_complete"] is False
+        assert html_css.last_fetch["pages_fetched"] == 4
+
+    def test_a_site_that_ignores_the_parameter_is_not_crawled_forever(self, monkeypatch):
+        monkeypatch.setattr(html_css, "fetch", lambda url, **kw: self._page("a", "b"))
+        html_css.fetch_raw(self._cfg())
+        assert html_css.last_fetch["pages_fetched"] == 1
+        assert html_css.last_fetch["pagination_complete"] is True
+
+    def test_an_unpaginated_source_makes_one_request(self, monkeypatch):
+        calls = []
+        monkeypatch.setattr(html_css, "fetch",
+                            lambda url, **kw: calls.append(url) or self._page("a"))
+        cfg = self._cfg()
+        del cfg["pages"]
+        html_css.fetch_raw(cfg)
+        assert calls == ["https://x.test/list"]
+
+    def test_the_page_parameter_replaces_an_existing_one(self):
+        assert html_css._with_page("https://x.test/l?page=9&q=1", "page", 3) \
+            in ("https://x.test/l?q=1&page=3", "https://x.test/l?page=3&q=1")
+
+
 # -------------------------------------------------------------------- ICS ---
 
 ICS = """BEGIN:VCALENDAR

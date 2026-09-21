@@ -67,7 +67,12 @@ CAREER_KEYWORDS: dict[str, tuple[str, ...]] = {
         "storytelling", "podcast", "presenter", "curator", "curating",
     ),
     "Environment & climate": (
-        "climate", "environment", "sustainab", "renewable", "net zero",
+        "climate", "environment", "renewable", "net zero",
+        # Not the bare stem: "grow in a way that feels sustainable" is
+        # business advice.  The environmental sense is carried by the noun and
+        # by the set phrases, and every real hit in the catalogue uses one.
+        "sustainability", "sustainable future", "sustainable development",
+        "sustainable energy", "sustainable design",
         "green econom", "energy", "air quality", "ocean", "weather",
     ),
     "History & archaeology": (

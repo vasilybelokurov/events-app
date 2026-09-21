@@ -178,6 +178,12 @@ def parse_age_range(text: str | None) -> tuple[int | None, int | None]:
 _TIME_TOKEN = re.compile(r"(?<![\d:.])(\d{1,2})(?:[:.](\d{2}))?\s*(am|pm)?", re.I)
 #: Times introduced by these words describe access, not the event itself.
 _NOT_START = re.compile(r"(doors?|bar|refreshments?|arrive|registration)\s*(?:open\w*)?\s*$", re.I)
+#: "Tuesday 20 October 10.30" holds one clock time, not two: the 20 is a day
+#: of the month.  Left in, it becomes the start token, and because a bare
+#: number with no meridiem is rejected as ambiguous the real time is demoted
+#: to the *end* time and the event loses its start.
+_DAY_BEFORE_MONTH = re.compile(rf"^\s*(?:st|nd|rd|th)?\s*(?:{_MONTHS})", re.I)
+_MONTH_BEFORE_DAY = re.compile(rf"(?:{_MONTHS})[a-z]*\s*$", re.I)
 
 
 def parse_time_text(text: str | None) -> tuple[time | None, time | None]:
@@ -214,6 +220,9 @@ def parse_time_text(text: str | None) -> tuple[time | None, time | None]:
                 continue
             if _NOT_START.search(clause[:m.start()].rstrip()):
                 continue
+            if mm is None and (_DAY_BEFORE_MONTH.match(clause[m.end():])
+                               or _MONTH_BEFORE_DAY.search(clause[:m.start()])):
+                continue                      # a date, not a time
             tokens.append((hh, int(mm) if mm is not None else None,
                            ap.lower() if ap else None))
         # Prefer the clause that actually looks like the event's own time span.
@@ -224,7 +233,7 @@ def parse_time_text(text: str | None) -> tuple[time | None, time | None]:
 
     if not best:
         return (None, None)
-    tokens = best[:2]
+    tokens = best[:3]
     meridiems = [t_[2] for t_ in tokens if t_[2]]
     fallback = meridiems[-1] if meridiems else None
 
@@ -239,8 +248,13 @@ def parse_time_text(text: str | None) -> tuple[time | None, time | None]:
             hh = 0
         return time(hh, mm or 0)
 
-    start = to_time(tokens[0], False)
-    end = to_time(tokens[1], True) if len(tokens) > 1 else None
+    # An unusable leading token must not push a real time into the end slot.
+    # "Monday 16 18.30 - Monday 23 November 18.30" opens with a bare day
+    # number, and reading that as the start left the event with an end time
+    # and no start at all.
+    resolved = [t_ for t_ in (to_time(tok, False) for tok in tokens) if t_]
+    start = resolved[0] if resolved else None
+    end = resolved[1] if len(resolved) > 1 else None
     if start and end and end <= start and fallback == "pm" and start.hour >= 12:
         # e.g. "19:00 - 8.30" where the end lost its meridiem: assume evening.
         if end.hour < 12:
@@ -318,6 +332,48 @@ def _localise(dt: datetime) -> datetime:
     return aware
 
 
+_DOTTED_TIME = re.compile(r"(?<![\d.])(\d{1,2})\.(\d{2})(?![\d.])")
+#: A real date names a day *and* a month, or is written numerically.  Anything
+#: less is not a date, however confidently a fuzzy parser reads one out of it.
+_DAY_AND_MONTH = re.compile(
+    rf"\d{{1,2}}\s*(?:st|nd|rd|th)?\s*(?:{_MONTHS})|(?:{_MONTHS})[a-z]*\s*\d{{1,2}}", re.I)
+#: Dots are allowed only in the full "17.01.2026" form: "11.00" is a time.
+_NUMERIC_DATE = re.compile(r"\d{1,2}\s*[/-]\s*\d{1,2}(?:\s*[/-]\s*\d{2,4})?"
+                           r"|\d{1,2}\.\d{1,2}\.\d{2,4}")
+
+
+def _looks_like_a_date(raw: str) -> bool:
+    """Whether *raw* holds enough to be a date at all.
+
+    ``dateutil``'s fuzzy mode will find a date in almost any string: it reads
+    "Once a month, Wednesdays, 11.00" as the 11th of the current month and
+    "Most Fridays at 11.30" as the 11th too.  Those are recurrence
+    descriptions, and a venue that publishes one has not published a date.
+    Inventing one puts a fabricated entry on the page, which is worse than
+    omitting the event, so the burden of proof sits here.
+    """
+    return bool(_DAY_AND_MONTH.search(raw) or _NUMERIC_DATE.search(raw))
+
+
+def _clock_dots(raw: str) -> str:
+    """Rewrite a dotted clock time as ``HH:MM`` when the text names a month.
+
+    A fuzzy date parser reads the "10.30" of "Tuesday 20 October 10.30" as a
+    *year* and returns 20 October **2010**, which is silently dropped as a
+    past event.  Once a month name is present the dots cannot be a ``d.m``
+    date, so the rewrite is unambiguous; without one the string is left alone.
+    """
+    if not re.search(_MONTHS, raw, re.I):
+        return raw
+
+    def sub(m: re.Match) -> str:
+        if int(m.group(1)) > 23 or int(m.group(2)) > 59:
+            return m.group(0)
+        return f"{m.group(1)}:{m.group(2)}"
+
+    return _DOTTED_TIME.sub(sub, raw)
+
+
 def parse_uk_datetime(value, *, default_time: time | None = None) -> str | None:
     """Parse a date/datetime into an ISO-8601 string anchored to Europe/London.
 
@@ -348,8 +404,11 @@ def parse_uk_datetime(value, *, default_time: time | None = None) -> str | None:
         try:                                    # ISO first: never day-first
             dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
         except ValueError:
+            probe = _clock_dots(raw)
+            if not _looks_like_a_date(probe):
+                return None
             try:
-                dt = dtparser.parse(raw, dayfirst=True, fuzzy=True)
+                dt = dtparser.parse(probe, dayfirst=True, fuzzy=True)
             except (ValueError, OverflowError, TypeError):
                 return None
         had_time = bool(re.search(r"\d\s*[:.]\s*\d\d", raw))
@@ -375,10 +434,55 @@ def shift(iso: str, **delta) -> str:
     return _localise(naive).isoformat()
 
 
+_ISO_DATE = re.compile(r"\d{4}-\d{2}-\d{2}(?:[T ]|$)")
 _RANGE_SPLIT = re.compile(r"\s*(?:\u2013|\u2014|\u2212|--|\sto\s|\s-\s|(?<=\d)-(?=\d{1,2}\w))\s*")
 
 
-def parse_date_range(text: str | None, *, default_time: time | None = None
+#: How far into the past a *yearless* date may fall before a source that has
+#: asked for it (``assume_future_dates``) has the date read as next year's.
+#: A run that began a few weeks ago is still current and must not be rolled.
+YEARLESS_GRACE_DAYS = 90
+
+
+def _roll_year(iso: str | None) -> str | None:
+    """Move an ISO timestamp forward one year, keeping its wall-clock time."""
+    if not iso:
+        return None
+    naive = datetime.fromisoformat(iso).replace(tzinfo=None)
+    try:
+        naive = naive.replace(year=naive.year + 1)
+    except ValueError:                          # 29 February
+        naive = naive.replace(year=naive.year + 1, month=2, day=28)
+    return _localise(naive).isoformat()
+
+
+def _roll_yearless(raw: str, start: str | None, end: str | None,
+                   assume_future: bool) -> tuple[str | None, str | None]:
+    """Read a long-past yearless date as next year's, where that is warranted.
+
+    ``dateutil`` fills a missing year with the current one, so a listing that
+    says "Saturday 3 January" resolves to the January that has already gone.
+    The event is then dropped as past and nobody sees it was ever there.
+
+    Whether that reading is right is a fact about the *source*, not about the
+    string, so it is declared per source and off by default.  A live what's-on
+    listing only advertises what is coming, so its yearless January is next
+    January.  An archived programme is the opposite case: the Cambridge
+    Festival page still holds the 2025 programme, and rolling its "Monday 2
+    March" forward would publish a fabricated 2027 event for something that
+    happened two years ago.  Both ends move together, so a range cannot be
+    turned inside out.
+    """
+    if not start or not assume_future or re.search(r"\d{4}", raw):
+        return (start, end)
+    cutoff = datetime.now(UK) - timedelta(days=YEARLESS_GRACE_DAYS)
+    if datetime.fromisoformat(start) >= cutoff:
+        return (start, end)
+    return (_roll_year(start), _roll_year(end))
+
+
+def parse_date_range(text: str | None, *, default_time: time | None = None,
+                     assume_future: bool = False
                      ) -> tuple[str | None, str | None]:
     """Split a written date range into ``(start, end)`` ISO strings.
 
@@ -403,6 +507,14 @@ def parse_date_range(text: str | None, *, default_time: time | None = None
     if not text or not str(text).strip():
         return (None, None)
     raw = re.sub(r"\s+", " ", str(text)).strip()
+
+    # An ISO-8601 timestamp is one instant, never a range.  The range splitter
+    # breaks on a hyphen between digits, so "2027-10-01T09:00:00+01:00" was
+    # torn into "2027-10" and "01T09:00:00+01:00" and parsed as neither.
+    if _ISO_DATE.match(raw):
+        iso = parse_uk_datetime(raw, default_time=default_time)
+        if iso:
+            return (iso, None)
 
     # "On now until Saturday, 28 November 2026" is a run that has already
     # started; reading it as a single date would put a live exhibition in the
@@ -435,10 +547,12 @@ def parse_date_range(text: str | None, *, default_time: time | None = None
             if start is None:
                 start = parse_uk_datetime(left, default_time=default_time)
             if start and start <= end:
-                return (start, end)
+                return _roll_yearless(raw, start, end, assume_future)
             if start:
-                return (start, None)
-    return (parse_uk_datetime(raw, default_time=default_time), None)
+                return _roll_yearless(raw, start, None, assume_future)
+    return _roll_yearless(
+        raw, parse_uk_datetime(raw, default_time=default_time), None,
+        assume_future)
 
 
 # --------------------------------------------------------------------------

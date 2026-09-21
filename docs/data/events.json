@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-21T23:08:45.889283+00:00",
+ "generated_at": "2026-09-21T23:36:43.237448+00:00",
  "timezone": "Europe/London",
  "stale_after_hours": 48,
  "verify_after_days": 90,
- "event_count": 195,
- "oldest_source_success": "2026-09-21T23:08:24.630083+00:00",
+ "event_count": 303,
+ "oldest_source_success": "2026-09-21T23:36:43.237448+00:00",
  "sources": [
   {
    "key": "rigb",
@@ -21,8 +21,8 @@
    "last_good_count": 30,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": true,
    "fetched": 30
   },
@@ -41,8 +41,8 @@
    "last_good_count": 100,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "detail_enabled": true,
    "detail_attempted": 100,
@@ -66,8 +66,8 @@
    "last_good_count": 8,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 8
   },
@@ -86,8 +86,8 @@
    "last_good_count": 0,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 7
@@ -107,8 +107,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -127,8 +127,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -147,8 +147,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -165,10 +165,10 @@
    "count": 1,
    "candidate_count": 1,
    "last_good_count": 1,
-   "status": "blocked",
-   "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery",
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:24.630083+00:00",
+   "status": "ok",
+   "error": null,
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -187,8 +187,8 @@
    "last_good_count": 4,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 4
@@ -208,8 +208,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -228,8 +228,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -248,8 +248,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -268,8 +268,8 @@
    "last_good_count": 8,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 8
   },
@@ -288,8 +288,8 @@
    "last_good_count": 0,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 0
   },
@@ -308,8 +308,8 @@
    "last_good_count": 17,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "fetched": 100
   },
@@ -328,8 +328,8 @@
    "last_good_count": 19,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 19
@@ -349,8 +349,8 @@
    "last_good_count": 7,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 7
@@ -365,16 +365,37 @@
    "docs": "no published interface; CSS selectors below, recorded 2026-09-22",
    "terms": "https://www.lse.ac.uk/lse-information/terms-of-use",
    "adapter_verified_on": "2026-09-22",
-   "count": 4,
-   "candidate_count": 4,
-   "last_good_count": 4,
+   "count": 8,
+   "candidate_count": 8,
+   "last_good_count": 8,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-09-21T23:08:45.889283+00:00",
-   "last_success": "2026-09-21T23:08:45.889283+00:00",
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
-   "fetched": 4
+   "fetched": 8
+  },
+  {
+   "key": "british_library",
+   "name": "British Library",
+   "kind": "html_css",
+   "homepage": "https://www.bl.uk/events/",
+   "verify_url": "https://events.bl.uk/",
+   "raw_url": "https://events.bl.uk/",
+   "docs": "no published interface; CSS selectors below, recorded 2026-09-22",
+   "terms": "https://www.bl.uk/terms",
+   "adapter_verified_on": "2026-09-22",
+   "count": 104,
+   "candidate_count": 104,
+   "last_good_count": 104,
+   "status": "ok",
+   "error": null,
+   "last_attempt": "2026-09-21T23:36:43.237448+00:00",
+   "last_success": "2026-09-21T23:36:43.237448+00:00",
+   "pagination_complete": true,
+   "detail_enabled": false,
+   "fetched": 104
   }
  ],
  "events": [
@@ -416,7 +437,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-ed0a22b6da3b",
@@ -446,7 +467,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-be31a5eb4695",
@@ -486,7 +507,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "lse_events-6ee7d4983b57",
@@ -518,7 +539,7 @@
     "Law & justice",
     "Politics & public service"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-aa85a8dcfe1f",
@@ -539,7 +560,7 @@
    "topics": [
     "Exhibition"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-243e4c2acd46",
@@ -570,7 +591,7 @@
    "topics": [
     "Exhibitions and displays"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-3d61396d8aa5",
@@ -604,7 +625,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-4f7940d7a54b",
@@ -630,7 +651,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-d323ad879646",
@@ -652,7 +673,7 @@
     "Relaxed",
     "Relaxed opening"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-b874e44de6a2",
@@ -690,7 +711,7 @@
     "Creative production",
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-e283b45eec4d",
@@ -711,7 +732,7 @@
    "topics": [
     "Display"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-552d921b071f",
@@ -734,7 +755,7 @@
     "British Sign Language",
     "Gallery tour"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "royal_society-195165a32fe2",
@@ -762,7 +783,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-b751cf0db2aa",
@@ -801,7 +822,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-e36ab22a5421",
@@ -827,7 +848,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-e9d4d378f0f7",
@@ -851,7 +872,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-32447464d655",
@@ -878,7 +899,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-a346d1ea6d1f",
@@ -901,7 +922,7 @@
     "Audio described",
     "Session"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-8f14b20cbe69",
@@ -929,7 +950,7 @@
     "Creative production",
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-5c15789ce7b8",
@@ -955,7 +976,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-9cc7bb81811f",
@@ -993,7 +1014,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-db802a7096d0",
@@ -1030,7 +1051,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "hunterian_museum-c833835f2501",
@@ -1065,7 +1086,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-e0d870a6e6b9",
@@ -1092,7 +1113,7 @@
     "Creative production",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-67d2aa06e7db",
@@ -1117,7 +1138,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-f759755dcc45",
@@ -1156,7 +1177,7 @@
     "Fieldwork & outdoors",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "bank_of_england_museum-8c1ea8eb56a2",
@@ -1193,7 +1214,7 @@
    ],
    "provenance": "Built from https://www.bankofengland.co.uk/museum as fetched on 2026-09-22. The page calls itself “Museum”. Confirmed on the page: “Free to visit”; “Monday to Friday, 10am to 5pm”.",
    "verified_on": "2026-09-22",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_engineering_outreach-f46fbb296147",
@@ -1227,7 +1248,7 @@
    ],
    "provenance": "Built from https://www.eng.cam.ac.uk/outreach as fetched on 2026-09-22. The page calls itself “Schools and Community Outreach”.",
    "verified_on": "2026-09-22",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museum_technology-04ee29daeeac",
@@ -1258,7 +1279,7 @@
    ],
    "provenance": "Built from https://www.museumoftechnology.com/whats-on/ as fetched on 2026-09-22. The page calls itself “Events — Cambridge Museum of Technology”.",
    "verified_on": "2026-09-22",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-6e1d361b0f5f",
@@ -1303,7 +1324,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-a45dfe30e8ff",
@@ -1348,7 +1369,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "old_bailey-8b62944aa8c4",
@@ -1382,7 +1403,7 @@
    ],
    "provenance": "Built from https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court as fetched on 2026-09-22. The page calls itself “Central Criminal Court”. Confirmed on the page: “no admission for children under 14”; “photographic identification”.",
    "verified_on": "2026-09-22",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "science_museum-97a747036909",
@@ -1394,14 +1415,17 @@
    "all_day": true,
    "ongoing": false,
    "anytime": true,
-   "when_text": "Any time during museum opening hours",
+   "when_text": "Open daily; see the museum page for hours",
    "status": "scheduled",
-   "summary": "A gallery built around technician jobs rather than school subjects.\n",
+   "summary": "Step into an interactive world of careers and take a peek behind the scenes in our brand new gallery.",
    "venue_name": "Science Museum, Exhibition Road",
    "city": "London",
    "lat": 51.4978,
    "lon": -0.1745,
    "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
    "topics": [
     "Careers",
     "Energy",
@@ -1416,11 +1440,9 @@
     "Medicine & health",
     "Teaching & outreach"
    ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "provenance": "Built from https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery as fetched on 2026-09-22. The page no longer mentions “Technicians”, so it may have been repurposed — check the link. NOT found on the page, so not claimed here: “Free entry”; “Open daily”. The venue refused automated access (HTTPError: 403 Client Error: Forbidden for url: https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery), so nothing was confirmed today — open the link and check.",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "provenance": "Built from https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery as fetched on 2026-09-22. The page calls itself “Technicians: The David Sainsbury Gallery | Science Museum”. Confirmed on the page: “Free entry”; “Open daily”.",
+   "verified_on": "2026-09-22",
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "supreme_court-f670595e50c6",
@@ -1456,7 +1478,7 @@
    ],
    "provenance": "Built from https://www.supremecourt.uk/tours as fetched on 2026-09-22. The page calls itself “Tours - UK Supreme Court”. Confirmed on the page: “Monday to Friday during term times”.",
    "verified_on": "2026-09-22",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-fe2d4bf2e764",
@@ -1501,7 +1523,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "design_museum-e2ddddfff9fb",
@@ -1537,7 +1559,118 @@
    ],
    "provenance": "Built from https://designmuseum.org/whats-on as fetched on 2026-09-22. The page calls itself “What's on”.",
    "verified_on": "2026-09-22",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-2766a3a04862",
+   "title": "Coaching sessions 2 & 3: Research viability and business planning",
+   "url": "https://events.bl.uk/events/coaching-sessions-2-3-research-viability-and-business-planning",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-22T10:00:00+01:00",
+   "end": "2026-12-17T13:00:00+00:00",
+   "all_day": false,
+   "time_text": "Tuesday 22 September 10.00 – Thursday 17 December 13.00",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "These coaching sessions will guide you through the fundamentals of starting a business. Working with a small group and supported by a SFEDI accredited business coach, you'll have the opportunity to develop your ideas and explore your business ambitions.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership",
+    "Research & discovery"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-7ee7d664317d",
+   "title": "Business Fundamentals: Sales",
+   "url": "https://events.bl.uk/events/business-fundamentals-sales",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-22T11:00:00+01:00",
+   "all_day": false,
+   "time_text": "Tuesday 22 September 11.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Online session to give you a clearer, practical understanding of the sales funnel (customer journey) — and how to guide people from awareness and interest through to purchase and retention, so your creative business can grow in a way that feels sustainable and aligned.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-4782144c6613",
+   "title": "What is a trade mark and how to search for one?",
+   "url": "https://events.bl.uk/events/what-is-a-trade-mark-and-how-to-search-for-one",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-22T12:00:00+01:00",
+   "all_day": false,
+   "time_text": "Tuesday 22 September 12.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Customers need to be able to identify your business from your competition in a highly competitive market place.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-9c9acacd8ede",
+   "title": "Coaching session 4: Financial planning",
+   "url": "https://events.bl.uk/events/coaching-session-4-financial-planning",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-23T12:00:00+01:00",
+   "end": "2026-12-18T11:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 23 September 12.00 – Friday 18 December 11.00",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "These coaching sessions will guide you through the fundamentals of starting a business. Working with a small group and supported by a SFEDI accredited business coach, you'll have the opportunity to develop your ideas and explore your business ambitions.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Business & entrepreneurship",
+    "Finance & economics"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-33e86c4ed99d",
@@ -1573,7 +1706,7 @@
     "Earth & geoscience",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-ca57b53f68c9",
@@ -1612,39 +1745,37 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
-   "id": "lse_events-08d111cf62a0",
-   "title": "The road to COP32: an African agenda for climate action and economic development",
-   "url": "https://www.lse.ac.uk/events/african-agenda-for-climate-action",
-   "source": "lse_events",
-   "source_name": "LSE public events",
-   "start": "2026-09-23T18:00:00+01:00",
-   "all_day": true,
+   "id": "british_library-d84901d461f2",
+   "title": "Legal Storyteller Live!",
+   "url": "https://events.bl.uk/events/legal-storyteller-live",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-23T17:30:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 23 September 17.30",
    "ongoing": false,
    "anytime": false,
    "status": "scheduled",
-   "summary": "Wednesday 23 September 2026 6pm - 7.30pm",
-   "venue_name": "In-person and online public event (Old Theatre, Old Building)",
+   "summary": "Gain practical insights from business owners’ experiences tackling legal issues.",
+   "venue_name": "British Library, St Pancras",
    "city": "London",
-   "lat": 51.5144,
-   "lon": -0.1165,
+   "lat": 51.5299,
+   "lon": -0.1276,
    "online": false,
-   "topics": [
-    "Economics",
-    "Public policy",
-    "Law",
-    "Politics",
-    "Society"
-   ],
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
    "careers": [
-    "Environment & climate",
-    "Finance & economics",
-    "Law & justice",
-    "Politics & public service"
+    "Business & entrepreneurship",
+    "Law & justice"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-7885ec4ec678",
@@ -1680,7 +1811,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "lse_events-574d133b128f",
@@ -1717,7 +1848,40 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "lse_events-aee8237b7c49",
+   "title": "Innovation and energy for a sustainable future",
+   "url": "https://www.lse.ac.uk/events/innovation-energy-technology",
+   "source": "lse_events",
+   "source_name": "LSE public events",
+   "start": "2026-09-24T18:30:00+01:00",
+   "end": "2026-09-24T18:30:00+01:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Thursday 24 September 2026 6.30pm - 8pm",
+   "venue_name": "In-person and online public event (Old Theatre, Old Building)",
+   "city": "London",
+   "lat": 51.5144,
+   "lon": -0.1165,
+   "online": false,
+   "topics": [
+    "Economics",
+    "Public policy",
+    "Law",
+    "Politics",
+    "Society"
+   ],
+   "careers": [
+    "Environment & climate",
+    "Finance & economics",
+    "Law & justice",
+    "Politics & public service"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-8c5c680d1c28",
@@ -1742,7 +1906,7 @@
     "Relaxed",
     "Speech-to-text"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-e3feef4ee55e",
@@ -1787,7 +1951,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-b172fde26b0c",
@@ -1828,7 +1992,7 @@
     "Computing & AI",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-005786aec196",
@@ -1872,7 +2036,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-c23e0181852b",
@@ -1913,7 +2077,7 @@
     "Computing & AI",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-983d21df30d0",
@@ -1957,7 +2121,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-c5cbca843469",
@@ -2002,7 +2166,7 @@
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-5938e2a1b216",
@@ -2043,7 +2207,7 @@
     "Computing & AI",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-5b752852f1ef",
@@ -2084,7 +2248,7 @@
     "Computing & AI",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-00b290ba0562",
@@ -2128,7 +2292,67 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-708268b5ac4f",
+   "title": "Family Workshop: The Twirly Wiggly Story, Craft & Dance",
+   "url": "https://events.bl.uk/events/family-workshop-the-twirly-wiggly-story",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-25T09:45:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 25 September 9.45",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Finish your summer reading challenge with The Twirly Wiggly Dance.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-bcaba8aa61b9",
+   "title": "Start using social media for my small business",
+   "url": "https://events.bl.uk/events/start-using-social-media-for-my-small-business",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-25T13:00:00+01:00",
+   "end": "2026-10-23T14:30:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 25 September 13.00 – Friday 23 October 14.30",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Everyone seems to talk about social media these days, but how can Facebook, LinkedIn, YouTube, TikTok and blogging actually help your business?",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-7dc29f9d4f4e",
@@ -2165,7 +2389,7 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-bfe37ce01ac0",
@@ -2206,7 +2430,7 @@
     "Research & discovery",
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-8275d0352a94",
@@ -2246,7 +2470,7 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-8da5c4ae4736",
@@ -2281,7 +2505,7 @@
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-e840ef2bd18b",
@@ -2319,7 +2543,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-8c0e9873d8bd",
@@ -2354,7 +2578,195 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-83f9b605ac32",
+   "title": "Queer Archives Study Day",
+   "url": "https://events.bl.uk/events/queer-archives-study-day",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-28T10:00:00+01:00",
+   "all_day": false,
+   "time_text": "Monday 28 September 10.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A-Level students are invited to develop their critical thinking skills through the exploration of queer archival material.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "History & archaeology"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-eb4562a18c19",
+   "title": "Introduction to copyright for business",
+   "url": "https://events.bl.uk/events/introduction-to-copyright-for-business",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-28T11:00:00+01:00",
+   "end": "2026-10-22T12:00:00+01:00",
+   "all_day": false,
+   "time_text": "Monday 28 September 11.00 – Thursday 22 October 12.00",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Learn the basics of copyright and get an introduction to protecting and managing your copyright as well as using the work of others.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-d17cb0372cc2",
+   "title": "Inventors' Club",
+   "url": "https://events.bl.uk/events/inventors-club-2",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-28T18:00:00+01:00",
+   "all_day": false,
+   "time_text": "Monday 28 September 18.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Great ideas can change the world!",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-15b067c6916a",
+   "title": "American Writers’ Week",
+   "url": "https://events.bl.uk/events/american-writers-week",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-28T18:15:00+01:00",
+   "end": "2026-10-02T18:15:00+01:00",
+   "all_day": false,
+   "time_text": "Monday 28 September 18.15 – Friday 2 October 18.15",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Discover the full programme for this exciting week of American Writers.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Research & discovery",
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-d67fbb2d65f0",
+   "title": "American Writers’ Week: Joyce Carol Oates",
+   "url": "https://events.bl.uk/events/american-writers-week-joyce-carol-oates",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-28T18:15:00+01:00",
+   "all_day": false,
+   "time_text": "Monday 28 September 18.15",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "In conversation with the celebrated author.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "lse_events-ff5c8a2d1803",
+   "title": "Eclipsing the West? China's tech titans and the new global power shift",
+   "url": "https://www.lse.ac.uk/school-of-public-policy/events/2026-27/eclipsing-the-west-chinas-tech-titans-and-the-new-global-power-shift",
+   "source": "lse_events",
+   "source_name": "LSE public events",
+   "start": "2026-09-28T18:30:00+01:00",
+   "end": "2026-09-28T18:30:00+01:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Monday 28 September 2026 6.30pm - 8pm",
+   "venue_name": "In-person and online public event (Old Theatre, Old Building)",
+   "city": "London",
+   "lat": 51.5144,
+   "lon": -0.1165,
+   "online": false,
+   "topics": [
+    "Economics",
+    "Public policy",
+    "Law",
+    "Politics",
+    "Society"
+   ],
+   "careers": [
+    "Finance & economics",
+    "Law & justice",
+    "Politics & public service"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-b893d3af284c",
+   "title": "American Writers’ Week: Alison Bechdel",
+   "url": "https://events.bl.uk/events/american-writers-week-alison-bechdel",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-28T20:00:00+01:00",
+   "all_day": false,
+   "time_text": "Monday 28 September 20.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "An evening with the much-loved writer and graphic novelist.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-09e6499eff6c",
@@ -2379,7 +2791,100 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-fcf74fb4392d",
+   "title": "American Writers’ Week: Armistead Maupin",
+   "url": "https://events.bl.uk/events/american-writers-week-armistead-maupin",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-29T18:15:00+01:00",
+   "all_day": false,
+   "time_text": "Tuesday 29 September 18.15",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "An audience with the beloved author of the bestselling Tales of the City series.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-329ae93eb5bb",
+   "title": "An American in London: A Celebration of Alison Lurie",
+   "url": "https://events.bl.uk/events/an-american-in-london-a-celebration-alison-lurie",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-29T19:00:00+01:00",
+   "all_day": false,
+   "time_text": "Tuesday 29 September 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "An evening celebrating the wit and world of Pulitzer Prize–winning novelist Alison Lurie.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-11e79dd7808b",
+   "title": "American Writers’ Week: Rabih Alameddine",
+   "url": "https://events.bl.uk/events/american-writers-week-rabih-alameddine",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-29T20:00:00+01:00",
+   "all_day": false,
+   "time_text": "Tuesday 29 September 20.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "In conversation with the daring, multi award-winning author.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-43549019bfaf",
+   "title": "EPICo Conference 2026",
+   "url": "https://events.bl.uk/events/epico-conference-2026",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-30T00:00:00+01:00",
+   "end": "2026-10-02T00:00:00+01:00",
+   "all_day": true,
+   "time_text": "Wednesday 30 September – Friday 2 October",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "The European Print Initiatives Collaboration (EPICo) Conference 2026.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-1fca761f0d36",
@@ -2416,21 +2921,48 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
-   "id": "lse_events-c58adf8b9fea",
-   "title": "Monetary clarity in the face of geoeconomic turmoil",
-   "url": "https://www.lse.ac.uk/cfm/events-and-seminars/cfm-rcm-lecture-with-francois-villeroy-de-galhau",
+   "id": "british_library-975f264fc25b",
+   "title": "American Writers’ Week: Jeanine Cummins",
+   "url": "https://events.bl.uk/events/american-writers-week-jeanine-cummins",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-30T18:15:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 30 September 18.15",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "With the bestselling author of Speak to Me of Home , and American Dirt .",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "lse_events-498d0e441d86",
+   "title": "Do social media platforms make people happier?",
+   "url": "https://www.lse.ac.uk/events/social-media-happy",
    "source": "lse_events",
    "source_name": "LSE public events",
-   "start": "2026-09-30T18:00:00+01:00",
+   "start": "2026-09-30T18:30:00+01:00",
+   "end": "2026-09-30T18:30:00+01:00",
    "all_day": true,
    "ongoing": false,
    "anytime": false,
    "status": "scheduled",
-   "summary": "Wednesday 30 September 2026 6pm - 7.15pm",
-   "venue_name": "In-person and online public event (Old Theatre, Old Building)",
+   "summary": "Wednesday 30 September 2026 6.30pm - 8pm",
+   "venue_name": "In-person and online public event (Sheikh Zayed Theatre, Cheng Kin Ku Building)",
    "city": "London",
    "lat": 51.5144,
    "lon": -0.1165,
@@ -2447,7 +2979,33 @@
     "Law & justice",
     "Politics & public service"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-c18df5d61ae9",
+   "title": "American Writers’ Week: Daniel Kraus",
+   "url": "https://events.bl.uk/events/american-writers-week-daniel-kraus",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-09-30T20:00:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 30 September 20.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A night with the maestro of fantasy horror and collaborator with Guillermo del Toro.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-fc4dc86d0fbd",
@@ -2487,7 +3045,7 @@
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-a1672004a12c",
@@ -2520,7 +3078,39 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "lse_events-30a41a39d85d",
+   "title": "Martino Tirimo (piano)",
+   "url": "https://www.lse.ac.uk/events/arts-and-music/martino-tirimo-piano",
+   "source": "lse_events",
+   "source_name": "LSE public events",
+   "start": "2026-10-01T13:05:00+01:00",
+   "end": "2026-10-01T13:05:00+01:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Thursday 1 October 2026 1.05pm - 2pm",
+   "venue_name": "In-person public event (Shaw Library, 6th floor, Old Building)",
+   "city": "London",
+   "lat": 51.5144,
+   "lon": -0.1165,
+   "online": false,
+   "topics": [
+    "Economics",
+    "Public policy",
+    "Law",
+    "Politics",
+    "Society"
+   ],
+   "careers": [
+    "Finance & economics",
+    "Law & justice",
+    "Politics & public service"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-c246b4c830d0",
@@ -2560,7 +3150,92 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-2c01216212d1",
+   "title": "American Writers’ Week: Viet Thanh Nguyen",
+   "url": "https://events.bl.uk/events/american-writers-week-viet-thanh-nguyen",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-01T18:15:00+01:00",
+   "all_day": false,
+   "time_text": "Thursday 1 October 18.15",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "The Pulitzer Prize–winning author in conversation with Nikesh Shukla.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "lse_events-d8233d877a0f",
+   "title": "America as a revisionist power (and what it means for the rest of the world)",
+   "url": "https://www.lse.ac.uk/events/america-as-a-revisionist-power",
+   "source": "lse_events",
+   "source_name": "LSE public events",
+   "start": "2026-10-01T18:30:00+01:00",
+   "end": "2026-10-01T18:30:00+01:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Thursday 1 October 2026 6.30pm - 8pm",
+   "venue_name": "In-person and online public event (Sheikh Zayed Theatre, Cheng Kin Ku Building)",
+   "city": "London",
+   "lat": 51.5144,
+   "lon": -0.1165,
+   "online": false,
+   "topics": [
+    "Economics",
+    "Public policy",
+    "Law",
+    "Politics",
+    "Society"
+   ],
+   "careers": [
+    "Finance & economics",
+    "Law & justice",
+    "Politics & public service"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-448622142d7c",
+   "title": "How to Start and Run a Successful Restaurant, Coffee Bar or Food Business",
+   "url": "https://events.bl.uk/events/how-to-start-and-run-a-successful-restaurant-coffee-bar-or-food-business",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-02T10:00:00+01:00",
+   "end": "2026-11-06T10:00:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 2 October 10.00 – Friday 6 November 10.00",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Explore the best ways of opening and running a viable and profitable food business like a cafe, restaurant, bakery, or cake shop!",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-e5ca129c9091",
@@ -2593,7 +3268,7 @@
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-e65c82db5b79",
@@ -2631,7 +3306,33 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-fc9210e0abc2",
+   "title": "American Writers’ Week: Katie Kitamura",
+   "url": "https://events.bl.uk/events/american-writers-week-katie-kitamura",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-02T18:15:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 2 October 18.15",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "With the Booker Prize short listed author of Audition .",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-1eefa497a5c4",
@@ -2676,7 +3377,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-7abe45c5e1b0",
@@ -2704,7 +3405,7 @@
     "families"
    ],
    "age_text": "Families",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-b1b3584560e8",
@@ -2732,7 +3433,7 @@
     "Hearing loop",
     "Relaxed"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-6f7a96b6ffea",
@@ -2773,7 +3474,7 @@
     "Chemistry & materials",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-ffca50158c3d",
@@ -2814,7 +3515,93 @@
     "Environment & climate",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-11633ec81e5b",
+   "title": "Family Workshop: Gaia & Luna Dance Adventure",
+   "url": "https://events.bl.uk/events/family-workshop-gaia-luna-dance-adventure",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-04T13:30:00+01:00",
+   "end": "2026-10-04T13:30:00+01:00",
+   "all_day": false,
+   "time_text": "Sunday 4 October, 11.15 and 13.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Move with us as we embark on a dance adventure.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Arts & performance"
+   ],
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-bce86d8a47d7",
+   "title": "Yugoslavism and its migrations: new directions in Yugoslav studies",
+   "url": "https://events.bl.uk/events/yugoslavism-and-its-migrations-new-directions",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-05T16:00:00+01:00",
+   "all_day": false,
+   "time_text": "Monday 5 October 16.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Yugoslavism was never confined to a map.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "lse_events-ab8c277f1557",
+   "title": "Socialism after AI",
+   "url": "https://www.lse.ac.uk/events/ai-socialism",
+   "source": "lse_events",
+   "source_name": "LSE public events",
+   "start": "2026-10-05T18:30:00+01:00",
+   "end": "2026-10-05T18:30:00+01:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Monday 5 October 2026 6.30pm - 8pm",
+   "venue_name": "In-person and online public event (Sheikh Zayed Theatre, Cheng Kin Ku Building)",
+   "city": "London",
+   "lat": 51.5144,
+   "lon": -0.1165,
+   "online": false,
+   "topics": [
+    "Economics",
+    "Public policy",
+    "Law",
+    "Politics",
+    "Society"
+   ],
+   "careers": [
+    "Computing & AI",
+    "Finance & economics",
+    "Law & justice",
+    "Politics & public service"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-87853ef4cc0b",
@@ -2857,7 +3644,27 @@
     "Data & quantitative analysis",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-4fb82e7ad197",
+   "title": "Chapter: Once Upon a Book",
+   "url": "https://events.bl.uk/events/chapter-once-upon-a-book",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-06T18:30:00+01:00",
+   "all_day": false,
+   "time_text": "Tuesday 6 October 18.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Chapter and Vintage Books present Once Upon a Book at the British Library, hosted by Tanya Burr.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-1a2dbe4fd934",
@@ -2896,7 +3703,37 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-2bfd9a151859",
+   "title": "Soul Trader: Build your business by heart",
+   "url": "https://events.bl.uk/events/soul-trader-build-your-business-by-heart",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-07T10:00:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 7 October 10.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Join leading life & business coach Rasheed Ogunlaru author of Soul Trader, to learn how to build an authentic, rewarding business.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Design & making",
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-ffbc9e810a76",
@@ -2932,7 +3769,7 @@
     "Earth & geoscience",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-2d7f2e5a1423",
@@ -2969,7 +3806,57 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-0d33d53a16ac",
+   "title": "Coaching session 1: Is starting a business for me?",
+   "url": "https://events.bl.uk/events/coaching-session-1-is-starting-a-business-for-me",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-07T13:30:00+01:00",
+   "end": "2026-12-17T10:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 7 October 13.30 – Thursday 17 December 10.00",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "These coaching sessions will guide you through the fundamentals of starting a business. Working with a small group and supported by a SFEDI accredited business coach, you'll have the opportunity to develop your ideas and explore your business ambitions.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-ccd2a4a06257",
+   "title": "Networking for Success – Express",
+   "url": "https://events.bl.uk/events/networking-for-success-express",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-07T14:00:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 7 October 14.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Join Coach-Speaker-Author Rasheed Ogunlaru for this online event to help you learn to network effectively, strategically and authentically.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-00cc2ddf37b4",
@@ -3009,7 +3896,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-07aaa225dbff",
@@ -3043,7 +3930,30 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-cacacb222ce1",
+   "title": "How to Build a Library",
+   "url": "https://events.bl.uk/events/how-to-build-a-library",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-08T18:30:00+01:00",
+   "all_day": false,
+   "time_text": "Thursday 8 October 18.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A screening of the acclaimed documentary followed by Q&A.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-4111a681fab3",
@@ -3076,7 +3986,27 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-5640dd049c94",
+   "title": "PEN Pinter Prize 2026: Jacqueline Rose",
+   "url": "https://events.bl.uk/events/pen-pinter-prize-2026-jacqueline-rose",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-08T19:00:00+01:00",
+   "all_day": false,
+   "time_text": "Thursday 8 October 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "The annual prize in memory of Nobel-Laureate playwright Harold Pinter.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-3b2681b036cf",
@@ -3115,7 +4045,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-272fb5e4c01a",
@@ -3150,7 +4080,7 @@
     "Arts & performance",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-14cc11f82c4a",
@@ -3184,7 +4114,7 @@
    "topics": [
     "Workshops and talks"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-f761df9852e5",
@@ -3222,7 +4152,7 @@
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "wellcome-2de3f122a5bb",
@@ -3248,7 +4178,27 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-351fb59852bb",
+   "title": "The Wordsworth Lecture: The Poetry That Changed The World",
+   "url": "https://events.bl.uk/events/wordsworth-lecture-2026",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-09T19:00:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 9 October 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "William and Dorothy Wordsworth at Rydal.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-475b25f701d1",
@@ -3284,7 +4234,7 @@
    "topics": [
     "Talks and shows"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-fc38256ffda8",
@@ -3321,7 +4271,7 @@
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-626c4900ca2e",
@@ -3352,7 +4302,7 @@
    "topics": [
     "Family events"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-10a922c97d3d",
@@ -3390,7 +4340,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-ed596a329c28",
@@ -3425,7 +4375,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-46beb5855851",
@@ -3466,7 +4416,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-2a1651991a26",
@@ -3497,7 +4447,7 @@
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-dd5ee74c7f64",
@@ -3538,7 +4488,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-ac9ae847bf35",
@@ -3573,7 +4523,33 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-6f07fd577cc2",
+   "title": "Getting It Made",
+   "url": "https://events.bl.uk/events/getting-it-made",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-13T14:00:00+01:00",
+   "all_day": false,
+   "time_text": "Tuesday 13 October 14.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A practical and inspiring webinar focusing on sourcing and production management for fashion and accessory brands",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "royal_society-b3c97c41d675",
@@ -3600,7 +4576,61 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-8473d72b5809",
+   "title": "Get Published",
+   "url": "https://events.bl.uk/events/get-published",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-14T10:00:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 14 October 10.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Have you written (or are writing) a book and want to get it published? This workshop covers both going via a publisher and self-publishing.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Design & making",
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-37a6a9e2de22",
+   "title": "Live schools' broadcast: the Bayeux Tapestry",
+   "url": "https://events.bl.uk/events/live-schools-broadcast-the-bayeux-tapestry",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-14T10:30:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 14 October 10.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "This British Museum session is delivered in partnership with the British Library, English Heritage and Norwich Museum Service.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Film, animation & media",
+    "History & archaeology"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-7c065ee06379",
@@ -3637,7 +4667,30 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-6de0803d88ef",
+   "title": "Introduction to Intellectual Property",
+   "url": "https://events.bl.uk/events/introduction-to-intellectual-property",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-14T14:00:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 14 October 14.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "An understanding of intellectual property and its protection is vital for anyone with an idea.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-642789d28837",
@@ -3683,7 +4736,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-9672b1283b34",
@@ -3715,7 +4768,38 @@
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-08813fadc97e",
+   "title": "Introduction to registered designs",
+   "url": "https://events.bl.uk/events/introduction-to-registered-designs",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-15T12:00:00+01:00",
+   "all_day": false,
+   "time_text": "Thursday 15 October 12.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Almost every organisation has intellectual property of some sort – this series of webinars helps businesses to understand and protect it.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship",
+    "Design, making & architecture"
+   ],
+   "work_styles": [
+    "Design & making",
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-54d93db79900",
@@ -3754,7 +4838,30 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-019d6b83a63b",
+   "title": "Study Day: Oscar Wilde",
+   "url": "https://events.bl.uk/events/study-day-oscar-wilde",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-16T10:30:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 16 October 10.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A Level students will explore the life and work of Oscar Wilde, with access to rare archival and manuscript material.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-10ec7cddd538",
@@ -3792,7 +4899,58 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-a8a78fab0007",
+   "title": "GRANTfinder – Financial support for your business and community",
+   "url": "https://events.bl.uk/events/grant-finder-financial-support-for-your-business-and-community",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-16T13:30:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 16 October 13.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "During this webinar the British Library will show you the GRANTfinder business information database.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship",
+    "Finance & economics"
+   ],
+   "work_styles": [
+    "Enterprise & leadership",
+    "Working with people"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-b794bd49b3c5",
+   "title": "Launch of Somali Week Festival 2026",
+   "url": "https://events.bl.uk/events/somali-week-festival-launch-2026",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-16T19:00:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 16 October 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "The Somali Week Festival launch returns to the British Library.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-57cca85a3c5b",
@@ -3832,7 +4990,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-35ee7be71de7",
@@ -3873,7 +5031,7 @@
     "Computing & AI",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-b5aea6e252e2",
@@ -3914,7 +5072,31 @@
     "Biology, ecology & vets",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-9a3ef9b6e9d4",
+   "title": "Family Festival: Stories, Sign and Shine",
+   "url": "https://events.bl.uk/events/family-festival-stories-sign-and-shine",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-17T16:00:00+01:00",
+   "end": "2026-10-17T16:00:00+01:00",
+   "all_day": false,
+   "time_text": "Saturday 17 October, 12.00 – 16.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Take part in this exciting day inspired by wondrous stories, both real and imaginary.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-05353b07bc7e",
@@ -3955,7 +5137,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-2a55152a32f0",
@@ -3983,7 +5165,7 @@
     "families"
    ],
    "age_text": "All ages, Families",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-91087ca9a545",
@@ -4024,7 +5206,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-43886420d6ed",
@@ -4068,7 +5250,27 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-83c17f9c1532",
+   "title": "God Save the Queens!",
+   "url": "https://events.bl.uk/events/god-save-the-queens",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-19T19:00:00+01:00",
+   "all_day": false,
+   "time_text": "Monday 19 October 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "The women who changed punk.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-dd29a54c9dce",
@@ -4106,7 +5308,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-371e9b5ad7a9",
@@ -4142,7 +5344,37 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-0d44edc26c88",
+   "title": "How do I research my market?",
+   "url": "https://events.bl.uk/events/how-do-i-research-my-market",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-20T10:30:00+01:00",
+   "all_day": false,
+   "time_text": "Tuesday 20 October 10.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A guide to using published market research sources and field research to find information on your business sector.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership",
+    "Research & discovery"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-3bcf4a620f28",
@@ -4178,7 +5410,34 @@
     "History & archaeology"
    ],
    "provenance": "also listed by cam_museums",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-65a1b6f4119b",
+   "title": "Green Libraries Week: Schools",
+   "url": "https://events.bl.uk/events/green-libraries-week-schools",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-21T00:00:00+01:00",
+   "end": "2026-10-23T00:00:00+01:00",
+   "all_day": true,
+   "time_text": "Wednesday 21 October – Friday 23 October",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Navigating climate mis- and disinformation is the focus of this year’s Green Libraries Week for schools.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Environment & climate"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-a7d11c52816f",
@@ -4214,7 +5473,7 @@
     "Earth & geoscience",
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-438e110159e5",
@@ -4254,7 +5513,64 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-7d644d89ce3d",
+   "title": "Securing Your Payments",
+   "url": "https://events.bl.uk/events/securing-your-payments",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-21T15:00:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 21 October 15.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Learn about how to build better payment strategies and tackle payment struggles.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-3ad53ead63f4",
+   "title": "Cooling Without Air Conditioning: Passive Design Lessons from Traditional Islamic Architecture",
+   "url": "https://events.bl.uk/events/cooling-without-air-conditioning-passive-design-lessons-from-traditional-islamic-architecture",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-21T18:30:00+01:00",
+   "all_day": false,
+   "time_text": "Wednesday 21 October 18.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A fascinating lecture by our Visiting Research Fellow for Environment and Sustainability.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Design, making & architecture",
+    "Environment & climate"
+   ],
+   "work_styles": [
+    "Design & making",
+    "Research & discovery"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-f4c39d854a1c",
@@ -4296,7 +5612,7 @@
     "Research & discovery",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-06ca6bcfed82",
@@ -4336,7 +5652,87 @@
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-285d688cb5ed",
+   "title": "Writing a Greener Future: A Creative Writing Workshop for Young Writers",
+   "url": "https://events.bl.uk/events/writing-a-greener-future-a-creative-writing-workshop-for-young-writers",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-22T17:00:00+01:00",
+   "all_day": false,
+   "time_text": "Thursday 22 October 17.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Join award-winning author Laura Baggaley for a creative writing workshop exploring thrutopian futures – imagining paths from today toward something better.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Design & making",
+    "Working with people",
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-016e1ccbf3a2",
+   "title": "Inspiring Entrepreneurs: Business Rooted in Community",
+   "url": "https://events.bl.uk/events/inspiring-entrepreneurs-business-rooted-in-community",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-22T18:30:00+01:00",
+   "all_day": false,
+   "time_text": "Thursday 22 October 18.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "This Black History Month, we’re spotlighting the founders who don’t just build businesses, they build up entire communities.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Business & entrepreneurship",
+    "History & archaeology"
+   ],
+   "work_styles": [
+    "Design & making",
+    "Enterprise & leadership",
+    "Working with people"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-2eee09a05014",
+   "title": "Beans in Britain: Fact and Fiction",
+   "url": "https://events.bl.uk/events/beans-in-britain-fact-and-fiction",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-22T19:00:00+01:00",
+   "all_day": false,
+   "time_text": "Thursday 22 October 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Nutritious, versatile, affordable and delicious… Why don’t we all eat more beans?",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-391e8eba48f3",
@@ -4375,7 +5771,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-96e139c65482",
@@ -4416,7 +5812,7 @@
     "Computing & AI",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-2491c14bc083",
@@ -4458,7 +5854,33 @@
     "Research & discovery",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-b74a4fbec76e",
+   "title": "Reimagining Edward Elgar: Past, Present and Future",
+   "url": "https://events.bl.uk/events/reimagining-edward-elgar-past-present-and-future",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-23T10:00:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 23 October 10.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Explore the musical world of Edward Elgar.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Arts & performance"
+   ],
+   "work_styles": [
+    "Creative production"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-cfd1760c0b11",
@@ -4490,7 +5912,32 @@
     "Family events",
     "Tours and trails"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-66c90760a975",
+   "title": "Green Libraries Week: Climate Fiction with Richard Lambert",
+   "url": "https://events.bl.uk/events/richard-lambert-celebrates-green-libraries-week",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-23T13:00:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 23 October 13.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Environment & climate"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-d740b42077a0",
@@ -4525,7 +5972,106 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-73632ec5d3ff",
+   "title": "Sustainable Collecting at the British Library",
+   "url": "https://events.bl.uk/events/sustainable-collecting-at-the-british-library",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-23T14:00:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 23 October 14.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Hear how the British Library is improving the sustainability of the collection.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Environment & climate"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-0eec2761c3d1",
+   "title": "Writing Climate Fiction That Changes Minds",
+   "url": "https://events.bl.uk/events/writing-climate-fiction-that-changes-minds",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-23T18:00:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 23 October 18.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Join us to explore how can we communicate climate change in a way that inspires joyful action rather than climate anxiety.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Environment & climate",
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-b3f7caa6e485",
+   "title": "John Berger: Do You Know What I Watch?",
+   "url": "https://events.bl.uk/events/john-berger-do-you-know-what-i-watch",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-23T19:00:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 23 October 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A choral reading by Katya and Yves Berger, following animal traces in John Berger’s work.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Biology, ecology & vets"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-5778fe836b64",
+   "title": "Dynasties in Dialogue: The Tang, the Qing, and China Today",
+   "url": "https://events.bl.uk/events/dynasties-in-dialogue",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-23T19:15:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 23 October 19.15",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Xiaolu Guo and Paul French explore how China's imperial past continues to shape its present.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-124255204917",
@@ -4572,7 +6118,7 @@
     "Design & making",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-0106d001e1fe",
@@ -4610,7 +6156,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-b2cea78acc1c",
@@ -4641,7 +6187,7 @@
    ],
    "age_min": 12,
    "age_text": "12+",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-4c74cef3b4f9",
@@ -4681,7 +6227,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-4808d738a5ea",
@@ -4712,7 +6258,7 @@
    "topics": [
     "Family events"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-d04fd11ee770",
@@ -4756,7 +6302,7 @@
     "Maths, data & statistics",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-e259ea2b1c6e",
@@ -4791,7 +6337,7 @@
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-649effcc8719",
@@ -4826,7 +6372,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-308b03e236b6",
@@ -4866,7 +6412,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "hunterian_museum-c736074c8a19",
@@ -4876,7 +6422,7 @@
    "source_name": "Hunterian Museum",
    "start": "2026-10-26T10:00:00+00:00",
    "end": "2026-10-26T10:00:00+00:00",
-   "all_day": true,
+   "all_day": false,
    "time_text": "Event 26th October 2026 10:00–14:00",
    "ongoing": false,
    "anytime": false,
@@ -4896,7 +6442,59 @@
     "History & archaeology",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-fa22733ab3ad",
+   "title": "Creative Writing Masterclass: Writing Memories Together",
+   "url": "https://events.bl.uk/events/creative-writing-masterclass-writing-memories-together",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-26T10:30:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 26 October 10.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Write creatively with a friend or family member.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-b5eb39b5f5d0",
+   "title": "National Emergency Briefing – Community Screening",
+   "url": "https://events.bl.uk/events/national-emergency-briefing-community-screening",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-26T12:30:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 26 October 12.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Screening followed by a Q&A.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "work_styles": [
+    "Working with people"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-afa0b6c00e10",
@@ -4927,7 +6525,63 @@
    "topics": [
     "Family events"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-9aee2d176064",
+   "title": "Setting up a Staff Sustainability Network",
+   "url": "https://events.bl.uk/events/setting-up-a-staff-sustainability-network",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-26T14:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 26 October 14.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Discover how staff at the British Library created an impactful Sustainability Staff Network.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Environment & climate"
+   ],
+   "work_styles": [
+    "Research & discovery"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-c88b0314c8e0",
+   "title": "Libraries and Positive Climate Action: Climate Resilience",
+   "url": "https://events.bl.uk/events/libraries-and-positive-climate-action-climate-resilience",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-26T16:00:00+00:00",
+   "end": "2026-12-01T16:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 26 October 16.00 – Tuesday 1 December 16.00",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Hear how libraries and cultural organisations around the world are responding to the challenges of climate change.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Environment & climate"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-461e6949371a",
@@ -4966,7 +6620,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-3d51a2da2d5f",
@@ -5004,7 +6658,7 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-45caeadab616",
@@ -5044,7 +6698,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "royal_society-a353065dde7c",
@@ -5071,7 +6725,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-1e664fedbf88",
@@ -5112,7 +6766,7 @@
     "Fieldwork & outdoors",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-8b5cca92eb3a",
@@ -5149,7 +6803,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "hunterian_museum-a9fa172b9d5d",
@@ -5159,7 +6813,7 @@
    "source_name": "Hunterian Museum",
    "start": "2026-10-28T11:00:00+00:00",
    "end": "2026-10-28T11:00:00+00:00",
-   "all_day": true,
+   "all_day": false,
    "time_text": "Event 28th October 2026 11:00–15:00",
    "ongoing": false,
    "anytime": false,
@@ -5182,7 +6836,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-e33563c20dbb",
@@ -5219,7 +6873,37 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-ed2fbc070346",
+   "title": "Start-up Stars: From purpose to profit",
+   "url": "https://events.bl.uk/events/start-up-stars-from-purpose-to-profit-growing-an-impact-led-business",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-28T18:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 28 October 18.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A conversation with purpose-driven founders exploring how they are turning environmental and social challenges into viable businesses.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship",
+    "Environment & climate"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-af399c12b963",
@@ -5260,7 +6944,57 @@
     "Fieldwork & outdoors",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-6b87909a9c3d",
+   "title": "Getting Started at the British Library for Postgraduate Researchers",
+   "url": "https://events.bl.uk/events/online-getting-started-at-the-british-library",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-29T14:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 29 October 14.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Understand the basics about using the Library, finding what you need and what opportunities are on offer.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "work_styles": [
+    "Research & discovery"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-ffdf35055753",
+   "title": "Agatha Christie: A World of Mystery",
+   "url": "https://events.bl.uk/exhibitions/agathachristie",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-30T00:00:00+00:00",
+   "end": "2027-06-20T00:00:00+01:00",
+   "all_day": true,
+   "time_text": "Friday 30 October 2026 – Sunday 20 June 2027",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A major exhibition on the woman behind the books.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "work_styles": [
+    "Creative production"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-63b240f097c7",
@@ -5297,7 +7031,53 @@
    "careers": [
     "Chemistry & materials"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-f2ccf55c82c9",
+   "title": "Pepperpots and Provision Grounds",
+   "url": "https://events.bl.uk/events/pepperpots-and-provision-grounds",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-31T11:00:00+00:00",
+   "all_day": false,
+   "time_text": "Saturday 31 October 11.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A recipe zine-making workshop that unearths food histories in Britain’s former Caribbean colonies within the Library’s archival collections.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-df952e63e48c",
+   "title": "Tales of the Weird – An Autumnal Festival",
+   "url": "https://events.bl.uk/events/tales-of-the-weird-festival",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-31T11:00:00+00:00",
+   "all_day": false,
+   "time_text": "Saturday 31 October 11.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "The British Library's annual encounter with strange, uncanny and chilling fiction.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-fe0ec65c0ebd",
@@ -5336,7 +7116,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-61b8e27c0ae5",
@@ -5377,7 +7157,7 @@
     "History & archaeology",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-b2f3fb137de7",
@@ -5417,7 +7197,7 @@
     "Chemistry & materials",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-4f26159db2c0",
@@ -5464,7 +7244,27 @@
     "Argument & advocacy",
     "Research & discovery"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-2d83b882d966",
+   "title": "China Miéville presents The Rouse",
+   "url": "https://events.bl.uk/events/china-mieville-presents-the-rouse",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-02T19:30:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 2 November 19.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A defining new work from the bestselling, award-winning master of uncanny fiction.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "royal_society-c4dea040b346",
@@ -5495,7 +7295,105 @@
     "Data & quantitative analysis",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-da1d28148fbb",
+   "title": "Teacher CPD: Oscar Wilde in Context",
+   "url": "https://events.bl.uk/events/teacher-cpd-oscar-wilde-in-context",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-04T16:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 4 November 16.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Get new inspiration, practical tips and resources for teaching Wilde's work drawing on unique sources from our collection.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Teaching & outreach"
+   ],
+   "work_styles": [
+    "Working with people"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-293816d1292c",
+   "title": "The Agatha Cure",
+   "url": "https://events.bl.uk/events/the-agatha-cure",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-05T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 5 November 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "The Queen of Crime and the power of reading.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-4b0dca8e91df",
+   "title": "Comics and Creatures Create-along: Make Your Own Magical Worlds",
+   "url": "https://events.bl.uk/events/comics-and-creatures-make-your-own-magical-worlds",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-06T11:00:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 6 November 11.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A livestreamed comics masterclass for Primary school to explore magical creatures and comics creation, with Thiago de Moraes.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-8962eeb19383",
+   "title": "Doctoral Open Day: Music, Sound and Vision",
+   "url": "https://events.bl.uk/events/music-sound-vision-doctoral-day",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-06T11:30:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 6 November 11.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Explore our music, sound and vision, and visual arts collections",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Arts & performance"
+   ],
+   "work_styles": [
+    "Creative production"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-2340c13745cd",
@@ -5533,7 +7431,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-ac892f965247",
@@ -5568,7 +7466,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-d3c9ac292ac8",
@@ -5611,7 +7509,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-8edcf821e710",
@@ -5655,7 +7553,34 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-80e7d341ed62",
+   "title": "US Politics Today",
+   "url": "https://events.bl.uk/events/us-politics-today",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-09T10:30:00+00:00",
+   "end": "2026-11-13T13:30:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 9 10.30 – Friday 13 November 13.30",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Join two former Members of Congress – one Democrat and one Republican – for a lively discussion of major themes in contemporary American politics.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Politics & public service"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "royal_society-f8403c692c45",
@@ -5682,7 +7607,7 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-1f6ced3df955",
@@ -5717,7 +7642,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "royal_society-647045511c97",
@@ -5741,7 +7666,7 @@
    "topics": [
     "Research science"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-949904d8613e",
@@ -5783,7 +7708,53 @@
     "Computing & AI",
     "Design, making & architecture"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-3c8dfcd88e60",
+   "title": "The Roger Ely Experience",
+   "url": "https://events.bl.uk/events/the-roger-ely-experience",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-12T18:15:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 12 November 18.15",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "An evening celebrating the life and legacy of the counterculture artist, publisher, archivist, curator and collector Roger Ely.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-0a9917c93bc0",
+   "title": "The Poetry Hour: The Poetry of The First World War",
+   "url": "https://events.bl.uk/events/the-poetry-hour-the-poetry-of-the-first-world-war",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-12T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 12 November 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "The Josephine Hart Poetry Hour with special guest readers.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-67a948be31db",
@@ -5815,7 +7786,7 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-192b691164f8",
@@ -5852,7 +7823,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-c0c8aea85217",
@@ -5894,7 +7865,30 @@
     "Medicine & health",
     "Teaching & outreach"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-821130fb39b7",
+   "title": "The Pen: Simon Garfield in Conversation with Jeremy Deller",
+   "url": "https://events.bl.uk/events/the-pen-simon-garfield",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-13T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 13 November 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Simon Garfield and Jeremy Deller explore the history of the pen and it’s enduring place in our cultural and daily lives.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "History & archaeology"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-594c9327a8bf",
@@ -5938,7 +7932,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "va_young_people-5f07cc85dcea",
@@ -5980,7 +7974,7 @@
     "Design, making & architecture",
     "Teaching & outreach"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-e53ccb2f0998",
@@ -6022,7 +8016,7 @@
     "History & archaeology",
     "Maths, data & statistics"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-aaa49af1bdec",
@@ -6066,7 +8060,51 @@
     "Maths, data & statistics",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-ff308069d447",
+   "title": "The Conquest of Knowledge: Translation and Civilization from Antiquity to the Renaissance",
+   "url": "https://events.bl.uk/events/panizzi-lecture-2026",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-16T18:30:00+00:00",
+   "end": "2026-11-23T18:30:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 16 18.30 – Monday 23 November 18.30",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Panizzi Lectures 2026, delivered by Professor Dimitri Gutas.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-8e538039092a",
+   "title": "Hercule Poirot and Friends",
+   "url": "https://events.bl.uk/events/hercule-poirot-and-friends",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-16T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 16 November 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Sophie Hannah and expert guests on the man behind the moustache...",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-f89890760018",
@@ -6108,7 +8146,7 @@
     "Environment & climate",
     "Physics & space"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-44524d9a3101",
@@ -6146,7 +8184,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-8dc5f7904f3f",
@@ -6182,7 +8220,33 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-f40f9dc9136e",
+   "title": "Diversifying Children’s Books in the Classroom: Beyond the Secret Garden",
+   "url": "https://events.bl.uk/events/diversifying-childrens-books-in-the-classroom-beyond-the-secret-garden",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-18T13:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 18 November 13.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Find new ways to introduce and discuss representation in children’s books.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "work_styles": [
+    "Fieldwork & outdoors"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-cce8e893be68",
@@ -6218,7 +8282,116 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-c8d5a09270ec",
+   "title": "Pride and Prejudice",
+   "url": "https://events.bl.uk/events/pride-and-prejudice",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-18T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 18 November 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "with Dolly Alderton and guests.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-11fc35ee51cf",
+   "title": "Keeping Your Curriculum Broad and Balanced: Celebrating the Arts and Humanities in Primary Schools",
+   "url": "https://events.bl.uk/events/keeping-your-curriculum-broad-and-balanced",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-19T09:30:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 19 November 9.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Join the Helen Hamlyn Centre for Pedagogy for an inspiring in-person conference exploring the important place of the arts and humanities in primary schools.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Arts & performance"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-2f556806b668",
+   "title": "Roger Ackroyd: The Killer Murder",
+   "url": "https://events.bl.uk/events/roger-ackroyd-the-killer-murder",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-19T20:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 19 November 20.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "The book that changed Christie's career – with Harriet Tyce, Tony Medawar and Victoria Dowd",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-d3565e89b3ac",
+   "title": "Young Adult Crime Fiction Fest: Patrice Lawrence and Friends",
+   "url": "https://events.bl.uk/events/young-adult-crime-fiction-fest-patrice-lawrence-and-friends",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-20T10:30:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 20 November 10.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Celebrate young adults crime fiction in this livestreamed author talk.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-1f784e140b77",
+   "title": "Young Adult Crime Fiction Fest: Lucy Foley and Friends",
+   "url": "https://events.bl.uk/events/young-adult-crime-fiction-fest-lucy-foley-and-friends",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-20T13:30:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 20 November 13.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Celebrate YA crime fiction in this online author talk.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-394c4272fa3f",
@@ -6253,7 +8426,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-882644f18884",
@@ -6291,7 +8464,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-91998b05e729",
@@ -6331,7 +8504,7 @@
     "Engineering",
     "Environment & climate"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-e325fc9d0e0e",
@@ -6371,7 +8544,56 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-0edb35c26ae0",
+   "title": "Young Adult Crime Fiction Fest: Benjamin Dean livestreamed workshop",
+   "url": "https://events.bl.uk/events/young-adult-crime-fiction-fest-benjamin-dean-livestreamed-workshop",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-23T13:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 23 November 13.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Celebrate young adult crime fiction with award-winning author Benjamin Dean.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-5374bc81d6dd",
+   "title": "Resistance: A History of Disability in Britain",
+   "url": "https://events.bl.uk/events/resistance-a-history-of-disability-in-britain",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-23T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 23 November 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Joined by Robin Ince, historian David Turner puts disabled people and their stories back at the heart of British history.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "History & archaeology"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "royal_society-ca04489aeea3",
@@ -6395,7 +8617,33 @@
    "topics": [
     "Research science"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-9d08ce65f456",
+   "title": "Start-up Day 2026",
+   "url": "https://events.bl.uk/events/start-up-day",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-24T08:30:00+00:00",
+   "all_day": false,
+   "time_text": "Tuesday 24 November 8.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Turn your idea into a business – in one action-packed day.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-049b1922cf6d",
@@ -6435,7 +8683,7 @@
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-86b1d55a9b99",
@@ -6473,7 +8721,60 @@
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-f2bddfe5705e",
+   "title": "Irish Writers' Weekend: Maggie O'Farrell",
+   "url": "https://events.bl.uk/events/irish-writers-weekend-maggie-ofarrell",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-27T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 27 November 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "In conversation with Martin Doyle.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-6ab23aabd183",
+   "title": "Irish Writers' Weekend",
+   "url": "https://events.bl.uk/events/irish-writers-weekend",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-28T11:00:00+00:00",
+   "end": "2026-11-29T11:00:00+00:00",
+   "all_day": false,
+   "time_text": "Saturday 28 11.00 – Sunday 29 November 11.00",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "With some of Ireland’s finest authors, poets and performers.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-b6f8cfc6c045",
@@ -6513,7 +8814,33 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-f0f5d395388d",
+   "title": "Christie: The Writer's Writer",
+   "url": "https://events.bl.uk/events/christie-the-writers-writer",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-30T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 30 November 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "with Jan Carson, Bobby Seagull, Shrabani Basu and Jeremy Vine.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-ebc036554bd3",
@@ -6549,7 +8876,47 @@
     "Creative production",
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-b663387f7752",
+   "title": "Christie Around the World",
+   "url": "https://events.bl.uk/events/christie-around-the-world",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-12-03T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 3 December 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Top crime trio Vaseem Khan, Victoria Dowd and Martin Edwards discuss the Queen of Crime's influence across the globe.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-c4d6fa6c395a",
+   "title": "Neneh & Andi: 45 years of Friendship, Family and Food",
+   "url": "https://events.bl.uk/events/neneh-andi-45-years-of-friendship-family-and-food",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-12-04T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 4 December 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "With Neneh Cherry and Andi Oliver.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-80da67245d01",
@@ -6587,7 +8954,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-868010850a3a",
@@ -6627,7 +8994,27 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-e1c0dada9d65",
+   "title": "Top Ten Christie Killings... In Reverse Order",
+   "url": "https://events.bl.uk/events/top-ten-christie-killings-in-reverse-order",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-12-07T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 7 December 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "An evening of terrible things happening to terrible people.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-823ea775d352",
@@ -6669,7 +9056,27 @@
     "Research & discovery",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-987823371ea0",
+   "title": "An Evening with Labi Siffre",
+   "url": "https://events.bl.uk/events/an-evening-with-labi-siffre",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-12-10T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 10 December 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A exclusive Classic Album Sundays conversation and listening event with the legendary-soul-folk singer, now acclaimed by new generations.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-8766a6a74e1b",
@@ -6701,7 +9108,7 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-77330ed2452b",
@@ -6736,7 +9143,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-b0bd615c33e9",
@@ -6773,7 +9180,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "hunterian_museum-be8b58037a9f",
@@ -6783,7 +9190,7 @@
    "source_name": "Hunterian Museum",
    "start": "2026-12-14T10:00:00+00:00",
    "end": "2026-12-14T10:00:00+00:00",
-   "all_day": true,
+   "all_day": false,
    "time_text": "Event 14th December 2026 10:00–15:00",
    "ongoing": false,
    "anytime": false,
@@ -6803,7 +9210,7 @@
     "History & archaeology",
     "Medicine & health"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-894fbb7137ce",
@@ -6839,7 +9246,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-5ea512f52b33",
@@ -6873,7 +9280,7 @@
    "topics": [
     "Talks and shows"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "rigb-f42d96ef0713",
@@ -6922,7 +9329,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-b1b3e9fcc8bf",
@@ -6958,7 +9365,7 @@
    "careers": [
     "Environment & climate"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-ac4a78bc11d0",
@@ -6998,7 +9405,30 @@
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-89faf41765c1",
+   "title": "Doctoral Open Day: British and European Collections from Antiquity to 1800",
+   "url": "https://events.bl.uk/events/doctoral-open-day-british-and-european-collections-from-antiquity-to-1800",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-01-22T11:30:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 22 January 2027 11.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Explore our collections covering Antiquity to 1800 in this Doctoral Open Day for PhD students.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "work_styles": [
+    "Research & discovery"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "talks_cam_darwin-f119efc01440",
@@ -7024,7 +9454,30 @@
     "Politics & public service"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-b8276c880616",
+   "title": "Quills and Calligraphy Masterclass",
+   "url": "https://events.bl.uk/events/quills-and-calligraphy",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-01-23T10:00:00+00:00",
+   "all_day": false,
+   "time_text": "Saturday 23 January 2027 10.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Learn the art of calligraphy with Patricia Lovett MBE.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Arts & performance"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-605bf757db33",
@@ -7060,7 +9513,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-5d7db1cd2ccb",
@@ -7100,7 +9553,30 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-91b9801324a2",
+   "title": "Miss Marple versus 2027",
+   "url": "https://events.bl.uk/events/miss-marple-versus-2027",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-01-28T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 28 January 2027, 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Lucy Foley, Kate Mosse and Natalie Haynes on the evolution of Miss Marple.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Biology, ecology & vets"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "talks_cam_darwin-47e5cd957554",
@@ -7123,7 +9599,7 @@
     "Public lecture"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-a74b713953dd",
@@ -7163,7 +9639,79 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-b97024ed3213",
+   "title": "Mysteries, Murders, Muddles and Mayhem!",
+   "url": "https://events.bl.uk/events/mysteries-murders-muddles-and-mayhem",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-02-01T10:30:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 1 February 10.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Expect crime capers, plot twists and draw-along fun!",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-60e4472e2425",
+   "title": "Teacher CPD: Shakespeare's Comedy in Context",
+   "url": "https://events.bl.uk/events/teacher-cpd-shakespeares-comedy-in-context",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-02-03T16:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 3 February 2027 16.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Get new critical perspectives, practical tips and resources for teaching Shakespeare's comedies drawing on unique sources from our collection.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Teaching & outreach"
+   ],
+   "work_styles": [
+    "Working with people"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-60de45f89362",
+   "title": "Agatha and Me: Inside A Life of Crime",
+   "url": "https://events.bl.uk/events/agatha-and-me-inside-a-life-of-crime",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-02-04T19:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 4 February 19.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Val McDermid, Steph McGovern and Ruth Ware with Stuart Maconie.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "talks_cam_darwin-80c80e7c862d",
@@ -7203,7 +9751,37 @@
     "Research & discovery"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-38680da4b6df",
+   "title": "LGBT+ History Month Study Day",
+   "url": "https://events.bl.uk/events/lgbt-history-month-study-day",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-02-10T00:00:00+00:00",
+   "all_day": true,
+   "time_text": "Wednesday 10 February",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "This LGBT+ History Month, discover and celebrate key figures from history through Library collection items and creative workshops.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "History & archaeology"
+   ],
+   "work_styles": [
+    "Design & making",
+    "Research & discovery"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "talks_cam_darwin-de3802741656",
@@ -7237,7 +9815,7 @@
     "Writing & communication"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-f628165706a5",
@@ -7276,7 +9854,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "talks_cam_darwin-86cdd5af41fb",
@@ -7308,7 +9886,7 @@
     "Research & discovery"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "cam_museums-a4d31743bbbf",
@@ -7348,7 +9926,30 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-06c9be47a59d",
+   "title": "Doctoral Open Day: Asian and African Collections",
+   "url": "https://events.bl.uk/events/asian-and-african-collections",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-02-26T11:30:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 26 February 2027 11.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Explore our Asian and African collections in this Doctoral Open Day for PhD students.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "work_styles": [
+    "Research & discovery"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "talks_cam_darwin-25529e9f1a95",
@@ -7374,7 +9975,36 @@
     "Research & discovery"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-324147aa1cd3",
+   "title": "Global Stories with Michael Rosen and Friends",
+   "url": "https://events.bl.uk/events/global-stories-with-michael-rosen-and-friends",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-03-01T11:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 1 March 2027 11.00",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A joyful journey into fiction, imagination and the power of storytelling in celebration of World Book Day.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "talks_cam_darwin-fd29aedb6fcf",
@@ -7400,7 +10030,33 @@
     "Arts & performance"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-004cb8535a75",
+   "title": "International Women’s Day Study Day",
+   "url": "https://events.bl.uk/events/study-day-international-womens-day",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-03-08T10:30:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 8 March 2027 10.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A Level students will explore the history of women’s rights through the Library’s collection.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "History & archaeology"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   },
   {
    "id": "talks_cam_darwin-0899cc4aa7d0",
@@ -7429,7 +10085,98 @@
     "Fieldwork & outdoors"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-09-21T23:08:45.889283+00:00"
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-3f41fff4695c",
+   "title": "Doctoral Open Day: Modern Collections from 1800 to 1950",
+   "url": "https://events.bl.uk/events/doctoral-open-day-modern-collections-from-1800-to-1950",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-03-19T11:30:00+00:00",
+   "all_day": false,
+   "time_text": "Friday 19 March 2027 11.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Explore our modern collections from 1800 – 1950, including maps, India Office records, and stamps.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-35cc7b8908ef",
+   "title": "Doctoral Open Day: Europe, Americas and Oceania",
+   "url": "https://events.bl.uk/events/doctoral-open-day-europe-americas-and-oceania",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-04-23T11:30:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 23 April 2027 11.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Learn about our collections covering Europe, the Americas and Oceania.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Environment & climate"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-88fb483741ce",
+   "title": "Doctoral Open Day: Contemporary and Digital Collections",
+   "url": "https://events.bl.uk/events/doctoral-open-day-contemporary-and-digital-collections",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-05-21T11:30:00+01:00",
+   "all_day": false,
+   "time_text": "Friday 21 May 2027 11.30",
+   "ongoing": false,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "Learn about our collections covering 1950 to the present day, as well as digital formats.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Computing & AI"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
+  },
+  {
+   "id": "british_library-386dcb2154a6",
+   "title": "Conquest: The Making of Norman England",
+   "url": "https://events.bl.uk/exhibitions/conquest-the-making-of-norman-england",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-10-01T09:00:00+01:00",
+   "end": "2028-02-27T09:00:00+00:00",
+   "all_day": true,
+   "time_text": "Friday 1 October 2027 – Sunday 27 February 2028",
+   "ongoing": true,
+   "anytime": false,
+   "status": "scheduled",
+   "summary": "A major exhibition exploring the impact of William the Conqueror on England.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "work_styles": [
+    "Creative production",
+    "Design & making"
+   ],
+   "last_seen": "2026-09-21T23:36:43.237448+00:00"
   }
  ]
 }

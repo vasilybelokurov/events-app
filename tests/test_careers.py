@@ -21,6 +21,9 @@ from collector.careers import infer_careers, infer_work_styles
     # "ancient magma chambers" is geoscience, not archaeology.
     ("From Magma to Magnets: ancient magma chambers in Greenland",
      "History & archaeology"),
+    # A business growing "in a way that feels sustainable" is not climate work.
+    ("Business Fundamentals: Sales. Grow your creative business in a way "
+     "that feels sustainable and aligned.", "Environment & climate"),
 ])
 def test_verified_false_positives_stay_fixed(text, must_not):
     assert must_not not in infer_careers(text)
@@ -28,6 +31,8 @@ def test_verified_false_positives_stay_fixed(text, must_not):
 
 @pytest.mark.parametrize("text,expected", [
     ("AI: a talk", "Computing & AI"),
+    ("Setting up a Staff Sustainability Network", "Environment & climate"),
+    ("Innovation and energy for a sustainable future", "Environment & climate"),
     ("From Magma to Magnets: ancient magma chambers", "Earth & geoscience"),
     ("The Operating Theatre: 250 Years of Surgery", "Medicine & health"),
     ("Discover Engineering family workshop", "Engineering"),

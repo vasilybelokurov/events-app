@@ -83,6 +83,37 @@ class TestCambridgeMuseums:
         _future_only(events)
 
 
+class TestBritishLibrary:
+    @pytest.fixture(scope="class")
+    @staticmethod
+    def events(sources):
+        cfg = sources["british_library"]
+        return html_css.parse(html_css.fetch_raw(cfg), cfg)
+
+    def test_selectors_still_match(self, events):
+        assert len(events) >= 40, "selector drift: the listing markup has changed"
+
+    def test_pagination_reached_the_end_of_the_listing(self, events):
+        """A truncated walk publishes a silently short list."""
+        assert html_css.last_fetch.get("pagination_complete") is True
+        assert html_css.last_fetch.get("pages_fetched", 0) > 1
+
+    def test_every_event_has_the_essentials(self, events):
+        for e in events:
+            assert e.title
+            assert e.url.startswith("https://events.bl.uk/")
+            assert e.city == "London"
+            assert e.start.endswith(("+00:00", "+01:00"))
+
+    def test_dates_are_current(self, events):
+        _future_only(events, slack_days=800)
+
+    def test_the_business_programme_is_still_there(self, events):
+        """It is the reason this source is in the registry at all."""
+        assert any("Business & entrepreneurship" in e.careers for e in events), \
+            "no business events found; has the programme moved off this listing?"
+
+
 class TestCuratedLinks:
     def test_every_curated_url_resolves(self, sources):
         """A curated claim whose page has gone is worse than no claim."""
@@ -91,7 +122,12 @@ class TestCuratedLinks:
         from collector.adapters import curated
         from collector.http import check_link
 
-        cfg = dict(sources["curated_teen_careers"])
+        # The registry currently holds no hand-written source -- every record
+        # is collected.  The check stays so that it covers the next one added.
+        hand_written = [c for c in sources.values() if c["kind"] == "curated"]
+        if not hand_written:
+            pytest.skip("no curated sources registered")
+        cfg = dict(hand_written[0])
         root = Path(__file__).resolve().parent.parent
         events = curated.parse((root / cfg["path"]).read_text(), cfg)
         bad = []

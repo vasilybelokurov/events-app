@@ -6,12 +6,13 @@ the independent Codex review, so the file doubles as a regression list.
 
 from __future__ import annotations
 
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 
 import pytest
 
-from collector.models import (Event, parse_age_range, parse_time_text,
-                              parse_uk_datetime, price_info, shift)
+from collector.models import (Event, parse_age_range, parse_date_range,
+                              parse_time_text, parse_uk_datetime, price_info,
+                              shift)
 
 
 class TestAgeRange:
@@ -180,3 +181,92 @@ def test_to_dict_drops_empties():
     d = ev(summary=None, topics=[]).to_dict()
     assert "summary" not in d and "topics" not in d
     assert d["title"] == "t"
+
+
+class TestListingDatesWithoutAYear:
+    """The British Library writes "Saturday 3 January 11.00" and means 2027.
+
+    Three separate defects, all found on that one listing and all silent: the
+    events simply vanished from the site with nothing in the logs.
+    """
+
+    def test_a_dotted_time_is_not_a_year(self):
+        """"20 October 10.30" was read as 20 October **2010**."""
+        start, end = parse_date_range("Tuesday 20 October 10.30",
+                                      default_time=time(10, 30))
+        assert start.startswith(f"{date.today().year}-10-20T10:30")
+        assert end is None
+
+    def test_a_day_number_is_not_a_clock_time(self):
+        """"20" in "20 October" was taken as the start, demoting the real time."""
+        assert parse_time_text("Tuesday 20 October 10.30") == (time(10, 30), None)
+        assert parse_time_text("October 20, 6.30pm") == (time(18, 30), None)
+
+    def test_an_unusable_first_token_does_not_become_the_end_time(self):
+        """A start-less event with an end time is never the right reading."""
+        assert parse_time_text("Monday 16 18.30 - Monday 23 November 18.30") \
+            == (time(18, 30), time(18, 30))
+
+    def test_a_long_past_yearless_date_is_next_year_when_the_source_says_so(self):
+        """Six months back on a what's-on listing is next year's programme."""
+        long_past = date.today() - timedelta(days=182)
+        start, _ = parse_date_range(long_past.strftime("%-d %B"),
+                                    assume_future=True)
+        assert start[5:10] == long_past.strftime("%m-%d")
+        assert start[:4] == str(long_past.year + 1)
+
+    def test_a_yearless_date_is_not_rolled_forward_by_default(self):
+        """A page keeping a past programme up must not gain future events.
+
+        The Cambridge Festival listing still holds the 2025 programme; read
+        with the roll-forward on, its "Monday 2 March" became a 2027 event
+        that nobody is running.
+        """
+        long_past = date.today() - timedelta(days=182)
+        start, _ = parse_date_range(long_past.strftime("%-d %B"))
+        assert start[:4] == str(long_past.year)
+
+    def test_a_recently_started_run_is_not_rolled_forward(self):
+        """Inside the grace window the run is current and keeps its year."""
+        recent = date.today() - timedelta(days=30)
+        start, _ = parse_date_range(recent.strftime("%-d %B"), assume_future=True)
+        assert start[:10] == recent.strftime("%Y-%m-%d")
+
+    def test_a_year_in_the_text_is_always_obeyed(self):
+        start, end = parse_date_range("Friday 30 October 2026 - Sunday 20 June 2027")
+        assert start.startswith("2026-10-30")
+        assert end.startswith("2027-06-20")
+
+    def test_an_iso_timestamp_is_not_a_range(self):
+        """The hyphens in "2027-10-01T09:00:00+01:00" are not a range dash."""
+        start, end = parse_date_range("2027-10-01T09:00:00+01:00")
+        assert start.startswith("2027-10-01T09:00")
+        assert end is None
+
+    @pytest.mark.parametrize("text", [
+        "Daily",
+        "Available Fridays and Sundays",
+        "Once a month, Wednesdays, 11.00",     # was read as the 11th
+        "Most Fridays at 11.30",               # was read as the 11th
+        "First Wednesday of the month, 11.00",
+        "Throughout 2026",                     # a year is not a date
+        "Every Tuesday",
+    ])
+    def test_a_recurrence_description_is_not_a_date(self, text):
+        """A venue describing a pattern has not published a date.
+
+        The fuzzy parser finds one anyway -- it read "Most Fridays at 11.30"
+        as the 11th of this month -- and a fabricated date on the page is
+        worse than a missing event.
+        """
+        assert parse_date_range(text) == (None, None)
+        assert parse_uk_datetime(text) is None
+
+    @pytest.mark.parametrize("text,expected", [
+        ("17/01/2026", "2026-01-17"),
+        ("17.01.2026", "2026-01-17"),
+        ("28th October 2026", "2026-10-28"),
+        ("Sunday, 1 November 2026", "2026-11-01"),
+    ])
+    def test_real_dates_still_parse(self, text, expected):
+        assert parse_uk_datetime(text).startswith(expected)

@@ -21,6 +21,14 @@
 #   expect_events  set false for a source that is knowingly dormant, so an
 #                  empty result is reported as a note rather than a failure
 #
+#   assume_future_dates
+#                  true only for a listing that advertises what is *coming*:
+#                  a date written without a year ("Saturday 3 January") is
+#                  then read as the next such date rather than as one that
+#                  has just gone.  Leave it off for any page that keeps a
+#                  past programme published, or the collector will invent
+#                  future dates for events that already happened.
+#
 # Optional
 #   hand_written  true if the records are human claims needing periodic
 #                 re-checking; defaults to true for `kind: curated`.  Entries
@@ -520,3 +528,64 @@ sources:
       Selector note: the row also carries a styled-components class whose hash
       changes on every deploy, so `.listing-card` is the one to match.
 
+
+  - key: british_library
+    name: British Library
+    kind: html_css
+    homepage: https://www.bl.uk/events/
+    url: https://events.bl.uk/
+    verify_url: https://events.bl.uk/
+    docs: no published interface; CSS selectors below, recorded 2026-09-22
+    terms: https://www.bl.uk/terms
+    site: https://events.bl.uk
+    venue_name: British Library, St Pancras
+    city: London
+    lat: 51.5299
+    lon: -0.1276
+    priority: 19
+    verified: 2026-09-22
+    assume_future_dates: true
+    pages:
+      param: page
+      max_pages: 25
+    selectors:
+      item: "li.o-grid__item:has(a.c-media--event)"
+      title: .c-media__title
+      link: a.c-media--event
+      date: ["time[itemprop=startDate]", ".c-media__datetime"]
+      date_attr: datetime
+      end: ["time[itemprop=endDate]"]
+      end_attr: datetime
+      time: .c-media__datetime
+      summary: .c-media__summary
+      price: .c-media__labels
+    notes: >
+      The occupational gap this fills is the one no museum covers: the
+      Library's business programme (market research, intellectual property,
+      payments, start-ups) alongside writing, publishing, archives,
+      conservation and library science.  Entrepreneur, publisher, editor,
+      archivist, librarian, patent agent and market researcher are otherwise
+      almost absent from the catalogue.
+
+      Listing notes, all learnt the hard way:
+
+      * The row *is* the anchor, so `item` selects its `li` wrapper and `link`
+        selects the anchor inside it.
+      * Two exhibitions are pinned to every page; `parse` drops the repeats by
+        event id.
+      * The site's own next-page hrefs accumulate junk parameters
+        (`?amp;page=6&page=2`), so `pages.param` drives the walk instead.
+      * Dates carry no year ("Saturday 3 January") and write times with a dot
+        ("10.30"), which is why `collector.models` grew `_clock_dots` and
+        `_roll_yearless`.  Without those, a January event landed in the past
+        and "20 October 10.30" landed in the year 2010.
+      * `assume_future_dates` is earned here and nowhere else so far: this is
+        a live what's-on listing, which advertises only what is coming, so a
+        yearless January is the January ahead.  It must stay off for a page
+        that keeps a past programme up -- see `cambridge_festival`.
+      * Rows that give a recurrence instead of a date ("Most Fridays at
+        11.30", "Daily") are dropped, because a pattern is not a date.  The
+        Treasures Tour and the building tours are lost that way; a `venue`
+        entry would be the way to carry them.
+      * Only free events are labelled, so a row with no label leaves the price
+        unknown rather than being claimed as free.

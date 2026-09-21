@@ -27,7 +27,7 @@ the build fails loudly when a source that previously worked returns zero.
 from __future__ import annotations
 
 import re
-from urllib.parse import urljoin
+from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup
 
@@ -39,9 +39,73 @@ from ..models import (Event, combine_audience_values, make_id, map_audience,
 
 KIND = "html_css"
 
+# Pages are concatenated into one document and split again in parse(), so a
+# per-page claim check still sees one page at a time.
+PAGE_BREAK = "<!--collector:page-break-->"
+
+last_fetch: dict = {}
+
+
+def _with_page(url: str, param: str, number: int) -> str:
+    """Return *url* with the pagination parameter set to *number*."""
+    parts = urlsplit(url)
+    query = [(k, v) for k, v in parse_qsl(parts.query, keep_blank_values=True)
+             if k != param]
+    query.append((param, str(number)))
+    return urlunsplit(parts._replace(query=urlencode(query)))
+
+
+def _row_keys(html: str, cfg: dict) -> set[str]:
+    """Identify the rows on one page, so a repeated page can be recognised."""
+    sel = cfg["selectors"]
+    soup = BeautifulSoup(html, "lxml")
+    keys = set()
+    for node in soup.select(sel["item"]):
+        href = _pick(node, sel.get("link") or sel.get("title"), "href")
+        keys.add(href or _pick(node, sel.get("title")) or "")
+    keys.discard("")
+    return keys
+
 
 def fetch_raw(cfg: dict, **_) -> str:
-    return fetch(cfg["url"])
+    """Fetch the listing, following its pagination when one is configured.
+
+    Listings paginate in two unhelpful ways: some repeat a pinned row on every
+    page, and some (the British Library among them) emit next-page hrefs that
+    accumulate junk parameters.  So pages are requested by setting the
+    parameter directly, and the walk stops when a page offers no row that an
+    earlier page did not -- which covers both the natural end of the list and a
+    site that silently serves page 1 for every number.
+
+    A walk cut short by ``max_pages`` reports ``pagination_complete: False``,
+    which :mod:`collector.build` treats as a degraded source rather than
+    publishing a list it knows to be truncated.
+    """
+    global last_fetch
+    last_fetch = {}
+    html = fetch(cfg["url"])
+    pages = cfg.get("pages") or {}
+    if not pages:
+        return html
+
+    param = pages.get("param", "page")
+    max_pages = int(pages.get("max_pages", 20))
+    chunks = [html]
+    seen = _row_keys(html, cfg)
+    complete = True
+    for number in range(2, max_pages + 1):
+        page = fetch(_with_page(cfg["url"], param, number))
+        keys = _row_keys(page, cfg)
+        if not keys - seen:
+            break
+        seen |= keys
+        chunks.append(page)
+    else:
+        complete = not (_row_keys(
+            fetch(_with_page(cfg["url"], param, max_pages + 1)), cfg) - seen)
+
+    last_fetch = {"pagination_complete": complete, "pages_fetched": len(chunks)}
+    return PAGE_BREAK.join(chunks)
 
 
 def _label_text(node, selector: str | None) -> list[str]:
@@ -147,15 +211,30 @@ def enrich(events: list[Event], cfg: dict) -> dict:
     return stats
 
 
-def _pick(node, selector: str | None, attr: str | None = None) -> str | None:
+def _pick(node, selector, attr: str | None = None) -> str | None:
+    """First non-empty value among *selector*, which may be a list.
+
+    A list is tried in order, which is how a listing that marks some rows up
+    properly and leaves the rest as prose is read: the British Library gives
+    an exhibition run a ``<time itemprop="startDate" datetime="...">`` but
+    writes a single-session event as "Tuesday 20 October 10.30".  Machine
+    markup first, prose as the fallback.
+    """
     if not selector:
         return None
-    el = node.select_one(selector)
-    if el is None:
-        return None
-    if attr:
-        return (el.get(attr) or "").strip() or None
-    return el.get_text(" ", strip=True) or None
+    for one in ([selector] if isinstance(selector, str) else selector):
+        el = node.select_one(one)
+        if el is None:
+            continue
+        if attr:
+            value = (el.get(attr) or "").strip()
+            if value:
+                return value
+            continue
+        text = el.get_text(" ", strip=True)
+        if text:
+            return text
+    return None
 
 
 #: Filled by :func:`parse` so the build can report enrichment health.
@@ -183,7 +262,7 @@ def _page_claims(soup: BeautifulSoup, cfg: dict) -> tuple[dict, list[str]]:
     return (claims, missing)
 
 
-def parse(raw: str, cfg: dict) -> list[Event]:
+def _parse_page(raw: str, cfg: dict) -> list[Event]:
     sel = cfg["selectors"]
     soup = BeautifulSoup(raw, "lxml")
     page_claims, page_missing = _page_claims(soup, cfg)
@@ -200,7 +279,9 @@ def parse(raw: str, cfg: dict) -> list[Event]:
         # Venues write a run as one string ("10th September-31st October
         # 2026") with the year only on the right, so a range is tried first:
         # parsing the left date alone would put a live exhibition in the past.
-        start, end = parse_date_range(date_text, default_time=t_start)
+        start, end = parse_date_range(
+            date_text, default_time=t_start,
+            assume_future=bool(cfg.get("assume_future_dates")))
         if not start:
             continue
         explicit_end = _pick(node, sel.get("end"), sel.get("end_attr")) \
@@ -265,6 +346,25 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             careers=infer_careers(title, summary, " ".join(cfg.get("topics", []))),
             work_styles=infer_work_styles(title, summary),
         ))
+
+    return out
+
+
+def parse(raw: str, cfg: dict) -> list[Event]:
+    """Parse every fetched page, keeping the first record of each event id.
+
+    A paginated listing repeats its pinned rows on every page, so the same
+    event arrives several times; ids are derived from the event's own URL, so
+    the repeats collapse here rather than being published as duplicates.
+    """
+    out: list[Event] = []
+    seen: set[str] = set()
+    for chunk in raw.split(PAGE_BREAK):
+        for event in _parse_page(chunk, cfg):
+            if event.id in seen:
+                continue
+            seen.add(event.id)
+            out.append(event)
 
     global last_enrichment
     last_enrichment = enrich(out, cfg)

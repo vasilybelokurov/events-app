@@ -15,10 +15,10 @@ collector/          Python: adapters -> normalise -> de-duplicate -> events.json
   sources.yaml      the source registry: add a venue here, not in code
   adapters/         one module per kind of source
   verify.py         proves every source is listed, reachable and parseable
-data/curated/       hand-written entries for things no feed lists
+data/curated/       hand-written entries, for anything no feed lists (empty)
 docs/               the published site (GitHub Pages root)
   data/events.json  the only thing the page loads
-tests/              239 offline tests + 9 live source checks
+tests/              275 offline tests + 14 live source checks
 ```
 
 ## Quick run
@@ -75,12 +75,14 @@ policy below exists to prevent. Publication happens first, and a final
 
 ### When a hand-written claim goes stale
 
+**There are currently none: every record on the site is collected from a
+source.** The machinery stays, because the next awkward venue will need it.
+
 A resolving link does not prove a price, an opening time or an age rule still
 holds. So every curated entry carries `verified_on`, the build link-checks it
 on every run, and after 90 days the page badges it **needs re-checking** and
 the Monday issue puts it on a checklist. An entry that has never been confirmed
-shows as **unverified claim** from the start — including the eight that came
-from a ChatGPT conversation and have only had their URLs machine-checked.
+shows as **unverified claim** from the start.
 
 ## Sources
 
@@ -92,7 +94,7 @@ it, so any claim on the site can be traced to its origin in two clicks.
 
 **Nothing is typed in by hand.** An earlier version carried nine hand-written
 event records; a typed claim rots silently, and eight of the nine were never
-confirmed by anyone. They are now twelve collected sources:
+confirmed by anyone. They are now nineteen collected sources:
 
 | Source | Kind | What it gives |
 |---|---|---|
@@ -104,13 +106,28 @@ confirmed by anyone. They are now twelve collected sources:
 | [LSE public events](https://www.lse.ac.uk/events/search-events) | `html_css` | Economics, public policy, law, politics, society. Fills the biggest gap: economist, lawyer, policy analyst, civil servant, statistician. |
 | [Hunterian Museum](https://hunterianmuseum.org/whats-on/) | `html_css` | Surgery and medical history: exhibitions, family activities, curator tours. |
 | [Darwin College Lectures](https://talks.cam.ac.uk/show/index/5358), [Major Public Lectures](https://talks.cam.ac.uk/show/index/5462), [CSAR](https://talks.cam.ac.uk/show/index/5366) | `ics` | Cambridge public lecture series. Three of ~2400 talks.cam lists, each a one-line registry entry. |
+| [British Library](https://www.bl.uk/events/) | `html_css` | ~104 events over 16 paginated pages: the business programme (market research, intellectual property, payments, start-ups) beside writing, publishing, archives and conservation. The only source here that shows entrepreneur, publisher, editor, archivist or librarian. |
 | [Cambridge Festival](https://www.festival.cam.ac.uk/events) | `html_css` | Dormant until the next programme is published, then it appears on its own. |
 | [Old Bailey](https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court), [Supreme Court](https://www.supremecourt.uk/tours), [Bank of England Museum](https://www.bankofengland.co.uk/museum), [Science Museum](https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery), [Design Museum](https://designmuseum.org/whats-on), [Cambridge Museum of Technology](https://www.museumoftechnology.com/whats-on/), [Cambridge Engineering](https://www.eng.cam.ac.uk/outreach) | `venue` | Places with nothing to list. Visited every run; see below. |
 
-Probed and rejected, so nobody repeats the work: **Gresham College** renders its
-listing in the browser with no feed and no JSON-LD; the **Institute of Physics**
-and the **Institution of Civil Engineers** return 403 to anything that is not a
-desktop browser. All three are worth revisiting if they publish a feed.
+Probed and rejected, so nobody repeats the work. Re-checked 2026-09-22, and
+none of them publishes JSON-LD, an ICS feed or a JSON:API:
+
+* **Renders its listing in the browser**, leaving nothing in the HTML to
+  select: Gresham College, King's College London, the Royal Geographical
+  Society, and the UCL `/events/` landing page (UCL's real calendar is
+  elsewhere and worth another look).
+* **Refuses anything that is not a desktop browser** (403 from here and from a
+  CI runner alike): the Institute of Physics, Kew, the National Theatre, the
+  London Transport Museum, the Southbank Centre and the Francis Crick
+  Institute.
+* **Server-rendered but with no usable structure**: the Institution of Civil
+  Engineers (200 since it last refused, so its markup is worth a second look),
+  the Natural History Museum (a `__NEXT_DATA__` island with no event objects),
+  the Barbican, ZSL London Zoo, Royal Museums Greenwich, the National Archives
+  and Cambridge Junction.
+
+Any of them becomes a one-line registry entry the day it publishes a feed.
 
 ### Venues with nothing to list
 
@@ -188,7 +205,18 @@ Most venues need no new code. Add a block to `collector/sources.yaml`:
 * **`ics`** — if it publishes a calendar feed.
 * **`html_css`** — otherwise: write CSS selectors for the listing rows
   (`item`, `title`, `link`, `date`, `time`, `end`, `summary`, `venue`,
-  `price`). No Python required.
+  `price`). No Python required. Two things worth knowing:
+  * **Any selector may be a list**, tried in order. That is how a listing
+    that marks some rows up properly and writes the rest as prose is read:
+    `date: ["time[itemprop=startDate]", ".c-media__datetime"]` with
+    `date_attr: datetime` believes the machine value and falls back to the
+    sentence.
+  * **`pages: {param: page, max_pages: 25}`** walks a paginated listing,
+    stopping as soon as a page offers nothing new — which also stops dead a
+    site that serves page 1 for every number. Rows pinned to every page are
+    published once. A walk cut short by `max_pages` is reported as
+    `pagination_complete: false`, which degrades the source rather than
+    quietly publishing a short list.
 * **`drupal_jsonapi`** — many UK institutions run Drupal; check
   `https://<host>/jsonapi` for a `node--event` resource before writing
   selectors. It is far more reliable than scraping.
@@ -278,6 +306,19 @@ dependencies.
   treated as London local; a time in the spring-forward gap is moved forward
   rather than silently mis-offset; durations are added in local terms so an
   event spanning a clock change keeps its wall-clock time.
+* **A pattern is not a date.** Venues write "Most Fridays at 11.30" or "Once
+  a month, Wednesdays" in the field where a date belongs, and a fuzzy date
+  parser will happily return the 11th of this month for both. Those rows are
+  **dropped**: a fabricated date on the page is worse than a missing event.
+  A date is only believed when the text names a day *and* a month, or is
+  written numerically.
+* **A date with no year is read as this year, unless the source says
+  otherwise.** "Saturday 3 January" seen in September means next January on a
+  live what's-on listing, and the British Library's listing is one — it sets
+  `assume_future_dates: true`. It stays off everywhere else, because the
+  Cambridge Festival page still has the 2025 programme up, and rolling its
+  yearless dates forward invented 2027 events for things that happened two
+  years ago.
 * **De-duplication is conservative.** Two records merge only when title,
   start time *and* city agree; two sessions on the same day stay separate, and
   `(BSL)` / `(English)` variants stay separate. Merging fills empty fields
