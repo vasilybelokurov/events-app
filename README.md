@@ -1,7 +1,9 @@
 # What's On — Cambridge & London events, filtered by the work they show
 
-A static site plus a scheduled collector. The collector pulls events from
-public feeds and APIs, normalises them into one JSON file, and GitHub Pages
+A static site plus a scheduled collector, live at
+<https://vasilybelokurov.github.io/events-app/>.
+
+The collector pulls events from public feeds and APIs, normalises them into one JSON file, and GitHub Pages
 serves a dependency-free page that filters and sorts them in the browser.
 
 The first use case: finding things in Cambridge and London to take a

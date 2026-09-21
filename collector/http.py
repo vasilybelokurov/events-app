@@ -19,7 +19,7 @@ import requests
 
 LOG = logging.getLogger(__name__)
 
-CONTACT = os.environ.get("EVENTS_CONTACT", "https://github.com/ (see repository issues)")
+CONTACT = os.environ.get("EVENTS_CONTACT", "https://github.com/vasilybelokurov/events-app/issues")
 UA = f"events_app/0.1 (personal event aggregator; contact: {CONTACT})"
 
 CACHE_DIR = Path(os.environ.get("EVENTS_CACHE", ".cache"))
