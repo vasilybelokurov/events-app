@@ -18,7 +18,8 @@ collector/          Python: adapters -> normalise -> de-duplicate -> events.json
 data/curated/       hand-written entries, for anything no feed lists (empty)
 docs/               the published site (GitHub Pages root)
   data/events.json  the only thing the page loads
-tests/              275 offline tests + 14 live source checks
+tests/              298 offline tests + 14 live source checks
+  js/               the front end, driven through Node against app.js itself
 ```
 
 ## Quick run
@@ -280,7 +281,10 @@ Honest limits, because a parent acting on wrong information wastes a day out:
   ChatGPT conversation were dropped outright because their URLs did not
   resolve at all.
 * **Recurring events show one occurrence.** ICS `RRULE` is not expanded; the
-  record says so rather than inventing dates.
+  record says so rather than inventing dates. So a weekly series arrives as a
+  single dated occurrence and the "kind" filter counts it as **one-off**: the
+  site does not know it repeats, and will not guess. Only a venue that
+  publishes a run, or no date at all, is shown as running over time.
 * **Cancellations are only as good as the feed.** Events marked cancelled,
   postponed or sold out are hidden unless you tick "Include cancelled", but a
   venue that does not publish the cancellation cannot be second-guessed.
@@ -292,7 +296,14 @@ Honest limits, because a parent acting on wrong information wastes a day out:
 dependencies.
 
 * Filters: full-text search, age, date window (7/30/90 days, everything, or
-  custom), city/online, audience and access flags, subject, ways of working.
+  custom), **kind** (one-off or runs over time), city/online, audience and
+  access flags, subject, ways of working.
+* **Kind** answers the question a person actually asks: do I have to be
+  somewhere at 18:30 on Tuesday, or can I go any time over the next six
+  weeks? *One-off* is a single dated occurrence; *runs over time* covers both
+  a multi-day exhibition and a standing offer with no fixed date at all, such
+  as a public gallery open on weekdays. Cards say which they are.
+  It is **not** a claim about recurrence — see below.
   "Only confirmed suitable" is named for what it does: ineligible events are
   always hidden, so the control decides whether events with *unknown*
   eligibility are shown.

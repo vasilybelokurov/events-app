@@ -19,6 +19,7 @@ const state = {
   sort: 'date',
   view: 'cards',
   when: '90',           // 7 | 30 | 90 | all | custom
+  shape: 'all',         // all | once | running
   from: '',
   to: '',
   cities: new Set(),
@@ -100,6 +101,22 @@ function whenLabel(e) {
   return out;
 }
 
+/* One evening, or something you can catch across a window of time.
+ *
+ * Two different records mean the second thing: a multi-day run (`ongoing`,
+ * typically an exhibition) and a standing offer with no fixed date
+ * (`anytime` — a public gallery, a weekly tour). They are the same answer to
+ * the question a person actually asks, which is whether they have to be
+ * somewhere at 18:30 on Tuesday or can go any time over the next six weeks.
+ *
+ * This is deliberately not a guess about recurrence: an ICS `RRULE` is never
+ * expanded, so a weekly series still arrives as one dated occurrence and is
+ * counted as one. The site does not claim to know what it has not been told.
+ */
+function runsOverTime(e) {
+  return !!(e.ongoing || e.anytime);
+}
+
 function isRunningNow(e) {
   if (e.anytime) return true;
   const s = parseDate(e.start);
@@ -165,6 +182,9 @@ function matches(e) {
     if (to && s > to) return false;
     if (end && end < from) return false;
   }
+
+  if (state.shape === 'once' && runsOverTime(e)) return false;
+  if (state.shape === 'running' && !runsOverTime(e)) return false;
 
   if (state.cities.size) {
     const key = e.online ? 'Online' : (e.city || 'Other');
@@ -249,6 +269,8 @@ function renderCard(e) {
   if (state.age >= 13 && aud.includes('children') && !aud.includes('teens')) {
     badge(badges, 'age-unknown', 'aimed at younger children');
   }
+  if (e.anytime) badge(badges, '', 'No fixed date');
+  else if (e.ongoing) badge(badges, '', 'Runs over several days');
   if (e.is_free === true) badge(badges, 'free', 'Free');
   if (e.online) badge(badges, '', 'Online option');
   if (e.status && e.status !== 'scheduled') badge(badges, 'alert', e.status.replace('_', ' '));
@@ -416,6 +438,30 @@ function buildChips() {
     });
     when.appendChild(b);
   });
+
+  const shape = document.getElementById('shape');
+  shape.textContent = '';
+  const shapeCounts = {
+    all: all.length,
+    once: all.filter((e) => !runsOverTime(e)).length,
+    running: all.filter(runsOverTime).length,
+  };
+  [['all', 'Any'], ['once', 'One-off'], ['running', 'Runs over time']]
+    .forEach(([k, label]) => {
+      const b = el('button', 'chip');
+      b.type = 'button';
+      b.textContent = label;
+      b.appendChild(el('span', 'n', shapeCounts[k]));
+      b.dataset.key = k;
+      b.setAttribute('aria-pressed', String(state.shape === k));
+      b.addEventListener('click', () => {
+        state.shape = k;
+        [...shape.children].forEach((c) => c.setAttribute('aria-pressed', 'false'));
+        b.setAttribute('aria-pressed', 'true');
+        render();
+      });
+      shape.appendChild(b);
+    });
 
   const cityCounts = new Map();
   all.forEach((e) => {
@@ -646,6 +692,7 @@ function writeHash() {
   if (state.sort !== 'date') p.set('sort', state.sort);
   if (state.view !== 'cards') p.set('view', state.view);
   if (state.when !== '90') p.set('when', state.when);
+  if (state.shape !== 'all') p.set('shape', state.shape);
   if (state.from) p.set('from', state.from);
   if (state.to) p.set('to', state.to);
   if (state.cities.size) p.set('city', [...state.cities].join('|'));
@@ -667,6 +714,7 @@ function readHash() {
   if (p.get('sort')) state.sort = p.get('sort');
   if (p.get('view')) state.view = p.get('view');
   if (p.get('when')) state.when = p.get('when');
+  if (p.get('shape')) state.shape = p.get('shape');
   if (p.get('from')) state.from = p.get('from');
   if (p.get('to')) state.to = p.get('to');
   if (p.get('city')) state.cities = new Set(p.get('city').split('|'));
@@ -704,7 +752,7 @@ function bind() {
 
   document.getElementById('reset').addEventListener('click', () => {
     state.q = ''; state.age = 14; state.sort = 'date'; state.view = 'cards';
-    state.when = '90'; state.from = ''; state.to = '';
+    state.when = '90'; state.shape = 'all'; state.from = ''; state.to = '';
     state.cities = new Set(); state.careers = new Set();
     state.styles = new Set(); state.flags = new Set();
     // `hidden` is deliberately preserved: dismissing an event is a judgement,
