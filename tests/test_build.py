@@ -326,6 +326,71 @@ class TestFailurePolicy:
         assert src["last_good_count"] == 0, "an unverified count became the baseline"
         assert src["last_success"] is None
 
+    def test_model_tags_replace_keyword_tags_when_present(self, stub, paths, tmp_path):
+        """An empty entry is an answer -- "cannot tell from this" -- so it
+        clears the keyword guess rather than falling back to it."""
+        import collector.classify as classify_mod
+        src, out, root = paths
+        stub.events = [ev(1, title="Woodworking Saturdays", summary="work with wood"),
+                       ev(2, title="Tenderness and Rage")]
+        run(paths)
+
+        model = "test-model"
+        cache = {"model": model, "prompt_version": classify_mod.PROMPT_VERSION,
+                 "entries": {
+                     classify_mod.cache_key("Woodworking Saturdays", "work with wood", model): {
+                         "labels": ["Design, making & architecture"], "model": model,
+                         "prompt_version": classify_mod.PROMPT_VERSION},
+                     classify_mod.cache_key("Tenderness and Rage", None, model): {
+                         "labels": [], "model": model,
+                         "prompt_version": classify_mod.PROMPT_VERSION},
+                 }}
+        (root / "data").mkdir(parents=True, exist_ok=True)
+        (root / "data/classifications.json").write_text(json.dumps(cache))
+
+        doc = run(paths)
+        by_title = {e["title"]: e for e in doc["events"]}
+        assert by_title["Woodworking Saturdays"]["careers"] == ["Design, making & architecture"]
+        assert not by_title["Tenderness and Rage"].get("careers")
+
+    def test_a_missing_cache_leaves_the_existing_tags(self, stub, paths):
+        """A model outage must degrade the tagging, never break the build."""
+        stub.events = [ev(1, title="A chemistry talk",
+                          careers=["Chemistry & materials"])]
+        doc = run(paths)                      # no data/classifications.json
+        assert doc["events"][0]["careers"] == ["Chemistry & materials"]
+
+    def test_an_unreadable_cache_is_survivable(self, stub, paths):
+        src, out, root = paths
+        stub.events = [ev(1, title="A chemistry talk",
+                          careers=["Chemistry & materials"])]
+        (root / "data").mkdir(parents=True, exist_ok=True)
+        (root / "data/classifications.json").write_text("{ not json")
+        doc = run(paths)
+        assert doc["events"][0]["careers"] == ["Chemistry & materials"]
+
+    def test_retag_rewrites_without_fetching(self, stub, paths, monkeypatch):
+        """The daily job collects first and classifies second, so the file has
+        to be re-tagged afterwards without going near the network."""
+        import collector.classify as classify_mod
+        src, out, root = paths
+        stub.events = [ev(1, title="Woodworking Saturdays", summary="work with wood")]
+        run(paths)
+        model = "test-model"
+        key = classify_mod.cache_key("Woodworking Saturdays", "work with wood", model)
+        (root / "data").mkdir(parents=True, exist_ok=True)
+        (root / "data/classifications.json").write_text(json.dumps(
+            {"model": model, "entries": {key: {"labels": ["Engineering"], "model": model,
+                                               "prompt_version": classify_mod.PROMPT_VERSION}}}))
+
+        def explode(*a, **k):
+            raise AssertionError("retag must not fetch anything")
+        monkeypatch.setattr(build_mod, "collect_source", explode)
+
+        build_mod.retag(out, root=root)
+        doc = json.loads(out.read_text())
+        assert doc["events"][0]["careers"] == ["Engineering"]
+
     def test_incomplete_pagination_is_flagged(self, stub, paths):
         stub.events = [ev(1)]
         stub.meta = {"pagination_complete": False}

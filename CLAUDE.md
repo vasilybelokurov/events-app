@@ -69,6 +69,38 @@ than shipping nothing.
   year" only on a listing that advertises what is coming. Switched on globally
   it invented six 2027 events from the Cambridge Festival's 2025 programme.
 
+## Subject tags come from a local model, in CI
+
+`collector/classify.py` asks a small local model (`qwen3:4b`, via Ollama)
+what each event is about, and caches the answer in
+`data/classifications.json`. The daily workflow runs it — nobody's laptop is
+involved — and three things make that affordable on a CPU runner:
+
+* the model is 2.5 GB and restored from the Actions cache, not downloaded
+  every morning;
+* the cache is keyed on a hash of the event's **own text** plus the model and
+  prompt version, so only genuinely new wording is sent. Between two real
+  consecutive builds that was **one** event;
+* `--budget` caps a run, so a venue publishing a whole season cannot hold the
+  job open for an hour. The remainder is picked up the next day.
+
+Order matters: **collect, then classify, then `--retag`.** Classifying before
+collecting would leave every new event a day behind, and `--retag` re-applies
+the answers to the file that was just built without fetching anything.
+
+Two properties worth not breaking:
+
+* **An empty entry is an answer**, not a gap: it means "I cannot tell from
+  this text", and it *clears* the keyword guess. Only text the model has
+  never seen keeps keyword tags.
+* **The model must be allowed to abstain.** Constrained to an array of real
+  subjects and nothing else, it will not return an empty list — it invents.
+  Given `"Unclear - not enough information"` as a permitted value it says so
+  instead. That sentinel is stripped before storage.
+
+If Ollama fails the build carries on with keyword tags; a bad morning must
+degrade the tagging, never stop the site.
+
 ## docs/data/events.json is a build artifact
 
 Never hand-edit it, and never resolve a merge conflict in it. `.gitattributes`

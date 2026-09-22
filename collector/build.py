@@ -40,6 +40,7 @@ import yaml
 
 from .adapters import get as get_adapter
 from .dedup import merge
+from .classify import cache_key as classify_key
 from .http import check_link
 from .models import UK, Event
 
@@ -118,6 +119,27 @@ def is_current(e: Event, *, now: datetime, grace_hours: int = 6) -> bool:
     return False
 
 
+def load_classifications(root: Path) -> tuple[dict[str, list[str]], str | None]:
+    """Read the committed model tags, if any.  Absent is not an error.
+
+    The daily build never runs a model: `collector.classify` writes this file
+    and the build only reads it, so CI needs no GPU and no download.  A
+    missing or unreadable cache leaves every event on its keyword tags.
+    """
+    path = root / "data/classifications.json"
+    if not path.exists():
+        return ({}, None)
+    try:
+        doc = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        LOG.warning("classification cache unreadable (%s); keywords only", exc)
+        return ({}, None)
+    # The model is part of every key, so the build has to use the one that
+    # wrote the file rather than whatever `classify` currently defaults to.
+    entries = {k: v.get("labels", []) for k, v in (doc.get("entries") or {}).items()}
+    return (entries, doc.get("model"))
+
+
 def build(sources_path: Path, out_path: Path, *, root: Path,
           only: list[str] | None = None, link_check: bool = True,
           horizon_days: int = 400, allow_drop: bool = False,
@@ -131,6 +153,7 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
         sources = [s for s in sources if s["key"] in only]
 
     previous = load_previous(out_path)
+    classifications, classified_by = load_classifications(root)
     prev_reports = {s["key"]: s for s in previous.get("sources", [])}
     prev_events: dict[str, list[dict]] = {}
     for raw_event in previous.get("events", []):
@@ -261,6 +284,21 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
 
     priority = {s["key"]: s.get("priority", 50) for s in sources}
     events = merge(all_events, priority)
+    # Subject tags from the local model, where it has read this event's text.
+    # An entry that exists but is empty is an *answer* -- "I cannot tell from
+    # this" -- so it replaces the keyword guess rather than falling back to it.
+    # Only text the model has never seen keeps the keyword tags.
+    tagged = 0
+    if classified_by:
+        for e in events:
+            labels = classifications.get(
+                classify_key(e.title, e.summary, classified_by))
+            if labels is not None:
+                e.careers = list(labels)
+                tagged += 1
+        LOG.info("model tags applied to %d of %d events (%s)",
+                 tagged, len(events), classified_by)
+
     records = [e.to_dict() for e in events]
 
     # Exactly the sources the registry declares hand-written, rather than a
@@ -354,6 +392,38 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
     return doc
 
 
+def retag(out_path: Path, *, root: Path) -> dict:
+    """Re-apply model tags to an already-built file, fetching nothing.
+
+    The daily job collects first and classifies second -- it has to, or a new
+    event would wait a day for its tags.  That leaves the published file
+    holding keyword tags for events the model has since read, so this puts the
+    model's answers in without going near the network again.
+    """
+    doc = json.loads(out_path.read_text(encoding="utf-8"))
+    classifications, classified_by = load_classifications(root)
+    if not classified_by:
+        LOG.info("no classification cache; nothing to re-tag")
+        return doc
+    tagged = 0
+    for rec in doc.get("events", []):
+        labels = classifications.get(
+            classify_key(rec.get("title", ""), rec.get("summary"), classified_by))
+        if labels is None:
+            continue
+        if labels:
+            rec["careers"] = list(labels)
+        else:
+            rec.pop("careers", None)
+        tagged += 1
+    LOG.info("re-tagged %d of %d events from the %s cache",
+             tagged, len(doc.get("events", [])), classified_by)
+    tmp = out_path.with_suffix(out_path.suffix + ".tmp")
+    tmp.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    tmp.replace(out_path)
+    return doc
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     root = Path(__file__).resolve().parent.parent
@@ -361,6 +431,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", type=Path, default=root / "docs/data/events.json")
     ap.add_argument("--only", nargs="*", help="only these source keys")
     ap.add_argument("--no-link-check", action="store_true")
+    ap.add_argument("--retag", action="store_true",
+                    help="only re-apply model tags to the existing file; "
+                         "fetches nothing")
     ap.add_argument("--allow-drop", action="store_true",
                     help="accept a genuine shrinkage: publish the smaller "
                          "set, rebase the baseline on it and exit 0")
@@ -368,6 +441,10 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING,
                         format="%(levelname)s %(name)s: %(message)s")
+    if args.retag:
+        retag(args.out, root=root)
+        return 0
+
     doc = build(args.sources, args.out, root=root, only=args.only,
                 allow_drop=args.allow_drop,
                 link_check=not args.no_link_check)

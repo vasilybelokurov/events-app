@@ -56,9 +56,12 @@ ROOT = Path(__file__).resolve().parent.parent
 CACHE_PATH = ROOT / "data/classifications.json"
 EVENTS_PATH = ROOT / "docs/data/events.json"
 
-DEFAULT_MODEL = "qwen3:14b"
+#: Small enough to cache and run on a GitHub CPU runner (2.5 GB), and
+#: with the schema below it matched the 14B model on real records --
+#: it even reads "Martino Tirimo (piano)" correctly, which 14B did not.
+DEFAULT_MODEL = "qwen3:4b"
 #: Bump when the wording below changes; it is part of every cache key.
-PROMPT_VERSION = 3
+PROMPT_VERSION = 6
 
 LABELS = tuple(CAREER_KEYWORDS)
 
@@ -72,9 +75,10 @@ supports -- either one alone is enough. A name of a person, place or series
 tells you nothing, but a title like "Socialism after AI" does. If the summary
 describes what happens, that is enough to choose a subject: do not hold out
 for the subject to be named.
-Answer [] only when neither the title nor the summary says anything about
-what the event is about. A summary that is only a date, a price or a venue
-says nothing -- judge the title on its own in that case.
+If neither the title nor the summary says what the event is *about* -- a
+bare name like "Tenderness and Rage", or a summary that is only a date, a
+price or a venue -- answer exactly ["{unclear}"] and nothing else. Guessing
+is worse than saying you cannot tell.
 
 Title: {title}
 Summary: {summary}
@@ -84,6 +88,7 @@ JSON array of subject names only."""
 
 def prompt_for(title: str, summary: str | None) -> str:
     return PROMPT.format(labels="\n".join(f"- {l}" for l in LABELS),
+                         unclear=UNCLEAR,
                          title=title,
                          summary=summary or "(no description given)")
 
@@ -116,6 +121,8 @@ def parse_reply(text: str) -> list[str]:
         if not isinstance(item, str):
             continue
         name = item.split(":")[0].strip()          # "Label: gloss" -> "Label"
+        if name.lower().startswith("unclear"):
+            return []                              # an answer, not a failure
         for label in LABELS:
             if name.lower() == label.lower() and label not in out:
                 out.append(label)
@@ -126,8 +133,23 @@ def parse_reply(text: str) -> list[str]:
 #: default, and it showed: "How to Start and Run a Successful Restaurant" came
 #: back as Business once and as nothing the next time.  A cached label has to
 #: be reproducible or the cache is just a record of one lucky roll.
-OPTIONS = {"temperature": 0, "top_p": 1, "seed": 1, "num_predict": 128}
+OPTIONS = {"temperature": 0, "top_p": 1, "seed": 1, "num_predict": 512}
 API = "http://127.0.0.1:11434/api/generate"
+
+#: Constrain the reply to an array of known labels.  Without this, a model
+#: that reasons aloud (qwen3:4b does, whatever `think` is set to) spends its
+#: whole budget on prose and is cut off before any JSON appears -- which read
+#: exactly like a stupid model until the raw response was examined.  The
+#: schema also makes an invented label impossible rather than merely filtered.
+#: "Unclear" is in the enum on purpose.  With only real subjects available the
+#: model would not return an empty array -- it tagged "BSL Interpreted Tours of
+#: The Coming of Age", which has no description at all, as *Biology, ecology &
+#: vets*.  Given a way to say it cannot tell, it says so.  It is stripped from
+#: the stored labels, so the record simply has none.
+UNCLEAR = "Unclear - not enough information"
+SCHEMA = {"type": "array",
+          "items": {"type": "string", "enum": list(LABELS) + [UNCLEAR]},
+          "maxItems": 3}
 
 
 def ask(model: str, title: str, summary: str | None, *, timeout: int = 240) -> list[str]:
@@ -136,6 +158,7 @@ def ask(model: str, title: str, summary: str | None, *, timeout: int = 240) -> l
         "prompt": prompt_for(title, summary),
         "stream": False,
         "think": False,
+        "format": SCHEMA,
         "options": OPTIONS,
     }).encode("utf-8")
     req = urllib.request.Request(API, data=body,
@@ -166,6 +189,13 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--cache", type=Path, default=CACHE_PATH)
     ap.add_argument("--limit", type=int, help="classify at most this many")
     ap.add_argument("--recheck", action="store_true", help="ignore cached answers")
+    ap.add_argument("--budget", type=int, default=0,
+                    help="stop after this many (0 = no limit).  A venue "
+                         "publishing a whole season must not run CI for an "
+                         "hour; whatever is left is picked up tomorrow.")
+    ap.add_argument("--require-model", action="store_true",
+                    help="fail if the model cannot be reached, instead of "
+                         "leaving the events for the keyword fallback")
     args = ap.parse_args(argv)
 
     events = json.loads(args.events.read_text(encoding="utf-8"))["events"]
@@ -189,15 +219,19 @@ def main(argv: list[str] | None = None) -> int:
             todo.append((key, e))
     if args.limit:
         todo = todo[:args.limit]
+    budget = args.budget or len(todo)
+    over_budget = max(0, len(todo) - budget)
+    todo = todo[:budget]
 
     print(f"{len(events)} events, {len(entries)} cached "
           f"({len(stale)} stale dropped), {len(todo)} to classify")
-    done = 0
+    done = failed = 0
     for key, e in todo:
         try:
             labels = ask(args.model, e["title"], e.get("summary"))
         except Exception as exc:                   # noqa: BLE001
             print(f"  ! {e['title'][:40]}: {type(exc).__name__}: {exc}", file=sys.stderr)
+            failed += 1
             continue
         entries[key] = {
             "labels": labels,
@@ -212,6 +246,16 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  {done}/{len(todo)}")
     save_cache(cache, args.cache)
     print(f"classified {done}; cache now holds {len(entries)}")
+    if over_budget:
+        print(f"{over_budget} left for the next run (budget {budget})")
+    if failed and args.require_model:
+        print(f"{failed} could not be classified", file=sys.stderr)
+        return 1
+    if failed:
+        # Not an error by default: the build falls back to keywords for
+        # anything uncached, so a model outage degrades the tagging rather
+        # than breaking the daily refresh.
+        print(f"{failed} left to the keyword fallback")
     return 0
 
 

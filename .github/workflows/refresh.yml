@@ -61,6 +61,58 @@ jobs:
       # A corrupted data file must never reach the site.  This has happened:
       # a `union` merge driver interleaved two copies of events.json into
       # something that parsed nowhere.
+      # Subject tagging runs here, not on anybody's laptop.  Three things make
+      # that affordable on a CPU runner:
+      #   * the model is 2.5 GB and is restored from the Actions cache, so it
+      #     is downloaded once rather than every morning;
+      #   * the classification cache is keyed on the event's own text, so only
+      #     genuinely new wording is sent to the model -- between two real
+      #     consecutive builds that was *one* event;
+      #   * `--budget` caps the work, so a venue publishing a whole season
+      #     cannot run this job for an hour.  The rest is picked up tomorrow.
+      # If any of it fails the build carries on: `collector.build` falls back
+      # to keyword tags for anything the model has not read, so a bad morning
+      # for Ollama degrades the tagging instead of stopping the site.
+      - name: Cache the local model
+        id: model-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-qwen3-4b-v1
+
+      - name: Tag events with the local model
+        id: classify
+        continue-on-error: true
+        timeout-minutes: 20
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          ollama serve &
+          for i in $(seq 1 30); do
+            curl -sf http://127.0.0.1:11434/api/tags >/dev/null && break
+            sleep 1
+          done
+          ollama pull qwen3:4b
+          python -m collector.classify --budget 60
+
+      - name: Report tagging
+        if: always()
+        run: |
+          if [ "${{ steps.classify.outcome }}" != "success" ]; then
+            echo "::warning::Model tagging did not finish; new events keep their keyword tags."
+          fi
+          python - <<'PY'
+          import json, pathlib
+          p = pathlib.Path("data/classifications.json")
+          d = json.loads(p.read_text()) if p.exists() else {"entries": {}}
+          n = len(d.get("entries", {}))
+          blank = sum(1 for v in d["entries"].values() if not v.get("labels"))
+          print(f"{n} texts classified, {blank} of them 'cannot tell'")
+          PY
+
+      - name: Re-apply the model's tags
+        if: always()
+        run: python -m collector.build --retag -v
+
       - name: Validate the published data
         run: |
           python - <<'CHECK'
@@ -79,15 +131,19 @@ jobs:
       - name: Show what changed
         run: git --no-pager diff --stat -- docs/data/events.json || true
 
+      # Both files, and the early exit tests both: the classification cache is
+      # the expensive half.  Staging only events.json threw the model's work
+      # away on every run, so each morning would have reclassified the whole
+      # catalogue from nothing and never accumulated anything.
       - name: Commit the refreshed data
         run: |
-          if git diff --quiet -- docs/data/events.json; then
+          if git diff --quiet -- docs/data/events.json data/classifications.json; then
             echo "No change."
             exit 0
           fi
           git config user.name  "events-app bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/events.json
+          git add docs/data/events.json data/classifications.json
           git commit -m "data: refresh events ($(date -u +%Y-%m-%d))"
           git push
 
