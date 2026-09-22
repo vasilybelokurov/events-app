@@ -163,6 +163,17 @@
    "prompt_version": 6,
    "title": "PEN Pinter Prize 2026: Jacqueline Rose"
   },
+  "09b4e8f290eb81eb": {
+   "at": "2026-09-22T13:02:39+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Medicine & health",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Friendly Drop In"
+  },
   "0a5f0633ba0d6e36": {
    "at": "2026-09-22T09:52:19+00:00",
    "labels": [
@@ -792,6 +803,16 @@
    "prompt_version": 6,
    "title": "Exhibition Tour: Sunil Gupta: Life with a Camera, 1970 – Today"
   },
+  "5376eefb11711239": {
+   "at": "2026-09-22T13:02:51+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "October Half Term Family Day"
+  },
   "53856a726a10daac": {
    "at": "2026-09-22T09:52:09+00:00",
    "labels": [
@@ -1214,6 +1235,15 @@
    "prompt_version": 6,
    "title": "Start-up Stars: From purpose to profit"
   },
+  "81854c21e555dffc": {
+   "at": "2026-09-22T13:02:42+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Toddlers in the Galleries"
+  },
   "81aa14c859fe339b": {
    "at": "2026-09-22T09:54:53+00:00",
    "labels": [
@@ -1222,6 +1252,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "An introduction to particle physics 2026 (short course)"
+  },
+  "82eb3ed95d09f68e": {
+   "at": "2026-09-22T13:02:54+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "See Christmas Differently"
   },
   "8466a29966c43177": {
    "at": "2026-09-22T09:52:18+00:00",
@@ -1540,6 +1577,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Meet the Greeks"
+  },
+  "a41b5afac183d60f": {
+   "at": "2026-09-22T13:02:47+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Babies in the Galleries (0-18 months)"
   },
   "a4af12544f41a908": {
    "at": "2026-09-22T09:54:12+00:00",
@@ -2482,6 +2528,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Agatha Cure"
+  },
+  "f3e18c24529eef37": {
+   "at": "2026-09-22T13:02:32+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Technicians: The David Sainsbury Gallery"
   },
   "f718835436464ef8": {
    "at": "2026-09-22T09:52:41+00:00",
