@@ -76,8 +76,8 @@ what each event is about, and caches the answer in
 `data/classifications.json`. The daily workflow runs it — nobody's laptop is
 involved — and three things make that affordable on a CPU runner:
 
-* the model is 2.5 GB and restored from the Actions cache, not downloaded
-  every morning;
+* the model is 2.5 GB and simply pulled each run: measured on a real runner,
+  that took **11 seconds**, which no cache would beat, so none is used;
 * the cache is keyed on a hash of the event's **own text** plus the model and
   prompt version, so only genuinely new wording is sent. Between two real
   consecutive builds that was **one** event;

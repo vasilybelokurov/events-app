@@ -73,24 +73,19 @@ jobs:
       # If any of it fails the build carries on: `collector.build` falls back
       # to keyword tags for anything the model has not read, so a bad morning
       # for Ollama degrades the tagging instead of stopping the site.
-      - name: Cache the local model
-        id: model-cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.ollama/models
-          key: ollama-qwen3-4b-v1
-
       - name: Tag events with the local model
         id: classify
         continue-on-error: true
         timeout-minutes: 20
         run: |
-          # Measured, not assumed: the first run tells us whether caching the
-          # model is worth its 2.5 GB of the 10 GB repo budget, or whether a
-          # fresh pull on a runner's network is just as quick.
+          # No Actions cache for the model: measured on a cache miss, the
+          # runner pulled all 2.5 GB and was ready in *11 seconds*, which
+          # restoring a cache of that size would not beat.  So it costs
+          # nothing of the repo's 10 GB cache budget and there is no eviction
+          # behaviour to reason about.  The runner also has ~86 GB free, not
+          # the ~14 GB the documentation led me to expect.
           echo "::group::runner capacity"
           df -h / | tail -1
-          echo "cache hit: ${{ steps.model-cache.outputs.cache-hit }}"
           echo "::endgroup::"
           curl -fsSL https://ollama.com/install.sh | sh
           ollama serve &
