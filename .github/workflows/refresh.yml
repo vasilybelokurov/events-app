@@ -85,13 +85,23 @@ jobs:
         continue-on-error: true
         timeout-minutes: 20
         run: |
+          # Measured, not assumed: the first run tells us whether caching the
+          # model is worth its 2.5 GB of the 10 GB repo budget, or whether a
+          # fresh pull on a runner's network is just as quick.
+          echo "::group::runner capacity"
+          df -h / | tail -1
+          echo "cache hit: ${{ steps.model-cache.outputs.cache-hit }}"
+          echo "::endgroup::"
           curl -fsSL https://ollama.com/install.sh | sh
           ollama serve &
           for i in $(seq 1 30); do
             curl -sf http://127.0.0.1:11434/api/tags >/dev/null && break
             sleep 1
           done
+          start=$(date +%s)
           ollama pull qwen3:4b
+          echo "model ready in $(( $(date +%s) - start ))s"
+          du -sh ~/.ollama/models 2>/dev/null || true
           python -m collector.classify --budget 60
 
       - name: Report tagging
