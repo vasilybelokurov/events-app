@@ -37,6 +37,20 @@ that is yours.
 These are the project's claims about its own honesty. Breaking one is worse
 than shipping nothing.
 
+* **Never make anything up.** Not a test input, not an example record, not a
+  quotation, not a number. Take it from the real data, every time, even for a
+  throwaway check: `json.load(...)` the actual record and print it rather than
+  retyping it from memory. A synthetic fixture is fine for exercising a code
+  path, never for judging behaviour on real data, and it must say it is
+  synthetic. If the real input cannot be obtained, say so and stop — "I could
+  not get it" is a result, an invented one is not.
+
+  This rule exists because a classifier prompt was tuned for three rounds
+  against event descriptions that had been invented. "Martino Tirimo (piano)"
+  was tested with the description "A lunchtime piano recital"; the real record
+  has no description, only "Thursday 1 October 2026 1.05pm - 2pm". The cases
+  were then reported as fixed. Invented input does not merely waste a test, it
+  inverts the answer, because the invented version is always the easy version.
 * **Nothing is typed in by hand.** Every record comes from a source registered
   in `collector/sources.yaml`. There are currently no curated entries.
 * **Never fabricate a date.** A recurrence description is not a date:

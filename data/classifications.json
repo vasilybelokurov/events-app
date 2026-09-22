@@ -1,0 +1,2623 @@
+{
+ "entries": {
+  "018bf1f877fe17e5": {
+   "at": "2026-09-22T08:41:26+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Little Stars"
+  },
+  "0232920ab0aa556f": {
+   "at": "2026-09-22T08:38:06+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Meet the Designer - Christie Swallow"
+  },
+  "02390efb81734f70": {
+   "at": "2026-09-22T08:38:24+00:00",
+   "labels": [
+    "Psychology & neuroscience",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Wellcome Collection Lates: The Friendship Effect"
+  },
+  "042729d63be0d876": {
+   "at": "2026-09-22T08:39:11+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Fun with Fungi"
+  },
+  "046355a3c344a6ea": {
+   "at": "2026-09-22T08:40:41+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Black History of Science Tour"
+  },
+  "04efd318d82053c0": {
+   "at": "2026-09-22T08:37:45+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Frank Bowling: Seeking the Sublime"
+  },
+  "057e522c40e7d9f9": {
+   "at": "2026-09-22T08:42:41+00:00",
+   "labels": [
+    "History & archaeology",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Domestic and Global: At Home with the Morrises"
+  },
+  "05826ba49ac7210a": {
+   "at": "2026-09-22T08:41:19+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Comics and Creatures Create-along: Make Your Own Magical Worlds"
+  },
+  "05a141e69ef28352": {
+   "at": "2026-09-22T08:41:23+00:00",
+   "labels": [
+    "Psychology & neuroscience",
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The neuroscience of sadness"
+  },
+  "05ff89e0675fc8be": {
+   "at": "2026-09-22T08:40:45+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Studio Sunday Relaxed Session"
+  },
+  "064e45dc0694890e": {
+   "at": "2026-09-22T08:39:17+00:00",
+   "labels": [
+    "Politics & public service",
+    "Computing & AI"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Socialism after AI"
+  },
+  "073ce6277f5c7304": {
+   "at": "2026-09-22T08:41:42+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Hercule Poirot and Friends"
+  },
+  "07ed4e34f244840d": {
+   "at": "2026-09-22T08:40:14+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Finance & economics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "How do I research my market?"
+  },
+  "08b477167a1dc889": {
+   "at": "2026-09-22T08:41:30+00:00",
+   "labels": [
+    "Arts & performance",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Roger Ely Experience"
+  },
+  "09717dc1aea55b87": {
+   "at": "2026-09-22T08:39:39+00:00",
+   "labels": [
+    "Writing & communication",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Wordsworth Lecture: The Poetry That Changed The World"
+  },
+  "0982919edb9b3519": {
+   "at": "2026-09-22T08:39:49+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Getting It Made"
+  },
+  "0af1c615d91f50e1": {
+   "at": "2026-09-22T08:42:00+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Start-up Day 2026"
+  },
+  "0dfba874d29943ba": {
+   "at": "2026-09-22T08:41:43+00:00",
+   "labels": [
+    "Environment & climate",
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The new normal: how weather whiplash is shaping our lives"
+  },
+  "0ed575badd73b523": {
+   "at": "2026-09-22T08:38:25+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "A Moment in Time Photography Display"
+  },
+  "10fcdcb6fc34737e": {
+   "at": "2026-09-22T08:38:55+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "An American in London: A Celebration of Alison Lurie"
+  },
+  "120d78ee5f3e5be2": {
+   "at": "2026-09-22T08:39:59+00:00",
+   "labels": [
+    "Teaching & outreach",
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Tea & Talk with Naja Hendriksen: Meeting Contemporary Greenland"
+  },
+  "1225700f876efeef": {
+   "at": "2026-09-22T08:40:08+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Pride in Nature LGBTQ+ tour"
+  },
+  "12501b90852e3cc4": {
+   "at": "2026-09-22T08:42:15+00:00",
+   "labels": [
+    "Writing & communication",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Bridging Binaries LGBTQ+ Tour"
+  },
+  "14b1b5ac22b92940": {
+   "at": "2026-09-22T08:39:14+00:00",
+   "labels": [
+    "Chemistry & materials",
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Supercharged: The future of energy materials"
+  },
+  "14e86a77a99a055e": {
+   "at": "2026-09-22T08:38:56+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "American Writers’ Week: Rabih Alameddine"
+  },
+  "1608c318c33195e7": {
+   "at": "2026-09-22T08:41:04+00:00",
+   "labels": [
+    "Chemistry & materials",
+    "Medicine & health"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Discourse: How to get a molecule to obey you"
+  },
+  "1848097eb103883b": {
+   "at": "2026-09-22T08:42:24+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Security Cooperation within Government and between Governments - Ms Suzanne Raine, Selwyn College Cambridge"
+  },
+  "192ce1406ebcab55": {
+   "at": "2026-09-22T08:37:54+00:00",
+   "labels": [
+    "Psychology & neuroscience",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Rudy Loewe: Intimacies of Care – Spaces of Grief and Possibility"
+  },
+  "19da7ce2def130f5": {
+   "at": "2026-09-22T08:38:34+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Family Workshop: The Twirly Wiggly Story, Craft & Dance"
+  },
+  "1c1e8c4c1244ff2d": {
+   "at": "2026-09-22T08:42:55+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Conquest: The Making of Norman England"
+  },
+  "1c2373127c8cbdda": {
+   "at": "2026-09-22T08:39:55+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Welly Walk October 2026"
+  },
+  "1cd338c861d3fb74": {
+   "at": "2026-09-22T08:39:33+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Kettle’s Yard Chamber Music: Quartetto Noûs"
+  },
+  "1d4da6454d679cb0": {
+   "at": "2026-09-22T08:42:47+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Global Stories with Michael Rosen and Friends"
+  },
+  "1da81fdd812ea65f": {
+   "at": "2026-09-22T08:38:45+00:00",
+   "labels": [
+    "Law & justice",
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Introduction to copyright for business"
+  },
+  "1e1757a3ac6efb51": {
+   "at": "2026-09-22T08:42:29+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Cooperation in Nature - Professor Stuart West, University of Oxford"
+  },
+  "1e37155e4c317cd8": {
+   "at": "2026-09-22T08:42:02+00:00",
+   "labels": [
+    "Environment & climate",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Cambridge Botanic Lights 2026"
+  },
+  "1f6ceb29079470eb": {
+   "at": "2026-09-22T08:38:37+00:00",
+   "labels": [
+    "Arts & performance",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Bridging Binaries LGBTQ+ Tour at the Polar Museum"
+  },
+  "206e69d19c35c88b": {
+   "at": "2026-09-22T08:42:46+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Cooperation as a Laboratory of Being - Professor Iris van der Tuin, Utrecht University"
+  },
+  "20aa105c67236d5f": {
+   "at": "2026-09-22T08:39:51+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Get Published"
+  },
+  "20d72d347c4e9ea0": {
+   "at": "2026-09-22T08:38:42+00:00",
+   "labels": [
+    "Environment & climate",
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Pride in Nature LGBTQ+ tour"
+  },
+  "20f2d26b04a56b1f": {
+   "at": "2026-09-22T08:42:45+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Doctoral Open Day: Asian and African Collections"
+  },
+  "2208094f23c27fd5": {
+   "at": "2026-09-22T08:41:41+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Conquest of Knowledge: Translation and Civilization from Antiquity to the Renaissance"
+  },
+  "229f75fd8671bd9d": {
+   "at": "2026-09-22T08:41:15+00:00",
+   "labels": [
+    "Computing & AI",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Croonian Prize Lecture: Advances in computational protein design"
+  },
+  "22bfd0660aa9a711": {
+   "at": "2026-09-22T08:41:37+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Next Generation Mould Makers"
+  },
+  "2329a446c8f3314a": {
+   "at": "2026-09-22T08:42:22+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Exhibition Tour: Sunil Gupta: Life with a Camera, 1970 – Today"
+  },
+  "246e43ed4bb595c8": {
+   "at": "2026-09-22T08:40:06+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The ancient cosmos: The James Webb Space Telescope's new revelations"
+  },
+  "25d82477a9cfb285": {
+   "at": "2026-09-22T08:38:14+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "What is a trade mark and how to search for one?"
+  },
+  "26c82525f2e333cb": {
+   "at": "2026-09-22T08:40:52+00:00",
+   "labels": [
+    "Environment & climate",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Libraries and Positive Climate Action: Climate Resilience"
+  },
+  "2761c67ac344d675": {
+   "at": "2026-09-22T08:40:49+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Creative Writing Masterclass: Writing Memories Together"
+  },
+  "27660c1c93df61f2": {
+   "at": "2026-09-22T08:40:00+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Finance & economics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "GRANTfinder – Financial support for your business and community"
+  },
+  "279c2da7b4a9b8e2": {
+   "at": "2026-09-22T08:42:48+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Together Now: Cooperation and Collaboration in Social Art Practice - Mr Harold Offeh, Royal College of Art"
+  },
+  "2816be9f9c37c3cd": {
+   "at": "2026-09-22T08:41:50+00:00",
+   "labels": [
+    "Teaching & outreach",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Keeping Your Curriculum Broad and Balanced: Celebrating the Arts and Humanities in Primary Schools"
+  },
+  "282dcc5cf08d806c": {
+   "at": "2026-09-22T08:38:04+00:00",
+   "labels": [
+    "Engineering"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Cambridge Engineering outreach"
+  },
+  "2a3358fb0c9f25f2": {
+   "at": "2026-09-22T08:38:32+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Sound of Us Workshop with Amrit Kaur"
+  },
+  "2ad146d0ab7da7a3": {
+   "at": "2026-09-22T08:38:03+00:00",
+   "labels": [
+    "Finance & economics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Bank of England Museum"
+  },
+  "2ad7c0f88b0eb568": {
+   "at": "2026-09-22T08:39:00+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "American Writers’ Week: Daniel Kraus"
+  },
+  "2add52144412073c": {
+   "at": "2026-09-22T08:39:53+00:00",
+   "labels": [
+    "Law & justice"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Introduction to Intellectual Property"
+  },
+  "2b6400e8559973ee": {
+   "at": "2026-09-22T08:38:32+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Live Drawing with Rosemary Cronin"
+  },
+  "2c226cc88706f693": {
+   "at": "2026-09-22T08:42:06+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Christie: The Writer's Writer"
+  },
+  "2d5a592ac99b16c8": {
+   "at": "2026-09-22T08:37:52+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "BSL Interpreted Tours of Tenderness and Rage"
+  },
+  "2f040a73b3279a87": {
+   "at": "2026-09-22T08:42:37+00:00",
+   "labels": [
+    "Finance & economics",
+    "Business & entrepreneurship",
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Economic Architecture of Cooperation - Professor Axel Ockenfels, University of Cologne, Max Planck Institute for Beh"
+  },
+  "2f6895c1b3f4d0bc": {
+   "at": "2026-09-22T08:38:01+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "BSL Interpreted Tours of Audrey Amiss and Rudy Loewe exhibitions"
+  },
+  "2fa8481d7cc57b31": {
+   "at": "2026-09-22T08:39:41+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Fungi Field Day"
+  },
+  "317504d52a08c961": {
+   "at": "2026-09-22T08:38:31+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Inwrds: The Gothic and Grotesque"
+  },
+  "330d99f2c73c651c": {
+   "at": "2026-09-22T08:37:49+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "BSL Tours of ‘The Coming of Age’ with Rubbena Aurangzeb-Tariq"
+  },
+  "34691647b569b06b": {
+   "at": "2026-09-22T08:39:37+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Museum Boost"
+  },
+  "3548b548642e42e7": {
+   "at": "2026-09-22T08:38:18+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Tea & Talk at the Polar Museum: Antarctic Panoramas"
+  },
+  "38d239076c62370d": {
+   "at": "2026-09-22T08:38:49+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Politics & public service",
+    "Computing & AI"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Eclipsing the West? China's tech titans and the new global power shift"
+  },
+  "3a20bb531a294a55": {
+   "at": "2026-09-22T08:39:33+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "PEN Pinter Prize 2026: Jacqueline Rose"
+  },
+  "3b39213d6a9065a6": {
+   "at": "2026-09-22T08:41:59+00:00",
+   "labels": [
+    "Medicine & health"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "See Healthcare Differently"
+  },
+  "3b9ac8332a022a7e": {
+   "at": "2026-09-22T08:40:51+00:00",
+   "labels": [
+    "Environment & climate",
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Setting up a Staff Sustainability Network"
+  },
+  "3cfd2bfe91bd4a4e": {
+   "at": "2026-09-22T08:38:07+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Offcut Afternoons"
+  },
+  "3d3af12d8354f636": {
+   "at": "2026-09-22T08:39:58+00:00",
+   "labels": [
+    "Writing & communication",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Study Day: Oscar Wilde"
+  },
+  "3d7fdf93b6b72257": {
+   "at": "2026-09-22T08:39:08+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "From Darwin to Dodos - guided tour of the Museum"
+  },
+  "41d67824ea353a66": {
+   "at": "2026-09-22T08:39:07+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Animal Tails: Fossil Fun"
+  },
+  "42618b4b47c98559": {
+   "at": "2026-09-22T08:40:32+00:00",
+   "labels": [
+    "Environment & climate",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Green Libraries Week: Climate Fiction with Richard Lambert"
+  },
+  "4404b90bd500ac10": {
+   "at": "2026-09-22T08:41:06+00:00",
+   "labels": [
+    "History & archaeology",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Pepperpots and Provision Grounds"
+  },
+  "44db64b4a5a12e48": {
+   "at": "2026-09-22T08:40:30+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Reimagining Edward Elgar: Past, Present and Future"
+  },
+  "483dc0d6b61fca32": {
+   "at": "2026-09-22T08:40:31+00:00",
+   "labels": [
+    "Environment & climate",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Magpies Magic Forest Trail"
+  },
+  "48baee9d5824715f": {
+   "at": "2026-09-22T08:42:09+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Guided House Tour"
+  },
+  "49a1945c92680c94": {
+   "at": "2026-09-22T08:39:26+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Coaching session 1: Is starting a business for me?"
+  },
+  "49bb575c56cf9b02": {
+   "at": "2026-09-22T08:40:22+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "An Enamel Revolution: Curator's Talk"
+  },
+  "4a3262f18a58d145": {
+   "at": "2026-09-22T08:39:19+00:00",
+   "labels": [
+    "Medicine & health",
+    "Psychology & neuroscience",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Art cure: The science of how the arts transform our health"
+  },
+  "4a4b7ee8a4bcfa33": {
+   "at": "2026-09-22T08:41:28+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Upstart Festival at V&A Dundee"
+  },
+  "4a7b9ba9999ba482": {
+   "at": "2026-09-22T08:40:17+00:00",
+   "labels": [
+    "History & archaeology",
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "LGBTQ+ Tours at the Sedgwick Museum of Earth Sciences"
+  },
+  "4a7c272f010c85f3": {
+   "at": "2026-09-22T08:38:12+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Coaching sessions 2 & 3: Research viability and business planning"
+  },
+  "4b3f48649f31741b": {
+   "at": "2026-09-22T08:37:55+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Audio Described Tours of 'Tenderness and Rage'"
+  },
+  "4bf8b8eee4156eba": {
+   "at": "2026-09-22T08:42:53+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Doctoral Open Day: Europe, Americas and Oceania"
+  },
+  "4c289bb758e3ce84": {
+   "at": "2026-09-22T08:41:22+00:00",
+   "labels": [
+    "Engineering"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "How to build a chocolate bridge (family)"
+  },
+  "4d84c056dddd02a0": {
+   "at": "2026-09-22T08:39:03+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Martino Tirimo (piano)"
+  },
+  "4dc1d34c754017d9": {
+   "at": "2026-09-22T08:42:54+00:00",
+   "labels": [
+    "History & archaeology",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Doctoral Open Day: Contemporary and Digital Collections"
+  },
+  "4ed2825cad30ebb6": {
+   "at": "2026-09-22T08:41:35+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "For Your Inspiration: Into the wild"
+  },
+  "51a276e07599fb60": {
+   "at": "2026-09-22T08:42:38+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "LGBT+ History Month Study Day"
+  },
+  "52855fd68cd1e6b9": {
+   "at": "2026-09-22T08:40:37+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Dynasties in Dialogue: The Tang, the Qing, and China Today"
+  },
+  "52aaf29035d290d2": {
+   "at": "2026-09-22T08:41:39+00:00",
+   "labels": [
+    "Maths, data & statistics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Tomorrow: It's not a question of when, but where! (family)"
+  },
+  "52d4c32d3b5f5b9b": {
+   "at": "2026-09-22T08:37:58+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "An introduction to quantum theory 2026 (short course)"
+  },
+  "52dd4442b45c9707": {
+   "at": "2026-09-22T08:37:41+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Art of Deception"
+  },
+  "550bd677de4c988e": {
+   "at": "2026-09-22T08:39:50+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Francis Crick Prize Lecture: Pathogens and the power of evolution"
+  },
+  "55e32683bbcc4fe0": {
+   "at": "2026-09-22T08:40:01+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Launch of Somali Week Festival 2026"
+  },
+  "5667eafdbccd393d": {
+   "at": "2026-09-22T08:40:07+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Apple Day 2026"
+  },
+  "56be251a262347bf": {
+   "at": "2026-09-22T08:41:44+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Contemplation, with Cambridge Schola"
+  },
+  "56c39e2bf15d6275": {
+   "at": "2026-09-22T08:37:47+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Relaxed Openings of The Coming of Age"
+  },
+  "5948a905ee6be451": {
+   "at": "2026-09-22T08:42:31+00:00",
+   "labels": [
+    "History & archaeology",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "African Legacies in Cambridge Museums Tour"
+  },
+  "59ac47b3d7620f24": {
+   "at": "2026-09-22T08:42:28+00:00",
+   "labels": [
+    "Arts & performance",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Neither Maid nor Wife: Pre-Raphaelite Women and the Firm of Morris, Marshall Faulkner & Co."
+  },
+  "5a0deff43b545368": {
+   "at": "2026-09-22T08:41:58+00:00",
+   "labels": [
+    "History & archaeology",
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Resistance: A History of Disability in Britain"
+  },
+  "5a69760973fe5acb": {
+   "at": "2026-09-22T08:39:47+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Pride in Nature LGBTQ+ tour"
+  },
+  "5a70671d4d5c7048": {
+   "at": "2026-09-22T08:38:26+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Create a Craft Flower Bouquet with Fatimah Mujtaba"
+  },
+  "5cd080b2c9bfe8d8": {
+   "at": "2026-09-22T08:42:14+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Animal Tails: Winter Sleep"
+  },
+  "5d6c8aeb4a693a78": {
+   "at": "2026-09-22T08:38:50+00:00",
+   "labels": [
+    "Computing & AI"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Hayekian case for wage flexibility in an AI economy"
+  },
+  "5ecedb50f128beaa": {
+   "at": "2026-09-22T08:41:08+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Crafternoon: Telling a Myth at Halloween"
+  },
+  "5f05af4eb087131f": {
+   "at": "2026-09-22T08:41:18+00:00",
+   "labels": [
+    "Writing & communication",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Agatha Cure"
+  },
+  "623cee330a697c67": {
+   "at": "2026-09-22T08:40:55+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Black History of Science Tours"
+  },
+  "625b67860201771b": {
+   "at": "2026-09-22T08:42:28+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Miss Marple versus 2027"
+  },
+  "63bff5b4f1e843e1": {
+   "at": "2026-09-22T08:39:13+00:00",
+   "labels": [
+    "Physics & space",
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Prism break (family)"
+  },
+  "644691e0194d8856": {
+   "at": "2026-09-22T08:40:16+00:00",
+   "labels": [
+    "Environment & climate",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Green Libraries Week: Schools"
+  },
+  "6551ec136cacf56f": {
+   "at": "2026-09-22T08:41:10+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Psychology & neuroscience",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "ShRIek: The spooky science of the paranormal (family)"
+  },
+  "655a0b8b03f4ad71": {
+   "at": "2026-09-22T08:38:56+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "EPICo Conference 2026"
+  },
+  "6691a93cc397af4c": {
+   "at": "2026-09-22T08:38:47+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "American Writers’ Week"
+  },
+  "66fb2356fef9771c": {
+   "at": "2026-09-22T08:42:52+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Doctoral Open Day: Modern Collections from 1800 to 1950"
+  },
+  "6719ea8be31c8630": {
+   "at": "2026-09-22T08:41:24+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "US Politics Today"
+  },
+  "68d06d263ce07508": {
+   "at": "2026-09-22T08:40:35+00:00",
+   "labels": [
+    "Environment & climate",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Writing Climate Fiction That Changes Minds"
+  },
+  "6df842f5eec46efb": {
+   "at": "2026-09-22T08:42:13+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "An Evening with Labi Siffre"
+  },
+  "6f17e2dbb1c4002b": {
+   "at": "2026-09-22T08:42:21+00:00",
+   "labels": [
+    "Environment & climate",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "William Morris and the Defence of Nature"
+  },
+  "6f56dd6cd379367f": {
+   "at": "2026-09-22T08:37:42+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "poíēsis: an exhibition by Tom de Freston"
+  },
+  "6fb1c574d4188687": {
+   "at": "2026-09-22T08:39:16+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Yugoslavism and its migrations: new directions in Yugoslav studies"
+  },
+  "70706751e94ad4ac": {
+   "at": "2026-09-22T08:40:58+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Meet the Greeks"
+  },
+  "70cab1bf6f74259a": {
+   "at": "2026-09-22T08:40:46+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Studio Sunday"
+  },
+  "70e167214576103d": {
+   "at": "2026-09-22T08:38:46+00:00",
+   "labels": [
+    "Engineering",
+    "Design, making & architecture",
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Inventors' Club"
+  },
+  "71a1a3662d6726e4": {
+   "at": "2026-09-22T08:41:47+00:00",
+   "labels": [
+    "Writing & communication",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Diversifying Children’s Books in the Classroom: Beyond the Secret Garden"
+  },
+  "7252e39c81577c05": {
+   "at": "2026-09-22T08:39:55+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Young V&A Schools: Design Takeover – KS3 (Autumn 2026)"
+  },
+  "7428724778544161": {
+   "at": "2026-09-22T08:40:54+00:00",
+   "labels": [
+    "Physics & space",
+    "Engineering"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Global fusion developments: The race for power"
+  },
+  "746b2bc9a1f646af": {
+   "at": "2026-09-22T08:41:14+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "China Miéville presents The Rouse"
+  },
+  "75bb1f1d3ba06d22": {
+   "at": "2026-09-22T08:40:34+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Sustainable Collecting at the British Library"
+  },
+  "760c3a0abd434c5d": {
+   "at": "2026-09-22T08:39:10+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Making from Fragments Ceramics Workshop"
+  },
+  "76e65ac8bd7c320c": {
+   "at": "2026-09-22T08:37:56+00:00",
+   "labels": [
+    "Arts & performance",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "BSL Tour of ‘Audrey Amiss: The Surviving Exhibitions’ with Alison Claire France"
+  },
+  "77ae93dc9cddf1b4": {
+   "at": "2026-09-22T08:40:20+00:00",
+   "labels": [
+    "Environment & climate",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Cooling Without Air Conditioning: Passive Design Lessons from Traditional Islamic Architecture"
+  },
+  "7aa5e535c2762351": {
+   "at": "2026-09-22T08:41:07+00:00",
+   "labels": [
+    "Writing & communication",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Tales of the Weird – An Autumnal Festival"
+  },
+  "7cd12181d633f354": {
+   "at": "2026-09-22T08:38:53+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "American Writers’ Week: Armistead Maupin"
+  },
+  "7d60a6f97d38f0db": {
+   "at": "2026-09-22T08:40:02+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Discourse: CERN - the past, present and future"
+  },
+  "7ddd29ad697393a7": {
+   "at": "2026-09-22T08:38:05+00:00",
+   "labels": [
+    "Engineering",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Cambridge Museum of Technology"
+  },
+  "8007dcba9f5a98ee": {
+   "at": "2026-09-22T08:39:57+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Kettle’s Yard Chamber Music: Susan Tomes, piano"
+  },
+  "809ed476910b7479": {
+   "at": "2026-09-22T08:38:25+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Capture your portrait with Jasprit Singh"
+  },
+  "80e403ede3b952ee": {
+   "at": "2026-09-22T08:40:48+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Family Activities in autumn for children with SEND"
+  },
+  "81572419c96edd16": {
+   "at": "2026-09-22T08:40:59+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Sedgwick Museum Staff Favourites Tours"
+  },
+  "826facdeb91bfb60": {
+   "at": "2026-09-22T08:39:35+00:00",
+   "labels": [
+    "Medicine & health",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Museum Encounters: Parkinson's Dance Course (Autumn 2026)"
+  },
+  "827662c477900502": {
+   "at": "2026-09-22T08:41:48+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "In Conversation: Sunil Gupta and Hal Fischer"
+  },
+  "86ad74f1835a0323": {
+   "at": "2026-09-22T08:41:34+00:00",
+   "labels": [
+    "History & archaeology",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "From Darwin to Dodos - guided tour of the Museum"
+  },
+  "88c3fd2f8044d478": {
+   "at": "2026-09-22T08:40:26+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Kettle’s Yard Chamber Music: Brodsky Quartet"
+  },
+  "89607afe907efa0b": {
+   "at": "2026-09-22T08:41:55+00:00",
+   "labels": [
+    "Computing & AI"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The future of AI is tiny and physical"
+  },
+  "89e63a6058b365ae": {
+   "at": "2026-09-22T08:41:20+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Doctoral Open Day: Music, Sound and Vision"
+  },
+  "8a160b1722b059cc": {
+   "at": "2026-09-22T08:40:23+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Writing a Greener Future: A Creative Writing Workshop for Young Writers"
+  },
+  "8b05d0178703bc0b": {
+   "at": "2026-09-22T08:38:59+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "American Writers’ Week: Jeanine Cummins"
+  },
+  "8b3116631b2aca4e": {
+   "at": "2026-09-22T08:37:44+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Coming of Age"
+  },
+  "8ce64dc93274a2d3": {
+   "at": "2026-09-22T08:37:49+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Tenderness and Rage"
+  },
+  "8d0f803e7377a397": {
+   "at": "2026-09-22T08:38:10+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Woodworking Saturdays"
+  },
+  "8db1e11fd2340b08": {
+   "at": "2026-09-22T08:38:13+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Business Fundamentals: Sales"
+  },
+  "8f0c519bdb051731": {
+   "at": "2026-09-22T08:42:24+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Doctoral Open Day: British and European Collections from Antiquity to 1800"
+  },
+  "8fb3480997c2ca39": {
+   "at": "2026-09-22T08:40:43+00:00",
+   "labels": [
+    "Maths, data & statistics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "An Evening of Unnecessary Detail"
+  },
+  "8fed83e2bbce391c": {
+   "at": "2026-09-22T08:41:52+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Young Adult Crime Fiction Fest: Patrice Lawrence and Friends"
+  },
+  "91313937757497d9": {
+   "at": "2026-09-22T08:39:27+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Networking for Success – Express"
+  },
+  "9321f779832faed1": {
+   "at": "2026-09-22T08:39:31+00:00",
+   "labels": [
+    "Film, animation & media",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "How to Build a Library"
+  },
+  "9472560575728e03": {
+   "at": "2026-09-22T08:39:20+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Chapter: Once Upon a Book"
+  },
+  "9594c6978c962927": {
+   "at": "2026-09-22T08:38:44+00:00",
+   "labels": [
+    "Teaching & outreach",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Queer Archives Study Day"
+  },
+  "9701be377cbccdf3": {
+   "at": "2026-09-22T08:40:03+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Panel and Conversation: Insights from South Asian Creatives"
+  },
+  "971c45e6f1af7abc": {
+   "at": "2026-09-22T08:39:05+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "America as a revisionist power (and what it means for the rest of the world)"
+  },
+  "97b35b3ccb969658": {
+   "at": "2026-09-22T08:39:30+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Spotlight Talk: Kettle’s Yard Rugs"
+  },
+  "9905a78f2659f165": {
+   "at": "2026-09-22T08:40:25+00:00",
+   "labels": [
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Beans in Britain: Fact and Fiction"
+  },
+  "9960d1c4dbb50d8f": {
+   "at": "2026-09-22T08:37:46+00:00",
+   "labels": [
+    "Arts & performance",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Moving Objects: stories from behind the scenes at the museum"
+  },
+  "9b879d358bee4620": {
+   "at": "2026-09-22T08:39:15+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Family Workshop: Gaia & Luna Dance Adventure"
+  },
+  "9c3e035a59da5dc3": {
+   "at": "2026-09-22T08:41:00+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Environment & climate"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Start-up Stars: From purpose to profit"
+  },
+  "9dbd9b1c50f0a2ec": {
+   "at": "2026-09-22T08:41:57+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Young Adult Crime Fiction Fest: Benjamin Dean livestreamed workshop"
+  },
+  "9f352a29839afb87": {
+   "at": "2026-09-22T08:40:53+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "An introduction to particle physics 2026 (short course)"
+  },
+  "a01d15212ed5d792": {
+   "at": "2026-09-22T08:39:52+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Live schools' broadcast: the Bayeux Tapestry"
+  },
+  "a13a1f82e5b5caf2": {
+   "at": "2026-09-22T08:41:13+00:00",
+   "labels": [
+    "Physics & space",
+    "Engineering"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Einstein Telescope: Discovery and diplomacy"
+  },
+  "a2b75138023ddd97": {
+   "at": "2026-09-22T08:37:59+00:00",
+   "labels": [
+    "Arts & performance",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "A Mughal Songbook: Art, Music and Empire"
+  },
+  "a2e4250e39954174": {
+   "at": "2026-09-22T08:40:09+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Did Neanderthals hum? The musicality of early humans"
+  },
+  "a47bac8f55cd730a": {
+   "at": "2026-09-22T08:40:56+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "See Buildings Differently"
+  },
+  "a52c04a4041e1ade": {
+   "at": "2026-09-22T08:38:28+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Cyanotype Portraits with Michael Akuagwu & Jude Amponsah"
+  },
+  "a54c2232c66debc8": {
+   "at": "2026-09-22T08:40:12+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "An Enamel Revolution: China and the World"
+  },
+  "a6b760e8efe76c2d": {
+   "at": "2026-09-22T08:40:05+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The animal queendom (family)"
+  },
+  "a7d8879fc5294ac4": {
+   "at": "2026-09-22T08:39:40+00:00",
+   "labels": [
+    "Computing & AI",
+    "Engineering"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "WiFi Wars Debug XXII"
+  },
+  "a84fe4d3247bb865": {
+   "at": "2026-09-22T08:41:01+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Evolution Expedition"
+  },
+  "a8f2176d5ae4b8db": {
+   "at": "2026-09-22T08:38:52+00:00",
+   "labels": [
+    "Arts & performance",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Discovering our Collections through Songsheets"
+  },
+  "a9f9c3faa547d946": {
+   "at": "2026-09-22T08:40:39+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Chemistry & materials",
+    "Physics & space"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Family Fun Day: Spooky science"
+  },
+  "aa3123a88e3a5be8": {
+   "at": "2026-09-22T08:38:00+00:00",
+   "labels": [
+    "Medicine & health"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Operating Theatre: 250 Years of Surgery in Hospitals"
+  },
+  "aaa0afa7b41df8d6": {
+   "at": "2026-09-22T08:39:21+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Life Scientific: Chris Packham"
+  },
+  "aab39e1b2165fac9": {
+   "at": "2026-09-22T08:41:49+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Pride and Prejudice"
+  },
+  "aaea640fbb8176ba": {
+   "at": "2026-09-22T08:40:49+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "National Emergency Briefing – Community Screening"
+  },
+  "ab022e1302eaa727": {
+   "at": "2026-09-22T08:39:09+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "American Writers’ Week: Katie Kitamura"
+  },
+  "ac6e72bf22ad0a13": {
+   "at": "2026-09-22T08:42:03+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Irish Writers' Weekend: Maggie O'Farrell"
+  },
+  "ae8dd4c538547626": {
+   "at": "2026-09-22T08:42:44+00:00",
+   "labels": [
+    "Physics & space",
+    "Engineering",
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Magic of Magnetism - Professor Russell Cowburn, University of Cambridge"
+  },
+  "afa220ed4b780518": {
+   "at": "2026-09-22T08:38:20+00:00",
+   "labels": [
+    "Environment & climate",
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The road to COP32: an African agenda for climate action and economic development"
+  },
+  "b09b38f2bd03cf13": {
+   "at": "2026-09-22T08:41:36+00:00",
+   "labels": [
+    "History & archaeology",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Pen: Simon Garfield in Conversation with Jeremy Deller"
+  },
+  "b317e6dfde234388": {
+   "at": "2026-09-22T08:39:22+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Soul Trader: Build your business by heart"
+  },
+  "b3502af8035a733f": {
+   "at": "2026-09-22T08:38:01+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Immuno-cautious Openings of the 'Audrey Amiss' and 'Rudy Loewe' exhibitions"
+  },
+  "b3f846cf4421b699": {
+   "at": "2026-09-22T08:39:01+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Exhibition Tour: Sunil Gupta: Life with a Camera, 1970 – Today"
+  },
+  "b5416b66f3624d18": {
+   "at": "2026-09-22T08:38:11+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "the Design Museum"
+  },
+  "b616c2bfaa3951bc": {
+   "at": "2026-09-22T08:38:08+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Technicians: The David Sainsbury Gallery"
+  },
+  "b693ffd0236ae5a5": {
+   "at": "2026-09-22T08:38:51+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "American Writers’ Week: Alison Bechdel"
+  },
+  "b70308c7c88c9508": {
+   "at": "2026-09-22T08:42:18+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Creative Connections"
+  },
+  "b723e9857cb82ffe": {
+   "at": "2026-09-22T08:41:38+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Upstart Festival: Careers in Fashion"
+  },
+  "b82d063e52267f51": {
+   "at": "2026-09-22T08:39:25+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Spotlight Talk: Women Weavers: Thread, Memory, Identity"
+  },
+  "b8638fc833270c8a": {
+   "at": "2026-09-22T08:39:02+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Meet the Artist: Debbie Yeboah"
+  },
+  "b9a04845fbc7cc25": {
+   "at": "2026-09-22T08:37:51+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "'Polar Panoramas'"
+  },
+  "ba8ddc18352eee43": {
+   "at": "2026-09-22T08:39:12+00:00",
+   "labels": [
+    "Psychology & neuroscience",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Conversations about Death"
+  },
+  "bc707d50721e5960": {
+   "at": "2026-09-22T08:40:58+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Family Activity in Autumn"
+  },
+  "bd3d08cf45265419": {
+   "at": "2026-09-22T08:37:44+00:00",
+   "labels": [
+    "Arts & performance",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Women’s Library at 100: celebrating a century of collections"
+  },
+  "bd952d2198ad1507": {
+   "at": "2026-09-22T08:38:21+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Conserving Constable"
+  },
+  "be77b69b57f40788": {
+   "at": "2026-09-22T08:42:01+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "LATE at Kettle's Yard"
+  },
+  "bee7e6b246c86548": {
+   "at": "2026-09-22T08:38:30+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Illustrate Schiaparelli Looks with BENJOMO"
+  },
+  "bf612eb815477021": {
+   "at": "2026-09-22T08:38:09+00:00",
+   "labels": [
+    "Law & justice"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "UK Supreme Court tours"
+  },
+  "c07f6c35324f8344": {
+   "at": "2026-09-22T08:42:20+00:00",
+   "labels": [
+    "Chemistry & materials",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Chemistry of a candle"
+  },
+  "c0c68f683772b0e3": {
+   "at": "2026-09-22T08:40:24+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Inspiring Entrepreneurs: Business Rooted in Community"
+  },
+  "c2920dcf4f740ef3": {
+   "at": "2026-09-22T08:40:50+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Skeleton Science"
+  },
+  "c295655dcb4a484e": {
+   "at": "2026-09-22T08:40:23+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Exhibition Tour: Sunil Gupta: Life with a Camera, 1970 – Today"
+  },
+  "c2d2bf65f621431b": {
+   "at": "2026-09-22T08:37:57+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Lights Out and Audio Described Tours of the Audrey Amiss and Rudy Loewe Exhibitions"
+  },
+  "c4cd89f804a6c409": {
+   "at": "2026-09-22T08:42:08+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Christie Around the World"
+  },
+  "c4ffedc6e52e3455": {
+   "at": "2026-09-22T08:42:04+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Irish Writers' Weekend"
+  },
+  "c5037eba323158da": {
+   "at": "2026-09-22T08:42:11+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Top Ten Christie Killings... In Reverse Order"
+  },
+  "c62fd16ad362ca8a": {
+   "at": "2026-09-22T08:42:40+00:00",
+   "labels": [
+    "Politics & public service",
+    "Law & justice"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Welfare Reform and the Imperative of Cooperation - Sir Andrew Dilnot, Nuffield College Oxford"
+  },
+  "c7a414e2cebb7c87": {
+   "at": "2026-09-22T08:38:07+00:00",
+   "labels": [
+    "Law & justice"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Old Bailey public galleries (Central Criminal Court)"
+  },
+  "c982b3c90a91bd51": {
+   "at": "2026-09-22T08:40:10+00:00",
+   "labels": [
+    "Arts & performance",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "God Save the Queens!"
+  },
+  "c99bb5b7f9ec963c": {
+   "at": "2026-09-22T08:39:32+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Museum Late: Frank Bowling"
+  },
+  "c9bae385ab1da4f0": {
+   "at": "2026-09-22T08:42:26+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "In Conversation: Sunil Gupta and Charan Singh"
+  },
+  "caa8b5dab9f81758": {
+   "at": "2026-09-22T08:42:31+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Mysteries, Murders, Muddles and Mayhem!"
+  },
+  "cad0933878d4c1ec": {
+   "at": "2026-09-22T08:37:43+00:00",
+   "labels": [
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "From Magma to Magnets"
+  },
+  "cd3a8911e8f49df1": {
+   "at": "2026-09-22T08:42:09+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Neneh & Andi: 45 years of Friendship, Family and Food"
+  },
+  "ce187f22c849a45b": {
+   "at": "2026-09-22T08:41:12+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Psychology & neuroscience",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "ShRIek: The spooky science of the paranormal"
+  },
+  "ce6bcf766ed0748c": {
+   "at": "2026-09-22T08:38:54+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Finance & economics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "In conversation with Alberto Musalem, President of the Federal Reserve Bank of St. Louis"
+  },
+  "d0dc49bee8752208": {
+   "at": "2026-09-22T08:42:07+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Exhibition Tour: Sunil Gupta: Life with a Camera, 1970 – Today"
+  },
+  "d11dbbbd297925b1": {
+   "at": "2026-09-22T08:42:17+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "From Darwin to Dodos - guided tour of the Museum"
+  },
+  "d176c0c6e3ec74ee": {
+   "at": "2026-09-22T08:38:15+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Finance & economics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Coaching session 4: Financial planning"
+  },
+  "d22207b5bb0dcac7": {
+   "at": "2026-09-22T08:42:12+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "An Enamel Revolution: Curator's Talk (Mandarin Chinese)"
+  },
+  "d28a291ea0ed5851": {
+   "at": "2026-09-22T08:41:16+00:00",
+   "labels": [
+    "Teaching & outreach",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Teacher CPD: Oscar Wilde in Context"
+  },
+  "d3aac169cecaafff": {
+   "at": "2026-09-22T08:42:51+00:00",
+   "labels": [
+    "Environment & climate",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Cooperation for Nature - Dr Mike Rands, Cambridge Conservation Initiative"
+  },
+  "d42b21d1dd82ee31": {
+   "at": "2026-09-22T08:39:04+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "American Writers’ Week: Viet Thanh Nguyen"
+  },
+  "d48ecce37d477bdb": {
+   "at": "2026-09-22T08:40:40+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Autumn Tours and Talks"
+  },
+  "d566794a49f93d09": {
+   "at": "2026-09-22T08:38:58+00:00",
+   "labels": [
+    "Finance & economics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Monetary clarity in the face of geoeconomic turmoil"
+  },
+  "d6034501f2fd408f": {
+   "at": "2026-09-22T08:41:27+00:00",
+   "labels": [
+    "Maths, data & statistics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Milner Prize Lecture: Highlights from 40 years of Complexity Theory"
+  },
+  "d8d9a94d8873f65f": {
+   "at": "2026-09-22T08:38:36+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Discourse: Physics and philosophy: On the equality of all things"
+  },
+  "d8f8c153a20528ad": {
+   "at": "2026-09-22T08:41:32+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Animal Tails: Our feathered friends"
+  },
+  "d8fc144b22894f28": {
+   "at": "2026-09-22T08:40:04+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Family Festival: Stories, Sign and Shine"
+  },
+  "d9218364ab1ed06a": {
+   "at": "2026-09-22T08:38:03+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Sunil Gupta: Life with a Camera, 1970 – Now"
+  },
+  "d949e76d7c427146": {
+   "at": "2026-09-22T08:41:25+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Michael Faraday Prize Lecture: Life in the fast lane — What the past tells us about evolution under pressure"
+  },
+  "d9aec11793916721": {
+   "at": "2026-09-22T08:38:35+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Start using social media for my small business"
+  },
+  "daa33447fb93b670": {
+   "at": "2026-09-22T08:41:53+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Young Adult Crime Fiction Fest: Lucy Foley and Friends"
+  },
+  "db7f4ef3dc040613": {
+   "at": "2026-09-22T08:38:29+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Fragments into Form - Assembling a sculpture from wood off cuts."
+  },
+  "dba4f20a81b30404": {
+   "at": "2026-09-22T08:37:48+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Whatever the Weather photography competition"
+  },
+  "dc0e1dcbc6c3e4f2": {
+   "at": "2026-09-22T08:39:00+00:00",
+   "labels": [
+    "Psychology & neuroscience",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Do social media platforms make people happier?"
+  },
+  "dc17df07d3b5f027": {
+   "at": "2026-09-22T08:37:50+00:00",
+   "labels": [
+    "Environment & climate",
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Exhibition: The beauty of the Earth"
+  },
+  "df41401fcbdf2848": {
+   "at": "2026-09-22T08:42:05+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Crafternoon: The Patterns in Art"
+  },
+  "dfc08e57be72acc5": {
+   "at": "2026-09-22T08:41:40+00:00",
+   "labels": [
+    "Physics & space",
+    "Engineering",
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "How to grow a quantum computer"
+  },
+  "dfe3fbad387df9de": {
+   "at": "2026-09-22T08:39:06+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "How to Start and Run a Successful Restaurant, Coffee Bar or Food Business"
+  },
+  "e04111a46f9e95fd": {
+   "at": "2026-09-22T08:37:53+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Audrey Amiss: The Surviving Exhibitions"
+  },
+  "e0b6be955ff90980": {
+   "at": "2026-09-22T08:37:47+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "BSL Interpreted Tours of The Coming of Age"
+  },
+  "e0b8c050bec8a89e": {
+   "at": "2026-09-22T08:40:28+00:00",
+   "labels": [
+    "Computing & AI",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Digital Meetup: Systems at Play"
+  },
+  "e0dac4f598f866b2": {
+   "at": "2026-09-22T08:40:19+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Finance & economics"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Securing Your Payments"
+  },
+  "e16e528a706350cb": {
+   "at": "2026-09-22T08:38:23+00:00",
+   "labels": [
+    "Environment & climate",
+    "Engineering"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Innovation and energy for a sustainable future"
+  },
+  "e2e67bb6e82dee28": {
+   "at": "2026-09-22T08:42:25+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Quills and Calligraphy Masterclass"
+  },
+  "e41077ee0d2e632f": {
+   "at": "2026-09-22T08:41:03+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Agatha Christie: A World of Mystery"
+  },
+  "e700d93324990b80": {
+   "at": "2026-09-22T08:38:39+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "History & archaeology",
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The story of birds: From the Jurassic to today"
+  },
+  "e749dc20e1ba059e": {
+   "at": "2026-09-22T08:42:17+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Home Learners Day"
+  },
+  "e74e2e27a4f64611": {
+   "at": "2026-09-22T08:42:19+00:00",
+   "labels": [],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "WiFi Wars Christmas Bash 2026"
+  },
+  "e9bc41d5ca2028cf": {
+   "at": "2026-09-22T08:42:50+00:00",
+   "labels": [
+    "History & archaeology",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "International Women’s Day Study Day"
+  },
+  "eb03034b01bfd3ab": {
+   "at": "2026-09-22T08:38:22+00:00",
+   "labels": [
+    "Writing & communication",
+    "History & archaeology"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Preserving women's publishing histories: editing women in the archives"
+  },
+  "eb1029750add35fa": {
+   "at": "2026-09-22T08:38:19+00:00",
+   "labels": [
+    "Law & justice",
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Legal Storyteller Live!"
+  },
+  "eb942594fe77e707": {
+   "at": "2026-09-22T08:39:42+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Fungi Field Day 2026"
+  },
+  "ed9022261171171e": {
+   "at": "2026-09-22T08:40:36+00:00",
+   "labels": [
+    "Writing & communication",
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "John Berger: Do You Know What I Watch?"
+  },
+  "edcaf5f3d6a82abf": {
+   "at": "2026-09-22T08:41:31+00:00",
+   "labels": [
+    "Arts & performance",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "The Poetry Hour: The Poetry of The First World War"
+  },
+  "efe3c46e7d09c33c": {
+   "at": "2026-09-22T08:42:45+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Art, Craft and Everyday Life: The David Parr House"
+  },
+  "f00adb783d8c0448": {
+   "at": "2026-09-22T08:39:45+00:00",
+   "labels": [
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Extraordinary chemical experiments which shaped today’s world"
+  },
+  "f0232867d1b4cb3e": {
+   "at": "2026-09-22T08:41:51+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Roger Ackroyd: The Killer Murder"
+  },
+  "f180248628bb2992": {
+   "at": "2026-09-22T08:38:48+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "American Writers’ Week: Joyce Carol Oates"
+  },
+  "f264498f8d38e547": {
+   "at": "2026-09-22T08:40:29+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "A Call to Art: William Morris and the Pre-Raphaelites"
+  },
+  "f6b1dd2b236563a5": {
+   "at": "2026-09-22T08:41:02+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Getting Started at the British Library for Postgraduate Researchers"
+  },
+  "f6d271d0cffef27d": {
+   "at": "2026-09-22T08:39:38+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Elders, 2046: For Living and Dying Otherwise"
+  },
+  "fa961cf6fb11904b": {
+   "at": "2026-09-22T08:39:36+00:00",
+   "labels": [
+    "Arts & performance",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Spotlight Talk: Helen Ede and Knitting"
+  },
+  "fb91f9abcacd61ab": {
+   "at": "2026-09-22T08:42:33+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Agatha and Me: Inside A Life of Crime"
+  },
+  "fdeb3088c61840fc": {
+   "at": "2026-09-22T08:39:56+00:00",
+   "labels": [
+    "Law & justice",
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Introduction to registered designs"
+  },
+  "feb393780772e16c": {
+   "at": "2026-09-22T08:42:33+00:00",
+   "labels": [
+    "Teaching & outreach",
+    "Writing & communication"
+   ],
+   "model": "qwen3:14b",
+   "prompt_version": 3,
+   "title": "Teacher CPD: Shakespeare's Comedy in Context"
+  }
+ },
+ "model": "qwen3:14b",
+ "prompt_version": 3
+}
