@@ -21,6 +21,13 @@
 #   expect_events  set false for a source that is knowingly dormant, so an
 #                  empty result is reported as a note rather than a failure
 #
+#   career_topics  topics that are true of **every** event from this source,
+#                  used for career tagging.  Distinct from `topics`, which is
+#                  what the venue programmes overall and is shown on the page:
+#                  applying that union per event tagged a woodworking class
+#                  "Computing & AI" because the V&A also runs digital media.
+#                  Leave it out unless the claim holds for every single event.
+#
 #   assume_future_dates
 #                  true only for a listing that advertises what is *coming*:
 #                  a date written without a year ("Saturday 3 January") is
@@ -293,6 +300,7 @@ sources:
     priority: 35
     verified: 2026-09-21
     topics: [Medicine, Surgery, History of science]
+    career_topics: [Medicine, Surgery, History of science]
     selectors:
       item: .card
       title: .card__link
@@ -451,6 +459,7 @@ sources:
     priority: 18
     verified: 2026-09-22
     topics: [Design, Art, Craft, Fashion, Digital media, Architecture]
+    career_topics: [Design, Art, Craft]
     selectors:
       item: .b-event-teaser
       title: .b-event-teaser__title

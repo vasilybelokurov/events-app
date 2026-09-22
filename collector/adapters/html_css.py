@@ -360,7 +360,8 @@ def _parse_page(raw: str, cfg: dict) -> list[Event]:
                         + "; ".join(f"\u201c{p}\u201d" for p in page_missing)
                         + ", so that claim was dropped") if page_missing else None,
             topics=list(cfg.get("topics", [])),
-            careers=infer_careers(title, summary, " ".join(cfg.get("topics", []))),
+            careers=infer_careers(title, summary,
+                                  " ".join(cfg.get("career_topics", []))),
             work_styles=infer_work_styles(title, summary),
         ))
 
@@ -389,7 +390,12 @@ def parse(raw: str, cfg: dict) -> list[Event]:
         # Career tags are re-derived after enrichment: the detail page often
         # supplies the topic words the listing row omitted.
         event.careers = infer_careers(event.title, event.summary,
-                                      " ".join(event.topics))
+                                      " ".join(cfg.get("career_topics", [])))
+        # `career_topics`, never `topics`: the registry's topic list is what
+        # the *venue* programmes, and applying the union of it to every event
+        # tagged a woodworking class "Computing & AI" because the V&A also
+        # runs digital media.  Same artefact as the one below.
+        #
         # Deliberately not the source's topics: a publisher bucket such as
         # "Workshops and talks" would tag a lunchtime lecture as design and
         # making, which is an artefact of their grouping, not evidence about

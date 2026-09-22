@@ -175,7 +175,8 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             age_min=age_min,
             age_max=age_max,
             topics=list(cfg.get("topics", [])),
-            careers=infer_careers(title, summary, " ".join(cfg.get("topics", []))),
+            careers=infer_careers(title, summary,
+                                  " ".join(cfg.get("career_topics", []))),
             work_styles=infer_work_styles(title, summary),
             provenance="recurring series (RRULE); this is the series start, "
                        "not necessarily the next occurrence -- check the venue"

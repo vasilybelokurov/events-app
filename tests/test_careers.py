@@ -21,6 +21,12 @@ from collector.careers import infer_careers, infer_work_styles
     # "ancient magma chambers" is geoscience, not archaeology.
     ("From Magma to Magnets: ancient magma chambers in Greenland",
      "History & archaeology"),
+    # A woodworking class is not computing.  The tag came from the V&A's
+    # registry topic list, which is what the venue programmes overall.
+    ("Woodworking Saturdays", "Computing & AI"),
+    # "sensory needs" matched the stem "sensor".
+    ("Studio Sunday Relaxed Session. A relaxed session aimed at children and "
+     "families with additional sensory needs.", "Computing & AI"),
     # A business growing "in a way that feels sustainable" is not climate work.
     ("Business Fundamentals: Sales. Grow your creative business in a way "
      "that feels sustainable and aligned.", "Environment & climate"),

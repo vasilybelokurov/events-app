@@ -22,13 +22,15 @@ export EVENTS_CONTACT="you@example.org"        # goes in the User-Agent
 
 python -m collector.build -v      # writes docs/data/events.json
 python -m collector.verify        # every source fetched, parsed, reported
-python -m pytest -q               # 301 offline tests
+python -m pytest -q               # 301 offline tests (README repeats this; keep both current)
 python -m pytest -m network -q    # 14 live source checks
 python -m http.server 8080 --directory docs
 ```
 
-Every Bash call starts a fresh shell: activate the venv and export
-`EVENTS_CONTACT` **in the same command**, or imports and the User-Agent fail.
+Every Bash call starts a fresh shell, so activate the venv **in the same
+command** or the imports fail. `EVENTS_CONTACT` is not required — `http.py`
+falls back to the repository's issues URL — but set it so venues see a contact
+that is yours.
 
 ## Non-negotiables
 
@@ -89,8 +91,9 @@ that is the situation — it is the only fact that matters.
 
 ## Front end
 
-`docs/index.html` + `assets/app.js` + `assets/styles.css`. No build step, no
-dependencies, no exports.
+`docs/index.html` + `assets/app.js` + `assets/styles.css`. No build step and
+no third-party libraries; `app.js` is a classic script with no module exports,
+which is why the tests evaluate it as a function body.
 
 * **Render it before calling a visual change done.** Tests cannot see layout.
   Adding one fieldset to the filter row overflowed the date inputs through

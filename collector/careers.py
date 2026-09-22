@@ -184,6 +184,19 @@ def infer_work_styles(*texts: str | None) -> list[str]:
                   if _match(words, blob))
 
 
+#: Keywords long enough to be matched as a stem, whose stem reaches words with
+#: nothing to do with them.  "sensor" tagged a relaxed session for children
+#: with additional *sensory* needs as Computing & AI.  These must match whole.
+WHOLE_WORD = frozenset({"sensor", "model-making", "plants", "bird", "energy"})
+
+
+def _pattern(word: str) -> str:
+    """Short keywords and over-reaching stems match whole; the rest by stem."""
+    if len(word) <= 4 or word in WHOLE_WORD:
+        return rf"\b{re.escape(word)}\b"
+    return rf"\b{re.escape(word)}"
+
+
 def infer_careers(*texts: str | None) -> list[str]:
     """Return the career themes implied by the given texts, sorted by name.
 
@@ -199,9 +212,9 @@ def infer_careers(*texts: str | None) -> list[str]:
     for theme, words in CAREER_KEYWORDS.items():
         for w in words:
             # Short keywords ("ai", "art", "law") must match a whole word;
-            # longer ones may match a stem ("engineer" -> "engineering").
-            pattern = rf"\b{re.escape(w)}\b" if len(w) <= 4 else rf"\b{re.escape(w)}"
-            if re.search(pattern, blob):
+            # longer ones may match a stem ("engineer" -> "engineering"),
+            # except the ones listed in WHOLE_WORD, whose stem over-reaches.
+            if re.search(_pattern(w), blob):
                 hits.add(theme)
                 break
     return sorted(hits)
