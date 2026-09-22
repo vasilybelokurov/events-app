@@ -974,3 +974,38 @@ class TestPhraseNegation:
                 + "<p>filler.</p>" * 40
                 + "<p>The cafe is no longer open on Mondays.</p>")
         assert self._age(body) == 14
+
+
+class TestSourceTopicsDoNotReachTheClassifier:
+    """The same leak, closed in every adapter that could have it."""
+
+    DOC = {"results": [{"@type": "Event", "name": "Woodworking Saturdays",
+                        "startDate": "2026-10-03T10:00:00+01:00",
+                        "url": "https://x.test/w",
+                        "description": "A hands-on woodworking class."}]}
+
+    def _parse(self, cfg):
+        return jsonld.parse(json.dumps(self.DOC), cfg)[0]
+
+    def test_jsonld_keeps_source_topics_off_the_career_tags(self):
+        e = self._parse({"key": "k", "name": "n", "kind": "jsonld",
+                         "url": "https://x.test/", "site": "https://x.test",
+                         "topics": ["Design", "Digital media"]})
+        assert e.careers == [], f"the venue's programme leaked in: {e.careers}"
+        assert e.topics == ["Design", "Digital media"], "still shown on the page"
+
+    def test_career_topics_are_honoured_when_declared(self):
+        e = self._parse({"key": "k", "name": "n", "kind": "jsonld",
+                         "url": "https://x.test/", "site": "https://x.test",
+                         "topics": ["Design", "Digital media"],
+                         "career_topics": ["Craft"]})
+        assert "Design, making & architecture" in e.careers
+
+    def test_an_events_own_labels_still_count(self):
+        """`format`/`series` are the event's own, not the venue's programme."""
+        doc = {"results": [{**self.DOC["results"][0],
+                            "series": [{"label": "Chemistry"}]}]}
+        cfg = {"key": "k", "name": "n", "kind": "jsonld",
+               "url": "https://x.test/", "site": "https://x.test"}
+        e = jsonld.parse(json.dumps(doc), cfg)[0]
+        assert "Chemistry & materials" in e.careers

@@ -254,9 +254,17 @@ def parse(raw: str, cfg: dict) -> list[Event]:
             else:
                 age_min, age_max = parse_age_range(age_text)
                 audiences = []
+            # The source-wide list is shown on the page but must not reach the
+            # classifier: it is what the venue programmes overall, and feeding
+            # the union of it to every event tagged a woodworking class
+            # "Computing & AI".  `career_topics` is the narrower, per-source
+            # list of things true of *every* event.  Same rule as html_css.
             topics = list(cfg.get("topics", []))
+            own_topics: list[str] = []
             for label_key in _LABEL_KEYS:      # not `key`: that is the id key
-                topics.extend(_labels(obj.get(label_key)))
+                own_topics.extend(_labels(obj.get(label_key)))
+            topics.extend(own_topics)
+            career_text = " ".join(own_topics + list(cfg.get("career_topics", [])))
             summary = _text(obj.get("description"))
             end = parse_uk_datetime(obj.get("endDate")) or time_end
             all_day = len(str(obj.get("startDate", ""))) <= 10
@@ -292,7 +300,7 @@ def parse(raw: str, cfg: dict) -> list[Event]:
                 age_max=age_max,
                 audiences=audiences,
                 topics=sorted(set(topics)),
-                careers=infer_careers(title, summary, " ".join(topics)),
+                careers=infer_careers(title, summary, career_text),
                 work_styles=infer_work_styles(title, summary),
             ))
     return out
