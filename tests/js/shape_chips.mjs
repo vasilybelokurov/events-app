@@ -81,5 +81,18 @@ if (shape.children[0].getAttribute('aria-pressed') !== 'false') {
   failures.push('Any stayed pressed: the chips are not mutually exclusive');
 }
 
+/* The From/To inputs are only meaningful under "Custom dates", and left on
+ * show they made the When box tower over the three beside it. */
+api.state.when = '90';
+api.buildChips();
+if (document.getElementById('dates').hidden !== true) {
+  failures.push('the date inputs show when the window comes from a chip');
+}
+api.state.when = 'custom';
+api.buildChips();
+if (document.getElementById('dates').hidden !== false) {
+  failures.push('the date inputs stay hidden under Custom dates');
+}
+
 if (failures.length) { console.error('FAIL\n  ' + failures.join('\n  ')); process.exit(1); }
 console.log(`ok: chips ${labels.join(' | ')}`);

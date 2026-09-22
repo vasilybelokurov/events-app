@@ -422,6 +422,13 @@ function chip(container, label, key, set, count) {
 }
 
 function buildChips() {
+  /* The From/To inputs do nothing unless "Custom dates" is chosen -- the
+   * window comes from the chip otherwise -- and left on show they made the
+   * When box far taller than the three beside it, opening a band of empty
+   * space across the filter row. */
+  const dates = document.getElementById('dates');
+  const showDates = () => { if (dates) dates.hidden = state.when !== 'custom'; };
+
   const when = document.getElementById('when');
   when.textContent = '';
   [['7', 'Next 7 days'], ['30', 'Next 30 days'], ['90', 'Next 3 months'],
@@ -434,10 +441,12 @@ function buildChips() {
       state.when = k;
       [...when.children].forEach((c) => c.setAttribute('aria-pressed', 'false'));
       b.setAttribute('aria-pressed', 'true');
+      showDates();
       render();
     });
     when.appendChild(b);
   });
+  showDates();
 
   const shape = document.getElementById('shape');
   shape.textContent = '';

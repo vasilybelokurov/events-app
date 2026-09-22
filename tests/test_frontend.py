@@ -57,6 +57,22 @@ def test_the_filter_panel_offers_the_control():
     assert 'id="shape"' in html
 
 
+def test_hiding_the_date_inputs_beats_their_display_rule():
+    """`.dates` is `display: flex`, which overrides the hidden attribute.
+
+    Without an explicit rule the inputs stay on screen however often the
+    attribute is set, which is exactly how they came to overflow their box.
+    """
+    css = (ROOT / "docs/assets/styles.css").read_text(encoding="utf-8")
+    assert ".dates[hidden]" in css
+
+
+def test_the_date_inputs_can_shrink():
+    """Two date inputs at their natural width overflow a narrow column."""
+    css = (ROOT / "docs/assets/styles.css").read_text(encoding="utf-8")
+    assert ".dates input[type=date] { width: 100%; }" in css
+
+
 def test_the_data_carries_both_kinds():
     """A filter nobody can use is worse than no filter."""
     import json
