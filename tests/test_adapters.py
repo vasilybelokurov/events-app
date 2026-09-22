@@ -115,6 +115,26 @@ class TestHtmlCss:
         evs = self.events(fixture_text, sources)
         assert any(e.ongoing for e in evs)
 
+    def test_a_midnight_end_does_not_beat_the_printed_time_range(self, sources):
+        """A date-only end field resolves to midnight on the day.
+
+        For a 3pm event that end precedes its own start, and it was published
+        as a backwards range.  The listing also prints "3:00 PM - 3:30 PM",
+        which is the better answer than dropping the end entirely.
+        """
+        cfg = dict(sources["cam_museums"])
+        html = """<div class='views-row'>
+          <div class='views-field-title'><a href='/events/x'>A tour</a></div>
+          <div class='views-field-field-date'><div class='field-content'>07/10/2026</div></div>
+          <div class='views-field-field-event-time'><div class='field-content'>3:00 PM - 3:30 PM</div></div>
+          <div class='views-field-field-end-date'><time datetime='2026-10-07T00:00:00'>7 Oct</time></div>
+        </div>"""
+        cfg["detail"] = {"enabled": False}
+        e = html_css.parse(html, cfg)[0]
+        assert e.start.startswith("2026-10-07T15:00")
+        assert e.end.startswith("2026-10-07T15:30")
+        assert e.provenance is None
+
     def test_missing_selector_yields_nothing_rather_than_garbage(self, sources):
         cfg = dict(sources["cam_museums"])
         out = html_css.parse("<html><body><div class='other'>x</div></body></html>", cfg)

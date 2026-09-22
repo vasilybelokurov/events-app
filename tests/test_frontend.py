@@ -51,6 +51,15 @@ def test_the_kind_chips_are_built_and_are_exclusive():
     assert proc.stdout.startswith("ok:")
 
 
+@node
+def test_the_calendar_export_never_invents_a_date():
+    """An undated venue became an all-day appointment for the build date."""
+    proc = subprocess.run(["node", str(HARNESS / "ics_export.mjs"), str(APP)],
+                          capture_output=True, text=True)
+    assert proc.returncode == 0, proc.stderr or proc.stdout
+    assert proc.stdout.startswith("ok:")
+
+
 def test_the_filter_panel_offers_the_control():
     """The chips are built into #shape, so the container has to be there."""
     html = (ROOT / "docs/index.html").read_text(encoding="utf-8")

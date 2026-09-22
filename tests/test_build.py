@@ -216,6 +216,29 @@ class TestFailurePolicy:
         assert doc["event_count"] == 10, "records were dropped instead of carried over"
         assert doc["sources"][0]["carried_over"] == 10
 
+    def test_a_dead_source_stops_showing_events_that_have_passed(self, stub, paths):
+        """Carried records were never re-checked against the calendar.
+
+        A venue that goes away for good keeps failing, so its records were
+        carried for ever -- including after their own dates had gone by.
+        """
+        soon, later = ev(1), ev(2)
+        soon.start = (datetime.now(UK) + timedelta(days=1)).isoformat()
+        later.start = (datetime.now(UK) + timedelta(days=30)).isoformat()
+        stub.events = [soon, later]
+        run(paths)
+
+        stub.error = RuntimeError("venue gone")
+        doc = run(paths)                       # fails: both carried, both future
+        assert doc["event_count"] == 2
+
+        # A fortnight later the first one is in the past.
+        doc = run(paths, now=datetime.now(UK) + timedelta(days=14))
+        titles = {e["title"] for e in doc["events"]}
+        assert titles == {"Event 2"}, "a finished event was carried anyway"
+        assert doc["sources"][0]["carried_expired"] == 1
+        assert doc["sources"][0]["count"] == 1
+
     def test_degraded_build_exits_nonzero(self, stub, paths, capsys):
         stub.events = [ev(1), ev(2)]
         assert run_cli(paths) == 0
@@ -228,6 +251,47 @@ class TestFailurePolicy:
         run_cli(paths)
         stub.events = []
         assert run_cli(paths, "--allow-drop") == 0
+
+    def test_allow_drop_actually_publishes_the_smaller_set(self, stub, paths):
+        """It used to change only the exit code.
+
+        The shrunken source still published its *old* records and the baseline
+        never moved, so the next run raised the same alarm for ever and the
+        documented "accepts a genuine shrinkage" was not true of the data.
+        """
+        stub.events = [ev(i) for i in range(10)]
+        run(paths)
+        stub.events = [ev(1), ev(2)]
+        assert run_cli(paths, "--allow-drop") == 0
+        doc = json.loads(paths[1].read_text())
+        assert doc["event_count"] == 2, "the old records were carried anyway"
+        src = doc["sources"][0]
+        assert src["status"] == "ok"
+        assert not src.get("carried_over")
+        assert src["last_good_count"] == 2, "the baseline did not move"
+        assert src["accepted_drop"] == {"from": 10, "to": 2}
+        assert "build_warnings" not in doc
+
+    def test_the_next_run_is_compared_against_the_accepted_count(self, stub, paths):
+        stub.events = [ev(i) for i in range(10)]
+        run(paths)
+        stub.events = [ev(1), ev(2)]
+        run_cli(paths, "--allow-drop")
+        doc = run(paths)                      # same two events, no flag
+        assert doc["sources"][0]["status"] == "ok"
+        assert "build_warnings" not in doc
+
+    def test_allow_drop_does_not_accept_a_truncated_crawl(self, stub, paths):
+        """A known-incomplete walk is not a shrinkage anybody can accept."""
+        stub.events = [ev(i) for i in range(10)]
+        run(paths)
+        stub.events = [ev(1)]
+        stub.meta = {"pagination_complete": False}
+        doc = run(paths, allow_drop=True)
+        # The label is "shrunk" because the count check runs first; what
+        # matters is that the flag did not accept it and nothing was lost.
+        assert doc["sources"][0]["status"] != "ok"
+        assert doc["event_count"] == 10, "a truncated crawl must still carry"
 
     def test_incomplete_pagination_is_flagged(self, stub, paths):
         stub.events = [ev(1)]

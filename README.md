@@ -69,7 +69,10 @@ policy below exists to prevent. Publication happens first, and a final
 * The alarm is the **exit code**, not a withheld file: `collector.build` always
   writes, and exits non-zero when anything is degraded, which turns the
   scheduled run red and emails the repository owner. `--allow-drop` accepts a
-  genuine shrinkage and exits zero.
+  genuine shrinkage: it publishes what the source actually returned and
+  rebases the baseline on that count, so the next run is compared against the
+  new normal. It refuses to accept a crawl known to have been cut short,
+  because that smaller number is an artefact of the truncation.
 * Writes are atomic, so a crash cannot leave a half-written `events.json`.
 * The page renders its own staleness warning from `last_success`, because a
   cron job that never ran cannot report its own absence.

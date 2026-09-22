@@ -703,6 +703,23 @@ class Event:
     verified_on: str | None = None
     last_seen: str | None = None
 
+    def __post_init__(self) -> None:
+        """Refuse an end that precedes its own start.
+
+        A venue that swaps the two, or an adapter that reads the wrong
+        attribute, produced a run from 20 November back to 2 November: the
+        page drew it as a date range, `ongoing` was set because the days
+        differed, and the calendar export emitted DTEND before DTSTART.
+        There is no reading of that which is true, so the end is dropped and
+        the record says so rather than quietly keeping half of it.
+        """
+        if self.start and self.end and self.end < self.start:
+            note = (f"the source gave an end ({self.end[:10]}) before the "
+                    f"start ({self.start[:10]}), so it was dropped")
+            self.provenance = f"{self.provenance}; {note}" if self.provenance else note
+            self.end = None
+            self.ongoing = False
+
     def eligibility(self, age: int) -> str:
         """``"eligible"``, ``"excluded"`` or ``"unknown"`` for a given age.
 

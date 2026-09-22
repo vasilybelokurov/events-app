@@ -348,3 +348,27 @@ class TestListingDatesWithoutAYear:
     ])
     def test_real_dates_still_parse(self, text, expected):
         assert parse_uk_datetime(text).startswith(expected)
+
+
+class TestImpossibleRanges:
+    def test_an_end_before_its_start_is_dropped(self):
+        """A run from 20 November back to 2 November is not a run."""
+        e = Event("i", "t", "u", "s", "S",
+                  start="2026-11-20T10:00:00+00:00",
+                  end="2026-11-02T10:00:00+00:00", ongoing=True)
+        assert e.end is None
+        assert e.ongoing is False
+        assert "before the start" in e.provenance
+
+    def test_a_sane_range_is_untouched(self):
+        e = Event("i", "t", "u", "s", "S",
+                  start="2026-11-02T10:00:00+00:00",
+                  end="2026-11-20T10:00:00+00:00", ongoing=True)
+        assert e.end.startswith("2026-11-20")
+        assert e.ongoing is True
+        assert e.provenance is None
+
+    def test_an_existing_note_is_kept(self):
+        e = Event("i", "t", "u", "s", "S", start="2026-11-20T10:00:00+00:00",
+                  end="2026-11-02T10:00:00+00:00", provenance="something earlier")
+        assert e.provenance.startswith("something earlier; ")

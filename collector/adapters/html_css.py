@@ -304,7 +304,14 @@ def _parse_page(raw: str, cfg: dict) -> list[Event]:
         explicit_end = _pick(node, sel.get("end"), sel.get("end_attr")) \
             or _pick(node, sel.get("end"))
         if explicit_end:
-            end = parse_uk_datetime(explicit_end) or end
+            stated = parse_uk_datetime(explicit_end)
+            if stated and start and stated < start:
+                # A date-only end field on a timed event resolves to midnight,
+                # which precedes its own start.  Prefer the time range the
+                # listing also prints ("3:00 PM - 3:30 PM") over an end that
+                # cannot be right.
+                stated = None
+            end = stated or end
         if end is None and t_end:
             end = parse_uk_datetime(f"{start[:10]}T{t_end.isoformat()}")
         # A run of more than one day is an exhibition, not a timed event.

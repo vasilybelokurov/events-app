@@ -313,7 +313,9 @@ function renderCard(e) {
   node.querySelector('.hide').addEventListener('click', () => {
     hidden.add(e.id); saved.delete(e.id); saveStore(); render();
   });
-  node.querySelector('.cal').addEventListener('click', () => downloadIcs([e]));
+  const cal = node.querySelector('.cal');
+  if (canGoInACalendar(e)) cal.addEventListener('click', () => downloadIcs([e]));
+  else cal.remove();
   return node;
 }
 
@@ -552,9 +554,26 @@ function icsDate(d) {
   }).format(d).replace(/-/g, '');
 }
 
+/* A standing offer -- a gallery open on weekdays, a weekly tour -- has no date.
+ * The record carries today's date as a sort key so the date window can place
+ * it, but that is a placeholder, not a claim, and writing it into a calendar
+ * turned "Old Bailey public galleries" into an appointment for this afternoon.
+ * There is no honest VEVENT for "open Monday to Friday", so there is none. */
+function canGoInACalendar(e) {
+  return !e.anytime && !!parseDate(e.start);
+}
+
 function downloadIcs(list) {
+  const datable = list.filter(canGoInACalendar);
+  if (!datable.length) {
+    alert(list.length === 1
+      ? 'This one has no fixed date — see "When" on the card and the venue\u2019s page.'
+      : 'None of these has a fixed date, so there is nothing to put in a calendar.');
+    return;
+  }
+  const skipped = list.length - datable.length;
   const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//events_app//EN', 'CALSCALE:GREGORIAN'];
-  list.forEach((e) => {
+  datable.forEach((e) => {
     const s = parseDate(e.start);
     if (!s) return;
     const end = parseDate(e.end) || new Date(s.getTime() + 2 * 3600 * 1000);
@@ -583,9 +602,15 @@ function downloadIcs(list) {
   const blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = list.length === 1 ? 'event.ics' : 'whats-on.ics';
+  a.download = datable.length === 1 ? 'event.ics' : 'whats-on.ics';
   a.click();
   URL.revokeObjectURL(a.href);
+  if (skipped) {
+    const n = document.getElementById('count');
+    if (n) {
+      n.textContent = `${datable.length} exported; ${skipped} with no fixed date left out.`;
+    }
+  }
 }
 
 /* ---------- freshness & health ---------- */

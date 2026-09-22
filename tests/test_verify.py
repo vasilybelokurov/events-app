@@ -265,3 +265,24 @@ class TestBlockedVersusBroken:
                                                         hand_written=True)]}))
         verify_mod.main(["--sources", str(path), "--markdown"])
         assert "HTTP 403" in capsys.readouterr().out
+
+
+class TestHandWrittenDetection:
+    """A note the collector wrote itself is not a human's signature."""
+
+    def test_provenance_alone_does_not_make_a_source_hand_written(self, stub):
+        """It flipped 100 scraped listings onto the re-checking list.
+
+        The trigger was one venue publishing an end date before its own start,
+        which the collector records in `provenance` when it drops it.
+        """
+        stub.events = [ev(provenance="the source gave an end before the start")]
+        report = verify_mod.verify_source(cfg())
+        assert not report["entries"]
+        assert not report["problems"]
+
+    def test_verified_on_still_makes_it_hand_written(self, stub):
+        """A dated human claim must stay on the checklist."""
+        stub.events = [ev(verified_on="2020-01-01")]
+        report = verify_mod.verify_source(cfg())
+        assert report["entries"], "a dated human claim escaped the per-entry check"

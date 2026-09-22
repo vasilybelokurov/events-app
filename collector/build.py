@@ -20,7 +20,9 @@ loud one, and worse still is a failure that looks like news.  So:
 * the alarm is the **exit code**, not a withheld file.  ``build()`` always
   writes; :func:`main` returns non-zero when any source is degraded, which is
   what turns the scheduled run red and emails whoever owns the repository.
-  ``--allow-drop`` says "yes, that shrinkage is genuine" and exits zero;
+  ``--allow-drop`` says "yes, that shrinkage is genuine": it publishes what
+  the source actually returned, rebases the baseline on that count and exits
+  zero.  It refuses to accept a crawl known to have been cut short.
 * the page itself renders a staleness warning from ``last_success``, because a
   cron job that never ran cannot report its own absence.
 """
@@ -118,8 +120,11 @@ def is_current(e: Event, *, now: datetime, grace_hours: int = 6) -> bool:
 
 def build(sources_path: Path, out_path: Path, *, root: Path,
           only: list[str] | None = None, link_check: bool = True,
-          horizon_days: int = 400) -> dict:
-    now = datetime.now(UK)
+          horizon_days: int = 400, allow_drop: bool = False,
+          now: datetime | None = None) -> dict:
+    # Injectable so the carry-over policy can be tested across time: whether a
+    # record still belongs on the page depends entirely on today's date.
+    now = now or datetime.now(UK)
     stamp = now.astimezone(timezone.utc).isoformat()
     sources = load_sources(sources_path)
     if only:
@@ -205,7 +210,22 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
             report["status"] = "partial"
             failures.append(f"{cfg['key']}: pagination incomplete")
 
-        if report["status"] in ("empty", "shrunk", "partial"):
+        # Never accept a drop from a crawl we know was cut short: the smaller
+        # number is an artefact of the truncation, not the venue's programme.
+        accepted_drop = (allow_drop and report["status"] in ("empty", "shrunk")
+                         and report["pagination_complete"] is not False)
+        if accepted_drop:
+            # `--allow-drop` has to mean something.  It used to change only the
+            # exit code, so the shrunken source still published its *old*
+            # records and the baseline never moved -- the next run raised the
+            # same alarm, and the README's claim that the flag "accepts a
+            # genuine shrinkage" was false.  Accepting means publishing what
+            # the source actually returned and rebasing on it.
+            report["status"] = "ok"
+            report["accepted_drop"] = {"from": prev_good, "to": len(candidate)}
+            failures[:] = [f for f in failures if not f.startswith(f"{cfg['key']}: ")]
+
+        if not accepted_drop and report["status"] in ("empty", "shrunk", "partial"):
             # Suspicious, or known-incomplete: keep the previous records rather
             # than publish a hole, and leave the baseline where it was so the
             # next run is still compared against a healthy figure.
@@ -268,9 +288,32 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
         report["verified_entries"] = fresh
         report["unverified_entries"] = len(mine) - fresh
 
-    # Carried-over records keep their original last_seen so the UI can age them.
+    # Carried-over records keep their original last_seen so the UI can age
+    # them -- but they are still subject to the calendar.  Carrying them
+    # unconditionally meant a venue that went away for good kept its events on
+    # the page after the dates had passed: the records were never re-checked
+    # because the source never succeeded again, and nothing expired them.
     known = {r["id"] for r in records}
-    records.extend(r for r in carried if r.get("id") not in known)
+    kept, expired = [], 0
+    for r in carried:
+        if r.get("id") in known:
+            continue
+        if is_current(Event(**{k: v for k, v in r.items()
+                              if k in Event.__dataclass_fields__}), now=now):
+            kept.append(r)
+        else:
+            expired += 1
+    records.extend(kept)
+    if expired:
+        by_source: dict[str, int] = {}
+        for r in carried:
+            if r.get("id") not in known and r not in kept:
+                by_source[r.get("source", "")] = by_source.get(r.get("source", ""), 0) + 1
+        for report in reports:
+            n = by_source.get(report["key"])
+            if n:
+                report["carried_expired"] = n
+                report["count"] = max(0, report["count"] - n)
     records.sort(key=lambda r: (r.get("start") or "9999", r.get("title", "")))
 
     oldest_success = min(
@@ -305,12 +348,14 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--only", nargs="*", help="only these source keys")
     ap.add_argument("--no-link-check", action="store_true")
     ap.add_argument("--allow-drop", action="store_true",
-                    help="exit 0 even if a source lost events or failed")
+                    help="accept a genuine shrinkage: publish the smaller "
+                         "set, rebase the baseline on it and exit 0")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING,
                         format="%(levelname)s %(name)s: %(message)s")
     doc = build(args.sources, args.out, root=root, only=args.only,
+                allow_drop=args.allow_drop,
                 link_check=not args.no_link_check)
     print(f"{doc['event_count']} events -> {args.out}")
     for s in doc["sources"]:

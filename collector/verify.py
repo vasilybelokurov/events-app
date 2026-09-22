@@ -153,11 +153,15 @@ def verify_source(cfg: dict, *, root: Path = ROOT, check_entries: bool = True) -
     # --- current?  (hand-written claims only) -----------------------------
     # The registry decides, with the adapter kind as the default: a `curated`
     # source is hand-written unless it says otherwise, and any other source can
-    # opt in with `hand_written: true`.  Data is only a fallback signal, so an
-    # entry that forgets both `provenance` and `verified_on` cannot escape the
-    # per-entry checks by omission.
+    # opt in with `hand_written: true`.
+    #
+    # `verified_on` is the only data signal that a person stood behind a
+    # record.  `provenance` is not: the collector writes it itself when it
+    # drops a claim or an impossible date, and treating that as human
+    # authorship put 100 scraped listings on the re-checking list the first
+    # time a venue published an end date before its own start.
     hand_written = cfg.get("hand_written", cfg["kind"] == "curated") or any(
-        e.provenance or e.verified_on for e in events)
+        e.verified_on for e in events)
     if hand_written and check_entries:
         today = datetime.now(UK).date()
         for e in events:
