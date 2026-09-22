@@ -22,7 +22,7 @@ export EVENTS_CONTACT="you@example.org"        # goes in the User-Agent
 
 python -m collector.build -v      # writes docs/data/events.json
 python -m collector.verify        # every source fetched, parsed, reported
-python -m pytest -q               # 301 offline tests (README repeats this; keep both current)
+python -m pytest -q               # 338 offline tests (README repeats this; keep both current)
 python -m pytest -m network -q    # 14 live source checks
 python -m http.server 8080 --directory docs
 ```

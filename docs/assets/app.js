@@ -77,6 +77,19 @@ function parseDate(iso) {
   return isNaN(d) ? null : d;
 }
 
+/* Everything on this page is stated in London time, so the weekend has to be
+ * London's.  `getDay()` reads the *viewer's* timezone: a Saturday-morning
+ * event in Cambridge is Friday night in Chicago, and the weekend filter hid
+ * it. */
+const FMT_WEEKDAY = new Intl.DateTimeFormat('en-GB', {
+  weekday: 'short', timeZone: 'Europe/London',
+});
+
+function isLondonWeekend(d) {
+  const day = FMT_WEEKDAY.format(d);
+  return day === 'Sat' || day === 'Sun';
+}
+
 const FMT_DAY = new Intl.DateTimeFormat('en-GB', {
   weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/London',
 });
@@ -206,10 +219,7 @@ function matches(e) {
   if (state.flags.has('eligible') && elig !== 'eligible') return false;
   if (state.flags.has('free') && e.is_free !== true) return false;
   if (state.flags.has('saved') && !saved.has(e.id)) return false;
-  if (state.flags.has('weekend') && s) {
-    const d = s.getDay();
-    if (d !== 0 && d !== 6) return false;
-  }
+  if (state.flags.has('weekend') && s && !isLondonWeekend(s)) return false;
 
   if (state.q) {
     const hay = [e.title, e.summary, e.venue_name, e.city, e.source_name,

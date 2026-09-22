@@ -934,3 +934,43 @@ class TestEventIdentity:
               '"times": [{"startDateTime": "2027-02-01T10:00:00.000Z"}]}]}'
         events = jsonld.parse(raw, self.cfg)
         assert len(events) == 1 and events[0].title == "Solo"
+
+
+class TestPhraseNegation:
+    """Phrase presence is not proof a claim still holds."""
+
+    CFG = {"key": "v", "name": "Venue", "kind": "venue",
+           "homepage": "https://x.test/", "title": "The place",
+           "confirm": [{"phrase": "no admission for children under 14",
+                        "sets": {"age_min": 14, "age_text": "no under 14s"}}]}
+
+    def _age(self, body, cfg=None):
+        from collector.adapters import venue
+        return venue.parse(f"<html><body>{body}</body></html>", cfg or self.CFG)[0].age_min
+
+    def test_a_plain_statement_is_confirmed(self):
+        assert self._age("<p>There is no admission for children under 14.</p>") == 14
+
+    @pytest.mark.parametrize("body", [
+        "<p>The rule that there is no admission for children under 14 "
+        "was dropped in 2025 and no longer applies.</p>",
+        "<p>Until further notice there is no admission for children under 14 "
+        "— this has been suspended.</p>",
+        "<p>We used to say there is no admission for children under 14.</p>",
+    ])
+    def test_a_retired_rule_is_not_claimed(self, body):
+        """"Free entry is no longer available" contains "Free entry"."""
+        assert self._age(body) is None
+
+    def test_an_unless_phrase_vetoes_the_claim(self):
+        cfg = dict(self.CFG)
+        cfg["confirm"] = [{**self.CFG["confirm"][0], "unless": ["all ages welcome"]}]
+        body = "<p>There is no admission for children under 14. All ages welcome.</p>"
+        assert self._age(body, cfg) is None
+
+    def test_one_clean_mention_is_enough(self):
+        """A negator elsewhere on a long page must not veto a clear statement."""
+        body = ("<p>There is no admission for children under 14.</p>"
+                + "<p>filler.</p>" * 40
+                + "<p>The cafe is no longer open on Mondays.</p>")
+        assert self._age(body) == 14

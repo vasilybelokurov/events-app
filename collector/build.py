@@ -194,9 +194,19 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
         # A source the adapter could not reach may still yield a useful record
         # from its configuration, but it has not been verified today.
         blocked = meta.get("reachable") is False
+        # 200 and parseable, but the page no longer says what it is supposed
+        # to be about.  Publishable -- the record is mostly registry metadata
+        # and the claims it could not confirm have already been dropped -- but
+        # not a day on which anything was verified.
+        repurposed = meta.get("expected_missing") or []
         if blocked:
             report["status"] = "blocked"
             report["error"] = meta.get("reason")
+        elif repurposed:
+            report["status"] = "unconfirmed"
+            report["error"] = ("the page no longer mentions "
+                               + "; ".join(repr(p) for p in repurposed))
+            failures.append(f"{cfg['key']}: {report['error']}")
         elif prev_good and len(candidate) == 0:
             report["status"] = "empty"
             failures.append(
@@ -237,9 +247,13 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
                 e.last_seen = stamp
             all_events.extend(candidate)
             report["count"] = len(candidate)
-            if blocked:
-                # Published, but neither a success nor a new baseline.
-                report["last_good_count"] = prev_good or len(candidate)
+            if blocked or repurposed:
+                # Published, but neither a success nor a new baseline.  Note
+                # `prev_good` and not `or len(candidate)`: on a first run that
+                # was never verified, adopting today's count would make an
+                # unchecked number the thing every later run is measured
+                # against.
+                report["last_good_count"] = prev_good
             else:
                 report["last_success"] = stamp
                 report["last_good_count"] = len(candidate)

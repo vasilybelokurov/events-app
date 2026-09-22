@@ -293,6 +293,39 @@ class TestFailurePolicy:
         assert doc["sources"][0]["status"] != "ok"
         assert doc["event_count"] == 10, "a truncated crawl must still carry"
 
+    def test_a_repurposed_page_is_not_a_verified_day(self, stub, paths):
+        """200 and parseable, but the page stopped being about the thing.
+
+        The record is mostly registry metadata, so it is still published --
+        but recording a fresh `last_success` for it said the venue had been
+        checked when nothing had been confirmed.
+        """
+        stub.events = [ev(1)]
+        first = run(paths)
+        earned = first["sources"][0]["last_success"]
+        assert earned
+
+        stub.meta = {"pagination_complete": True,
+                     "expected_missing": ["public galler"]}
+        doc = run(paths)
+        src = doc["sources"][0]
+        assert src["status"] == "unconfirmed"
+        assert doc["event_count"] == 1, "it should still publish"
+        assert src["last_success"] == earned, "it claimed a success it did not earn"
+        assert "public galler" in src["error"]
+        assert doc["build_warnings"], "a repurposed page must turn the run red"
+
+    def test_a_first_run_that_was_never_verified_sets_no_baseline(self, stub, paths):
+        """Otherwise an unchecked count becomes the yardstick for every run."""
+        stub.events = [ev(1), ev(2), ev(3)]
+        stub.meta = {"pagination_complete": True, "reachable": False,
+                     "reason": "HTTP 403"}
+        doc = run(paths)
+        src = doc["sources"][0]
+        assert src["status"] == "blocked"
+        assert src["last_good_count"] == 0, "an unverified count became the baseline"
+        assert src["last_success"] is None
+
     def test_incomplete_pagination_is_flagged(self, stub, paths):
         stub.events = [ev(1)]
         stub.meta = {"pagination_complete": False}

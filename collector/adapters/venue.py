@@ -16,9 +16,12 @@ page says today:
   claim; miss it, and the claim is dropped and the omission recorded.  A claim
   can therefore never outlive the sentence it came from.
 
-That is a different and stronger guarantee than a link check: a 200 only proves
-a page loads, whereas a confirmed phrase proves the specific fact is still
-published.
+That is a stronger guarantee than a link check -- a 200 only proves a page
+loads -- but it is still *phrase presence*, not comprehension.  "Free entry is
+no longer available" contains "Free entry", so an occurrence sitting next to a
+negator ("no longer", "was dropped", "until further notice") is rejected, and a
+rule may name `unless` phrases that veto it outright.  Both err towards
+dropping the claim: saying nothing beats repeating a rule the venue retired.
 """
 
 from __future__ import annotations
@@ -31,7 +34,7 @@ from bs4 import BeautifulSoup
 from ..careers import infer_careers, infer_work_styles
 from ..http import fetch
 from ..models import (UK, Event, make_id, map_audience, parse_age_range,
-                      parse_uk_datetime, price_info)
+                      parse_uk_datetime, phrase_confirmed, price_info)
 
 KIND = "venue"
 
@@ -135,13 +138,19 @@ def parse(raw: str, cfg: dict) -> list[Event]:
     # `expect` phrases guard against a page that has been repurposed: if the
     # thing we came for is no longer named on it, nothing here is confirmed.
     expected_missing = [phrase for phrase in cfg.get("expect", [])
-                        if phrase.lower() not in text.lower()]
+                        if not phrase_confirmed(text, phrase)]
+    # A repurposed page answers 200 and parses, so without this the build
+    # recorded a fresh success for a venue whose page no longer mentions the
+    # thing we came for.  `reachable` stays true -- it was reachable -- but
+    # the run must not treat the day as verified.
+    if expected_missing:
+        last_fetch["expected_missing"] = list(expected_missing)
 
     confirmed: list[str] = []
     unconfirmed: list[str] = []
     for rule in cfg.get("confirm", []):
         phrase = rule["phrase"]
-        if not unfetchable and phrase.lower() in text.lower():
+        if not unfetchable and phrase_confirmed(text, phrase, rule.get("unless")):
             confirmed.append(phrase)
             for field, value in rule["sets"].items():
                 if field in ("topics", "audiences"):

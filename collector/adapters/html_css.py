@@ -35,7 +35,7 @@ from ..careers import infer_careers, infer_work_styles
 from ..http import fetch
 from ..models import (Event, combine_audience_values, make_id, map_audience,
                       parse_age_range, parse_date_range, parse_time_text,
-                      parse_uk_datetime, price_info)
+                      parse_uk_datetime, phrase_confirmed, price_info)
 
 KIND = "html_css"
 
@@ -272,7 +272,7 @@ def _page_claims(soup: BeautifulSoup, cfg: dict) -> tuple[dict, list[str]]:
     text = re.sub(r"\s+", " ", soup.get_text(" ", strip=True))
     claims, missing = {}, []
     for rule in rules:
-        if rule["phrase"].lower() in text.lower():
+        if phrase_confirmed(text, rule["phrase"], rule.get("unless")):
             claims.update(rule["sets"])
         else:
             missing.append(rule["phrase"])

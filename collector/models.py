@@ -604,6 +604,14 @@ def parse_date_range(text: str | None, *, default_time: time | None = None,
 # --------------------------------------------------------------------------
 
 _FREE_RE = re.compile(r"(?<!not )\bfree\b", re.I)
+#: "Free for under-12s", "free with a ticket", "free to members" -- a free
+#: *concession*, not a free event.  Without a paid number beside it the old
+#: code read the bare word and called the whole outing free, which is the
+#: error the docstring below says must not happen.
+_QUALIFIED_FREE_RE = re.compile(
+    r"\bfree\s+(?:for|to|with|on|when|if|upon|under)\b"
+    r"|\b(?:children|child|under[- ]?\d+s?|members?|concessions?|students?)\s+"
+    r"(?:go\s+|are\s+|is\s+)?free\b", re.I)
 _NOT_FREE_RE = re.compile(r"\b(?:not|non|no)[- ]free\b", re.I)
 _PRICE_RE = re.compile(r"([£$€])\s?([\d,]+(?:\.\d{2})?)")
 _CURRENCY = {"£": "GBP", "$": "USD", "€": "EUR"}
@@ -639,16 +647,70 @@ def price_info(text: str | None) -> tuple[bool | None, float | None, str | None]
             symbols.append(sym)
         except ValueError:
             continue
-    currency = _CURRENCY.get(symbols[0]) if symbols else None
     if prices:
-        cheapest = min(prices)
+        # The currency of the cheapest price, not of the first symbol seen:
+        # "$15 / £10" reported ten *dollars*.  Comparing across currencies is
+        # approximate whatever we do, but the number and its symbol at least
+        # have to describe the same ticket.
+        cheapest, symbol = min(zip(prices, symbols), key=lambda pair: pair[0])
         dearest = max(prices)
-        return (dearest == 0, cheapest, currency)
+        return (dearest == 0, cheapest, _CURRENCY.get(symbol))
     if _NOT_FREE_RE.search(text):
+        return (None, None, None)
+    if _QUALIFIED_FREE_RE.search(text):
+        # Someone gets in free, but the listing does not say the visit is.
         return (None, None, None)
     if _FREE_RE.search(text):
         return (True, 0.0, None)
     return (None, None, None)
+
+
+#: Words that turn a sentence into a record of something that *stopped*.
+#: Substring matching cannot read, so this is a guard, not comprehension: it
+#: catches the common ways a venue announces a rule has gone.
+_NEGATORS = re.compile(
+    r"\b(?:no longer|used to|formerly|previously|until further notice"
+    r"|has (?:been )?(?:dropped|suspended|withdrawn|removed|ended)"
+    r"|was (?:dropped|suspended|withdrawn|removed|ended)"
+    r"|ceased|discontinued|not currently|temporarily (?:closed|suspended)"
+    r"|does not apply|no longer applies)\b", re.I)
+
+#: How far either side of the phrase to look for one.
+NEGATION_WINDOW = 120
+
+
+def phrase_confirmed(text: str, phrase: str, unless: list[str] | None = None) -> bool:
+    """Whether *phrase* appears in *text* and still reads as current.
+
+    Phrase presence is **not** proof a claim holds: "Free entry is no longer
+    available" contains "Free entry", and a page saying an age rule "was
+    dropped in 2025" contains the rule.  So an occurrence is rejected when a
+    negating phrase sits near it, and a rule may list `unless` phrases that
+    veto it outright.
+
+    Erring towards dropping the claim is deliberate: this project would
+    rather say nothing than repeat a rule the venue has retired.
+
+    >>> phrase_confirmed("Free entry to all galleries.", "free entry")
+    True
+    >>> phrase_confirmed("Free entry is no longer available.", "free entry")
+    False
+    >>> phrase_confirmed("Free entry applies.", "free entry", ["ticket required"])
+    True
+    >>> phrase_confirmed("Free entry applies. A ticket required.", "free entry",
+    ...                  ["ticket required"])
+    False
+    """
+    haystack = text.lower()
+    for veto in (unless or []):
+        if veto.lower() in haystack:
+            return False
+    for m in re.finditer(re.escape(phrase.lower()), haystack):
+        lo = max(0, m.start() - NEGATION_WINDOW)
+        hi = min(len(text), m.end() + NEGATION_WINDOW)
+        if not _NEGATORS.search(text[lo:hi]):
+            return True                      # one clean occurrence is enough
+    return False
 
 
 def make_id(source: str, key: str) -> str:

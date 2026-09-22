@@ -18,7 +18,7 @@ collector/          Python: adapters -> normalise -> de-duplicate -> events.json
 data/curated/       hand-written entries, for anything no feed lists (empty)
 docs/               the published site (GitHub Pages root)
   data/events.json  the only thing the page loads
-tests/              301 offline tests + 14 live source checks
+tests/              338 offline tests + 14 live source checks
   js/               the front end, driven through Node against app.js itself
 ```
 
@@ -151,7 +151,10 @@ confirm:
 Find the phrase, apply the claim. Miss it, and the claim is dropped and the
 omission recorded in `provenance`. **A claim can never outlive the sentence it
 came from** — a stronger guarantee than a link check, which only proves a page
-loads. `expect` phrases catch a page that has been repurposed, and
+loads. It is still matching, not reading: "Free entry is no longer available"
+contains "Free entry", so a phrase sitting beside a negator is rejected, and a
+rule can name `unless` phrases that veto it. Both err towards dropping the
+claim. `expect` phrases catch a page that has been repurposed, and
 `allow_blocked` keeps a venue that refuses automated access (the Science
 Museum serves 403 to anything but a desktop browser) in the list while saying
 plainly that nothing was confirmed.

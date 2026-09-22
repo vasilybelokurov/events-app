@@ -21,6 +21,11 @@
 #   expect_events  set false for a source that is knowingly dormant, so an
 #                  empty result is reported as a note rather than a failure
 #
+#   confirm[].unless
+#                  phrases that veto a `confirm` rule when they appear on the
+#                  page.  Phrase matching cannot read: a page can carry the
+#                  phrase while saying the rule has gone.
+#
 #   career_topics  topics that are true of **every** event from this source,
 #                  used for career tagging.  Distinct from `topics`, which is
 #                  what the venue programmes overall and is shown on the page:

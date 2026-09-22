@@ -8,6 +8,7 @@ would pass happily while the shipped file was broken.
 
 from __future__ import annotations
 
+import os
 import shutil
 import subprocess
 from pathlib import Path
@@ -56,6 +57,18 @@ def test_the_calendar_export_never_invents_a_date():
     """An undated venue became an all-day appointment for the build date."""
     proc = subprocess.run(["node", str(HARNESS / "ics_export.mjs"), str(APP)],
                           capture_output=True, text=True)
+    assert proc.returncode == 0, proc.stderr or proc.stdout
+    assert proc.stdout.startswith("ok:")
+
+
+@node
+@pytest.mark.parametrize("tz", ["Europe/London", "America/Chicago", "Asia/Tokyo"])
+def test_the_weekend_is_londons_weekend(tz):
+    """It used the viewer's timezone, so a Saturday-morning event in
+    Cambridge was Friday night in Chicago and the filter hid it."""
+    env = {**os.environ, "TZ": tz}
+    proc = subprocess.run(["node", str(HARNESS / "weekend_tz.mjs"), str(APP)],
+                          capture_output=True, text=True, env=env)
     assert proc.returncode == 0, proc.stderr or proc.stdout
     assert proc.stdout.startswith("ok:")
 

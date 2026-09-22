@@ -372,3 +372,39 @@ class TestImpossibleRanges:
         e = Event("i", "t", "u", "s", "S", start="2026-11-20T10:00:00+00:00",
                   end="2026-11-02T10:00:00+00:00", provenance="something earlier")
         assert e.provenance.startswith("something earlier; ")
+
+
+class TestPriceHonesty:
+    """Two ways the price line claimed more than the listing said."""
+
+    @pytest.mark.parametrize("text,expected", [
+        ("$15 / £10", (False, 10.0, "GBP")),
+        ("£10 / $15", (False, 10.0, "GBP")),
+        ("\u20ac20, £12", (False, 12.0, "GBP")),
+    ])
+    def test_the_currency_belongs_to_the_cheapest_price(self, text, expected):
+        """"$15 / £10" reported ten *dollars*: the first symbol, another
+        ticket's number."""
+        assert price_info(text) == expected
+
+    @pytest.mark.parametrize("text", [
+        "Free for children; adults pay",
+        "Free for under 12s",
+        "Children go free",
+        "Free to members",
+        "Free with a ticket",
+    ])
+    def test_a_free_concession_is_not_a_free_event(self, text):
+        """The docstring's own rule, which the code broke whenever the paid
+        side carried no number: unknown, not free."""
+        assert price_info(text) == (None, None, None)
+
+    @pytest.mark.parametrize("text,expected", [
+        ("Free", (True, 0.0, None)),
+        ("Free entry", (True, 0.0, None)),
+        ("Free admission", (True, 0.0, None)),
+        ("\u00a310 adults, free for children", (False, 10.0, "GBP")),
+        ("\u00a30 child; \u00a325 adult", (False, 0.0, "GBP")),
+    ])
+    def test_an_unqualified_free_still_counts(self, text, expected):
+        assert price_info(text) == expected
