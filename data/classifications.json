@@ -523,6 +523,15 @@
    "prompt_version": 6,
    "title": "Family Fun Day: Spooky science"
   },
+  "31d288f998167b61": {
+   "at": "2026-09-23T11:38:11+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Friendly Drop In"
+  },
   "31f42ee3f33ac956": {
    "at": "2026-09-22T09:54:19+00:00",
    "labels": [
@@ -669,6 +678,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Black History of Science Tours"
+  },
+  "419aa2c96131da47": {
+   "at": "2026-09-23T11:38:08+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Start using the British Library for my business"
   },
   "42a1780b8f1119c8": {
    "at": "2026-09-22T09:51:11+00:00",
@@ -1955,6 +1974,15 @@
    "prompt_version": 6,
    "title": "Museum Boost"
   },
+  "c3bb36902271fe45": {
+   "at": "2026-09-23T11:38:22+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Babies in the Galleries"
+  },
   "c3d536690443ccc4": {
    "at": "2026-09-22T09:56:48+00:00",
    "labels": [
@@ -2107,6 +2135,16 @@
    "prompt_version": 6,
    "title": "Cyanotype Portraits with Michael Akuagwu & Jude Amponsah"
   },
+  "cd16b5ba59ea4e78": {
+   "at": "2026-09-23T11:38:35+00:00",
+   "labels": [
+    "Medicine & health",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Curves in our Spines with Fused not Fragile"
+  },
   "ceaaf87d0ee276d4": {
    "at": "2026-09-22T09:54:48+00:00",
    "labels": [
@@ -2237,6 +2275,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Meet the Designer - Christie Swallow"
+  },
+  "e0253afdca67e32b": {
+   "at": "2026-09-23T11:38:19+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Toddlers in the Galleries"
   },
   "e1441997f88bf59f": {
    "at": "2026-09-22T09:51:59+00:00",
@@ -2424,6 +2471,15 @@
    "prompt_version": 6,
    "title": "Hercule Poirot and Friends"
   },
+  "ed6b46349075d093": {
+   "at": "2026-09-23T11:38:31+00:00",
+   "labels": [
+    "Medicine & health"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Amputation: A Dramatic Act"
+  },
   "edf3c0b93948a307": {
    "at": "2026-09-22T09:51:49+00:00",
    "labels": [
@@ -2511,6 +2567,15 @@
    "prompt_version": 6,
    "title": "Doctoral Open Day: Asian and African Collections"
   },
+  "f2cdc2ac39b5e844": {
+   "at": "2026-09-23T11:38:38+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Plotting the Mystery: Writing Crime Fiction"
+  },
   "f2f80e95ff3a0814": {
    "at": "2026-09-22T09:51:34+00:00",
    "labels": [
@@ -2537,6 +2602,27 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Technicians: The David Sainsbury Gallery"
+  },
+  "f57b4f782290a33c": {
+   "at": "2026-09-23T11:38:27+00:00",
+   "labels": [
+    "Medicine & health",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Anatomists, Bodies and Coffins: Corpse stealing in Georgian London"
+  },
+  "f5e9608e712f4a45": {
+   "at": "2026-09-23T11:38:16+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "An Introduction to Patents and Patent Searching"
   },
   "f718835436464ef8": {
    "at": "2026-09-22T09:52:41+00:00",
