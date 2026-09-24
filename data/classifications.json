@@ -92,6 +92,15 @@
    "prompt_version": 6,
    "title": "Conversations about Death"
   },
+  "040ae56b39aee7f6": {
+   "at": "2026-09-24T11:48:38+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Magnetronics - Cracking the Code (Year 5 and 6)"
+  },
   "043e59003260485c": {
    "at": "2026-09-22T09:55:13+00:00",
    "labels": [
@@ -464,6 +473,15 @@
    "prompt_version": 6,
    "title": "Martino Tirimo (piano)"
   },
+  "29b1479faaf90b70": {
+   "at": "2026-09-24T11:48:23+00:00",
+   "labels": [
+    "Maths, data & statistics"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Playing with proof (Year 10 -13)"
+  },
   "2a076551d2d3d0a4": {
    "at": "2026-09-22T09:53:19+00:00",
    "labels": [],
@@ -479,6 +497,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Autumn Tours and Talks"
+  },
+  "2d1c017ec6f0a227": {
+   "at": "2026-09-24T11:47:48+00:00",
+   "labels": [
+    "Engineering"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Electrical and electronic control (Year 7, 8 and 9)"
   },
   "2dd637fe55884fe4": {
    "at": "2026-09-22T09:51:07+00:00",
@@ -540,6 +567,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Kettle’s Yard Chamber Music: Brodsky Quartet"
+  },
+  "340f916ae4bb9706": {
+   "at": "2026-09-24T11:48:19+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Extract your own DNA (Year 5 and 6)"
   },
   "348c8ef4b7fdf9c2": {
    "at": "2026-09-22T09:52:42+00:00",
@@ -629,6 +665,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Live Drawing with Rosemary Cronin"
+  },
+  "3db63d71733093f6": {
+   "at": "2026-09-24T11:48:35+00:00",
+   "labels": [
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Intro to coding (Year 3 and 4)"
   },
   "3f713f1bc96afbcd": {
    "at": "2026-09-22T09:52:53+00:00",
@@ -963,6 +1008,15 @@
    "prompt_version": 6,
    "title": "An Evening of Unnecessary Detail"
   },
+  "5a00ef0a63ca7339": {
+   "at": "2026-09-24T11:48:52+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "National Network: Start-up Day 2026"
+  },
   "5aff10a311ca26a4": {
    "at": "2026-09-22T09:51:36+00:00",
    "labels": [
@@ -1095,6 +1149,15 @@
    "prompt_version": 6,
    "title": "From Darwin to Dodos - guided tour of the Museum"
   },
+  "6c6e3ae680a63092": {
+   "at": "2026-09-24T11:48:12+00:00",
+   "labels": [
+    "Maths, data & statistics"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Playing with proof (Year 7 - 9)"
+  },
   "6ea98dd4dd200663": {
    "at": "2026-09-22T09:56:21+00:00",
    "labels": [
@@ -1130,6 +1193,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Global fusion developments: The race for power"
+  },
+  "70781aacf87ff556": {
+   "at": "2026-09-24T11:47:45+00:00",
+   "labels": [
+    "Physics & space",
+    "Engineering"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshop: Space Engineering (Year 3 and 4)"
   },
   "73540f6ae533784c": {
    "at": "2026-09-22T09:55:26+00:00",
@@ -1173,6 +1246,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Art of Deception"
+  },
+  "7930dffe2cfcc116": {
+   "at": "2026-09-24T11:48:00+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Kitchen Lab (Year 5 and 6)"
   },
   "7a702b270f610b03": {
    "at": "2026-09-22T09:56:18+00:00",
@@ -1333,6 +1417,15 @@
    "prompt_version": 6,
    "title": "How to Start and Run a Successful Restaurant, Coffee Bar or Food Business"
   },
+  "8877d8dd0b916311": {
+   "at": "2026-09-24T11:47:51+00:00",
+   "labels": [
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Extract your own DNA (Year 7, 8 and 9)"
+  },
   "88e53b12906c5f3f": {
    "at": "2026-09-22T09:52:15+00:00",
    "labels": [
@@ -1393,6 +1486,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Innovation and energy for a sustainable future"
+  },
+  "8d85c0f7256edeca": {
+   "at": "2026-09-24T11:47:56+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Kitchen Lab (Year 3 and 4)"
   },
   "8ec30ce2601f5540": {
    "at": "2026-09-22T09:56:16+00:00",
@@ -1916,6 +2020,16 @@
    "prompt_version": 6,
    "title": "From Darwin to Dodos - guided tour of the Museum"
   },
+  "ba7fa44227dc9623": {
+   "at": "2026-09-24T11:48:28+00:00",
+   "labels": [
+    "Physics & space",
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday Workshops- Atoms, Energy, and the Future (Years 10 - 13)"
+  },
   "bb2a314dd3afa2bf": {
    "at": "2026-09-22T09:52:03+00:00",
    "labels": [
@@ -2126,6 +2240,15 @@
    "prompt_version": 6,
    "title": "Family Festival: Stories, Sign and Shine"
   },
+  "cc67d4abc470561f": {
+   "at": "2026-09-24T11:48:32+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Crash testing (Year 7 - 9)"
+  },
   "cd0578f4fcb99034": {
    "at": "2026-09-22T09:51:56+00:00",
    "labels": [
@@ -2145,6 +2268,15 @@
    "prompt_version": 6,
    "title": "Curves in our Spines with Fused not Fragile"
   },
+  "cd37076d59aa1654": {
+   "at": "2026-09-24T11:48:41+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: How things get carried away (Year 10 - 13)"
+  },
   "ceaaf87d0ee276d4": {
    "at": "2026-09-22T09:54:48+00:00",
    "labels": [
@@ -2153,6 +2285,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Creative Writing Masterclass: Writing Memories Together"
+  },
+  "cfc6e66a2fc248ca": {
+   "at": "2026-09-24T11:48:49+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Station: Halloween Weekend"
   },
   "d0dffcd864631d52": {
    "at": "2026-09-22T09:57:04+00:00",
@@ -2258,6 +2399,26 @@
    "prompt_version": 6,
    "title": "China Miéville presents The Rouse"
   },
+  "dd2cbad73e8a15d5": {
+   "at": "2026-09-24T11:48:16+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Engineering"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Smart trains and smart tracks (Year 7, 8 and 9)"
+  },
+  "dfce5c6b0ad5f286": {
+   "at": "2026-09-24T11:47:38+00:00",
+   "labels": [
+    "Physics & space",
+    "Engineering"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshop: Space Engineering (Year 1 and 2)"
+  },
   "dfd5475091468d6e": {
    "at": "2026-09-22T09:52:24+00:00",
    "labels": [
@@ -2302,6 +2463,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "For Your Inspiration: Into the wild"
+  },
+  "e2952c3a0564496c": {
+   "at": "2026-09-24T11:47:34+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Every last girl: a journey to educate India’s forgotten daughters"
   },
   "e2bbf404c218c8ae": {
    "at": "2026-09-22T09:54:52+00:00",
@@ -2471,6 +2641,15 @@
    "prompt_version": 6,
    "title": "Hercule Poirot and Friends"
   },
+  "ed61d2bdea384d4a": {
+   "at": "2026-09-24T11:47:41+00:00",
+   "labels": [
+    "Engineering"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Electrical & electronic control (Year 5 and 6)"
+  },
   "ed6b46349075d093": {
    "at": "2026-09-23T11:38:31+00:00",
    "labels": [
@@ -2479,6 +2658,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Amputation: A Dramatic Act"
+  },
+  "edcfe872400fb508": {
+   "at": "2026-09-24T11:48:04+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Extract your own DNA (Year 3 and 4)"
   },
   "edf3c0b93948a307": {
    "at": "2026-09-22T09:51:49+00:00",
@@ -2613,6 +2801,16 @@
    "prompt_version": 6,
    "title": "Anatomists, Bodies and Coffins: Corpse stealing in Georgian London"
   },
+  "f5d62723fcdcab7e": {
+   "at": "2026-09-24T11:48:46+00:00",
+   "labels": [
+    "Physics & space",
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Magnetronics - Cracking the Code (Year 3 and 4)"
+  },
   "f5e9608e712f4a45": {
    "at": "2026-09-23T11:38:16+00:00",
    "labels": [
@@ -2699,6 +2897,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Socialism after AI"
+  },
+  "fe02e30cf16bf308": {
+   "at": "2026-09-24T11:48:09+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Kitchen Lab (Year 1 and 2)"
   },
   "ff6b1f6cd5f77ee2": {
    "at": "2026-09-22T09:56:23+00:00",
