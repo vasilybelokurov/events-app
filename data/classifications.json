@@ -338,6 +338,15 @@
    "prompt_version": 6,
    "title": "An Enamel Revolution: China and the World"
   },
+  "19e936d8dcdfc0d4": {
+   "at": "2026-09-25T11:54:59+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Hands on Craft at Sheffield Museums"
+  },
   "1a0904bcddf2f4ad": {
    "at": "2026-09-22T09:54:57+00:00",
    "labels": [
@@ -346,6 +355,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "See Buildings Differently"
+  },
+  "1a3e786ed9b9eb06": {
+   "at": "2026-09-25T11:54:51+00:00",
+   "labels": [
+    "Medicine & health",
+    "Biology, ecology & vets",
+    "History & archaeology"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Healing, Religion, and Politics in Medieval China"
   },
   "1a7f587800d2519f": {
    "at": "2026-09-22T09:55:01+00:00",
@@ -435,6 +455,24 @@
    "prompt_version": 6,
    "title": "Art cure: The science of how the arts transform our health"
   },
+  "2245f6931fb21f35": {
+   "at": "2026-09-25T11:54:34+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Sixty-six years on -  how can Nigeria escape the fragility trap and unlock its potential?"
+  },
+  "23a90bd8c788d5e6": {
+   "at": "2026-09-25T11:54:46+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Polar Stories"
+  },
   "246a2128934c62ee": {
    "at": "2026-09-22T09:56:56+00:00",
    "labels": [
@@ -497,6 +535,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Autumn Tours and Talks"
+  },
+  "2a34f0d99d398564": {
+   "at": "2026-09-25T11:54:24+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Lights Up and Audio Described Tours of The Coming of Age"
   },
   "2d1c017ec6f0a227": {
    "at": "2026-09-24T11:47:48+00:00",
@@ -751,6 +800,15 @@
    "prompt_version": 6,
    "title": "Launch of Somali Week Festival 2026"
   },
+  "466a4594d8c5fa5f": {
+   "at": "2026-09-25T11:54:30+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Celebrate London's Start-up Success"
+  },
   "46e70352bab7fc3f": {
    "at": "2026-09-22T09:56:12+00:00",
    "labels": [
@@ -980,6 +1038,13 @@
    "prompt_version": 6,
    "title": "Family Workshop: The Twirly Wiggly Story, Craft & Dance"
   },
+  "592c1e979244b97b": {
+   "at": "2026-09-25T11:54:38+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Can we talk to animals?"
+  },
   "593a7356f55ceca4": {
    "at": "2026-09-22T09:57:00+00:00",
    "labels": [
@@ -1054,6 +1119,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Doctoral Open Day: Modern Collections from 1800 to 1950"
+  },
+  "5d92b919a9b48832": {
+   "at": "2026-09-25T11:55:05+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Science narratives and the public"
   },
   "5dd03dc5e0eaeaa8": {
    "at": "2026-09-22T09:53:06+00:00",
@@ -1203,6 +1275,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Holiday workshop: Space Engineering (Year 3 and 4)"
+  },
+  "72a55e66522a566d": {
+   "at": "2026-09-25T11:54:55+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Meet the Makers with Sheffield Museums"
   },
   "73540f6ae533784c": {
    "at": "2026-09-22T09:55:26+00:00",
@@ -1506,6 +1587,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Cambridge Botanic Lights 2026"
+  },
+  "8f27568e82765f9f": {
+   "at": "2026-09-25T11:55:02+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "STC to ESTC, Past, Present, and Future"
   },
   "8fe32b08e2d70cac": {
    "at": "2026-09-22T09:52:35+00:00",
@@ -1948,6 +2040,13 @@
    "prompt_version": 6,
    "title": "Live schools' broadcast: the Bayeux Tapestry"
   },
+  "b4c7bb99109a3fb7": {
+   "at": "2026-09-25T11:54:43+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Pure Poison"
+  },
   "b5aa3c222d519afc": {
    "at": "2026-09-22T09:54:21+00:00",
    "labels": [
@@ -2331,6 +2430,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "An introduction to quantum theory 2026 (short course)"
+  },
+  "d494a77c47feb8d0": {
+   "at": "2026-09-25T11:54:27+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Relaxed Opening of ‘Audrey Amiss' and ‘Rudy Loewe' exhibitions"
   },
   "d4aecc7c63dbb093": {
    "at": "2026-09-22T09:56:42+00:00",
@@ -2743,6 +2849,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The neuroscience of sadness"
+  },
+  "f1893ac97b2b8fe8": {
+   "at": "2026-09-25T11:54:40+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "An Evening with Melanie C"
   },
   "f21a88fa230c733a": {
    "at": "2026-09-22T09:57:03+00:00",
