@@ -1192,6 +1192,16 @@
    "prompt_version": 6,
    "title": "Home Learners Day"
   },
+  "676305a95844bd0e": {
+   "at": "2026-09-26T11:27:07+00:00",
+   "labels": [
+    "Arts & performance",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Hunterian Drawing Club"
+  },
   "6bd84d0f6adbbb14": {
    "at": "2026-09-22T09:56:40+00:00",
    "labels": [
@@ -1715,6 +1725,17 @@
    "prompt_version": 6,
    "title": "Getting It Made"
   },
+  "9c67a81e2f71aa2f": {
+   "at": "2026-09-26T11:27:00+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Open and Engaged Conference 2026"
+  },
   "9d617061bdce94b9": {
    "at": "2026-09-22T09:56:02+00:00",
    "labels": [
@@ -1836,6 +1857,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Audio Described Tours of 'Tenderness and Rage'"
+  },
+  "a9a5c55b420d07a1": {
+   "at": "2026-09-26T11:27:03+00:00",
+   "labels": [
+    "Medicine & health"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Stop the Bleed Training"
   },
   "a9fdf8b0ff759333": {
    "at": "2026-09-22T09:57:09+00:00",
