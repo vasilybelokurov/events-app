@@ -130,6 +130,17 @@
    "prompt_version": 6,
    "title": "American Writers’ Week: Katie Kitamura"
   },
+  "0732d4e1afdbfa67": {
+   "at": "2026-09-28T13:56:24+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Micro:bit: Build Your Own Weather Station (Year 5 and 6)"
+  },
   "077bc1047a266bae": {
    "at": "2026-09-22T09:51:40+00:00",
    "labels": [
@@ -227,6 +238,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Welly Walk October 2026"
+  },
+  "0edd9ebf5b1e5441": {
+   "at": "2026-09-28T13:56:19+00:00",
+   "labels": [
+    "Film, animation & media"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Light Night Leeds: Far, Far Away by Lightspray Visual"
   },
   "0f5751285d3f1455": {
    "at": "2026-09-22T09:52:45+00:00",
@@ -547,6 +567,15 @@
    "prompt_version": 6,
    "title": "Lights Up and Audio Described Tours of The Coming of Age"
   },
+  "2c7eaa0ae5cdf2ed": {
+   "at": "2026-09-28T13:56:37+00:00",
+   "labels": [
+    "Psychology & neuroscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Workshops: Alex T Smith presents J. Algernon Pickle"
+  },
   "2d1c017ec6f0a227": {
    "at": "2026-09-24T11:47:48+00:00",
    "labels": [
@@ -682,6 +711,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Tea & Talk at the Polar Museum: Antarctic Panoramas"
+  },
+  "3880e0b96ee3ed1d": {
+   "at": "2026-09-28T13:56:41+00:00",
+   "labels": [
+    "Medicine & health",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "BSL Tours of Hunterian Museum 2026"
   },
   "38b99e467d5fdff3": {
    "at": "2026-09-22T09:53:40+00:00",
@@ -1082,6 +1121,17 @@
    "prompt_version": 6,
    "title": "National Network: Start-up Day 2026"
   },
+  "5ac7aa7be3fe4998": {
+   "at": "2026-09-28T13:56:30+00:00",
+   "labels": [
+    "Engineering",
+    "Chemistry & materials",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Raspberry Pi Pico: Data, Sensors and the Sky (Year 7 - 9)"
+  },
   "5aff10a311ca26a4": {
    "at": "2026-09-22T09:51:36+00:00",
    "labels": [
@@ -1239,6 +1289,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Holiday workshops: Playing with proof (Year 7 - 9)"
+  },
+  "6e4a41c2694bd1bb": {
+   "at": "2026-09-28T13:56:33+00:00",
+   "labels": [
+    "Environment & climate"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Tea & Talk: Antarctic Extremes"
   },
   "6ea98dd4dd200663": {
    "at": "2026-09-22T09:56:21+00:00",
