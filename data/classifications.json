@@ -121,6 +121,15 @@
    "prompt_version": 6,
    "title": "Writing Climate Fiction That Changes Minds"
   },
+  "06bf85e7dad3b539": {
+   "at": "2026-09-29T12:54:52+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Coaching session 4: Financial planning"
+  },
   "06d85dc032a27d78": {
    "at": "2026-09-22T09:52:37+00:00",
    "labels": [
@@ -319,6 +328,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "American Writers’ Week"
+  },
+  "1733efc588c74417": {
+   "at": "2026-09-29T12:54:49+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "'No future' for transatlantic relations? Reflections in advance of the US mid-term elections"
   },
   "17990c2c1f7a6537": {
    "at": "2026-09-22T09:54:26+00:00",
@@ -1233,6 +1251,15 @@
    "prompt_version": 6,
    "title": "Discourse: Physics and philosophy: On the equality of all things"
   },
+  "64f937475c590052": {
+   "at": "2026-09-29T12:54:35+00:00",
+   "labels": [
+    "Psychology & neuroscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Do social media platforms make people happy?"
+  },
   "6756a4d8585f899e": {
    "at": "2026-09-22T09:56:31+00:00",
    "labels": [
@@ -1307,6 +1334,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Christie Around the World"
+  },
+  "6f3ac2d7f2239455": {
+   "at": "2026-09-29T12:54:41+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Coaching sessions 2 & 3: Research viability and business planning"
   },
   "6f43729f5547c7b0": {
    "at": "2026-09-22T09:52:20+00:00",
@@ -1901,6 +1937,16 @@
    "prompt_version": 6,
    "title": "Chapter: Once Upon a Book"
   },
+  "a689f5c57091eb77": {
+   "at": "2026-09-29T12:54:31+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Lights Up and Audio Described Tours of the Audrey Amiss and Rudy Loewe Exhibitions"
+  },
   "a740ff22f0504ef4": {
    "at": "2026-09-22T09:54:42+00:00",
    "labels": [
@@ -2026,6 +2072,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "American Writers’ Week: Rabih Alameddine"
+  },
+  "ae2c20ba9d4dc2f2": {
+   "at": "2026-09-29T12:54:38+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Coaching session 1: Is starting a business for me?"
   },
   "af46d83e6b9a3c04": {
    "at": "2026-09-22T09:51:32+00:00",
@@ -2537,6 +2592,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Neither Maid nor Wife: Pre-Raphaelite Women and the Firm of Morris, Marshall Faulkner & Co."
+  },
+  "d5db7be5defa7f2a": {
+   "at": "2026-09-29T12:54:45+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Petar Pejčić (cello) and Nour Ayadi (piano)"
   },
   "d6fdef1d626e2379": {
    "at": "2026-09-22T09:52:39+00:00",
