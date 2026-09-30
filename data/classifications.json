@@ -756,6 +756,15 @@
    "prompt_version": 6,
    "title": "Wellcome Collection Lates: The Friendship Effect"
   },
+  "3c7325df6dcd7cac": {
+   "at": "2026-09-30T12:37:49+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Bookbinding Masterclass"
+  },
   "3d37e8480ce5f7b1": {
    "at": "2026-09-22T09:51:22+00:00",
    "labels": [],
@@ -1278,6 +1287,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Hunterian Drawing Club"
+  },
+  "6a06fc6bb9ae1d02": {
+   "at": "2026-09-30T12:37:52+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Illumination Masterclass"
   },
   "6bd84d0f6adbbb14": {
    "at": "2026-09-22T09:56:40+00:00",
@@ -2301,6 +2319,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Did Neanderthals hum? The musicality of early humans"
+  },
+  "be1779b9de725251": {
+   "at": "2026-09-30T12:37:45+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "In conversation with Reni Eddo-Lodge"
   },
   "c1916e967b30c310": {
    "at": "2026-09-22T09:54:16+00:00",
