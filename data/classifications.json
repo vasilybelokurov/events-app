@@ -1,5 +1,14 @@
 {
  "entries": {
+  "00188ae54651cbaf": {
+   "at": "2026-10-22T11:56:46+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How to master the art of grant fundraising"
+  },
   "0096b255cf1415ea": {
    "at": "2026-09-22T09:51:38+00:00",
    "labels": [
@@ -120,6 +129,26 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Writing Climate Fiction That Changes Minds"
+  },
+  "05a3790aabada13a": {
+   "at": "2026-10-22T11:56:25+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "ShRiek: The spooky science of the paranormal (family)"
+  },
+  "0616641529e057b1": {
+   "at": "2026-10-22T11:59:53+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Stephen Hawking: His life and work"
   },
   "06bf85e7dad3b539": {
    "at": "2026-09-29T12:54:52+00:00",
@@ -266,6 +295,24 @@
    "prompt_version": 6,
    "title": "The Bayeux Tapestry"
   },
+  "0dba3e35af5a6fb7": {
+   "at": "2026-10-22T11:56:39+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "CSAR lecture: The Sun and Climate Change - Dr. Robin Catchpole, Institute of Astronomy, U. of Cambridge"
+  },
+  "0e96fef9f9f95ca1": {
+   "at": "2026-10-22T11:57:33+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How to raise capital for business growth"
+  },
   "0edd9ebf5b1e5441": {
    "at": "2026-09-28T13:56:19+00:00",
    "labels": [
@@ -310,6 +357,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "A Mughal Songbook: Art, Music and Empire"
+  },
+  "12ff5288e44bb1c0": {
+   "at": "2026-10-22T11:59:17+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members' Tour: William Eggleston and Sanlé Sory"
   },
   "133cbd8744805cbd": {
    "at": "2026-09-22T09:51:03+00:00",
@@ -473,6 +529,15 @@
    "prompt_version": 6,
    "title": "What is a trade mark and how to search for one?"
   },
+  "1f1fc12bf94e67b0": {
+   "at": "2026-10-22T11:58:40+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Stitched together with Ksenia Kazintseva"
+  },
   "1f2dd10b496c71bd": {
    "at": "2026-09-22T09:57:04+00:00",
    "labels": [
@@ -587,6 +652,24 @@
    "prompt_version": 6,
    "title": "Martino Tirimo (piano)"
   },
+  "25e185f3802e2d26": {
+   "at": "2026-10-22T11:57:51+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How to develop a PR strategy for growth"
+  },
+  "268e9ff106f9b378": {
+   "at": "2026-10-22T11:55:48+00:00",
+   "labels": [
+    "Law & justice"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Old Bailey public galleries (Central Criminal Court)"
+  },
   "29b1479faaf90b70": {
    "at": "2026-09-24T11:48:23+00:00",
    "labels": [
@@ -666,6 +749,26 @@
    "prompt_version": 6,
    "title": "The Coming of Age"
   },
+  "2ede1bcc04b31935": {
+   "at": "2026-10-22T11:58:53+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Handle with Care: Conversations Through Objects"
+  },
+  "2f163fe7f1ace35c": {
+   "at": "2026-10-22T11:55:56+00:00",
+   "labels": [
+    "Engineering",
+    "Computing & AI",
+    "Environment & climate"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Holiday workshops: Data, Sensors and the Sky (Year 7 - 9)"
+  },
   "2fc5a40a28d16991": {
    "at": "2026-09-22T09:53:24+00:00",
    "labels": [
@@ -711,6 +814,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Green Business is Good Business"
+  },
+  "31bbe6bfc6ea8701": {
+   "at": "2026-10-22T11:57:58+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "American Politics Group Annual Colloquium 2026"
   },
   "31d288f998167b61": {
    "at": "2026-09-23T11:38:11+00:00",
@@ -794,6 +906,24 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Tea & Talk with Naja Hendriksen: Meeting Contemporary Greenland"
+  },
+  "366c6b56c10ac0b0": {
+   "at": "2026-10-22T11:58:33+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Pattern Cutting: The Pattern Puzzle with London College of Fashion"
+  },
+  "3779473e68639983": {
+   "at": "2026-10-22T11:56:56+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "party done: Performance by Samra Mayanja"
   },
   "37a6af3de837cc86": {
    "at": "2026-09-22T09:55:19+00:00",
@@ -901,6 +1031,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Stolen! Theft in the archives"
+  },
+  "3e7766a2106a5e0e": {
+   "at": "2026-10-22T11:56:11+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Workshop: Spooky Characters Mix and Match"
   },
   "3f713f1bc96afbcd": {
    "at": "2026-09-22T09:52:53+00:00",
@@ -1030,12 +1167,32 @@
    "prompt_version": 6,
    "title": "The Sound of Us Workshop with Amrit Kaur"
   },
+  "47a1331b4de97410": {
+   "at": "2026-10-22T11:56:35+00:00",
+   "labels": [
+    "Environment & climate",
+    "Biology, ecology & vets",
+    "Psychology & neuroscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Station Relaxed Early Opening: Halloween Weekend"
+  },
   "47a6ebcb3978ae6b": {
    "at": "2026-09-22T09:51:30+00:00",
    "labels": [],
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "BSL Interpreted Tours of Audrey Amiss and Rudy Loewe exhibitions"
+  },
+  "48031b2ef3481b8b": {
+   "at": "2026-10-22T11:56:52+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Artist Talk: Charlie Phillips"
   },
   "49c105b968345ca1": {
    "at": "2026-09-22T09:56:13+00:00",
@@ -1061,6 +1218,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Immuno-cautious Openings of the 'Audrey Amiss' and 'Rudy Loewe' exhibitions"
+  },
+  "4d1257447f026898": {
+   "at": "2026-10-22T11:59:28+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "pity party: Performance by Michelangelo Miccolis and nick von kleist"
   },
   "4da76cdd8e50d63c": {
    "at": "2026-09-22T09:56:32+00:00",
@@ -1135,6 +1301,17 @@
    "prompt_version": 6,
    "title": "Korea"
   },
+  "5157b68a026dd2e6": {
+   "at": "2026-10-22T11:59:21+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Lost Women of Science Conversations: Hertha Ayrton - Electrical Engineer Extraordinaire"
+  },
   "5259fb0edf7af4bb": {
    "at": "2026-09-22T09:56:20+00:00",
    "labels": [
@@ -1199,6 +1376,15 @@
    "prompt_version": 6,
    "title": "Relaxed Openings of The Coming of Age"
   },
+  "5493466cefc15881": {
+   "at": "2026-10-22T11:58:50+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Develop | In Practice: Building your portfolio"
+  },
   "54f4d690ab1af442": {
    "at": "2026-09-22T09:54:17+00:00",
    "labels": [
@@ -1207,6 +1393,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Inspiring Entrepreneurs: Business Rooted in Community"
+  },
+  "5531b4bd65e571e8": {
+   "at": "2026-10-22T11:56:43+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members' Curator Tour Autumn Knight: I Can't Complain"
   },
   "5588758e583c64de": {
    "at": "2026-09-22T09:55:40+00:00",
@@ -1235,6 +1430,15 @@
    "prompt_version": 6,
    "title": "Spotlight Talk: Women Weavers: Thread, Memory, Identity"
   },
+  "56599caa2b872da7": {
+   "at": "2026-10-22T11:58:26+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Fashion Photography Masterclass with Jasprit Singh and Michael Akuagwu"
+  },
   "57095fc8b3bb9efe": {
    "at": "2026-09-22T09:55:55+00:00",
    "labels": [
@@ -1244,6 +1448,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The new normal: how weather whiplash is shaping our lives"
+  },
+  "5751fa679c48b870": {
+   "at": "2026-10-22T11:57:55+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Teachers' Session | Reworking Photographs by Hand"
   },
   "580bc5e16c3145ef": {
    "at": "2026-09-22T09:55:08+00:00",
@@ -1384,12 +1597,51 @@
    "prompt_version": 6,
    "title": "Spotlight Talk: Kettle’s Yard Rugs"
   },
+  "5df2d94567c6539a": {
+   "at": "2026-10-22T11:59:04+00:00",
+   "labels": [
+    "Medicine & health",
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "CSAR lecture: Using the very small to tackle the very large - Professor Dame Ijeoma Uchegbu DBE FMedSci HonFRSC, Wolfson"
+  },
+  "5dffa39f1080e0c6": {
+   "at": "2026-10-22T11:57:45+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Milner Prize Lecture: Highlights from 40 years of complexity theory"
+  },
   "5e862556e6db6d86": {
    "at": "2026-10-22T08:30:02+00:00",
    "labels": [],
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Cecilia Vicuña: Living Threads"
+  },
+  "5f2d27e08f16c9f8": {
+   "at": "2026-10-22T11:58:04+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Careers Fair"
+  },
+  "6056b3f47dde6cf9": {
+   "at": "2026-10-22T11:57:38+00:00",
+   "labels": [
+    "Film, animation & media"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Artist’s Film Picks: Persepolis"
   },
   "60f86807f1851ccf": {
    "at": "2026-09-22T09:51:57+00:00",
@@ -1483,6 +1735,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Illumination Masterclass"
+  },
+  "6b86006a0b8a747f": {
+   "at": "2026-10-22T12:00:01+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How to build a winning website"
   },
   "6bd84d0f6adbbb14": {
    "at": "2026-09-22T09:56:40+00:00",
@@ -1596,6 +1858,15 @@
    "prompt_version": 6,
    "title": "Holiday workshop: Space Engineering (Year 3 and 4)"
   },
+  "7149653efd336a6d": {
+   "at": "2026-10-22T11:58:22+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Fashion Illustration Trail"
+  },
   "7226805761d0d383": {
    "at": "2026-10-22T08:29:31+00:00",
    "labels": [],
@@ -1646,6 +1917,15 @@
    "prompt_version": 6,
    "title": "Together Now: Cooperation and Collaboration in Social Art Practice - Mr Harold Offeh, Royal College of Art"
   },
+  "7570e87bb6c47a14": {
+   "at": "2026-10-22T11:59:07+00:00",
+   "labels": [
+    "Film, animation & media"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The Film London Jarman Award 2026"
+  },
   "778798a1175085ba": {
    "at": "2026-09-22T09:51:01+00:00",
    "labels": [
@@ -1654,6 +1934,27 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Art of Deception"
+  },
+  "78b52ebcd8ebdf43": {
+   "at": "2026-10-22T11:56:08+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Summer Science Exhibits on Tour at Swansea Science Festival"
+  },
+  "78fa3d7f45afc277": {
+   "at": "2026-10-22T11:58:10+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Conversation Through Imagery Roundtable: Unconventional Fashion with Adobe Creative Resident Shanti Bell, Esme Marsh and"
   },
   "7930dffe2cfcc116": {
    "at": "2026-09-24T11:48:00+00:00",
@@ -1771,6 +2072,15 @@
    "prompt_version": 6,
    "title": "Start-up Stars: From purpose to profit"
   },
+  "80850dee1592da87": {
+   "at": "2026-10-22T11:57:25+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Making Sense of the Mid-Term Elections"
+  },
   "81854c21e555dffc": {
    "at": "2026-09-22T13:02:42+00:00",
    "labels": [
@@ -1813,6 +2123,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Pride in Nature LGBTQ+ tour"
+  },
+  "86d8cecde8635d86": {
+   "at": "2026-10-22T11:59:13+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Photobooth workshop | Disrupted Portraits"
   },
   "86e357e321e9d418": {
    "at": "2026-10-22T08:32:46+00:00",
@@ -1892,6 +2211,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "WiFi Wars Debug XXII"
+  },
+  "89fe780cc84ccad6": {
+   "at": "2026-10-22T11:57:41+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How Cobra can help your business journey"
   },
   "8ad83203aafe8679": {
    "at": "2026-09-22T09:52:17+00:00",
@@ -1992,6 +2320,17 @@
    "prompt_version": 6,
    "title": "Studio Sunday"
   },
+  "905688d381b1f9ff": {
+   "at": "2026-10-22T11:56:30+00:00",
+   "labels": [
+    "Physics & space",
+    "Biology, ecology & vets",
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "ShRiek: The spooky science of the paranormal"
+  },
   "911fbba3462ed71f": {
    "at": "2026-09-22T09:51:29+00:00",
    "labels": [
@@ -2000,6 +2339,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Operating Theatre: 250 Years of Surgery in Hospitals"
+  },
+  "91c9592be3c7cd8b": {
+   "at": "2026-10-22T11:56:00+00:00",
+   "labels": [
+    "Environment & climate",
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Once Upon An ... Invention"
   },
   "940337f12d211820": {
    "at": "2026-09-22T09:51:58+00:00",
@@ -2019,6 +2368,24 @@
    "prompt_version": 6,
    "title": "Snap Happy! How Children Became Photographers"
   },
+  "963b14da5572aab8": {
+   "at": "2026-10-22T11:56:05+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Book Launch, Talk & Signing, Roger Eberhard: Meanwhile"
+  },
+  "9648f5de6cf0b6af": {
+   "at": "2026-10-22T11:58:01+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "CV Workshop with Chloe Levin"
+  },
   "978d1c570c231770": {
    "at": "2026-09-22T09:56:09+00:00",
    "labels": [
@@ -2027,6 +2394,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The future of AI is tiny and physical"
+  },
+  "97b253211c2979c4": {
+   "at": "2026-10-22T11:58:14+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Decorate a Hat: From Heritage to Streetwear"
   },
   "97b70ad423edb8b1": {
    "at": "2026-10-22T08:32:54+00:00",
@@ -2071,6 +2447,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Exhibition Tour: Sunil Gupta: Life with a Camera, 1970 – Today"
+  },
+  "9a595e03bde40c7a": {
+   "at": "2026-10-22T11:57:04+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart presents: Creative Frequencies (November 2026)"
   },
   "9b81ea3ba5259955": {
    "at": "2026-09-22T09:51:20+00:00",
@@ -2149,6 +2534,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "ShRIek: The spooky science of the paranormal (family)"
+  },
+  "a188ddfad3b08331": {
+   "at": "2026-10-22T11:55:51+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How to apply sustainable strategies to your business"
   },
   "a3589db97a468087": {
    "at": "2026-09-22T09:51:33+00:00",
@@ -2363,6 +2757,15 @@
    "prompt_version": 6,
    "title": "Green Libraries Week: Schools"
   },
+  "abd0a778ba0b1a6e": {
+   "at": "2026-10-22T11:58:43+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Festival Talks"
+  },
   "ac0b4e6a91bb6257": {
    "at": "2026-09-22T09:54:30+00:00",
    "labels": [
@@ -2443,6 +2846,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Sunil Gupta: Life with a Camera, 1970 – Now"
+  },
+  "af6571526eb159d1": {
+   "at": "2026-10-22T11:58:29+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Group  Mentorship Sessions"
   },
   "afe266e70585a80a": {
    "at": "2026-09-22T09:53:51+00:00",
@@ -2707,6 +3119,17 @@
    "prompt_version": 6,
    "title": "In conversation with Reni Eddo-Lodge"
   },
+  "bf2b0b7473af4909": {
+   "at": "2026-10-22T11:56:16+00:00",
+   "labels": [
+    "Film, animation & media",
+    "Writing & communication",
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Spooktacular Family Day"
+  },
   "c09647fbd9ffc173": {
    "at": "2026-10-22T08:29:50+00:00",
    "labels": [
@@ -2733,6 +3156,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "American Writers’ Week: Jeanine Cummins"
+  },
+  "c1d7455f02f4c755": {
+   "at": "2026-10-22T11:59:31+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Photo Walk | Using Colour"
   },
   "c1f77a648c51d7c7": {
    "at": "2026-09-22T09:53:18+00:00",
@@ -2970,6 +3402,15 @@
    "prompt_version": 6,
    "title": "Holiday workshops: How things get carried away (Year 10 - 13)"
   },
+  "ce3777c1081a4cb8": {
+   "at": "2026-10-22T11:57:07+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Workshop: Little Miss Marple"
+  },
   "ceaaf87d0ee276d4": {
    "at": "2026-09-22T09:54:48+00:00",
    "labels": [
@@ -2978,6 +3419,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Creative Writing Masterclass: Writing Memories Together"
+  },
+  "cf25439d46d015e6": {
+   "at": "2026-10-22T11:57:30+00:00",
+   "labels": [
+    "Psychology & neuroscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Lecture: Sara Ahmed on Complaining, Again!"
   },
   "cfc6e66a2fc248ca": {
    "at": "2026-09-24T11:48:49+00:00",
@@ -3012,6 +3462,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Legal Storyteller Live!"
+  },
+  "d3b73b11b7a75f6a": {
+   "at": "2026-10-22T11:57:00+00:00",
+   "labels": [
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Discussion and Book Launch: AI and the Paradox of Agency"
   },
   "d4528425ec83a977": {
    "at": "2026-09-22T09:51:14+00:00",
@@ -3101,6 +3560,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Women artists in conflict zones: imagination as an act of resistance"
+  },
+  "d898f846f1800e07": {
+   "at": "2026-10-22T11:56:49+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How to build a brand story for your business"
   },
   "da98d2fca23e3889": {
    "at": "2026-09-22T09:57:13+00:00",
@@ -3205,6 +3673,15 @@
    "prompt_version": 6,
    "title": "Inwrds: The Gothic and Grotesque"
   },
+  "e1d41513d89c98b2": {
+   "at": "2026-10-22T11:56:19+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Exhibition Tour | Sanlé Sory: Colour Years"
+  },
   "e25cb31d3e5d1234": {
    "at": "2026-10-22T08:33:09+00:00",
    "labels": [
@@ -3270,6 +3747,16 @@
    "prompt_version": 6,
    "title": "The Magpies Magic Forest Trail"
   },
+  "e5bc0b13a0c76d5d": {
+   "at": "2026-10-22T11:58:18+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Fashion Futures: From garment to virtual world"
+  },
   "e6a7cd131a003a66": {
    "at": "2026-09-22T09:52:32+00:00",
    "labels": [
@@ -3305,6 +3792,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Celebrating Hilde Himmelweit: women, scholarship, and LSE’s intellectual history"
+  },
+  "e7ac744211d659a3": {
+   "at": "2026-10-22T11:57:22+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "What Did Viruses Ever Do For Us? The Evolution of “Good” Viruses - John Carr is Professor of Plant Virology, Department "
   },
   "e8275681571e55fd": {
    "at": "2026-09-22T09:55:05+00:00",
@@ -3466,6 +3963,15 @@
    "prompt_version": 6,
    "title": "Pepperpots and Provision Grounds"
   },
+  "efc8c710b735b0aa": {
+   "at": "2026-10-22T11:58:36+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Portfolio Clinic"
+  },
   "f00eba2043914c31": {
    "at": "2026-09-22T09:55:43+00:00",
    "labels": [
@@ -3476,6 +3982,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "From Darwin to Dodos - guided tour of the Museum"
+  },
+  "f04bb7775592333e": {
+   "at": "2026-10-22T11:59:49+00:00",
+   "labels": [
+    "Psychology & neuroscience",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Do Children and Other Animals Think Like Scientists? - Professor Marta Halina is a Senior Research Fellow at the Leverhu"
   },
   "f04c569fe20420f2": {
    "at": "2026-09-22T09:54:15+00:00",
@@ -3530,6 +4046,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "An Evening with Melanie C"
+  },
+  "f18d4a150a0854f7": {
+   "at": "2026-10-22T11:59:57+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Exhibition Teacher Preview with Janice Hallett"
   },
   "f21a88fa230c733a": {
    "at": "2026-09-22T09:57:03+00:00",
@@ -3643,6 +4168,15 @@
    "prompt_version": 6,
    "title": "An Introduction to Patents and Patent Searching"
   },
+  "f5efe29968adaa59": {
+   "at": "2026-10-22T11:59:24+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Social Enterprise Day"
+  },
   "f718835436464ef8": {
    "at": "2026-09-22T09:52:41+00:00",
    "labels": [
@@ -3651,6 +4185,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Prism break (family)"
+  },
+  "f73483b5ef0de521": {
+   "at": "2026-10-22T11:58:47+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Exhibition Tour: Snap Happy!"
   },
   "f77eac142467a9ca": {
    "at": "2026-09-22T09:56:29+00:00",
@@ -3678,6 +4221,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Crafternoon: Telling a Myth at Halloween"
+  },
+  "f8467369118f349e": {
+   "at": "2026-10-22T11:57:48+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Vanessa Bell & Duncan Grant: Inside Bloomsbury"
   },
   "f87f0d4f60d12caa": {
    "at": "2026-09-22T09:53:38+00:00",
@@ -3709,6 +4261,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Cooperation in Nature - Professor Stuart West, University of Oxford"
+  },
+  "fc5080ad4a4622f2": {
+   "at": "2026-10-22T11:59:10+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How to master social media for your business"
   },
   "fde098f7b0492413": {
    "at": "2026-09-22T09:52:46+00:00",
