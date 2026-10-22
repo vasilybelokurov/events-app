@@ -780,7 +780,7 @@ sources:
     exhibition_topics: [Exhibition]
     expect_events: true
     selectors:
-      item: '[class~="o-grid__item--1/2@l+"]:has(> h2 > a)'
+      item: '[class~="o-grid__item--1/2@l+"]:has(h2)'
       title: h2 a
       link: h2 a
       date: ":scope > p"
