@@ -570,7 +570,16 @@ def parse_date_range(text: str | None, *, default_time: time | None = None,
             start = None
             if not re.search(r"\d{4}", left):
                 has_month = re.search(_MONTHS, left, re.I) or re.search(r"[/.]", left)
-                candidate = f"{left} {year}" if has_month else f"{left} {end[5:7]} {year}"
+                # A bare day number borrows the month by *name*: "12 10 2026"
+                # is not believed as a date, so "12 – 30 October 2026" fell
+                # through to the fuzzy parse below, which read it as 30
+                # October 2012 at 20:26.  Only a day number: "Monday –
+                # Thursday, 2 November 2026 – 18 June 2027" (the British
+                # Library) given June would invent a Monday in June.
+                month = (datetime.fromisoformat(end).strftime("%B")
+                         if re.fullmatch(r"\d{1,2}(?:st|nd|rd|th)?", left)
+                         else end[5:7])
+                candidate = f"{left} {year}" if has_month else f"{left} {month} {year}"
                 start = parse_uk_datetime(candidate, default_time=default_time)
             if start is None:
                 start = parse_uk_datetime(left, default_time=default_time)
@@ -585,6 +594,21 @@ def parse_date_range(text: str | None, *, default_time: time | None = None,
                     rolled = _roll_year(end)
                     if rolled and start <= rolled:
                         return _roll_yearless(raw, start, rolled, assume_future)
+                # "7 Oct - 14 Feb 2027" writes the year once, for the end: a
+                # run that crosses New Year opened the year before.  Borrowing
+                # 2027 for the left side put the opening after the closing,
+                # and the end was dropped, so a four-month exhibition was
+                # published as a one-day event in October 2027.
+                elif not re.search(r"\d{4}", left):
+                    prior = str(int(year) - 1)
+                    earlier = parse_uk_datetime(
+                        f"{left} {prior}" if has_month
+                        else f"{left} {month} {prior}",
+                        default_time=default_time)
+                    if earlier and earlier <= end and \
+                            datetime.fromisoformat(end) - datetime.fromisoformat(earlier) \
+                            < timedelta(days=366):
+                        return (earlier, end)
                 return _roll_yearless(raw, start, None, assume_future)
         else:
             # The right-hand part is not a date: "Wednesday 23 September 2026
@@ -738,6 +762,7 @@ class Event:
     time_text: str | None = None
     ongoing: bool = False          # long-running exhibition
     anytime: bool = False          # standing offer with no fixed date
+    exhibition: bool = False       # a run the source itself calls an exhibition
     when_text: str | None = None   # verbatim schedule, e.g. "Fridays, 14:00"
     status: str = "scheduled"
     summary: str | None = None

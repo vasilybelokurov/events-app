@@ -119,6 +119,28 @@ def is_current(e: Event, *, now: datetime, grace_hours: int = 6) -> bool:
     return False
 
 
+def is_exhibition(e: Event, cfg: dict) -> bool:
+    """Whether the source itself calls this record an exhibition.
+
+    Two things have to hold.  The record runs over several days, and it
+    carries one of the source's ``exhibition_topics`` -- a label the venue
+    attached, not a keyword found in the title.  The topic alone is not
+    enough: the University of Cambridge Museums file their one-hour gallery
+    tours under "Exhibitions and displays" too.  The run alone is not enough
+    either: Wellcome's BSL tours are listed as one record spanning three
+    months, and the Photographers' Gallery's eight-week courses run as long
+    as its shows.
+
+    >>> e = Event("i", "t", "u", "s", "S", ongoing=True, topics=["Exhibition"])
+    >>> is_exhibition(e, {"exhibition_topics": ["Exhibition"]})
+    True
+    >>> is_exhibition(e, {})
+    False
+    """
+    wanted = set(cfg.get("exhibition_topics") or [])
+    return bool(wanted and e.ongoing and not e.anytime and wanted & set(e.topics))
+
+
 def load_classifications(root: Path) -> tuple[dict[str, list[str]], str | None]:
     """Read the committed model tags, if any.  Absent is not an error.
 
@@ -211,6 +233,8 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
 
         candidate = [e for e in events
                      if is_current(e, now=now) and (e.start or "") <= horizon]
+        for e in candidate:
+            e.exhibition = is_exhibition(e, cfg)
         report["candidate_count"] = len(candidate)
         report["fetched"] = len(events)
 
@@ -346,12 +370,18 @@ def build(sources_path: Path, out_path: Path, *, root: Path,
     # the page after the dates had passed: the records were never re-checked
     # because the source never succeeded again, and nothing expired them.
     known = {r["id"] for r in records}
+    by_key = {s["key"]: s for s in sources}
     kept, expired = [], 0
     for r in carried:
         if r.get("id") in known:
             continue
-        if is_current(Event(**{k: v for k, v in r.items()
-                              if k in Event.__dataclass_fields__}), now=now):
+        carried_event = Event(**{k: v for k, v in r.items()
+                                 if k in Event.__dataclass_fields__})
+        if is_current(carried_event, now=now):
+            # The rule is re-applied rather than trusted from the old file,
+            # which may predate it or an edit to `exhibition_topics`.
+            r["exhibition"] = is_exhibition(carried_event,
+                                            by_key.get(r.get("source"), {}))
             kept.append(r)
         else:
             expired += 1

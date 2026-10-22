@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exhibitions — Cambridge &amp; London</title>
+<meta name="description" content="Exhibitions on in Cambridge and London, filtered by age, place, date and the kind of work they show.">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128197;</text></svg>">
+</head>
+<body data-page="exhibitions">
+<a class="skip" href="#results">Skip to results</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <h1>What's On</h1>
+    <p class="tagline">Exhibitions in Cambridge &amp; London: something you can catch any day it is open.</p>
+    <nav class="pages" aria-label="Pages">
+      <a href="./">Events</a>
+      <a href="exhibitions.html" aria-current="page">Exhibitions</a>
+    </nav>
+    <p id="freshness" class="freshness" role="status"></p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="controls" aria-label="Filters">
+    <div class="row">
+      <label class="grow">
+        <span>Search</span>
+        <input type="search" id="q" placeholder="artist, gallery, description&hellip;" autocomplete="off">
+      </label>
+      <label>
+        <span>Age</span>
+        <input type="number" id="age" min="0" max="99" step="1" value="14" inputmode="numeric">
+      </label>
+      <label>
+        <span>Sort by</span>
+        <select id="sort">
+          <option value="date">Date</option>
+          <option value="closing">Closing soonest</option>
+          <option value="title">Title</option>
+          <option value="price">Price (cheapest first)</option>
+          <option value="city">Place</option>
+          <option value="source">Source</option>
+        </select>
+      </label>
+      <label>
+        <span>View</span>
+        <select id="view">
+          <option value="cards">Cards</option>
+          <option value="table">Table</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="row facets">
+      <fieldset>
+        <legend>When</legend>
+        <div class="chips" id="when"></div>
+        <div class="dates" id="dates" hidden>
+          <label><span>From</span><input type="date" id="from"></label>
+          <label><span>To</span><input type="date" id="to"></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Where</legend>
+        <div class="chips" id="cities"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Audience &amp; access</legend>
+        <div class="chips" id="flags"></div>
+      </fieldset>
+    </div>
+
+    <fieldset>
+      <legend>Subject <span class="hint">(a keyword guess — always check the listing)</span></legend>
+      <div class="chips" id="careers"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Ways of working <span class="hint">(what you would actually be doing, not the subject)</span></legend>
+      <div class="chips" id="styles"></div>
+    </fieldset>
+
+    <div class="row actions">
+      <p id="count" role="status"></p>
+      <button type="button" id="reset" class="ghost">Clear filters</button>
+      <button type="button" id="restore" class="ghost" hidden>Restore hidden</button>
+      <button type="button" id="ics" class="ghost">Download these as a calendar</button>
+      <button type="button" id="share" class="ghost">Copy link to this view</button>
+    </div>
+  </section>
+
+  <p class="note scope">
+    An exhibition here is something the venue itself lists as an exhibition
+    and that runs for more than a day. Talks, tours and workshops at the same
+    galleries are on the <a href="./">events page</a>. The British Library's
+    exhibitions are still there too, because its listing does not say which
+    rows are exhibitions.
+  </p>
+
+  <section id="results" aria-live="polite"></section>
+
+  <details class="health">
+    <summary>Every source, and how fresh it is</summary>
+    <div id="sources"></div>
+    <p class="note">
+      This is the complete list — nothing reaches this page from a source that
+      is not in it. Each row links to the venue's own listing, to the raw feed
+      the collector reads, and to that source's terms, so any claim here can be
+      traced back and checked. Run <code>python -m collector.verify</code> to
+      have every source fetched, parsed and reported on demand.
+    </p>
+    <p class="note">
+      A source that fails keeps its last good records, labelled with when they
+      were last seen, and the others still refresh. Venues with nothing to list
+      — a public gallery, a museum open on weekdays — are visited on every run
+      and only claim what their page still says: an age rule or a price
+      disappears from here when it disappears from the venue's page. Nothing on
+      this site is typed in by hand. Even so, the link on each card is the
+      authority, not this page.
+    </p>
+  </details>
+
+</main>
+
+<footer class="wrap">
+  <p>Built from public listings and feeds. Times are Europe/London.
+     <a href="https://github.com/vasilybelokurov/events-app">Source &amp; issues</a></p>
+</footer>
+
+<template id="card-tpl">
+  <article class="card">
+    <div class="card-head">
+      <time class="when"></time>
+      <span class="badges"></span>
+    </div>
+    <h3><a class="title" rel="noopener noreferrer"></a></h3>
+    <p class="meta"></p>
+    <p class="summary"></p>
+    <p class="tags"></p>
+    <div class="card-foot">
+      <button type="button" class="save" aria-pressed="false">Save</button>
+      <button type="button" class="hide">Not interested</button>
+      <a class="book" rel="noopener noreferrer">Book</a>
+      <button type="button" class="cal">Add to calendar</button>
+    </div>
+  </article>
+</template>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

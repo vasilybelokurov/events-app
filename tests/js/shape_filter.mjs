@@ -57,12 +57,14 @@ check('every run that passes the other filters is kept',
 check('one-off is the rest of that baseline',
       oneOff.length + runs.length === baseline.length);
 
+// Dated in 2030, same weekdays and BST offsets as before: matches() drops
+// anything already past, so the original October 2026 dates expired.
 // A run and a one-off that are otherwise identical must sort into the two groups.
 const synthetic = [
-  { id: 'a', title: 'Evening talk', start: '2026-10-01T18:30:00+01:00' },
-  { id: 'b', title: 'Exhibition', start: '2026-10-01T00:00:00+01:00',
-    end: '2026-12-01T00:00:00+00:00', ongoing: true },
-  { id: 'c', title: 'Open gallery', start: '2026-10-01T00:00:00+01:00', anytime: true },
+  { id: 'a', title: 'Evening talk', start: '2030-10-03T18:30:00+01:00' },
+  { id: 'b', title: 'Exhibition', start: '2030-10-03T00:00:00+01:00',
+    end: '2030-12-03T00:00:00+00:00', ongoing: true },
+  { id: 'c', title: 'Open gallery', start: '2030-10-03T00:00:00+01:00', anytime: true },
 ];
 api.load(synthetic);
 api.state.shape = 'once';

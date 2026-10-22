@@ -29,6 +29,7 @@ from __future__ import annotations
 import re
 from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
 
+import requests
 from bs4 import BeautifulSoup
 
 from ..careers import infer_careers, infer_work_styles
@@ -44,6 +45,10 @@ KIND = "html_css"
 PAGE_BREAK = "<!--collector:page-break-->"
 
 last_fetch: dict = {}
+
+#: A run that has already opened, written as its closing date alone.  The
+#: same pattern as in :func:`collector.models.parse_date_range`.
+_OPEN_RUN = re.compile(r"^(?:on now\s+)?(?:until|till|through(?:out)?|ends?)\s", re.I)
 
 
 def _with_page(url: str, param: str, number: int) -> str:
@@ -95,7 +100,17 @@ def fetch_raw(cfg: dict, **_) -> str:
     complete = False
     blanks = 0
     for number in range(2, max_pages + 1):
-        page = fetch(_with_page(cfg["url"], param, number)).replace(PAGE_BREAK, "")
+        try:
+            page = fetch(_with_page(cfg["url"], param, number)).replace(PAGE_BREAK, "")
+        except requests.HTTPError as exc:
+            # A 404 for page N is the server saying page N does not exist --
+            # Tate answers that way one past its last page.  Unlike an empty
+            # page served as 200, it cannot be an interstitial, so it is the
+            # end.  Any other error is not evidence of anything and is raised.
+            if exc.response is not None and exc.response.status_code == 404:
+                complete = True
+                break
+            raise
         keys = _row_keys(page, cfg)
         if not keys:
             # A page with no rows at all is *not* evidence that the listing
@@ -316,6 +331,10 @@ def _parse_page(raw: str, cfg: dict) -> list[Event]:
             end = parse_uk_datetime(f"{start[:10]}T{t_end.isoformat()}")
         # A run of more than one day is an exhibition, not a timed event.
         ongoing = bool(end and end[:10] != start[:10])
+        # "Until 3 Jan 2027" gives no opening date, so the start is today's
+        # date standing in as a sort key.  The card says what the venue said
+        # rather than presenting today as the day it opened.
+        when_text = date_text if date_text and _OPEN_RUN.match(date_text) else None
 
         status = "scheduled"
         status_text = (_pick(node, sel.get("status")) or "").lower()
@@ -348,6 +367,7 @@ def _parse_page(raw: str, cfg: dict) -> list[Event]:
             end=end,
             all_day=t_start is None,
             ongoing=ongoing,
+            when_text=when_text,
             status=status,
             time_text=time_text,
             summary=summary,

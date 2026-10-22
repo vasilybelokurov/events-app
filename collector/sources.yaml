@@ -87,6 +87,9 @@ sources:
     lon: 0.1179
     priority: 20
     verified: 2026-09-21
+    # Gallery tours are filed under this topic too, but they last an hour,
+    # and only a run of several days is counted as an exhibition.
+    exhibition_topics: [Exhibitions and displays]
     selectors:
       item: .views-row
       title: .views-field-title a
@@ -439,6 +442,10 @@ sources:
     verified: 2026-09-22
     url_template: https://wellcomecollection.org/events/{id}
     require_url: true
+    # Its tours span months as one record but are typed "Gallery tour", so
+    # the type, not the run, is what makes an exhibition.  "Display" is its
+    # word for a smaller one ("Tenderness and Rage").
+    exhibition_topics: [Exhibition, Display]
     notes: >
       Medicine, health, psychology, society and the art/science boundary -- a
       different intersection from the other science sources.  A public content
@@ -605,3 +612,208 @@ sources:
         entry would be the way to carry them.
       * Only free events are labelled, so a row with no label leaves the price
         unknown rather than being claimed as free.
+
+  # ---------------------------------------------------------------------
+  # Galleries.  Their exhibitions go to the Exhibitions page; anything else
+  # they list (talks, tours, workshops) stays on the main one.  A record is
+  # an exhibition only when it runs over several days *and* carries one of
+  # the source's `exhibition_topics` -- see `is_exhibition` in build.py.
+  # Probed 2026-10-22; what was rejected, and why, is in the README.
+  # ---------------------------------------------------------------------
+  - key: photographers_gallery
+    name: The Photographers' Gallery
+    kind: drupal_jsonapi
+    homepage: https://thephotographersgallery.org.uk/whats-on
+    endpoint: https://thephotographersgallery.org.uk/jsonapi/node/event
+    verify_url: https://thephotographersgallery.org.uk/jsonapi/node/event?page%5Blimit%5D=1
+    docs: https://www.drupal.org/docs/core-modules-and-themes/core-modules/jsonapi-module
+    terms: https://thephotographersgallery.org.uk/terms-use
+    site: https://thephotographersgallery.org.uk
+    venue_name: The Photographers' Gallery, Ramillies Street
+    city: London
+    priority: 21
+    verified: 2026-10-22
+    date_field: field_run_dates
+    time_field: field_time
+    price_field: field_price
+    booking_field: field_booking_cta_link
+    type_field: field_types
+    topic_field: field_topic_tag
+    include: [field_types, field_topic_tag]
+    exhibition_topics: [Exhibition]
+    notes: >
+      A public Drupal JSON:API, found the same way as the Royal Institution's.
+      Its `field_types` taxonomy separates exhibitions from tours, courses,
+      talks, bookshop events and the youth programme, which is what lets the
+      eight-week courses stay on the main page.  The exhibitions' run dates
+      carry arbitrary clock times (07:34:03); only the days mean anything.
+
+  - key: tate
+    name: Tate (London)
+    kind: html_css
+    homepage: https://www.tate.org.uk/whats-on?event_type=exhibition
+    url: https://www.tate.org.uk/whats-on?event_type=exhibition
+    verify_url: https://www.tate.org.uk/whats-on?event_type=exhibition
+    docs: no published interface; CSS selectors below, recorded 2026-10-22
+    terms: https://www.tate.org.uk/about-us/policies-and-procedures/website-terms-use
+    site: https://www.tate.org.uk
+    city: London
+    priority: 22
+    verified: 2026-10-22
+    topics: [Exhibition]
+    exhibition_topics: [Exhibition]
+    pages:
+      param: page
+      max_pages: 8
+    selectors:
+      # The listing covers all four Tates; only Modern and Britain are London.
+      item: >-
+        .card:has(.event-info__date):has(.event-info__venue:-soup-contains("Tate Modern"),
+        .event-info__venue:-soup-contains("Tate Britain"))
+      title: .card__title
+      link: a[href]
+      date: .event-info__date span
+      venue: .event-info__venue span
+      price: .event-info__price span
+      summary: .card-content__inner p
+    notes: >
+      The exhibitions filter of Tate's what's-on listing.  Featured cards
+      repeat rows further down and collapse by URL.  Pages are numbered from 1;
+      one past the last is a 404, which the walker reads as the end.  "Until 3
+      Jan 2027" is a run already open, and is stored as starting today.
+      Permanent displays ("Ongoing") have no date and are dropped.
+
+  - key: whitechapel
+    name: Whitechapel Gallery
+    kind: html_css
+    homepage: https://www.whitechapelgallery.org/exhibitions/
+    url: https://www.whitechapelgallery.org/exhibitions/
+    verify_url: https://www.whitechapelgallery.org/exhibitions/
+    docs: no published interface; CSS selectors below, recorded 2026-10-22
+    terms: unstated
+    site: https://www.whitechapelgallery.org
+    venue_name: Whitechapel Gallery
+    city: London
+    priority: 23
+    verified: 2026-10-22
+    topics: [Exhibition]
+    exhibition_topics: [Exhibition]
+    selectors:
+      item: .oneHalfMedia
+      title: .category_name a
+      link: .category_name a
+      date: p
+    notes: >
+      Writes runs as "7 Oct - 14 Feb 2027", with the year only on the end.
+      That is why parse_date_range learnt that a run crossing New Year opened
+      the year before.  The site links no terms of use.
+
+  - key: ica
+    name: ICA
+    kind: html_css
+    homepage: https://www.ica.art/exhibitions
+    url: https://www.ica.art/exhibitions
+    verify_url: https://www.ica.art/exhibitions
+    docs: no published interface; CSS selectors below, recorded 2026-10-22
+    terms: https://www.ica.art/terms-conditions
+    site: https://www.ica.art
+    venue_name: ICA, The Mall
+    city: London
+    priority: 24
+    verified: 2026-10-22
+    assume_future_dates: true
+    topics: [Exhibition]
+    exhibition_topics: [Exhibition]
+    selectors:
+      item: .item.exhibitions
+      title: .title
+      link: a
+      date: .date
+      summary: .description
+    notes: >
+      The listing holds exhibitions and the talks, screenings and performances
+      that go with them.  Only the runs become exhibitions; the one-night
+      events, dated "Wed, 28 October" without a year, stay on the main page.
+      `assume_future_dates` is earned: this page shows what is on and coming,
+      and past years live at /exhibitions/<year>.
+
+  - key: courtauld
+    name: The Courtauld Gallery
+    kind: html_css
+    homepage: https://courtauld.ac.uk/whats-on/
+    url: https://courtauld.ac.uk/whats-on/
+    verify_url: https://courtauld.ac.uk/whats-on/
+    docs: no published interface; CSS selectors below, recorded 2026-10-22
+    terms: https://courtauld.ac.uk/terms-and-conditions/
+    site: https://courtauld.ac.uk
+    venue_name: The Courtauld Gallery, Somerset House
+    city: London
+    priority: 25
+    verified: 2026-10-22
+    topics: [Exhibition]
+    exhibition_topics: [Exhibition]
+    selectors:
+      item: article.o-featured-teaser
+      title: h2 a
+      link: h2 a
+      date: ".o-featured-teaser__content > p:not(.tag)"
+    notes: >
+      Only the featured teasers are in the HTML; the rest of the programme is
+      drawn in the browser.  That is enough for the current exhibition.  The
+      collection display ("Open daily, 10:00 - 18:00") has no date and is
+      dropped.
+
+  - key: estorick
+    name: Estorick Collection
+    kind: html_css
+    homepage: https://www.estorickcollection.com/exhibitions
+    url: https://www.estorickcollection.com/exhibitions
+    verify_url: https://www.estorickcollection.com/exhibitions
+    docs: no published interface; CSS selectors below, recorded 2026-10-22
+    terms: https://www.estorickcollection.com/addres-and-legal-information
+    site: https://www.estorickcollection.com
+    venue_name: Estorick Collection, Canonbury Square
+    city: London
+    priority: 26
+    verified: 2026-10-22
+    topics: [Exhibition]
+    exhibition_topics: [Exhibition]
+    expect_events: true
+    selectors:
+      item: '[class~="o-grid__item--1/2@l+"]:has(> h2 > a)'
+      title: h2 a
+      link: h2 a
+      date: ":scope > p"
+      summary: .o-grid p
+    notes: >
+      Modern Italian art, one exhibition at a time.  Past and future
+      exhibitions are on separate pages; the future one is not read.
+
+  - key: british_museum
+    name: British Museum
+    kind: html_css
+    homepage: https://www.britishmuseum.org/exhibitions-events
+    url: https://www.britishmuseum.org/exhibitions-events
+    verify_url: https://www.britishmuseum.org/exhibitions-events
+    docs: no published interface; CSS selectors below, recorded 2026-10-22
+    terms: https://www.britishmuseum.org/terms-use
+    site: https://www.britishmuseum.org
+    venue_name: British Museum
+    city: London
+    priority: 27
+    verified: 2026-10-22
+    topics: [Exhibition]
+    exhibition_topics: [Exhibition]
+    selectors:
+      item: .teaser--exhibition
+      title: ".teaser__anchor > span:first-child"
+      link: .teaser__anchor
+      date: .date-display-range
+      # The same badge also says "Open" or "Book now", which is not a price.
+      price: '.teaser__defacer:-soup-contains("Free")'
+    notes: >
+      The page mixes exhibitions with events; `.teaser--exhibition` is the
+      site's own marking of the first kind.  The events (lectures, tours,
+      sleepovers) are not read yet.  /exhibitions and /terms-use answer 403
+      to a script while /exhibitions-events answers 200; if CI is refused,
+      this is a datacentre block, not a broken page.

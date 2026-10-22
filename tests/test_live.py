@@ -136,3 +136,17 @@ class TestCuratedLinks:
             if probe["status"] != 200 or probe["redirected_to_root"]:
                 bad.append((e.title, probe["status"], probe["redirected_to_root"]))
         assert not bad, f"curated entries with dead or redirected links: {bad}"
+
+
+@pytest.mark.parametrize("key", ["photographers_gallery", "tate", "whitechapel",
+                                 "ica", "courtauld", "estorick", "british_museum"])
+def test_each_gallery_still_yields_an_exhibition(sources, key):
+    """The Exhibitions page is fed by these; a redesign shows up here first."""
+    from collector.build import is_exhibition
+    cfg = sources[key]
+    adapter = drupal_jsonapi if cfg["kind"] == "drupal_jsonapi" else html_css
+    events = adapter.parse(adapter.fetch_raw(cfg), cfg)
+    shows = [e for e in events if is_exhibition(e, cfg)]
+    assert shows, f"{key}: no exhibitions parsed"
+    for e in shows:
+        assert e.end and e.end[:10] > e.start[:10], f"{e.title}: not a run"

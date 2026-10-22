@@ -127,7 +127,7 @@ def parse(raw: str | dict, cfg: dict) -> list[Event]:
             return [n for n in names if n]
 
         dates = attrs.get(date_field) or {}
-        time_text = attrs.get("field_times")
+        time_text = attrs.get(cfg.get("time_field", "field_times"))
         t_start, t_end = parse_time_text(time_text)
         # field_dates usually carries the real clock time; when it is midnight
         # the human-readable field_times is the only source of one.
@@ -144,8 +144,9 @@ def parse(raw: str | dict, cfg: dict) -> list[Event]:
 
         path = (attrs.get("path") or {}).get("alias") or ""
         url = urljoin(site, path) if path else site
-        booking = (attrs.get("field_book_tickets") or {}).get("uri")
-        price_text = attrs.get("field_prices")
+        booking = (attrs.get(cfg.get("booking_field", "field_book_tickets"))
+                   or {}).get("uri")
+        price_text = attrs.get(cfg.get("price_field", "field_prices"))
         is_free, price_from, currency = price_info(price_text)
 
         # The age taxonomy lists the audiences an event suits, so they combine

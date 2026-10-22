@@ -30,6 +30,25 @@ const state = {
 
 let all = [];
 let meta = {};
+
+/* Two pages read the same file. Exhibitions -- runs the venue itself calls an
+ * exhibition (see `is_exhibition` in collector/build.py) -- are shown on
+ * exhibitions.html and nowhere else; index.html has everything that is not
+ * one. The split is made once, on load, so every filter, count and export
+ * below sees only this page's records. */
+function pageKind() {
+  const body = typeof document !== 'undefined' && document.body;
+  return body && body.dataset && body.dataset.page === 'exhibitions'
+    ? 'exhibitions' : 'events';
+}
+
+function belongsHere(e, page) {
+  return !!e.exhibition === (page === 'exhibitions');
+}
+
+function noun(page) {
+  return page === 'exhibitions' ? 'exhibitions' : 'events';
+}
 let saved = new Set();
 let hidden = new Set();
 
@@ -93,6 +112,12 @@ function isLondonWeekend(d) {
 const FMT_DAY = new Intl.DateTimeFormat('en-GB', {
   weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/London',
 });
+const FMT_DAY_YEAR = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Europe/London',
+});
+const FMT_YEAR = new Intl.DateTimeFormat('en-GB', {
+  year: 'numeric', timeZone: 'Europe/London',
+});
 const FMT_TIME = new Intl.DateTimeFormat('en-GB', {
   hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London',
 });
@@ -106,6 +131,11 @@ function whenLabel(e) {
   if (!s) return 'Date to be confirmed';
   const end = parseDate(e.end);
   if (e.ongoing && end && end - s > DAY) {
+    /* A run from 2 March 2026 to 2 March 2027 read "Mon 2 Mar – Tue 2 Mar"
+     * without its years. They are shown whenever the two ends differ. */
+    if (FMT_YEAR.format(s) !== FMT_YEAR.format(end)) {
+      return `${FMT_DAY_YEAR.format(s)} – ${FMT_DAY_YEAR.format(end)}`;
+    }
     return `${FMT_DAY.format(s)} – ${FMT_DAY.format(end)}`;
   }
   let out = FMT_DAY.format(s);
@@ -137,6 +167,17 @@ function isRunningNow(e) {
   const end = parseDate(e.end);
   const now = Date.now();
   return s.getTime() <= now && !!end && end.getTime() >= now;
+}
+
+/* Days left in a run that is open now, when that is `days` or fewer; null
+ * otherwise. Counted in whole London days, so a show that closes tonight
+ * reads "Last day" rather than "Last 0 days". */
+function closesWithin(e, days) {
+  if (!e.ongoing || e.anytime || !isRunningNow(e)) return null;
+  const end = parseDate(e.end);
+  if (!end) return null;
+  const left = Math.floor((end - startOfToday()) / DAY) + 1;
+  return left <= days ? Math.max(left, 1) : null;
 }
 
 function eligibility(e, age) {
@@ -219,7 +260,7 @@ function matches(e) {
   if (state.flags.has('eligible') && elig !== 'eligible') return false;
   if (state.flags.has('free') && e.is_free !== true) return false;
   if (state.flags.has('saved') && !saved.has(e.id)) return false;
-  if (state.flags.has('weekend') && s && !isLondonWeekend(s)) return false;
+  if (state.flags.has('weekend') && s && !e.exhibition && !isLondonWeekend(s)) return false;
 
   if (state.q) {
     const hay = [e.title, e.summary, e.venue_name, e.city, e.source_name,
@@ -237,6 +278,8 @@ function sortEvents(list) {
   const by = state.sort;
   const cmp = {
     date: (a, b) => (a.start || '9999').localeCompare(b.start || '9999'),
+    closing: (a, b) => (a.end || '9999').localeCompare(b.end || '9999') ||
+                       (a.start || '9999').localeCompare(b.start || '9999'),
     title: (a, b) => a.title.localeCompare(b.title, 'en-GB'),
     price: (a, b) => (a.price_from ?? (a.is_free ? 0 : 1e9)) - (b.price_from ?? (b.is_free ? 0 : 1e9)),
     city: (a, b) => (a.city || '').localeCompare(b.city || '') ||
@@ -280,7 +323,11 @@ function renderCard(e) {
     badge(badges, 'age-unknown', 'aimed at younger children');
   }
   if (e.anytime) badge(badges, '', 'No fixed date');
-  else if (e.ongoing) badge(badges, '', 'Runs over several days');
+  else if (e.ongoing && !e.exhibition) badge(badges, '', 'Runs over several days');
+  const closing = closesWithin(e, 14);
+  if (closing != null) {
+    badge(badges, 'closing', closing <= 1 ? 'Last day' : `Last ${closing} days`);
+  }
   if (e.is_free === true) badge(badges, 'free', 'Free');
   if (e.online) badge(badges, '', 'Online option');
   if (e.status && e.status !== 'scheduled') badge(badges, 'alert', e.status.replace('_', ' '));
@@ -367,7 +414,7 @@ function render() {
   results.textContent = '';
 
   document.getElementById('count').textContent =
-    `${shown.length} of ${all.length} events` +
+    `${shown.length} of ${all.length} ${noun(pageKind())}` +
     (hidden.size ? ` · ${hidden.size} hidden` : '') +
     (saved.size ? ` · ${saved.size} saved` : '');
 
@@ -460,7 +507,9 @@ function buildChips() {
   });
   showDates();
 
+  /* The exhibitions page has no Kind filter: every record on it is a run. */
   const shape = document.getElementById('shape');
+  if (shape) {
   shape.textContent = '';
   const shapeCounts = {
     all: all.length,
@@ -483,6 +532,7 @@ function buildChips() {
       });
       shape.appendChild(b);
     });
+  }
 
   const cityCounts = new Map();
   all.forEach((e) => {
@@ -498,11 +548,15 @@ function buildChips() {
   flags.textContent = '';
   /* Named for what it does: ineligible events are always excluded, so this
    * only controls whether events with *unknown* eligibility are shown. */
+  /* "Weekends only" tests the day an event starts, which says nothing about
+   * a run: a show that opened on a Thursday is open on Saturday too. */
   [['eligible', 'Only confirmed suitable'], ['free', 'Free only'],
    ['weekend', 'Weekends only'], ['saved', 'Saved only'],
-   ['all-status', 'Include cancelled']].forEach(([k, label]) => {
-    chip(flags, label, k, state.flags);
-  });
+   ['all-status', 'Include cancelled']]
+    .filter(([k]) => !(k === 'weekend' && pageKind() === 'exhibitions'))
+    .forEach(([k, label]) => {
+      chip(flags, label, k, state.flags);
+    });
 
   const careerCounts = new Map();
   all.forEach((e) => (e.careers || []).forEach((c) => {
@@ -720,7 +774,7 @@ function renderHealth() {
   const stale = hours > (meta.stale_after_hours || 48);
   f.classList.toggle('stale', stale);
   f.textContent = gen
-    ? `${meta.event_count} events · last collected ${gen.toLocaleString('en-GB')}`
+    ? `${all.length} ${noun(pageKind())} · last collected ${gen.toLocaleString('en-GB')}`
       + (stale ? ' — this is out of date; the collector has not run recently.' : '')
     : 'Freshness unknown.';
 }
@@ -846,7 +900,8 @@ async function init() {
     const resp = await fetch(DATA_URL, { cache: 'no-cache' });
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     const doc = await resp.json();
-    all = (doc.events || []).filter((e) => e && e.id && e.title);
+    const page = pageKind();
+    all = (doc.events || []).filter((e) => e && e.id && e.title && belongsHere(e, page));
     meta = doc;
   } catch (e) {
     document.getElementById('results').appendChild(

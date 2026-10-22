@@ -18,7 +18,7 @@ collector/          Python: adapters -> normalise -> de-duplicate -> events.json
 data/curated/       hand-written entries, for anything no feed lists (empty)
 docs/               the published site (GitHub Pages root)
   data/events.json  the only thing the page loads
-tests/              338 offline tests + 14 live source checks
+tests/              374 offline tests + 21 live source checks
   js/               the front end, driven through Node against app.js itself
 ```
 
@@ -98,7 +98,7 @@ it, so any claim on the site can be traced to its origin in two clicks.
 
 **Nothing is typed in by hand.** An earlier version carried nine hand-written
 event records; a typed claim rots silently, and eight of the nine were never
-confirmed by anyone. They are now nineteen collected sources:
+confirmed by anyone. They are now twenty-six collected sources:
 
 | Source | Kind | What it gives |
 |---|---|---|
@@ -112,6 +112,8 @@ confirmed by anyone. They are now nineteen collected sources:
 | [Darwin College Lectures](https://talks.cam.ac.uk/show/index/5358), [Major Public Lectures](https://talks.cam.ac.uk/show/index/5462), [CSAR](https://talks.cam.ac.uk/show/index/5366) | `ics` | Cambridge public lecture series. Three of ~2400 talks.cam lists, each a one-line registry entry. |
 | [British Library](https://www.bl.uk/events/) | `html_css` | ~104 events over 16 paginated pages: the business programme (market research, intellectual property, payments, start-ups) beside writing, publishing, archives and conservation. The only source here that shows entrepreneur, publisher, editor, archivist or librarian. |
 | [Cambridge Festival](https://www.festival.cam.ac.uk/events) | `html_css` | Dormant until the next programme is published, then it appears on its own. |
+| [The Photographers' Gallery](https://thephotographersgallery.org.uk/whats-on) | `drupal_jsonapi` | Exhibitions, plus tours, courses, talks and a youth programme, separated by the gallery's own type taxonomy. |
+| [Tate](https://www.tate.org.uk/whats-on?event_type=exhibition) (Modern, Britain), [Whitechapel](https://www.whitechapelgallery.org/exhibitions/), [ICA](https://www.ica.art/exhibitions), [Courtauld](https://courtauld.ac.uk/whats-on/), [Estorick](https://www.estorickcollection.com/exhibitions), [British Museum](https://www.britishmuseum.org/exhibitions-events) | `html_css` | London exhibitions for the Exhibitions page; the ICA's talks and performances stay on the main one. |
 | [Old Bailey](https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court), [Supreme Court](https://www.supremecourt.uk/tours), [Bank of England Museum](https://www.bankofengland.co.uk/museum), [Science Museum](https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery), [Design Museum](https://designmuseum.org/whats-on), [Cambridge Museum of Technology](https://www.museumoftechnology.com/whats-on/), [Cambridge Engineering](https://www.eng.cam.ac.uk/outreach) | `venue` | Places with nothing to list. Visited every run; see below. |
 
 Probed and rejected, so nobody repeats the work. Re-checked 2026-09-22, and
@@ -130,6 +132,22 @@ none of them publishes JSON-LD, an ICS feed or a JSON:API:
   the Natural History Museum (a `__NEXT_DATA__` island with no event objects),
   the Barbican, ZSL London Zoo, Royal Museums Greenwich, the National Archives
   and Cambridge Junction.
+
+Galleries, probed 2026-10-22:
+
+* **`robots.txt` disallows the listing**: the National Gallery, the
+  Serpentine, White Cube and Sir John Soane's Museum.
+* **403 to anything but a desktop browser**: the National Portrait Gallery,
+  the Royal Academy, Dulwich Picture Gallery and the Hayward (Southbank).
+* **Dates that would be misread**: the Design Museum writes a closing date
+  alone ("Book now: 10 January 2027"), which parses as a one-day event on
+  that date.
+* **No dates in the HTML, or no listing found**: Camden Art Centre (its
+  WordPress `event` API carries no dates and stops in 2022), Somerset House
+  (exhibitions and ice-skating sessions share one undifferentiated listing;
+  worth another look), the Wallace Collection, Saatchi, Two Temple Place.
+* **Already covered**: Kettle's Yard and the Fitzwilliam come through the
+  University of Cambridge Museums listing.
 
 Any of them becomes a one-line registry entry the day it publishes a feed.
 
@@ -259,6 +277,26 @@ respecting `robots.txt` is a courtesy, not a licence
 and UK copyright and
 [database rights](https://www.gov.uk/guidance/sui-generis-database-rights) can
 still apply. If you add a commercial source, check its terms.
+
+## Exhibitions
+
+`docs/exhibitions.html` is a second page over the same `events.json`. A record
+belongs there, and only there, when the build sets `exhibition: true`, which
+requires two things: it runs over several days, **and** it carries one of its
+source's `exhibition_topics`, a label the venue itself attached. Neither alone
+is enough. Cambridge museum tours are filed under "Exhibitions and displays"
+but last an hour; Wellcome's BSL tours and the Photographers' Gallery's courses
+run for months but are typed as tours and courses. The rule is re-applied to
+records carried over from a failed source, so an old file cannot leave an
+exhibition on the wrong page.
+
+Known gaps: the British Library's exhibitions stay on the main page, because
+its listing does not say which rows are exhibitions, and a non-exhibition
+("Coaching sessions 2 & 3") also spans weeks. The same goes for the Royal
+Society's single exhibition and the Photographers' Gallery's outdoor
+"Soho Photography Quarter" shows. A run written as "Until 3 Jan 2027" has no
+opening date: it is stored as starting today and the card prints the venue's
+own words.
 
 ## What the page will and will not tell you
 

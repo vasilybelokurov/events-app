@@ -12,11 +12,13 @@ let src = readFileSync(process.argv[2], 'utf8').replace(/\ninit\(\);\s*$/, '\n')
 src += '\nreturn { isLondonWeekend, state, matches, load: (xs) => { all = xs; } };\n';
 const api = new Function(src)();
 
+// Dated in 2030, same weekdays and BST offsets as before: matches() drops
+// anything already past, so the original October 2026 dates expired.
 const cases = [
-  ['Sat 09:00 London', '2026-10-03T09:00:00+01:00', true],
-  ['Sun 00:30 London', '2026-10-04T00:30:00+01:00', true],   // Sat evening in Chicago
-  ['Fri 21:00 London', '2026-10-02T21:00:00+01:00', false],  // Sat already in Tokyo
-  ['Mon 12:00 London', '2026-10-05T12:00:00+01:00', false],
+  ['Sat 09:00 London', '2030-10-05T09:00:00+01:00', true],
+  ['Sun 00:30 London', '2030-10-06T00:30:00+01:00', true],   // Sat evening in Chicago
+  ['Fri 21:00 London', '2030-10-04T21:00:00+01:00', false],  // Sat already in Tokyo
+  ['Mon 12:00 London', '2030-10-07T12:00:00+01:00', false],
 ];
 const failures = [];
 for (const [name, iso, want] of cases) {

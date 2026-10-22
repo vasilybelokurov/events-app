@@ -102,3 +102,23 @@ def test_the_data_carries_both_kinds():
     runs = [e for e in events if e.get("ongoing") or e.get("anytime")]
     assert runs, "no multi-day or undated events; the Kind filter has nothing to do"
     assert len(runs) < len(events), "everything is a run; the split is meaningless"
+
+
+@node
+def test_the_exhibitions_page_logic():
+    """The page split, the closing badge and cross-year labels, via app.js."""
+    proc = subprocess.run(
+        ["node", str(HARNESS / "exhibitions_page.mjs"), str(APP), str(DATA)],
+        capture_output=True, text=True)
+    assert proc.returncode == 0, proc.stderr
+
+
+def test_both_pages_declare_which_they_are():
+    """app.js decides what to show from `data-page`; without it the
+    exhibitions page would show the events."""
+    index = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+    exhibitions = (ROOT / "docs/exhibitions.html").read_text(encoding="utf-8")
+    assert '<body data-page="events">' in index
+    assert '<body data-page="exhibitions">' in exhibitions
+    assert 'href="exhibitions.html"' in index and 'href="./"' in exhibitions
+    assert 'value="closing"' in exhibitions
