@@ -54,6 +54,27 @@
    "prompt_version": 6,
    "title": "The Roger Ely Experience"
   },
+  "01904ce0fdb2aeea": {
+   "at": "2026-10-23T11:42:34+00:00",
+   "labels": [
+    "Medicine & health",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "CSAR lecture: Looking inside the box: PET imaging and blood tests as windows into brain biology in dementia - Dr. Maura "
+  },
+  "020a823773051a4d": {
+   "at": "2026-10-23T11:43:35+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Two Scientific Giants: Laplace,  Gauss and the Law of Errors - Professor Thomas Körner, Emeritus Professor of Fourier An"
+  },
   "0217e9fb048552f7": {
    "at": "2026-09-22T09:52:55+00:00",
    "labels": [
@@ -230,6 +251,15 @@
    "prompt_version": 6,
    "title": "PEN Pinter Prize 2026: Jacqueline Rose"
   },
+  "097be6c3167c4f10": {
+   "at": "2026-10-23T11:41:42+00:00",
+   "labels": [
+    "Environment & climate"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Action on climate change and new approaches to growth: marking the 20th anniversary of the Stern Review"
+  },
   "09b4e8f290eb81eb": {
    "at": "2026-09-22T13:02:39+00:00",
    "labels": [
@@ -304,6 +334,15 @@
    "prompt_version": 6,
    "title": "CSAR lecture: The Sun and Climate Change - Dr. Robin Catchpole, Institute of Astronomy, U. of Cambridge"
   },
+  "0e03d339f7faf6ff": {
+   "at": "2026-10-23T11:43:30+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Monet: Painting Time"
+  },
   "0e96fef9f9f95ca1": {
    "at": "2026-10-22T11:57:33+00:00",
    "labels": [
@@ -330,6 +369,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Yugoslavism and its migrations: new directions in Yugoslav studies"
+  },
+  "10d880396dd6a519": {
+   "at": "2026-10-23T11:42:16+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Psychology & neuroscience",
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Banshee: Mythological Irish Women Retold"
   },
   "116d1a417965bb8c": {
    "at": "2026-09-22T09:51:41+00:00",
@@ -375,6 +425,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "poíēsis: an exhibition by Tom de Freston"
+  },
+  "1360923a484647ec": {
+   "at": "2026-10-23T11:42:36+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Agatha Christie: A World of Mystery Relaxed Hours"
   },
   "159827e6f973473f": {
    "at": "2026-09-22T09:55:50+00:00",
@@ -429,6 +488,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Christie: The Writer's Writer"
+  },
+  "1953aa9f24323cee": {
+   "at": "2026-10-23T11:43:54+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "David Hockney"
   },
   "19dcb2572e6a4688": {
    "at": "2026-09-22T09:53:34+00:00",
@@ -778,6 +846,13 @@
    "prompt_version": 6,
    "title": "Fungi Field Day 2026"
   },
+  "304814560a0f52ab": {
+   "at": "2026-10-23T11:42:01+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Wellcome Collection Lates: Not Done Yet"
+  },
   "30785a293735862b": {
    "at": "2026-09-22T09:56:11+00:00",
    "labels": [
@@ -804,6 +879,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Family Fun Day: Spooky science"
+  },
+  "31338076c2ee1b92": {
+   "at": "2026-10-23T11:43:18+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Online Study Day: The Iliad"
   },
   "3192561b92d3cd2a": {
    "at": "2026-10-22T08:33:05+00:00",
@@ -842,6 +926,16 @@
    "prompt_version": 6,
    "title": "Kettle’s Yard Chamber Music: Brodsky Quartet"
   },
+  "324203436677cbb8": {
+   "at": "2026-10-23T11:43:05+00:00",
+   "labels": [
+    "Environment & climate",
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Antarctica is Changing Faster Than Expected – Why You Should Care - Professor Dame Jane Francis DCMG FRS, Director of th"
+  },
   "340f916ae4bb9706": {
    "at": "2026-09-24T11:48:19+00:00",
    "labels": [
@@ -850,6 +944,24 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Holiday workshops: Extract your own DNA (Year 5 and 6)"
+  },
+  "340fd8ac83d9e7c7": {
+   "at": "2026-10-23T11:43:56+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Edvard Munch"
+  },
+  "34459b7f71affbab": {
+   "at": "2026-10-23T11:42:58+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Exhibition Tour | William Eggleston: All that goes unnoticed"
   },
   "348022aa1a7d8503": {
    "at": "2026-10-22T08:30:35+00:00",
@@ -907,6 +1019,17 @@
    "prompt_version": 6,
    "title": "Tea & Talk with Naja Hendriksen: Meeting Contemporary Greenland"
   },
+  "363041575e790247": {
+   "at": "2026-10-23T11:43:16+00:00",
+   "labels": [
+    "Chemistry & materials",
+    "Biology, ecology & vets",
+    "Environment & climate"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "From Innovative Crop Pest Management by Pheromones to Approaching Sustainability in Food Production and Beyond - Profess"
+  },
   "366c6b56c10ac0b0": {
    "at": "2026-10-22T11:58:33+00:00",
    "labels": [
@@ -945,6 +1068,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Tea & Talk at the Polar Museum: Antarctic Panoramas"
+  },
+  "38802397707ae843": {
+   "at": "2026-10-23T11:41:54+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Discovering our Collections through Ephemera"
   },
   "3880e0b96ee3ed1d": {
    "at": "2026-09-28T13:56:41+00:00",
@@ -999,6 +1129,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Bookbinding Masterclass"
+  },
+  "3cd9d8f437951976": {
+   "at": "2026-10-23T11:42:09+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: Dangerous Debuts"
   },
   "3d37e8480ce5f7b1": {
    "at": "2026-09-22T09:51:22+00:00",
@@ -1107,6 +1246,13 @@
    "prompt_version": 6,
    "title": "Start using the British Library for my business"
   },
+  "421e782da4d65627": {
+   "at": "2026-10-23T11:41:47+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Sarah Williamson (clarinet) and Simon Callaghan (piano)"
+  },
   "429ca7ca7d7053a6": {
    "at": "2026-10-22T08:32:00+00:00",
    "labels": [
@@ -1157,6 +1303,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Edward Leung (piano)"
+  },
+  "476af0044f0dd4bd": {
+   "at": "2026-10-23T11:42:05+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: People in Time and Place"
   },
   "4795bb4268c838e5": {
    "at": "2026-09-22T09:52:01+00:00",
@@ -1681,6 +1836,15 @@
    "prompt_version": 6,
    "title": "Black History of Science Tour"
   },
+  "6275da032b6fdbc7": {
+   "at": "2026-10-23T11:42:12+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writer's Weekend: State of the Nation, Irish Literature Now"
+  },
   "62e9550db9af14b6": {
    "at": "2026-09-22T09:52:04+00:00",
    "labels": [
@@ -1690,6 +1854,13 @@
    "prompt_version": 6,
    "title": "Discourse: Physics and philosophy: On the equality of all things"
   },
+  "64251de1a4c5f94a": {
+   "at": "2026-10-23T11:41:52+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Celebrating 25 years of Wikipedia"
+  },
   "64f937475c590052": {
    "at": "2026-09-29T12:54:35+00:00",
    "labels": [
@@ -1698,6 +1869,33 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Do social media platforms make people happy?"
+  },
+  "65ac8bbe374e714f": {
+   "at": "2026-10-23T11:43:42+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Ink"
+  },
+  "66466216c7ad9425": {
+   "at": "2026-10-23T11:41:40+00:00",
+   "labels": [
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Geography and the wealth of nations"
+  },
+  "66b3681eef5894fb": {
+   "at": "2026-10-23T11:42:20+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: Crimes, Secrets and Lies"
   },
   "6756a4d8585f899e": {
    "at": "2026-09-22T09:56:31+00:00",
@@ -1784,6 +1982,22 @@
    "prompt_version": 6,
    "title": "Holiday workshops: Playing with proof (Year 7 - 9)"
   },
+  "6cdef1ca11c9582a": {
+   "at": "2026-10-23T11:43:58+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The Tudors"
+  },
+  "6d8def5ea2740c9f": {
+   "at": "2026-10-23T11:41:50+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Eurosclerosis 2.0 in a changing world: from repetition to rupture"
+  },
   "6d953ee3002854c0": {
    "at": "2026-10-22T08:31:33+00:00",
    "labels": [
@@ -1793,6 +2007,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How to navigate the business legal landscape with ease"
+  },
+  "6d9ca15016d823b7": {
+   "at": "2026-10-23T11:43:52+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Lynda Benglis"
   },
   "6e4a41c2694bd1bb": {
    "at": "2026-09-28T13:56:33+00:00",
@@ -1882,6 +2105,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Meet the Makers with Sheffield Museums"
+  },
+  "7322d057ba0b557c": {
+   "at": "2026-10-23T11:42:45+00:00",
+   "labels": [
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "O Chemis-tree, O Chemis-tree! (family)"
   },
   "73540f6ae533784c": {
    "at": "2026-09-22T09:55:26+00:00",
@@ -1994,6 +2226,15 @@
    "prompt_version": 6,
    "title": "The madness of markets: why smart investors make crazy decisions – and how to exploit them"
   },
+  "7b293414d398846e": {
+   "at": "2026-10-23T11:43:46+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Thomas Gainsborough"
+  },
   "7b6db4d5e0e5b6a7": {
    "at": "2026-09-22T09:51:05+00:00",
    "labels": [],
@@ -2018,6 +2259,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Julio Le Parc: Light. Colour. Action."
+  },
+  "7d243abc059431ba": {
+   "at": "2026-10-23T11:42:53+00:00",
+   "labels": [
+    "Law & justice",
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Security Cooperation in a Volatile World - Ms Suzanne Raine, Selwyn College Cambridge"
   },
   "7d4538a9a4271e6f": {
    "at": "2026-09-22T09:55:36+00:00",
@@ -2266,6 +2517,15 @@
    "prompt_version": 6,
    "title": "Holiday workshops: Kitchen Lab (Year 3 and 4)"
   },
+  "8dfecbd3b1d77697": {
+   "at": "2026-10-23T11:43:28+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The Magic of Magnetism - Professor Russell Cowburn, University of Cambridge"
+  },
   "8ec30ce2601f5540": {
    "at": "2026-09-22T09:56:16+00:00",
    "labels": [
@@ -2358,6 +2618,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Illustrate Schiaparelli Looks with BENJOMO"
+  },
+  "952185530d8ba03c": {
+   "at": "2026-10-23T11:42:43+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Under 5s Workshop: The Birds of Christmas"
   },
   "9638327acadcad71": {
    "at": "2026-10-22T08:30:30+00:00",
@@ -2495,6 +2764,15 @@
    "prompt_version": 6,
    "title": "Open and Engaged Conference 2026"
   },
+  "9d4701f1ea746d93": {
+   "at": "2026-10-23T11:41:59+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Exhibition Tour | William Eggleston: All that goes unnoticed"
+  },
   "9d617061bdce94b9": {
    "at": "2026-09-22T09:56:02+00:00",
    "labels": [
@@ -2524,6 +2802,15 @@
    "prompt_version": 6,
    "title": "Preserving women's publishing histories: editing women in the archives"
   },
+  "a0912ef4ef7ec4a7": {
+   "at": "2026-10-23T11:43:08+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "BSL Exhibition Tour | William Eggleston: All that goes unnoticed"
+  },
   "a0ecbaffa858d20a": {
    "at": "2026-09-22T09:55:17+00:00",
    "labels": [
@@ -2543,6 +2830,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How to apply sustainable strategies to your business"
+  },
+  "a266e639d1133f30": {
+   "at": "2026-10-23T11:42:47+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Exhibition Tour | Sanlé Sory: Colour Years"
   },
   "a3589db97a468087": {
    "at": "2026-09-22T09:51:33+00:00",
@@ -2638,6 +2934,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Chapter: Once Upon a Book"
+  },
+  "a61838901cc52ea1": {
+   "at": "2026-10-23T11:42:22+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: The World of Maeve Brennan"
   },
   "a689f5c57091eb77": {
    "at": "2026-09-29T12:54:31+00:00",
@@ -2872,6 +3177,15 @@
    "prompt_version": 6,
    "title": "EPICo Conference 2026"
   },
+  "b12bd7b61e13a27e": {
+   "at": "2026-10-23T11:43:38+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Sirkka-Liisa Konttinen"
+  },
   "b15576f397641ce8": {
    "at": "2026-09-22T09:56:04+00:00",
    "labels": [
@@ -2912,6 +3226,15 @@
    "prompt_version": 6,
    "title": "Family Activities in autumn for children with SEND"
   },
+  "b22ed6f48897b7e1": {
+   "at": "2026-10-23T11:42:26+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: Altered States"
+  },
   "b3302834f9691a60": {
    "at": "2026-09-22T09:57:01+00:00",
    "labels": [
@@ -2938,6 +3261,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Panel and Conversation: Insights from South Asian Creatives"
+  },
+  "b48e4231510e5c08": {
+   "at": "2026-10-23T11:43:48+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Baya"
   },
   "b4994e6323692f60": {
    "at": "2026-09-22T09:53:15+00:00",
@@ -3103,6 +3435,15 @@
    "prompt_version": 6,
    "title": "Did Neanderthals hum? The musicality of early humans"
   },
+  "bcc5c28e9ae5ef77": {
+   "at": "2026-10-23T11:43:40+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Sonia Boyce"
+  },
   "bd6aa2a8f6c74443": {
    "at": "2026-10-22T08:30:50+00:00",
    "labels": [
@@ -3138,6 +3479,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Autumn Knight: I Can't Complain"
+  },
+  "c12b0df55d185ec6": {
+   "at": "2026-10-23T11:41:45+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How do Britain’s private schools reproduce privilege?"
   },
   "c1916e967b30c310": {
    "at": "2026-09-22T09:54:16+00:00",
@@ -3212,6 +3560,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Pen: Simon Garfield in Conversation with Jeremy Deller"
+  },
+  "c43982b1b260de35": {
+   "at": "2026-10-23T11:43:44+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Title to be confirmed - Giuseppe Savare (Bocconni)"
   },
   "c55a0f9f31871a83": {
    "at": "2026-09-22T09:54:02+00:00",
@@ -3347,6 +3702,15 @@
    "prompt_version": 6,
    "title": "Artist’s Film Picks: I Am Not Your Negro"
   },
+  "cbbcb47ac8fa92eb": {
+   "at": "2026-10-23T11:41:57+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Discussion: How to read a face"
+  },
   "cbf8c55b5dc40d93": {
    "at": "2026-09-22T09:53:48+00:00",
    "labels": [
@@ -3447,6 +3811,24 @@
    "prompt_version": 6,
    "title": "Global Stories with Michael Rosen and Friends"
   },
+  "d14e2bb9ba3ebe27": {
+   "at": "2026-10-23T11:42:18+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: Small Towns Big Stories"
+  },
+  "d1830b709d8e6c93": {
+   "at": "2026-10-23T11:42:03+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: The Past in the Present"
+  },
   "d1a27b68cce6a339": {
    "at": "2026-10-22T08:29:59+00:00",
    "labels": [],
@@ -3471,6 +3853,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Discussion and Book Launch: AI and the Paradox of Agency"
+  },
+  "d3d6492df4d15ec7": {
+   "at": "2026-10-23T11:42:24+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: Lisa Dwan – A Body of Beckett"
   },
   "d4528425ec83a977": {
    "at": "2026-09-22T09:51:14+00:00",
@@ -3500,6 +3891,15 @@
    "prompt_version": 6,
    "title": "An introduction to quantum theory 2026 (short course)"
   },
+  "d48cc7f79f8ca3b9": {
+   "at": "2026-10-23T11:43:50+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Nalini Malani"
+  },
   "d490e83e591e7762": {
    "at": "2026-10-22T08:30:08+00:00",
    "labels": [
@@ -3526,6 +3926,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Neither Maid nor Wife: Pre-Raphaelite Women and the Firm of Morris, Marshall Faulkner & Co."
+  },
+  "d4f04a0a9b2e8af2": {
+   "at": "2026-10-23T11:42:40+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How to harness marketplace opportunities"
   },
   "d5db7be5defa7f2a": {
    "at": "2026-09-29T12:54:45+00:00",
@@ -3569,6 +3978,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How to build a brand story for your business"
+  },
+  "d8ed6979ba4083ed": {
+   "at": "2026-10-23T11:42:07+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: The Art of the Memoir"
   },
   "da98d2fca23e3889": {
    "at": "2026-09-22T09:57:13+00:00",
@@ -3626,6 +4044,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Holiday workshops: Smart trains and smart tracks (Year 7, 8 and 9)"
+  },
+  "dfb007a3adb808c9": {
+   "at": "2026-10-23T11:42:38+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Workshops: A Little Boy and His Bear story time with Jane Riordan"
   },
   "dfce5c6b0ad5f286": {
    "at": "2026-09-24T11:47:38+00:00",
@@ -4093,6 +4520,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Cambridge Museum of Technology"
+  },
+  "f32840022bd351ac": {
+   "at": "2026-10-23T11:42:56+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Course| Behind the Scenes: How The Photographers' Gallery works"
   },
   "f3c406d0aa7ec50c": {
    "at": "2026-10-22T08:31:26+00:00",
