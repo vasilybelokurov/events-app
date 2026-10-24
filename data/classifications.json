@@ -642,6 +642,15 @@
    "prompt_version": 6,
    "title": "In Conversation: Sunil Gupta and Hal Fischer"
   },
+  "21a1513f8b9fa35e": {
+   "at": "2026-10-24T11:02:03+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Pan-Africanism: a history"
+  },
   "2231480ce2d42fd8": {
    "at": "2026-09-22T09:52:49+00:00",
    "labels": [
@@ -1466,6 +1475,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Lost Women of Science Conversations: Hertha Ayrton - Electrical Engineer Extraordinaire"
+  },
+  "51ebfd63ad2242e3": {
+   "at": "2026-10-24T11:02:06+00:00",
+   "labels": [
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Comedy vs AI: Garrett Millerick's I, Robot"
   },
   "5259fb0edf7af4bb": {
    "at": "2026-09-22T09:56:20+00:00",
