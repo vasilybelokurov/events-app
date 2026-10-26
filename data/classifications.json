@@ -1173,6 +1173,15 @@
    "prompt_version": 6,
    "title": "Holiday workshops: Intro to coding (Year 3 and 4)"
   },
+  "3dd6fe0e9e9dc34c": {
+   "at": "2026-10-26T13:04:07+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Discussion | How Children Became Photographers"
+  },
   "3e2834eff79f193a": {
    "at": "2026-10-22T08:30:19+00:00",
    "labels": [],
@@ -2697,6 +2706,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Can incentives encourage open research practice?"
+  },
+  "97b9f0926ffbfe85": {
+   "at": "2026-10-26T13:04:09+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Audio described Tour: Agatha Christie: A World of Mystery"
   },
   "97de11bb4c84bbda": {
    "at": "2026-09-22T09:55:48+00:00",
