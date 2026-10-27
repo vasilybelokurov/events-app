@@ -563,6 +563,15 @@
    "prompt_version": 6,
    "title": "Family Activity in Autumn"
   },
+  "1b871df1e9812679": {
+   "at": "2026-10-27T12:14:18+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Routes To Market"
+  },
   "1c359be6f6c02c2d": {
    "at": "2026-09-22T09:53:43+00:00",
    "labels": [
@@ -580,6 +589,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Exhibition: The beauty of the Earth"
+  },
+  "1d664fb07fb21f0e": {
+   "at": "2026-10-27T12:14:59+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Through the lens of a bee: from the past to the future - Professor Mark Brown, Professor of Evolutionary Biology and Eco"
   },
   "1d93fc4116f0b6f1": {
    "at": "2026-09-22T09:51:16+00:00",
@@ -650,6 +668,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Pan-Africanism: a history"
+  },
+  "21ff0a35f525f983": {
+   "at": "2026-10-27T12:14:23+00:00",
+   "labels": [
+    "Environment & climate",
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The new normal: How weather whiplash is shaping our lives"
   },
   "2231480ce2d42fd8": {
    "at": "2026-09-22T09:52:49+00:00",
@@ -1048,6 +1076,15 @@
    "prompt_version": 6,
    "title": "Pattern Cutting: The Pattern Puzzle with London College of Fashion"
   },
+  "37687fa156c1cdf3": {
+   "at": "2026-10-27T12:14:03+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Funding Clinic: an interactive Q&A on raising investment"
+  },
   "3779473e68639983": {
    "at": "2026-10-22T11:56:56+00:00",
    "labels": [
@@ -1357,6 +1394,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "BSL Interpreted Tours of Audrey Amiss and Rudy Loewe exhibitions"
+  },
+  "47ebf773456dd34a": {
+   "at": "2026-10-27T12:14:31+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Cooperation in Nature - Professor Stuart West, University of Oxford"
   },
   "48031b2ef3481b8b": {
    "at": "2026-10-22T11:56:52+00:00",
@@ -2744,6 +2790,17 @@
    "prompt_version": 6,
    "title": "Michael Faraday Prize Lecture: Life in the fast lane — What the past tells us about evolution under pressure"
   },
+  "99505f62ebdf6f59": {
+   "at": "2026-10-27T12:14:41+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Cooperation in Welfare Reform - Sir Andrew Dilnot, Nuffield College Oxford"
+  },
   "9a334580f2f5b3a7": {
    "at": "2026-09-22T09:56:36+00:00",
    "labels": [
@@ -3656,6 +3713,13 @@
    "prompt_version": 6,
    "title": "Frieze × ICA Artists’ Film Programme 2026 (online)"
   },
+  "c6426e44eb043621": {
+   "at": "2026-10-27T12:14:07+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The big picture as an approach to the study of international relations"
+  },
   "c6750ede85650850": {
    "at": "2026-09-22T09:53:41+00:00",
    "labels": [
@@ -3719,6 +3783,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Monetary clarity in the face of geoeconomic turmoil"
+  },
+  "cafea14f026d9d37": {
+   "at": "2026-10-27T12:14:11+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "1946: a turning point for Italian Women – Anglo-Italian encounters"
   },
   "cb2e7a790103fb8f": {
    "at": "2026-09-22T09:56:17+00:00",
@@ -4565,6 +4638,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Course| Behind the Scenes: How The Photographers' Gallery works"
+  },
+  "f3bd2aff1c30cf9d": {
+   "at": "2026-10-27T12:14:15+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Book Launch & Signing, Jerry Hsu: How About Never"
   },
   "f3c406d0aa7ec50c": {
    "at": "2026-10-22T08:31:26+00:00",

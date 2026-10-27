@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T12:59:59.768260+00:00",
+ "generated_at": "2026-10-27T12:09:42.569295+00:00",
  "timezone": "Europe/London",
  "stale_after_hours": 48,
  "verify_after_days": 90,
@@ -16,15 +16,15 @@
    "docs": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/jsonapi-module",
    "terms": "https://www.rigb.org/terms-and-conditions",
    "adapter_verified_on": "2026-09-21",
-   "count": 39,
-   "candidate_count": 39,
-   "last_good_count": 39,
+   "count": 34,
+   "candidate_count": 34,
+   "last_good_count": 34,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": true,
-   "fetched": 39
+   "fetched": 34
   },
   {
    "key": "cam_museums",
@@ -36,16 +36,16 @@
    "docs": "no published interface; CSS selectors below, recorded 2026-09-21",
    "terms": "https://www.museums.cam.ac.uk/terms-and-conditions",
    "adapter_verified_on": "2026-09-21",
-   "count": 51,
+   "count": 50,
    "candidate_count": null,
    "last_good_count": 104,
    "status": "fetch_error",
    "error": "ConnectionError: HTTPSConnectionPool(host='www.museums.cam.ac.uk', port=443): Max retries exceeded with url: /whats-on (Caused by NewConnectionError(\"HTTPSConnection(host='www.museums.cam.ac.uk', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))",
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
    "last_success": "2026-09-22T12:58:59.863293+00:00",
    "pagination_complete": null,
-   "carried_over": 54,
-   "carried_expired": 3
+   "carried_over": 51,
+   "carried_expired": 1
   },
   {
    "key": "talks_cam_darwin",
@@ -62,8 +62,8 @@
    "last_good_count": 8,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "fetched": 8
   },
@@ -82,8 +82,8 @@
    "last_good_count": 0,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 7
@@ -103,8 +103,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -123,8 +123,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -143,8 +143,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -163,7 +163,7 @@
    "last_good_count": 1,
    "status": "blocked",
    "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery",
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
    "last_success": "2026-10-22T08:15:58.689549+00:00",
    "pagination_complete": null,
    "fetched": 1
@@ -178,16 +178,16 @@
    "docs": "no published interface; CSS selectors below, recorded 2026-09-21",
    "terms": "https://hunterianmuseum.org/privacy-policy/",
    "adapter_verified_on": "2026-09-21",
-   "count": 9,
-   "candidate_count": 9,
-   "last_good_count": 9,
+   "count": 8,
+   "candidate_count": 8,
+   "last_good_count": 8,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
-   "fetched": 9
+   "fetched": 8
   },
   {
    "key": "design_museum",
@@ -204,8 +204,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -224,8 +224,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "fetched": 1
   },
@@ -243,8 +243,8 @@
    "candidate_count": null,
    "last_good_count": 1,
    "status": "fetch_error",
-   "error": "ConnectTimeout: HTTPSConnectionPool(host='www.eng.cam.ac.uk', port=443): Max retries exceeded with url: /outreach (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.eng.cam.ac.uk', port=443) at 0x7faabbd89f70>, 'Connection to www.eng.cam.ac.uk timed out. (connect timeout=30)'))",
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
+   "error": "ConnectTimeout: HTTPSConnectionPool(host='www.eng.cam.ac.uk', port=443): Max retries exceeded with url: /outreach (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.eng.cam.ac.uk', port=443) at 0x7f2506bc1dc0>, 'Connection to www.eng.cam.ac.uk timed out. (connect timeout=30)'))",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
    "last_success": "2026-09-22T12:58:59.863293+00:00",
    "pagination_complete": null,
    "carried_over": 1
@@ -264,8 +264,8 @@
    "last_good_count": 18,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "fetched": 18
   },
@@ -284,8 +284,8 @@
    "last_good_count": 3,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "fetched": 3
   },
@@ -304,8 +304,8 @@
    "last_good_count": 17,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "fetched": 100
   },
@@ -324,8 +324,8 @@
    "last_good_count": 25,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 25
@@ -345,8 +345,8 @@
    "last_good_count": 11,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 11
@@ -366,8 +366,8 @@
    "last_good_count": 12,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 12
@@ -382,16 +382,16 @@
    "docs": "no published interface; CSS selectors below, recorded 2026-09-22",
    "terms": "https://www.bl.uk/terms",
    "adapter_verified_on": "2026-09-22",
-   "count": 98,
-   "candidate_count": 98,
-   "last_good_count": 98,
+   "count": 104,
+   "candidate_count": 104,
+   "last_good_count": 104,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": true,
    "detail_enabled": false,
-   "fetched": 98
+   "fetched": 104
   },
   {
    "key": "photographers_gallery",
@@ -403,15 +403,15 @@
    "docs": "https://www.drupal.org/docs/core-modules-and-themes/core-modules/jsonapi-module",
    "terms": "https://thephotographersgallery.org.uk/terms-use",
    "adapter_verified_on": "2026-10-22",
-   "count": 27,
-   "candidate_count": 27,
-   "last_good_count": 27,
+   "count": 28,
+   "candidate_count": 28,
+   "last_good_count": 28,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": true,
-   "fetched": 27
+   "fetched": 28
   },
   {
    "key": "tate",
@@ -428,8 +428,8 @@
    "last_good_count": 20,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": true,
    "detail_enabled": false,
    "fetched": 20
@@ -449,8 +449,8 @@
    "last_good_count": 5,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 5
@@ -470,8 +470,8 @@
    "last_good_count": 8,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 8
@@ -491,8 +491,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 1
@@ -512,8 +512,8 @@
    "last_good_count": 1,
    "status": "ok",
    "error": null,
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
-   "last_success": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
+   "last_success": "2026-10-27T12:09:42.569295+00:00",
    "pagination_complete": null,
    "detail_enabled": false,
    "fetched": 1
@@ -533,7 +533,7 @@
    "last_good_count": 4,
    "status": "fetch_error",
    "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.britishmuseum.org/exhibitions-events",
-   "last_attempt": "2026-10-26T12:59:59.768260+00:00",
+   "last_attempt": "2026-10-27T12:09:42.569295+00:00",
    "last_success": "2026-10-22T08:15:58.689549+00:00",
    "pagination_complete": null,
    "carried_over": 4
@@ -604,7 +604,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-be31a5eb4695",
@@ -681,7 +681,7 @@
     "Creative production",
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-aa85a8dcfe1f",
@@ -703,7 +703,7 @@
    "topics": [
     "Exhibition"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-243e4c2acd46",
@@ -803,7 +803,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-4f7940d7a54b",
@@ -830,7 +830,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-b874e44de6a2",
@@ -890,7 +890,7 @@
    "topics": [
     "Display"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-552d921b071f",
@@ -914,7 +914,7 @@
     "British Sign Language",
     "Gallery tour"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-f2604398414d",
@@ -949,7 +949,7 @@
     "Fieldwork & outdoors",
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_museum-6f6116fffb44",
@@ -1005,7 +1005,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-b751cf0db2aa",
@@ -1070,7 +1070,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-e9d4d378f0f7",
@@ -1095,7 +1095,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-32447464d655",
@@ -1123,7 +1123,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-a346d1ea6d1f",
@@ -1147,7 +1147,7 @@
     "Audio described",
     "Session"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-cc4642930031",
@@ -1172,7 +1172,7 @@
    "topics": [
     "Talks & Events"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-47633f4551cf",
@@ -1198,7 +1198,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-8f14b20cbe69",
@@ -1227,7 +1227,7 @@
     "Creative production",
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-5c15789ce7b8",
@@ -1258,7 +1258,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-db802a7096d0",
@@ -1355,7 +1355,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-e0d870a6e6b9",
@@ -1383,7 +1383,7 @@
     "Creative production",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "estorick-e57331bb7c55",
@@ -1412,7 +1412,7 @@
     "Creative production",
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-9cefc4562c41",
@@ -1443,7 +1443,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-67d2aa06e7db",
@@ -1469,7 +1469,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-f759755dcc45",
@@ -1571,7 +1571,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_museum-c6c43503b3ff",
@@ -1613,7 +1613,7 @@
    "topics": [
     "Exhibition"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "whitechapel-f7764376d532",
@@ -1634,7 +1634,7 @@
    "topics": [
     "Exhibition"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "whitechapel-243a25f7136d",
@@ -1655,7 +1655,7 @@
    "topics": [
     "Exhibition"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "whitechapel-29562e63862d",
@@ -1679,7 +1679,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_museum-dfc0ab25817d",
@@ -1730,7 +1730,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-272fb5e4c01a",
@@ -1834,7 +1834,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "lse_events-99c3be4d4b3a",
@@ -1862,7 +1862,7 @@
     "Politics",
     "Society"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-1850d65d0617",
@@ -1898,7 +1898,7 @@
     "Creative production",
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-2de763c9be9d",
@@ -1932,7 +1932,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-17a2c2509f87",
@@ -1966,7 +1966,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-c73e0dec37e5",
@@ -2001,7 +2001,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-dd29a54c9dce",
@@ -2153,799 +2153,6 @@
    "exhibition": false
   },
   {
-   "id": "british_library-b0663ae6d03d",
-   "title": "Agatha Christie: in your local library",
-   "url": "https://events.bl.uk/events/agatha-christie-in-your-local-library",
-   "source": "british_library",
-   "source_name": "British Library",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2028-10-26T00:00:00+01:00",
-   "all_day": true,
-   "time_text": "Various dates between October 2026 – October 2028",
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Discover the extraordinary life, characters and plot-twists of the bestselling novelist of all time, Agatha Christie.",
-   "venue_name": "British Library, St Pancras",
-   "city": "London",
-   "lat": 51.5299,
-   "lon": -0.1276,
-   "online": false,
-   "careers": [
-    "Writing & communication"
-   ],
-   "work_styles": [
-    "Research & discovery"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "tate-15be381b8061",
-   "title": "Ana Mendieta",
-   "url": "https://www.tate.org.uk/whats-on/tate-modern/ana-mendieta",
-   "source": "tate",
-   "source_name": "Tate (London)",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2027-01-17T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": true,
-   "when_text": "Until 17 Jan 2027",
-   "status": "scheduled",
-   "summary": "Experience the powerful work of Ana Mendieta, whose legacy changed the course of contemporary art",
-   "venue_name": "Tate Modern",
-   "city": "London",
-   "online": false,
-   "price_text": "FREE FOR MEMBERS",
-   "topics": [
-    "Exhibition"
-   ],
-   "careers": [
-    "Arts & performance"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "tate-e80ed7be7660",
-   "title": "Art Now: Mohammed Z Rahman",
-   "url": "https://www.tate.org.uk/whats-on/tate-britain/art-now-mohammed-z-rahman",
-   "source": "tate",
-   "source_name": "Tate (London)",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2026-11-08T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": true,
-   "when_text": "Until 8 Nov 2026",
-   "status": "scheduled",
-   "summary": "A new body of paintings exploring notions of home and love, displayed alongside Tate works, The Lovers and The Spaghetti …",
-   "venue_name": "Tate Britain",
-   "city": "London",
-   "online": false,
-   "price_text": "FREE",
-   "is_free": true,
-   "price_from": 0.0,
-   "topics": [
-    "Exhibition"
-   ],
-   "careers": [
-    "Arts & performance"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "bank_of_england_museum-8c1ea8eb56a2",
-   "title": "Bank of England Museum",
-   "url": "https://www.bankofengland.co.uk/museum",
-   "source": "bank_of_england_museum",
-   "source_name": "Bank of England Museum",
-   "start": "2026-10-26T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": false,
-   "anytime": true,
-   "exhibition": false,
-   "when_text": "Monday to Friday, 10am to 5pm (last entry 4.30pm)",
-   "status": "scheduled",
-   "summary": "Discover our history and the role we play in the economy today",
-   "venue_name": "Bank of England Museum, Threadneedle Street",
-   "city": "London",
-   "lat": 51.5142,
-   "lon": -0.0885,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "topics": [
-    "Economics",
-    "Finance",
-    "Public sector"
-   ],
-   "careers": [
-    "Finance & economics"
-   ],
-   "work_styles": [
-    "Research & discovery"
-   ],
-   "provenance": "Built from https://www.bankofengland.co.uk/museum as fetched on 2026-10-26. The page calls itself “Museum”. Confirmed on the page: “Free to visit”; “Monday to Friday, 10am to 5pm”.",
-   "verified_on": "2026-10-26",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "cam_museum_technology-04ee29daeeac",
-   "title": "Cambridge Museum of Technology",
-   "url": "https://www.museumoftechnology.com/whats-on/",
-   "source": "cam_museum_technology",
-   "source_name": "Cambridge Museum of Technology",
-   "start": "2026-10-26T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": false,
-   "anytime": true,
-   "exhibition": false,
-   "when_text": "See the museum's what's-on page for steaming days",
-   "status": "scheduled",
-   "venue_name": "Cambridge Museum of Technology, Cheddars Lane",
-   "city": "Cambridge",
-   "lat": 52.2115,
-   "lon": 0.1401,
-   "online": false,
-   "topics": [
-    "Energy",
-    "Industrial history",
-    "Mechanical engineering"
-   ],
-   "careers": [
-    "Design, making & architecture"
-   ],
-   "provenance": "Built from https://www.museumoftechnology.com/whats-on/ as fetched on 2026-10-26. The page calls itself “Events — Cambridge Museum of Technology”.",
-   "verified_on": "2026-10-26",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "va_young_people-537850e68d7f",
-   "title": "Design Club (11-14) - Friendship Bracelets",
-   "url": "https://www.vam.ac.uk/event/EaoZE75eXB/design-club-11-14-oct-2026-mar-2027",
-   "source": "va_young_people",
-   "source_name": "V&A Young People",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2027-03-13T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": false,
-   "when_text": "On now until Saturday, 13 March 2027",
-   "status": "scheduled",
-   "summary": "Drop-in Design Club (11-14) - Friendship Bracelets On now until Saturday, 13 March 2027 Young V&A",
-   "venue_name": "V&A South Kensington",
-   "city": "London",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "audiences": [
-    "teens"
-   ],
-   "age_min": 13,
-   "age_max": 26,
-   "age_text": "for young creatives aged 13-26",
-   "topics": [
-    "Design",
-    "Art",
-    "Craft",
-    "Fashion",
-    "Digital media",
-    "Architecture"
-   ],
-   "careers": [
-    "Design, making & architecture"
-   ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "tate-056bd68c363b",
-   "title": "Frida: The Making of an Icon",
-   "url": "https://www.tate.org.uk/whats-on/tate-modern/frida-kahlo-the-making-of-an-icon",
-   "source": "tate",
-   "source_name": "Tate (London)",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2027-01-03T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": true,
-   "when_text": "Until 3 Jan 2027",
-   "status": "scheduled",
-   "venue_name": "Tate Modern",
-   "city": "London",
-   "online": false,
-   "price_text": "FREE FOR MEMBERS",
-   "topics": [
-    "Exhibition"
-   ],
-   "careers": [
-    "Arts & performance"
-   ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "tate-14fbf79d0aeb",
-   "title": "Gathering Ground",
-   "url": "https://www.tate.org.uk/whats-on/tate-modern/gathering-ground",
-   "source": "tate",
-   "source_name": "Tate (London)",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2027-03-07T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": true,
-   "when_text": "Until 7 Mar 2027",
-   "status": "scheduled",
-   "summary": "Explore the power of art to inspire change in today’s ecological crisis",
-   "venue_name": "Tate Modern",
-   "city": "London",
-   "online": false,
-   "price_text": "FREE",
-   "is_free": true,
-   "price_from": 0.0,
-   "topics": [
-    "Exhibition"
-   ],
-   "careers": [
-    "Environment & climate",
-    "Arts & performance"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "tate-d08e82abb73e",
-   "title": "Hyundai Commission: Tarek Atoui",
-   "url": "https://www.tate.org.uk/whats-on/tate-modern/tarek-atoui",
-   "source": "tate",
-   "source_name": "Tate (London)",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2027-04-11T00:00:00+01:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": true,
-   "when_text": "Until 11 Apr 2027",
-   "status": "scheduled",
-   "summary": "Discover Tarek Atoui’s exciting new work in Tate Modern’s iconic Turbine Hall",
-   "venue_name": "Tate Modern",
-   "city": "London",
-   "online": false,
-   "price_text": "FREE",
-   "is_free": true,
-   "price_from": 0.0,
-   "topics": [
-    "Exhibition"
-   ],
-   "careers": [
-    "Arts & performance"
-   ],
-   "work_styles": [
-    "Research & discovery"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "tate-90ac83e2d0b3",
-   "title": "Julio Le Parc: Light. Colour. Action.",
-   "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
-   "source": "tate",
-   "source_name": "Tate (London)",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2027-05-03T00:00:00+01:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": true,
-   "when_text": "Until 3 May 2027",
-   "status": "scheduled",
-   "venue_name": "Tate Modern",
-   "city": "London",
-   "online": false,
-   "price_text": "FREE FOR MEMBERS",
-   "topics": [
-    "Exhibition"
-   ],
-   "careers": [
-    "Arts & performance"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "tate-db48ebcf9a0d",
-   "title": "Light and Magic: The Birth of Art Photography",
-   "url": "https://www.tate.org.uk/whats-on/tate-modern/light-and-magic",
-   "source": "tate",
-   "source_name": "Tate (London)",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2027-02-21T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": true,
-   "when_text": "Until 21 Feb 2027",
-   "status": "scheduled",
-   "summary": "Discover the untold global story of art photography",
-   "venue_name": "Tate Modern",
-   "city": "London",
-   "online": false,
-   "price_text": "FREE FOR MEMBERS",
-   "topics": [
-    "Exhibition"
-   ],
-   "careers": [
-    "Arts & performance"
-   ],
-   "work_styles": [
-    "Creative production",
-    "Research & discovery"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "va_young_people-b5b505fab81a",
-   "title": "Make Space (November & December 2026)",
-   "url": "https://www.vam.ac.uk/event/NGY9LZGDjL/v-a-east-make-space-oct-dec-2026",
-   "source": "va_young_people",
-   "source_name": "V&A Young People",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2026-12-10T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": false,
-   "when_text": "On now until Thursday, 10 December 2026",
-   "status": "scheduled",
-   "summary": "Drop-in Make Space (November & December 2026) On now until Thursday, 10 December 2026 V&A East Storehouse",
-   "venue_name": "V&A South Kensington",
-   "city": "London",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "audiences": [
-    "teens"
-   ],
-   "age_min": 13,
-   "age_max": 26,
-   "age_text": "for young creatives aged 13-26",
-   "topics": [
-    "Design",
-    "Art",
-    "Craft",
-    "Fashion",
-    "Digital media",
-    "Architecture"
-   ],
-   "careers": [
-    "Design, making & architecture"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "va_young_people-aba8b8430ea5",
-   "title": "Meet the Designer, Christie Swallow",
-   "url": "https://www.vam.ac.uk/event/e4Q1adGX5qY/meet-the-designer-christie-swallow-2026",
-   "source": "va_young_people",
-   "source_name": "V&A Young People",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2026-12-12T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": false,
-   "when_text": "On now until Saturday, 12 December 2026",
-   "status": "scheduled",
-   "summary": "Open studio Meet the Designer, Christie Swallow On now until Saturday, 12 December 2026 Young V&A",
-   "venue_name": "V&A South Kensington",
-   "city": "London",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "audiences": [
-    "teens"
-   ],
-   "age_min": 13,
-   "age_max": 26,
-   "age_text": "for young creatives aged 13-26",
-   "topics": [
-    "Design",
-    "Art",
-    "Craft",
-    "Fashion",
-    "Digital media",
-    "Architecture"
-   ],
-   "careers": [
-    "Design, making & architecture"
-   ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "va_young_people-a45dfe30e8ff",
-   "title": "Offcut Afternoons",
-   "url": "https://www.vam.ac.uk/event/q4rg0kGxO3/making-workshop-afternoon-drop-in-apr-nov-2026",
-   "source": "va_young_people",
-   "source_name": "V&A Young People",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2026-11-28T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": false,
-   "when_text": "On now until Saturday, 28 November 2026",
-   "status": "scheduled",
-   "summary": "Workshop Offcut Afternoons On now until Saturday, 28 November 2026 V&A South Kensington",
-   "venue_name": "V&A South Kensington",
-   "city": "London",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "audiences": [
-    "teens"
-   ],
-   "age_min": 13,
-   "age_max": 26,
-   "age_text": "for young creatives aged 13-26",
-   "topics": [
-    "Design",
-    "Art",
-    "Craft",
-    "Fashion",
-    "Digital media",
-    "Architecture"
-   ],
-   "careers": [
-    "Design, making & architecture"
-   ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "old_bailey-8b62944aa8c4",
-   "title": "Old Bailey public galleries (Central Criminal Court)",
-   "url": "https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court",
-   "source": "old_bailey",
-   "source_name": "Old Bailey public galleries",
-   "start": "2026-10-26T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": false,
-   "anytime": true,
-   "exhibition": false,
-   "when_text": "Weekdays when the court is sitting",
-   "status": "scheduled",
-   "summary": "The Central Criminal Court is probably the most famous criminal court in the world, and has been London's principal criminal court for centuries",
-   "venue_name": "Central Criminal Court, City of London",
-   "city": "London",
-   "lat": 51.5158,
-   "lon": -0.1021,
-   "online": false,
-   "booking": "required",
-   "age_min": 14,
-   "age_text": "no admission for children under 14; proof of age may be requested",
-   "topics": [
-    "Criminal justice",
-    "Law",
-    "Public service"
-   ],
-   "careers": [
-    "Law & justice"
-   ],
-   "provenance": "Built from https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court as fetched on 2026-10-26. The page calls itself “Central Criminal Court”. Confirmed on the page: “no admission for children under 14”; “photographic identification”.",
-   "verified_on": "2026-10-26",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "tate-0b30936a48a8",
-   "title": "Tate Britain Commission 2026: Zineb Sedira: When Words Fall Silent, Cinema Speaks",
-   "url": "https://www.tate.org.uk/whats-on/tate-britain/zineb-sedira",
-   "source": "tate",
-   "source_name": "Tate (London)",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2027-01-17T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": true,
-   "when_text": "Until 17 Jan 2027",
-   "status": "scheduled",
-   "summary": "Explore Zineb Sedira's monumental and intimate installation, bridging the political and the poetic",
-   "venue_name": "Tate Britain",
-   "city": "London",
-   "online": false,
-   "price_text": "FREE",
-   "is_free": true,
-   "price_from": 0.0,
-   "topics": [
-    "Exhibition"
-   ],
-   "careers": [
-    "Arts & performance"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "science_museum-97a747036909",
-   "title": "Technicians: The David Sainsbury Gallery",
-   "url": "https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery",
-   "source": "science_museum",
-   "source_name": "Science Museum",
-   "start": "2026-10-26T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": false,
-   "anytime": true,
-   "exhibition": false,
-   "when_text": "Any time during museum opening hours",
-   "status": "scheduled",
-   "summary": "A gallery built around technician jobs rather than school subjects.\n",
-   "venue_name": "Science Museum, Exhibition Road",
-   "city": "London",
-   "lat": 51.4978,
-   "lon": -0.1745,
-   "online": false,
-   "topics": [
-    "Careers",
-    "Energy",
-    "Engineering",
-    "Film and media",
-    "Medicine"
-   ],
-   "careers": [
-    "Design, making & architecture"
-   ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "provenance": "Built from https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery as fetched on 2026-10-26. The page no longer mentions “Technicians”, so it may have been repurposed — check the link. NOT found on the page, so not claimed here: “Free entry”; “Open daily”. The venue refused automated access (HTTPError: 403 Client Error: Forbidden for url: https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery), so nothing was confirmed today — open the link and check.",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "tate-6663db4969c1",
-   "title": "The 90 s : Art and Fashion",
-   "url": "https://www.tate.org.uk/whats-on/tate-britain/the-90s",
-   "source": "tate",
-   "source_name": "Tate (London)",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2027-02-14T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": true,
-   "when_text": "Until 14 Feb 2027",
-   "status": "scheduled",
-   "summary": "Explore a decade characterised by its bold creativity and rebellious spirit",
-   "venue_name": "Tate Britain",
-   "city": "London",
-   "online": false,
-   "price_text": "FREE FOR MEMBERS",
-   "topics": [
-    "Exhibition"
-   ],
-   "careers": [
-    "Arts & performance"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "supreme_court-f670595e50c6",
-   "title": "UK Supreme Court tours",
-   "url": "https://www.supremecourt.uk/tours",
-   "source": "supreme_court",
-   "source_name": "UK Supreme Court tours",
-   "start": "2026-10-26T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": false,
-   "anytime": true,
-   "exhibition": false,
-   "when_text": "Open to the public Monday to Friday during term times; see the page for tour times",
-   "status": "scheduled",
-   "summary": "Learn about the history and workings of The Supreme Court of the United Kingdom with a tour from one of our experienced guides. The Court is open to the public and offers tour bookings for individuals, groups and educational institutions.",
-   "venue_name": "The Supreme Court, Parliament Square",
-   "city": "London",
-   "lat": 51.5001,
-   "lon": -0.1281,
-   "online": false,
-   "topics": [
-    "Constitution",
-    "Law",
-    "Public service"
-   ],
-   "careers": [
-    "Law & justice"
-   ],
-   "work_styles": [
-    "Working with people"
-   ],
-   "provenance": "Built from https://www.supremecourt.uk/tours as fetched on 2026-10-26. The page calls itself “Tours - UK Supreme Court”. Confirmed on the page: “Monday to Friday during term times”.",
-   "verified_on": "2026-10-26",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "va_young_people-fe2d4bf2e764",
-   "title": "Woodworking Saturdays",
-   "url": "https://www.vam.ac.uk/event/qGbE7OR2av/making-workshop-morning-session-apr-nov-2026",
-   "source": "va_young_people",
-   "source_name": "V&A Young People",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2026-11-28T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": false,
-   "when_text": "On now until Saturday, 28 November 2026",
-   "status": "scheduled",
-   "summary": "Workshop Woodworking Saturdays On now until Saturday, 28 November 2026 V&A South Kensington",
-   "venue_name": "V&A South Kensington",
-   "city": "London",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "audiences": [
-    "teens"
-   ],
-   "age_min": 13,
-   "age_max": 26,
-   "age_text": "for young creatives aged 13-26",
-   "topics": [
-    "Design",
-    "Art",
-    "Craft",
-    "Fashion",
-    "Digital media",
-    "Architecture"
-   ],
-   "careers": [
-    "Design, making & architecture"
-   ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "va_young_people-642789d28837",
-   "title": "Young V&A Schools: Design Takeover – KS3 (Autumn 2026)",
-   "url": "https://www.vam.ac.uk/event/r4E9edb4/yva-schools-design-takeover-ks3-autumn-2026",
-   "source": "va_young_people",
-   "source_name": "V&A Young People",
-   "start": "2026-10-26T00:00:00+00:00",
-   "end": "2026-12-10T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": false,
-   "when_text": "On now until Thursday, 10 December 2026",
-   "status": "scheduled",
-   "summary": "Workshop Young V&A Schools: Design Takeover – KS3 (Autumn 2026) On now until Thursday, 10 December 2026 Young V&A",
-   "venue_name": "V&A South Kensington",
-   "city": "London",
-   "lat": 51.4966,
-   "lon": -0.1722,
-   "online": false,
-   "price_text": "£150.00",
-   "is_free": false,
-   "price_from": 150.0,
-   "currency": "GBP",
-   "audiences": [
-    "teens"
-   ],
-   "age_min": 13,
-   "age_max": 26,
-   "age_text": "for young creatives aged 13-26",
-   "topics": [
-    "Design",
-    "Art",
-    "Craft",
-    "Fashion",
-    "Digital media",
-    "Architecture"
-   ],
-   "careers": [
-    "Design, making & architecture"
-   ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "design_museum-e2ddddfff9fb",
-   "title": "the Design Museum",
-   "url": "https://designmuseum.org/whats-on",
-   "source": "design_museum",
-   "source_name": "the Design Museum",
-   "start": "2026-10-26T00:00:00+00:00",
-   "all_day": true,
-   "ongoing": false,
-   "anytime": true,
-   "exhibition": false,
-   "when_text": "See the museum's what's-on page",
-   "status": "scheduled",
-   "summary": "The Design Museum explores the past, present and future of design through a programme of temporary exhibitions and displays and a vibrant public programme offering creative workshops and talks for all ages to experience and learn more about design.",
-   "venue_name": "the Design Museum, Kensington High Street",
-   "city": "London",
-   "lat": 51.4995,
-   "lon": -0.205,
-   "online": false,
-   "topics": [
-    "Animation",
-    "Design",
-    "Film"
-   ],
-   "careers": [
-    "Design, making & architecture"
-   ],
-   "work_styles": [
-    "Creative production",
-    "Design & making"
-   ],
-   "provenance": "Built from https://designmuseum.org/whats-on as fetched on 2026-10-26. The page calls itself “What's on”.",
-   "verified_on": "2026-10-26",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "hunterian_museum-c736074c8a19",
-   "title": "Family Activities in autumn for children with SEND",
-   "url": "https://hunterianmuseum.org/events/family-activities",
-   "source": "hunterian_museum",
-   "source_name": "Hunterian Museum",
-   "start": "2026-10-26T10:00:00+00:00",
-   "end": "2026-10-26T14:00:00+00:00",
-   "all_day": false,
-   "time_text": "Event 26th October 2026 10:00–14:00",
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "With exclusive access to the Hunterian Museum",
-   "venue_name": "Hunterian Museum, Royal College of Surgeons",
-   "city": "London",
-   "lat": 51.5162,
-   "lon": -0.1173,
-   "online": false,
-   "topics": [
-    "Medicine",
-    "Surgery",
-    "History of science"
-   ],
-   "careers": [
-    "Medicine & health",
-    "Design, making & architecture",
-    "Environment & climate"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
    "id": "lse_events-846ab9391c92",
    "title": "Women artists in conflict zones: imagination as an act of resistance",
    "url": "https://www.lse.ac.uk/events/arts-and-music/exhibitions/exhibitions/women-artists-in-conflict-zones",
@@ -2974,427 +2181,7 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "rigb-e08f27e32bfe",
-   "title": "Holiday workshop: Space Engineering (Year 1 and 2)",
-   "url": "https://www.rigb.org/whats-on/holiday-workshop-space-engineering-year-1-and-2",
-   "source": "rigb",
-   "source_name": "Royal Institution",
-   "start": "2026-10-26T11:00:00+00:00",
-   "end": "2026-10-26T12:30:00+00:00",
-   "all_day": false,
-   "time_text": "11.00am - 12.30pm",
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Join us for this hands-on workshop to discover how we've engineered our way into space and build your own rocket!",
-   "venue_name": "The Royal Institution, 21 Albemarle Street",
-   "city": "London",
-   "lat": 51.509,
-   "lon": -0.1422,
-   "online": false,
-   "price_text": "£25.00, Ri Young Members £20.00",
-   "is_free": false,
-   "price_from": 20.0,
-   "currency": "GBP",
-   "booking_url": "https://www.eventbrite.co.uk/e/holiday-workshops-space-engineering-year-1-2-tickets-2000964609010?aff=oddtdtcreator",
-   "booking": "required",
-   "audiences": [
-    "children",
-    "families"
-   ],
-   "age_text": "Children 12 and under, Families",
-   "topics": [
-    "Technology and engineering",
-    "Workshops"
-   ],
-   "careers": [
-    "Physics & space",
-    "Engineering"
-   ],
-   "work_styles": [
-    "Design & making",
-    "Research & discovery"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "rigb-c2ee231ec7c5",
-   "title": "Holiday workshops: Electrical & electronic control (Year 5 and 6)",
-   "url": "https://www.rigb.org/whats-on/holiday-workshops-electrical-electronic-control-year-5-and-6-0",
-   "source": "rigb",
-   "source_name": "Royal Institution",
-   "start": "2026-10-26T11:00:00+00:00",
-   "end": "2026-10-26T13:15:00+00:00",
-   "all_day": false,
-   "time_text": "11.00am - 1:15pm",
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Program vehicles to tackle real-world engineering challenges.",
-   "venue_name": "The Royal Institution, 21 Albemarle Street",
-   "city": "London",
-   "lat": 51.509,
-   "lon": -0.1422,
-   "online": false,
-   "price_text": "£40.00, Ri Young Members £32.00",
-   "is_free": false,
-   "price_from": 32.0,
-   "currency": "GBP",
-   "booking_url": "https://www.eventbrite.com/e/holiday-workshops-electronic-and-electrical-control-year-5-6-tickets-2000373767788?aff=oddtdtcreator",
-   "booking": "required",
-   "audiences": [
-    "children",
-    "families"
-   ],
-   "age_text": "Children 12 and under, Families",
-   "topics": [
-    "Maths",
-    "Physics",
-    "Technology and engineering",
-    "Workshops"
-   ],
-   "careers": [
-    "Engineering"
-   ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "cam_museums-afa0b6c00e10",
-   "title": "Skeleton Science",
-   "url": "https://www.museums.cam.ac.uk/events/skeleton-science-0",
-   "source": "cam_museums",
-   "source_name": "University of Cambridge Museums",
-   "start": "2026-10-26T13:00:00+00:00",
-   "end": "2026-10-26T16:00:00+00:00",
-   "all_day": false,
-   "time_text": "1:00 PM - 4:00 PM",
-   "ongoing": false,
-   "anytime": false,
-   "status": "scheduled",
-   "summary": "Join us for some spooky skeletal science!",
-   "venue_name": "Whipple Museum of the History of Science",
-   "city": "Cambridge",
-   "lat": 52.2035,
-   "lon": 0.1179,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "audiences": [
-    "families"
-   ],
-   "age_text": "Families",
-   "topics": [
-    "Family events"
-   ],
-   "careers": [
-    "Medicine & health",
-    "Biology, ecology & vets"
-   ],
-   "last_seen": "2026-09-22T12:58:59.863293+00:00",
-   "exhibition": false
-  },
-  {
-   "id": "rigb-66a3912f6dc0",
-   "title": "Holiday workshop: Space Engineering (Year 3 and 4)",
-   "url": "https://www.rigb.org/whats-on/holiday-workshop-space-engineering-year-3-and-4",
-   "source": "rigb",
-   "source_name": "Royal Institution",
-   "start": "2026-10-26T14:00:00+00:00",
-   "end": "2026-10-26T16:15:00+00:00",
-   "all_day": false,
-   "time_text": "2.00pm–4.15pm",
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Join us for this hands-on workshop to discover how we've engineered our way into space and build your own rocket!",
-   "venue_name": "The Royal Institution, 21 Albemarle Street",
-   "city": "London",
-   "lat": 51.509,
-   "lon": -0.1422,
-   "online": false,
-   "price_text": "£40.00, Ri Young Members £32.00",
-   "is_free": false,
-   "price_from": 32.0,
-   "currency": "GBP",
-   "booking_url": "https://www.eventbrite.co.uk/e/holiday-workshops-space-engineering-year-3-4-tickets-2000962954060?aff=oddtdtcreator",
-   "booking": "required",
-   "audiences": [
-    "children",
-    "families"
-   ],
-   "age_text": "Children 12 and under, Families",
-   "topics": [
-    "Technology and engineering",
-    "Workshops"
-   ],
-   "careers": [
-    "Physics & space",
-    "Engineering"
-   ],
-   "work_styles": [
-    "Design & making",
-    "Research & discovery"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "british_library-9aee2d176064",
-   "title": "Setting up a Staff Sustainability Network",
-   "url": "https://events.bl.uk/events/setting-up-a-staff-sustainability-network",
-   "source": "british_library",
-   "source_name": "British Library",
-   "start": "2026-10-26T14:00:00+00:00",
-   "all_day": false,
-   "time_text": "Monday 26 October 14.00",
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Discover how staff at the British Library created an impactful Sustainability Staff Network.",
-   "venue_name": "British Library, St Pancras",
-   "city": "London",
-   "lat": 51.5299,
-   "lon": -0.1276,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "careers": [
-    "Environment & climate"
-   ],
-   "work_styles": [
-    "Research & discovery"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "rigb-14e601322da4",
-   "title": "Holiday workshops: Electrical and electronic control (Year 7, 8 and 9)",
-   "url": "https://www.rigb.org/whats-on/holiday-workshops-electrical-and-electronic-control-year-7-8-and-9",
-   "source": "rigb",
-   "source_name": "Royal Institution",
-   "start": "2026-10-26T14:15:00+00:00",
-   "end": "2026-10-26T16:30:00+00:00",
-   "all_day": false,
-   "time_text": "2.15pm - 4.30pm",
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Program vehicles to tackle real-world engineering challenges.",
-   "venue_name": "The Royal Institution, 21 Albemarle Street",
-   "city": "London",
-   "lat": 51.509,
-   "lon": -0.1422,
-   "online": false,
-   "price_text": "£40.00, Ri Young Members £32.00",
-   "is_free": false,
-   "price_from": 32.0,
-   "currency": "GBP",
-   "booking_url": "https://www.eventbrite.co.uk/e/holiday-workshops-electronic-and-electrical-control-year-7-9-tickets-2000375904178?aff=oddtdtcreator",
-   "booking": "required",
-   "audiences": [
-    "families",
-    "teens"
-   ],
-   "age_text": "Families, Young people 13+",
-   "topics": [
-    "Physics",
-    "Technology and engineering",
-    "Workshops"
-   ],
-   "careers": [
-    "Engineering"
-   ],
-   "work_styles": [
-    "Design & making"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "british_library-c88b0314c8e0",
-   "title": "Libraries and Positive Climate Action: Climate Resilience",
-   "url": "https://events.bl.uk/events/libraries-and-positive-climate-action-climate-resilience",
-   "source": "british_library",
-   "source_name": "British Library",
-   "start": "2026-10-26T16:00:00+00:00",
-   "end": "2026-12-01T16:00:00+00:00",
-   "all_day": false,
-   "time_text": "Monday 26 October 16.00 – Tuesday 1 December 16.00",
-   "ongoing": true,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Hear how libraries and cultural organisations around the world are responding to the challenges of climate change.",
-   "venue_name": "British Library, St Pancras",
-   "city": "London",
-   "lat": 51.5299,
-   "lon": -0.1276,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "careers": [
-    "Environment & climate"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "talks_cam_public-59f9e97a72e7",
-   "title": "The organization of goal-directed behaviour in the brain - Professor John Duncan FBA FRS is Programme leader at the MRC Cognition and Brain Sciences Unit.",
-   "url": "https://talks.cam.ac.uk/show/index/5462",
-   "source": "talks_cam_public",
-   "source_name": "Major Public Lectures in Cambridge",
-   "start": "2026-10-26T17:30:00+00:00",
-   "end": "2026-10-26T18:30:00+00:00",
-   "all_day": false,
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Our behaviour is characteristically organized in a hierarchical structure of goals and subgoals, with many fragments of behaviour contributing to an everyday activity such as making breakfast or attending a lecture. Such goal-directed structures are often impaired following major damage to the frontal lobes of the brain. I shall describe a core discovery of human brain imaging – a nine-patch network recruited for addressing a very broad range of cognitive challenges, based in frontal cortex but with additional components elsewhere. This network is strongly activated by a standard test of “fluid intelligence”, known to predict success in all kinds of activities and presumably requiring mental operations of very widespread importance. From human brain imaging, I shall move on to electrophysiology in the behaving monkey. In a network of frontal lobe regions, putatively homologous to regions of the human network, I shall show encoding of core components of a goal-directed plan – current state, goal, component moves and hierarchy. Damage to this network, I suggest, underlies the broad behavioural impairment that can follow frontal lobe damage.",
-   "venue_name": "Bristol-Myers Squibb Lecture Theatre, Department of Chemistry",
-   "city": "Cambridge",
-   "online": false,
-   "topics": [
-    "Public lecture"
-   ],
-   "careers": [
-    "Psychology & neuroscience",
-    "Biology, ecology & vets"
-   ],
-   "work_styles": [
-    "Design & making",
-    "Research & discovery"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "british_library-c712d94b1108",
-   "title": "BIPC Liverpool – Inspiring Entrepreneurs: Business Rooted in Community",
-   "url": "https://events.bl.uk/events/bipc-liverpool-inspiring-entrepreneurs-business-rooted-in-community",
-   "source": "british_library",
-   "source_name": "British Library",
-   "start": "2026-10-26T18:00:00+00:00",
-   "all_day": false,
-   "time_text": "Monday 26 October 18.00",
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Join us at Toxteth Library for a streamed panel event to celebrate Black History Month and entrepreneurship.",
-   "venue_name": "British Library, St Pancras",
-   "city": "London",
-   "lat": 51.5299,
-   "lon": -0.1276,
-   "online": false,
-   "price_text": "Free",
-   "is_free": true,
-   "price_from": 0.0,
-   "careers": [
-    "Business & entrepreneurship"
-   ],
-   "work_styles": [
-    "Enterprise & leadership",
-    "Working with people"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "british_library-60816b77ec1e",
-   "title": "Inventors' Club",
-   "url": "https://events.bl.uk/events/inventors-club-",
-   "source": "british_library",
-   "source_name": "British Library",
-   "start": "2026-10-26T18:00:00+00:00",
-   "all_day": false,
-   "time_text": "Monday 26 October 18.00",
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Great ideas can change the world!",
-   "venue_name": "British Library, St Pancras",
-   "city": "London",
-   "lat": 51.5299,
-   "lon": -0.1276,
-   "online": false,
-   "careers": [
-    "Medicine & health",
-    "Engineering",
-    "Physics & space"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "lse_events-237d39aebd98",
-   "title": "The madness of markets: why smart investors make crazy decisions – and how to exploit them",
-   "url": "https://www.lse.ac.uk/events/open/the-madness-of-markets",
-   "source": "lse_events",
-   "source_name": "LSE public events",
-   "start": "2026-10-26T18:30:00+00:00",
-   "all_day": true,
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Monday 26 October 2026 6.30pm - 7.30pm",
-   "venue_name": "In-person public event (Old Theatre, Old Building)",
-   "city": "London",
-   "lat": 51.5144,
-   "lon": -0.1165,
-   "online": false,
-   "topics": [
-    "Economics",
-    "Public policy",
-    "Law",
-    "Politics",
-    "Society"
-   ],
-   "careers": [
-    "Finance & economics"
-   ],
-   "work_styles": [
-    "Enterprise & leadership"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "lse_events-fc1f5f8dd997",
-   "title": "Women of the world unite: the UN Decade for Women and transnational feminisms 1975 to now",
-   "url": "https://www.lse.ac.uk/events/women-of-the-world",
-   "source": "lse_events",
-   "source_name": "LSE public events",
-   "start": "2026-10-26T18:30:00+00:00",
-   "all_day": true,
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Monday 26 October 2026 6.30pm - 8pm",
-   "venue_name": "In-person and online public event (Sheikh Zayed Theatre, Cheng Kin Ku Building)",
-   "city": "London",
-   "lat": 51.5144,
-   "lon": -0.1165,
-   "online": false,
-   "topics": [
-    "Economics",
-    "Public policy",
-    "Law",
-    "Politics",
-    "Society"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-461e6949371a",
@@ -3433,76 +2220,768 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
-   "id": "rigb-3d51a2da2d5f",
-   "title": "Global fusion developments: The race for power",
-   "url": "https://www.rigb.org/whats-on/global-fusion-developments-race-power",
-   "source": "rigb",
-   "source_name": "Royal Institution",
-   "start": "2026-10-26T19:00:00+00:00",
-   "end": "2026-10-26T20:30:00+00:00",
-   "all_day": false,
-   "time_text": "7.00pm – 8.30pm",
-   "ongoing": false,
-   "anytime": false,
-   "exhibition": false,
-   "status": "scheduled",
-   "summary": "Physicist Alan Costley tracks the technologies being used to develop fusion reactors, and explores which might win the global race for clean power.",
-   "venue_name": "The Royal Institution, 21 Albemarle Street",
-   "city": "London",
-   "lat": 51.509,
-   "lon": -0.1422,
-   "online": false,
-   "price_text": "Theatre audience: £16/£10, Ri Members or Ri Patrons: £7; Eventbrite booking fee not included",
-   "is_free": false,
-   "price_from": 7.0,
-   "currency": "GBP",
-   "booking_url": "https://www.eventbrite.co.uk/e/the-future-of-fusion-energy-the-global-race-for-power-tickets-1992993774028?aff=oddtdtcreator",
-   "booking": "required",
-   "audiences": [
-    "adults"
-   ],
-   "age_text": "Adults",
-   "topics": [
-    "Physics",
-    "Talks and shows"
-   ],
-   "careers": [
-    "Physics & space"
-   ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
-  },
-  {
-   "id": "british_library-84f8d4fca5a4",
-   "title": "How to develop your business strategy – Business Model Canvas",
-   "url": "https://events.bl.uk/events/how-to-develop-your-business-strategy-business-model-canvas",
+   "id": "british_library-b0663ae6d03d",
+   "title": "Agatha Christie: in your local library",
+   "url": "https://events.bl.uk/events/agatha-christie-in-your-local-library",
    "source": "british_library",
    "source_name": "British Library",
-   "start": "2026-10-27T10:30:00+00:00",
-   "all_day": false,
-   "time_text": "Tuesday 27 October 10.30",
-   "ongoing": false,
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2028-10-27T00:00:00+01:00",
+   "all_day": true,
+   "time_text": "Various dates between October 2026 – October 2028",
+   "ongoing": true,
    "anytime": false,
    "exhibition": false,
    "status": "scheduled",
-   "summary": "Explore the two most effective methods to develop a winning strategy for success – the Business Plan and the Business Model Canvas.",
+   "summary": "Discover the extraordinary life, characters and plot-twists of the bestselling novelist of all time, Agatha Christie.",
    "venue_name": "British Library, St Pancras",
    "city": "London",
    "lat": 51.5299,
    "lon": -0.1276,
    "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Research & discovery"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "tate-15be381b8061",
+   "title": "Ana Mendieta",
+   "url": "https://www.tate.org.uk/whats-on/tate-modern/ana-mendieta",
+   "source": "tate",
+   "source_name": "Tate (London)",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2027-01-17T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": true,
+   "when_text": "Until 17 Jan 2027",
+   "status": "scheduled",
+   "summary": "Experience the powerful work of Ana Mendieta, whose legacy changed the course of contemporary art",
+   "venue_name": "Tate Modern",
+   "city": "London",
+   "online": false,
+   "price_text": "FREE FOR MEMBERS",
+   "topics": [
+    "Exhibition"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "tate-e80ed7be7660",
+   "title": "Art Now: Mohammed Z Rahman",
+   "url": "https://www.tate.org.uk/whats-on/tate-britain/art-now-mohammed-z-rahman",
+   "source": "tate",
+   "source_name": "Tate (London)",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2026-11-08T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": true,
+   "when_text": "Until 8 Nov 2026",
+   "status": "scheduled",
+   "summary": "A new body of paintings exploring notions of home and love, displayed alongside Tate works, The Lovers and The Spaghetti …",
+   "venue_name": "Tate Britain",
+   "city": "London",
+   "online": false,
+   "price_text": "FREE",
+   "is_free": true,
+   "price_from": 0.0,
+   "topics": [
+    "Exhibition"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "bank_of_england_museum-8c1ea8eb56a2",
+   "title": "Bank of England Museum",
+   "url": "https://www.bankofengland.co.uk/museum",
+   "source": "bank_of_england_museum",
+   "source_name": "Bank of England Museum",
+   "start": "2026-10-27T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": true,
+   "exhibition": false,
+   "when_text": "Monday to Friday, 10am to 5pm (last entry 4.30pm)",
+   "status": "scheduled",
+   "summary": "Discover our history and the role we play in the economy today",
+   "venue_name": "Bank of England Museum, Threadneedle Street",
+   "city": "London",
+   "lat": 51.5142,
+   "lon": -0.0885,
+   "online": false,
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "topics": [
+    "Economics",
+    "Finance",
+    "Public sector"
+   ],
    "careers": [
-    "Business & entrepreneurship"
+    "Finance & economics"
    ],
    "work_styles": [
-    "Enterprise & leadership"
+    "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "provenance": "Built from https://www.bankofengland.co.uk/museum as fetched on 2026-10-27. The page calls itself “Museum”. Confirmed on the page: “Free to visit”; “Monday to Friday, 10am to 5pm”.",
+   "verified_on": "2026-10-27",
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "cam_museum_technology-04ee29daeeac",
+   "title": "Cambridge Museum of Technology",
+   "url": "https://www.museumoftechnology.com/whats-on/",
+   "source": "cam_museum_technology",
+   "source_name": "Cambridge Museum of Technology",
+   "start": "2026-10-27T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": true,
+   "exhibition": false,
+   "when_text": "See the museum's what's-on page for steaming days",
+   "status": "scheduled",
+   "venue_name": "Cambridge Museum of Technology, Cheddars Lane",
+   "city": "Cambridge",
+   "lat": 52.2115,
+   "lon": 0.1401,
+   "online": false,
+   "topics": [
+    "Energy",
+    "Industrial history",
+    "Mechanical engineering"
+   ],
+   "careers": [
+    "Design, making & architecture"
+   ],
+   "provenance": "Built from https://www.museumoftechnology.com/whats-on/ as fetched on 2026-10-27. The page calls itself “Events — Cambridge Museum of Technology”.",
+   "verified_on": "2026-10-27",
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "va_young_people-537850e68d7f",
+   "title": "Design Club (11-14) - Friendship Bracelets",
+   "url": "https://www.vam.ac.uk/event/EaoZE75eXB/design-club-11-14-oct-2026-mar-2027",
+   "source": "va_young_people",
+   "source_name": "V&A Young People",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2027-03-13T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": false,
+   "when_text": "On now until Saturday, 13 March 2027",
+   "status": "scheduled",
+   "summary": "Drop-in Design Club (11-14) - Friendship Bracelets On now until Saturday, 13 March 2027 Young V&A",
+   "venue_name": "V&A South Kensington",
+   "city": "London",
+   "lat": 51.4966,
+   "lon": -0.1722,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "teens"
+   ],
+   "age_min": 13,
+   "age_max": 26,
+   "age_text": "for young creatives aged 13-26",
+   "topics": [
+    "Design",
+    "Art",
+    "Craft",
+    "Fashion",
+    "Digital media",
+    "Architecture"
+   ],
+   "careers": [
+    "Design, making & architecture"
+   ],
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "tate-056bd68c363b",
+   "title": "Frida: The Making of an Icon",
+   "url": "https://www.tate.org.uk/whats-on/tate-modern/frida-kahlo-the-making-of-an-icon",
+   "source": "tate",
+   "source_name": "Tate (London)",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2027-01-03T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": true,
+   "when_text": "Until 3 Jan 2027",
+   "status": "scheduled",
+   "venue_name": "Tate Modern",
+   "city": "London",
+   "online": false,
+   "price_text": "FREE FOR MEMBERS",
+   "topics": [
+    "Exhibition"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "tate-14fbf79d0aeb",
+   "title": "Gathering Ground",
+   "url": "https://www.tate.org.uk/whats-on/tate-modern/gathering-ground",
+   "source": "tate",
+   "source_name": "Tate (London)",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2027-03-07T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": true,
+   "when_text": "Until 7 Mar 2027",
+   "status": "scheduled",
+   "summary": "Explore the power of art to inspire change in today’s ecological crisis",
+   "venue_name": "Tate Modern",
+   "city": "London",
+   "online": false,
+   "price_text": "FREE",
+   "is_free": true,
+   "price_from": 0.0,
+   "topics": [
+    "Exhibition"
+   ],
+   "careers": [
+    "Environment & climate",
+    "Arts & performance"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "tate-d08e82abb73e",
+   "title": "Hyundai Commission: Tarek Atoui",
+   "url": "https://www.tate.org.uk/whats-on/tate-modern/tarek-atoui",
+   "source": "tate",
+   "source_name": "Tate (London)",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2027-04-11T00:00:00+01:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": true,
+   "when_text": "Until 11 Apr 2027",
+   "status": "scheduled",
+   "summary": "Discover Tarek Atoui’s exciting new work in Tate Modern’s iconic Turbine Hall",
+   "venue_name": "Tate Modern",
+   "city": "London",
+   "online": false,
+   "price_text": "FREE",
+   "is_free": true,
+   "price_from": 0.0,
+   "topics": [
+    "Exhibition"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "work_styles": [
+    "Research & discovery"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "tate-90ac83e2d0b3",
+   "title": "Julio Le Parc: Light. Colour. Action.",
+   "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+   "source": "tate",
+   "source_name": "Tate (London)",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2027-05-03T00:00:00+01:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": true,
+   "when_text": "Until 3 May 2027",
+   "status": "scheduled",
+   "venue_name": "Tate Modern",
+   "city": "London",
+   "online": false,
+   "price_text": "FREE FOR MEMBERS",
+   "topics": [
+    "Exhibition"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "tate-db48ebcf9a0d",
+   "title": "Light and Magic: The Birth of Art Photography",
+   "url": "https://www.tate.org.uk/whats-on/tate-modern/light-and-magic",
+   "source": "tate",
+   "source_name": "Tate (London)",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2027-02-21T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": true,
+   "when_text": "Until 21 Feb 2027",
+   "status": "scheduled",
+   "summary": "Discover the untold global story of art photography",
+   "venue_name": "Tate Modern",
+   "city": "London",
+   "online": false,
+   "price_text": "FREE FOR MEMBERS",
+   "topics": [
+    "Exhibition"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "work_styles": [
+    "Creative production",
+    "Research & discovery"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "va_young_people-b5b505fab81a",
+   "title": "Make Space (November & December 2026)",
+   "url": "https://www.vam.ac.uk/event/NGY9LZGDjL/v-a-east-make-space-oct-dec-2026",
+   "source": "va_young_people",
+   "source_name": "V&A Young People",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2026-12-10T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": false,
+   "when_text": "On now until Thursday, 10 December 2026",
+   "status": "scheduled",
+   "summary": "Drop-in Make Space (November & December 2026) On now until Thursday, 10 December 2026 V&A East Storehouse",
+   "venue_name": "V&A South Kensington",
+   "city": "London",
+   "lat": 51.4966,
+   "lon": -0.1722,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "teens"
+   ],
+   "age_min": 13,
+   "age_max": 26,
+   "age_text": "for young creatives aged 13-26",
+   "topics": [
+    "Design",
+    "Art",
+    "Craft",
+    "Fashion",
+    "Digital media",
+    "Architecture"
+   ],
+   "careers": [
+    "Design, making & architecture"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "va_young_people-aba8b8430ea5",
+   "title": "Meet the Designer, Christie Swallow",
+   "url": "https://www.vam.ac.uk/event/e4Q1adGX5qY/meet-the-designer-christie-swallow-2026",
+   "source": "va_young_people",
+   "source_name": "V&A Young People",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2026-12-12T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": false,
+   "when_text": "On now until Saturday, 12 December 2026",
+   "status": "scheduled",
+   "summary": "Open studio Meet the Designer, Christie Swallow On now until Saturday, 12 December 2026 Young V&A",
+   "venue_name": "V&A South Kensington",
+   "city": "London",
+   "lat": 51.4966,
+   "lon": -0.1722,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "teens"
+   ],
+   "age_min": 13,
+   "age_max": 26,
+   "age_text": "for young creatives aged 13-26",
+   "topics": [
+    "Design",
+    "Art",
+    "Craft",
+    "Fashion",
+    "Digital media",
+    "Architecture"
+   ],
+   "careers": [
+    "Design, making & architecture"
+   ],
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "va_young_people-a45dfe30e8ff",
+   "title": "Offcut Afternoons",
+   "url": "https://www.vam.ac.uk/event/q4rg0kGxO3/making-workshop-afternoon-drop-in-apr-nov-2026",
+   "source": "va_young_people",
+   "source_name": "V&A Young People",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2026-11-28T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": false,
+   "when_text": "On now until Saturday, 28 November 2026",
+   "status": "scheduled",
+   "summary": "Workshop Offcut Afternoons On now until Saturday, 28 November 2026 V&A South Kensington",
+   "venue_name": "V&A South Kensington",
+   "city": "London",
+   "lat": 51.4966,
+   "lon": -0.1722,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "teens"
+   ],
+   "age_min": 13,
+   "age_max": 26,
+   "age_text": "for young creatives aged 13-26",
+   "topics": [
+    "Design",
+    "Art",
+    "Craft",
+    "Fashion",
+    "Digital media",
+    "Architecture"
+   ],
+   "careers": [
+    "Design, making & architecture"
+   ],
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "old_bailey-8b62944aa8c4",
+   "title": "Old Bailey public galleries (Central Criminal Court)",
+   "url": "https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court",
+   "source": "old_bailey",
+   "source_name": "Old Bailey public galleries",
+   "start": "2026-10-27T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": true,
+   "exhibition": false,
+   "when_text": "Weekdays when the court is sitting",
+   "status": "scheduled",
+   "summary": "The Central Criminal Court is probably the most famous criminal court in the world, and has been London's principal criminal court for centuries",
+   "venue_name": "Central Criminal Court, City of London",
+   "city": "London",
+   "lat": 51.5158,
+   "lon": -0.1021,
+   "online": false,
+   "booking": "required",
+   "age_min": 14,
+   "age_text": "no admission for children under 14; proof of age may be requested",
+   "topics": [
+    "Criminal justice",
+    "Law",
+    "Public service"
+   ],
+   "careers": [
+    "Law & justice"
+   ],
+   "provenance": "Built from https://www.cityoflondon.gov.uk/about-us/law-historic-governance/central-criminal-court as fetched on 2026-10-27. The page calls itself “Central Criminal Court”. Confirmed on the page: “no admission for children under 14”; “photographic identification”.",
+   "verified_on": "2026-10-27",
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "tate-0b30936a48a8",
+   "title": "Tate Britain Commission 2026: Zineb Sedira: When Words Fall Silent, Cinema Speaks",
+   "url": "https://www.tate.org.uk/whats-on/tate-britain/zineb-sedira",
+   "source": "tate",
+   "source_name": "Tate (London)",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2027-01-17T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": true,
+   "when_text": "Until 17 Jan 2027",
+   "status": "scheduled",
+   "summary": "Explore Zineb Sedira's monumental and intimate installation, bridging the political and the poetic",
+   "venue_name": "Tate Britain",
+   "city": "London",
+   "online": false,
+   "price_text": "FREE",
+   "is_free": true,
+   "price_from": 0.0,
+   "topics": [
+    "Exhibition"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "science_museum-97a747036909",
+   "title": "Technicians: The David Sainsbury Gallery",
+   "url": "https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery",
+   "source": "science_museum",
+   "source_name": "Science Museum",
+   "start": "2026-10-27T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": true,
+   "exhibition": false,
+   "when_text": "Any time during museum opening hours",
+   "status": "scheduled",
+   "summary": "A gallery built around technician jobs rather than school subjects.\n",
+   "venue_name": "Science Museum, Exhibition Road",
+   "city": "London",
+   "lat": 51.4978,
+   "lon": -0.1745,
+   "online": false,
+   "topics": [
+    "Careers",
+    "Energy",
+    "Engineering",
+    "Film and media",
+    "Medicine"
+   ],
+   "careers": [
+    "Design, making & architecture"
+   ],
+   "work_styles": [
+    "Design & making"
+   ],
+   "provenance": "Built from https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery as fetched on 2026-10-27. The page no longer mentions “Technicians”, so it may have been repurposed — check the link. NOT found on the page, so not claimed here: “Free entry”; “Open daily”. The venue refused automated access (HTTPError: 403 Client Error: Forbidden for url: https://www.sciencemuseum.org.uk/see-and-do/technicians-david-sainsbury-gallery), so nothing was confirmed today — open the link and check.",
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "tate-6663db4969c1",
+   "title": "The 90 s : Art and Fashion",
+   "url": "https://www.tate.org.uk/whats-on/tate-britain/the-90s",
+   "source": "tate",
+   "source_name": "Tate (London)",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2027-02-14T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": true,
+   "when_text": "Until 14 Feb 2027",
+   "status": "scheduled",
+   "summary": "Explore a decade characterised by its bold creativity and rebellious spirit",
+   "venue_name": "Tate Britain",
+   "city": "London",
+   "online": false,
+   "price_text": "FREE FOR MEMBERS",
+   "topics": [
+    "Exhibition"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "supreme_court-f670595e50c6",
+   "title": "UK Supreme Court tours",
+   "url": "https://www.supremecourt.uk/tours",
+   "source": "supreme_court",
+   "source_name": "UK Supreme Court tours",
+   "start": "2026-10-27T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": true,
+   "exhibition": false,
+   "when_text": "Open to the public Monday to Friday during term times; see the page for tour times",
+   "status": "scheduled",
+   "summary": "Learn about the history and workings of The Supreme Court of the United Kingdom with a tour from one of our experienced guides. The Court is open to the public and offers tour bookings for individuals, groups and educational institutions.",
+   "venue_name": "The Supreme Court, Parliament Square",
+   "city": "London",
+   "lat": 51.5001,
+   "lon": -0.1281,
+   "online": false,
+   "topics": [
+    "Constitution",
+    "Law",
+    "Public service"
+   ],
+   "careers": [
+    "Law & justice"
+   ],
+   "work_styles": [
+    "Working with people"
+   ],
+   "provenance": "Built from https://www.supremecourt.uk/tours as fetched on 2026-10-27. The page calls itself “Tours - UK Supreme Court”. Confirmed on the page: “Monday to Friday during term times”.",
+   "verified_on": "2026-10-27",
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "va_young_people-fe2d4bf2e764",
+   "title": "Woodworking Saturdays",
+   "url": "https://www.vam.ac.uk/event/qGbE7OR2av/making-workshop-morning-session-apr-nov-2026",
+   "source": "va_young_people",
+   "source_name": "V&A Young People",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2026-11-28T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": false,
+   "when_text": "On now until Saturday, 28 November 2026",
+   "status": "scheduled",
+   "summary": "Workshop Woodworking Saturdays On now until Saturday, 28 November 2026 V&A South Kensington",
+   "venue_name": "V&A South Kensington",
+   "city": "London",
+   "lat": 51.4966,
+   "lon": -0.1722,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "audiences": [
+    "teens"
+   ],
+   "age_min": 13,
+   "age_max": 26,
+   "age_text": "for young creatives aged 13-26",
+   "topics": [
+    "Design",
+    "Art",
+    "Craft",
+    "Fashion",
+    "Digital media",
+    "Architecture"
+   ],
+   "careers": [
+    "Design, making & architecture"
+   ],
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "va_young_people-642789d28837",
+   "title": "Young V&A Schools: Design Takeover – KS3 (Autumn 2026)",
+   "url": "https://www.vam.ac.uk/event/r4E9edb4/yva-schools-design-takeover-ks3-autumn-2026",
+   "source": "va_young_people",
+   "source_name": "V&A Young People",
+   "start": "2026-10-27T00:00:00+00:00",
+   "end": "2026-12-10T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": false,
+   "when_text": "On now until Thursday, 10 December 2026",
+   "status": "scheduled",
+   "summary": "Workshop Young V&A Schools: Design Takeover – KS3 (Autumn 2026) On now until Thursday, 10 December 2026 Young V&A",
+   "venue_name": "V&A South Kensington",
+   "city": "London",
+   "lat": 51.4966,
+   "lon": -0.1722,
+   "online": false,
+   "price_text": "£150.00",
+   "is_free": false,
+   "price_from": 150.0,
+   "currency": "GBP",
+   "audiences": [
+    "teens"
+   ],
+   "age_min": 13,
+   "age_max": 26,
+   "age_text": "for young creatives aged 13-26",
+   "topics": [
+    "Design",
+    "Art",
+    "Craft",
+    "Fashion",
+    "Digital media",
+    "Architecture"
+   ],
+   "careers": [
+    "Design, making & architecture"
+   ],
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "design_museum-e2ddddfff9fb",
+   "title": "the Design Museum",
+   "url": "https://designmuseum.org/whats-on",
+   "source": "design_museum",
+   "source_name": "the Design Museum",
+   "start": "2026-10-27T00:00:00+00:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": true,
+   "exhibition": false,
+   "when_text": "See the museum's what's-on page",
+   "status": "scheduled",
+   "summary": "The Design Museum explores the past, present and future of design through a programme of temporary exhibitions and displays and a vibrant public programme offering creative workshops and talks for all ages to experience and learn more about design.",
+   "venue_name": "the Design Museum, Kensington High Street",
+   "city": "London",
+   "lat": 51.4995,
+   "lon": -0.205,
+   "online": false,
+   "topics": [
+    "Animation",
+    "Design",
+    "Film"
+   ],
+   "careers": [
+    "Design, making & architecture"
+   ],
+   "work_styles": [
+    "Creative production",
+    "Design & making"
+   ],
+   "provenance": "Built from https://designmuseum.org/whats-on as fetched on 2026-10-27. The page calls itself “What's on”.",
+   "verified_on": "2026-10-27",
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-190f1b17c9a2",
@@ -3546,7 +3025,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "lse_events-bb424452bebb",
@@ -3576,7 +3055,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-45caeadab616",
@@ -3649,7 +3128,7 @@
    "careers": [
     "Environment & climate"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "lse_events-6114d0d51ea3",
@@ -3679,7 +3158,7 @@
    "careers": [
     "Earth & geoscience"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "ica-db57fd7c18d8",
@@ -3706,7 +3185,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-a353065dde7c",
@@ -3737,7 +3216,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-1e664fedbf88",
@@ -3861,7 +3340,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-4f887bfef72c",
@@ -3907,7 +3386,7 @@
     "Design & making",
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-ae924079e2a9",
@@ -3974,7 +3453,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-c45868dfc504",
@@ -4017,7 +3496,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-294d96683363",
@@ -4062,7 +3541,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-9e07d8069eb4",
@@ -4108,7 +3587,7 @@
     "Design & making",
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-e33563c20dbb",
@@ -4180,7 +3659,7 @@
     "Enterprise & leadership",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-797f6363ac82",
@@ -4224,7 +3703,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-0fc7d6b73c91",
@@ -4267,7 +3746,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-ec1336d1f376",
@@ -4313,7 +3792,7 @@
     "Design & making",
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-b9e1f5aca52c",
@@ -4341,7 +3820,7 @@
    "careers": [
     "Film, animation & media"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-ed2fbc070346",
@@ -4372,7 +3851,7 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "lse_events-3b6195f5e3d6",
@@ -4387,7 +3866,7 @@
    "exhibition": false,
    "status": "scheduled",
    "summary": "Wednesday 28 October 2026 6.30pm - 8pm",
-   "venue_name": "In-person and online public event (LSE campus, venue tbc to ticketholders)",
+   "venue_name": "In-person and online public event (Sheikh Zayed Theatre, Cheng Kin Ku Building)",
    "city": "London",
    "lat": 51.5144,
    "lon": -0.1165,
@@ -4402,7 +3881,7 @@
    "careers": [
     "Environment & climate"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "lse_events-4176f49133e2",
@@ -4429,7 +3908,7 @@
     "Politics",
     "Society"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-bfe5daa974c9",
@@ -4473,7 +3952,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-af399c12b963",
@@ -4545,7 +4024,7 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-30340f73ad81",
@@ -4590,7 +4069,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-0e7d7f0dbae4",
@@ -4636,7 +4115,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "lse_events-ab3608e6658f",
@@ -4663,7 +4142,7 @@
     "Politics",
     "Society"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-6b87909a9c3d",
@@ -4693,7 +4172,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "hunterian_museum-fe3922aa4f75",
@@ -4726,7 +4205,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-d83cc39d662b",
@@ -4773,7 +4252,37 @@
     "Data & quantitative analysis",
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "british_library-0b7e6a28450b",
+   "title": "Funding Clinic: an interactive Q&A on raising investment",
+   "url": "https://events.bl.uk/events/funding-clinic-an-interactive-q-a-on-raising-investment",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-10-29T15:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 29 October 15.00",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Join funding expert Paul Grant & angel investor Colin Coghlan for an open, interactive Q&A session on raising investment for your business.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-6add4eab164f",
@@ -4804,7 +4313,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-0b3dd7556032",
@@ -4832,7 +4341,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "lse_events-a0adeafe8871",
@@ -4859,7 +4368,7 @@
     "Politics",
     "Society"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "lse_events-03d590ab0f54",
@@ -4889,7 +4398,34 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "lse_events-4e470b18bb36",
+   "title": "The big picture as an approach to the study of international relations",
+   "url": "https://www.lse.ac.uk/events/study-of-international-relations",
+   "source": "lse_events",
+   "source_name": "LSE public events",
+   "start": "2026-10-29T18:30:00+00:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Thursday 29 October 2026 6.30pm - 8pm",
+   "venue_name": "In-person and online public event (Sheikh Zayed Theatre, Cheng Kin Ku Building)",
+   "city": "London",
+   "lat": 51.5144,
+   "lon": -0.1165,
+   "online": false,
+   "topics": [
+    "Economics",
+    "Public policy",
+    "Law",
+    "Politics",
+    "Society"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "hunterian_museum-8a54293117f9",
@@ -4922,7 +4458,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-ffdf35055753",
@@ -4950,7 +4486,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-a363156de8f7",
@@ -4984,7 +4520,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-f2daa3cc5539",
@@ -5029,7 +4565,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-a9fdcf2732fc",
@@ -5072,7 +4608,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-9cfdd04aa28e",
@@ -5116,7 +4652,7 @@
     "Design & making",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-3c84a115d269",
@@ -5144,7 +4680,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-c9e7d7ce9fb8",
@@ -5187,7 +4723,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-971e05b5d92f",
@@ -5232,7 +4768,7 @@
     "Design & making",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-201e13aefbee",
@@ -5258,7 +4794,7 @@
     "Biology, ecology & vets",
     "History & archaeology"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-63b240f097c7",
@@ -5297,7 +4833,7 @@
     "Chemistry & materials",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-7714951f848e",
@@ -5326,7 +4862,7 @@
     "Writing & communication",
     "Teaching & outreach"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-26580b244d75",
@@ -5363,7 +4899,7 @@
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-95200bb75179",
@@ -5394,7 +4930,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-f2ccf55c82c9",
@@ -5426,7 +4962,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-df952e63e48c",
@@ -5452,7 +4988,7 @@
     "Chemistry & materials",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-fe0ec65c0ebd",
@@ -5535,7 +5071,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-b2f3fb137de7",
@@ -5577,7 +5113,7 @@
     "Biology, ecology & vets",
     "Chemistry & materials"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-cc281e5e08db",
@@ -5606,7 +5142,37 @@
     "Biology, ecology & vets",
     "Psychology & neuroscience"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "lse_events-8d578f20026f",
+   "title": "1946: a turning point for Italian Women – Anglo-Italian encounters",
+   "url": "https://www.lse.ac.uk/library/whats-on/events/1946-a-turning-point-for-italian-women-anglo-italian-encounters",
+   "source": "lse_events",
+   "source_name": "LSE public events",
+   "start": "2026-11-02T17:00:00+00:00",
+   "all_day": true,
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Monday 2 November 2026 5pm - 7pm",
+   "venue_name": "LSE Library",
+   "city": "London",
+   "lat": 51.5144,
+   "lon": -0.1165,
+   "online": false,
+   "topics": [
+    "Economics",
+    "Public policy",
+    "Law",
+    "Politics",
+    "Society"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00",
+   "careers": [
+    "History & archaeology"
+   ]
   },
   {
    "id": "rigb-4f26159db2c0",
@@ -5651,7 +5217,7 @@
     "Argument & advocacy",
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_public-185ee7ba09f9",
@@ -5678,7 +5244,7 @@
     "Physics & space"
    ],
    "provenance": "also listed by talks_cam_csar",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-2d83b882d966",
@@ -5702,7 +5268,7 @@
    "careers": [
     "Film, animation & media"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-c4dea040b346",
@@ -5735,7 +5301,7 @@
     "Data & quantitative analysis",
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "ica-fc5f362c99a1",
@@ -5764,7 +5330,7 @@
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-d3bd951444ca",
@@ -5794,7 +5360,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "hunterian_museum-c000e88b9b2c",
@@ -5825,7 +5391,7 @@
     "Arts & performance",
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-9c9acacd8ede",
@@ -5853,7 +5419,7 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-da1d28148fbb",
@@ -5883,7 +5449,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-0d33d53a16ac",
@@ -5911,7 +5477,7 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-2766a3a04862",
@@ -5940,7 +5506,7 @@
     "Enterprise & leadership",
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-38b53730b587",
@@ -5971,7 +5537,7 @@
     "Design & making",
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-973aa618c85e",
@@ -6003,7 +5569,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-293816d1292c",
@@ -6027,7 +5593,7 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "ica-e4a63223e504",
@@ -6054,7 +5620,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-448622142d7c",
@@ -6081,7 +5647,7 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-4b0dca8e91df",
@@ -6108,7 +5674,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-8962eeb19383",
@@ -6136,7 +5702,35 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "photographers_gallery-201b0d8bad28",
+   "title": "Book Launch & Signing, Jerry Hsu: How About Never",
+   "url": "https://thephotographersgallery.org.uk/whats-on/book-launch-signing-jerry-hsu-how-about-never",
+   "source": "photographers_gallery",
+   "source_name": "The Photographers' Gallery",
+   "start": "2026-11-06T18:00:00+00:00",
+   "end": "2026-11-06T20:00:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Please join us for an evening with American photographer Jerry Hsu. He will be in our Cafe for chats, and to sign copies of his latest book How About Never, published by Mack.",
+   "venue_name": "The Photographers' Gallery, Ramillies Street",
+   "city": "London",
+   "online": false,
+   "topics": [
+    "Bookshop Event"
+   ],
+   "careers": [
+    "Arts & performance"
+   ],
+   "work_styles": [
+    "Creative production"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-a9ae4bd2d4b9",
@@ -6169,7 +5763,7 @@
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-2372c62b5f51",
@@ -6209,7 +5803,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-2340c13745cd",
@@ -6282,7 +5876,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-ac892f965247",
@@ -6352,7 +5946,7 @@
     "Design & making"
    ],
    "provenance": "the source gave an end (2026-11-07) before the start (2026-11-07), so it was dropped",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-d3c9ac292ac8",
@@ -6395,7 +5989,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-8edcf821e710",
@@ -6437,7 +6031,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-80e7d341ed62",
@@ -6465,7 +6059,37 @@
    "careers": [
     "Politics & public service"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "british_library-eb4562a18c19",
+   "title": "Introduction to copyright for business",
+   "url": "https://events.bl.uk/events/introduction-to-copyright-for-business",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-09T11:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 9 November 11.00",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Learn the basics of copyright and get an introduction to protecting and managing your copyright as well as using the work of others.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Law & justice"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_public-7df13831cfcf",
@@ -6494,7 +6118,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-898141b5d6b0",
@@ -6524,7 +6148,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "ica-fa9feb8e7792",
@@ -6551,7 +6175,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-f8403c692c45",
@@ -6579,7 +6203,7 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-1f6ced3df955",
@@ -6618,6 +6242,36 @@
    "exhibition": false
   },
   {
+   "id": "british_library-4782144c6613",
+   "title": "What is a trade mark and how to search for one?",
+   "url": "https://events.bl.uk/events/what-is-a-trade-mark-and-how-to-search-for-one",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-10T11:00:00+00:00",
+   "all_day": false,
+   "time_text": "Tuesday 10 November 11.00",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Customers need to be able to identify your business from your competition in a highly competitive market place.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Law & justice"
+   ],
+   "work_styles": [
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
    "id": "british_library-6d35756b497a",
    "title": "How to raise capital for business growth",
    "url": "https://events.bl.uk/events/how-to-raise-capital-for-business-growth",
@@ -6645,7 +6299,7 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "ica-a0ba30941651",
@@ -6672,7 +6326,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-309ddba38a2f",
@@ -6702,7 +6356,38 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "british_library-a8a78fab0007",
+   "title": "GRANTfinder – Financial support for your business and community",
+   "url": "https://events.bl.uk/events/grant-finder-financial-support-for-your-business-and-community",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-11T12:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 11 November 12.00",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "During this webinar the British Library will show you the GRANTfinder business information database.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Finance & economics"
+   ],
+   "work_styles": [
+    "Enterprise & leadership",
+    "Working with people"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-647045511c97",
@@ -6732,7 +6417,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-949904d8613e",
@@ -6773,7 +6458,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-508a9d4f2b8f",
@@ -6799,7 +6484,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-11172d6b92a0",
@@ -6829,7 +6514,34 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "british_library-759e7d42d771",
+   "title": "Routes To Market",
+   "url": "https://events.bl.uk/events/routes-to-market",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-12T14:00:00+00:00",
+   "all_day": false,
+   "time_text": "Thursday 12 November 14.00",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "This workshop is for clothing, accessory, homewares and jewellery brands that need to identify where they should be pitching their products.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "work_styles": [
+    "Design & making"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00",
+   "careers": [
+    "Business & entrepreneurship"
+   ]
   },
   {
    "id": "photographers_gallery-e5dd3f78f442",
@@ -6864,7 +6576,7 @@
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-3c8dfcd88e60",
@@ -6891,7 +6603,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-0a9917c93bc0",
@@ -6915,7 +6627,7 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-4c44de264d5d",
@@ -6955,7 +6667,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-67a948be31db",
@@ -7015,7 +6727,7 @@
    "work_styles": [
     "Argument & advocacy"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-192b691164f8",
@@ -7096,7 +6808,7 @@
    "careers": [
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-821130fb39b7",
@@ -7120,7 +6832,7 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-92b3e564ee16",
@@ -7163,7 +6875,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-2ecd1777a02f",
@@ -7203,7 +6915,7 @@
    "careers": [
     "Teaching & outreach"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-0efd5934e9e6",
@@ -7244,7 +6956,7 @@
     "Design, making & architecture",
     "Computing & AI"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-2d51e40c2ab8",
@@ -7287,7 +6999,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-d68113a8553a",
@@ -7328,7 +7040,7 @@
     "Design, making & architecture",
     "Computing & AI"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-b8e22daac54a",
@@ -7371,7 +7083,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-6d3107673642",
@@ -7415,7 +7127,7 @@
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-90211685e505",
@@ -7458,7 +7170,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-72a28bdabde3",
@@ -7501,7 +7213,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-594c9327a8bf",
@@ -7544,7 +7256,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-474691231b91",
@@ -7587,7 +7299,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-e10bb9da87ee",
@@ -7627,7 +7339,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-25ed1940d979",
@@ -7670,7 +7382,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-b872bfc12c11",
@@ -7710,7 +7422,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "va_young_people-5f07cc85dcea",
@@ -7750,7 +7462,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-01ff056cff69",
@@ -7787,7 +7499,7 @@
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-f99fc61dd072",
@@ -7821,7 +7533,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-763670bfb8b2",
@@ -7851,7 +7563,7 @@
    "work_styles": [
     "Caring & clinical work"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-e53ccb2f0998",
@@ -7893,7 +7605,7 @@
    "careers": [
     "Maths, data & statistics"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "hunterian_museum-422e97d56b95",
@@ -7924,7 +7636,7 @@
     "Medicine & health",
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-aaa49af1bdec",
@@ -7965,7 +7677,7 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-e2c7506c04f8",
@@ -7990,7 +7702,7 @@
    "topics": [
     "Research science"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-8d44bd60d2bd",
@@ -8019,7 +7731,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-ff308069d447",
@@ -8047,7 +7759,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-8e538039092a",
@@ -8073,11 +7785,11 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-f89890760018",
-   "title": "The new normal: how weather whiplash is shaping our lives",
+   "title": "The new normal: How weather whiplash is shaping our lives",
    "url": "https://www.rigb.org/whats-on/new-normal-how-weather-whiplash-shaping-our-lives",
    "source": "rigb",
    "source_name": "Royal Institution",
@@ -8089,7 +7801,7 @@
    "anytime": false,
    "exhibition": false,
    "status": "scheduled",
-   "summary": "A series of three enlightening short talks uncovering the technology helping us overcome the severe impacts of changing weather systems, presented by the UK Centre for Ecology and Hydrology.",
+   "summary": "A series of three enlightening short talks uncovering the technology helping us overcome the severe impacts of changing weather systems, presented by the UK Centre for Ecology & Hydrology.",
    "venue_name": "The Royal Institution, 21 Albemarle Street",
    "city": "London",
    "lat": 51.509,
@@ -8114,7 +7826,7 @@
     "Environment & climate",
     "Earth & geoscience"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_public-f032c8aa6d6a",
@@ -8145,7 +7857,7 @@
     "Caring & clinical work"
    ],
    "provenance": "also listed by talks_cam_csar",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-44524d9a3101",
@@ -8213,7 +7925,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-8dc5f7904f3f",
@@ -8285,7 +7997,7 @@
     "Enterprise & leadership",
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-f7dbf93e3ada",
@@ -8320,7 +8032,35 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "british_library-c88b0314c8e0",
+   "title": "Libraries and Positive Climate Action: Climate Resilience",
+   "url": "https://events.bl.uk/events/libraries-and-positive-climate-action-climate-resilience",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-18T10:00:00+00:00",
+   "end": "2026-12-01T16:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 18 November 10.00 – Tuesday 1 December 16.00",
+   "ongoing": true,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Hear how libraries and cultural organisations around the world are responding to the challenges of climate change.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Environment & climate"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "hunterian_museum-1a9097bd385f",
@@ -8356,7 +8096,7 @@
     "Research & discovery",
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-f40f9dc9136e",
@@ -8386,7 +8126,7 @@
    "work_styles": [
     "Fieldwork & outdoors"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-4948a33ccff6",
@@ -8419,7 +8159,7 @@
     "Creative production",
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-cce8e893be68",
@@ -8478,7 +8218,7 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-b2ac91c0cf9a",
@@ -8511,7 +8251,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-11fc35ee51cf",
@@ -8535,7 +8275,7 @@
    "careers": [
     "Teaching & outreach"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-8ce42b87f14e",
@@ -8559,7 +8299,7 @@
    "careers": [
     "Business & entrepreneurship"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-2f556806b668",
@@ -8585,7 +8325,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-2b06d277de33",
@@ -8610,7 +8350,7 @@
    "topics": [
     "Research science"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "ica-076d2846ab94",
@@ -8637,7 +8377,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-d3565e89b3ac",
@@ -8664,7 +8404,7 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-1f784e140b77",
@@ -8691,7 +8431,7 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-394c4272fa3f",
@@ -8807,7 +8547,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-91998b05e729",
@@ -8846,7 +8586,7 @@
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-e325fc9d0e0e",
@@ -8917,7 +8657,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_public-86c9dec4117b",
@@ -8947,7 +8687,7 @@
     "Research & discovery",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-5374bc81d6dd",
@@ -8971,7 +8711,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-321f9d28d2a4",
@@ -9010,7 +8750,7 @@
    "careers": [
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-ca04489aeea3",
@@ -9038,7 +8778,7 @@
    "careers": [
     "Medicine & health"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-5b8b414605da",
@@ -9069,7 +8809,7 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-9d08ce65f456",
@@ -9096,7 +8836,7 @@
    "work_styles": [
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-abdd96ed7150",
@@ -9123,7 +8863,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-651e6f7f79d3",
@@ -9153,7 +8893,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-049b1922cf6d",
@@ -9226,7 +8966,7 @@
     "Design & making",
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-206c82ffc413",
@@ -9261,7 +9001,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-39f8071f034f",
@@ -9297,7 +9037,7 @@
     "Creative production",
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "wellcome-c63a82fce0da",
@@ -9329,7 +9069,7 @@
     "Relaxed",
     "Speech-to-text"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-86b1d55a9b99",
@@ -9395,7 +9135,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-6ab23aabd183",
@@ -9404,9 +9144,9 @@
    "source": "british_library",
    "source_name": "British Library",
    "start": "2026-11-28T11:00:00+00:00",
-   "end": "2026-11-29T11:00:00+00:00",
+   "end": "2026-11-29T19:00:00+00:00",
    "all_day": false,
-   "time_text": "Saturday 28 11.00 – Sunday 29 November 11.00",
+   "time_text": "Saturday 28 11.00 – Sunday 29 November 19.00",
    "ongoing": true,
    "anytime": false,
    "exhibition": false,
@@ -9423,7 +9163,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-1b2781e586d4",
@@ -9450,7 +9190,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-b6f8cfc6c045",
@@ -9517,7 +9257,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-511d6e72c4ef",
@@ -9544,7 +9284,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-00c09e607f78",
@@ -9571,7 +9311,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-b4fc97fec1a8",
@@ -9598,7 +9338,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-3c4a49d38671",
@@ -9641,7 +9381,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-7fceda232548",
@@ -9667,7 +9407,7 @@
     "Psychology & neuroscience",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-f6959212499d",
@@ -9694,7 +9434,34 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "british_library-15a2a91ca0fc",
+   "title": "Irish Writers' Weekend: Crimes, Secrets and Lies",
+   "url": "https://events.bl.uk/events/irish-writers-weekend-crimes-secrets-and-lies",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-29T13:00:00+00:00",
+   "all_day": false,
+   "time_text": "Sunday 29 November 13.00",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Andrea Mara and Liz Nugent in conversation with Sam Blake.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Writing & communication"
+   ],
+   "work_styles": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-19d4bff664c7",
@@ -9721,7 +9488,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-d66d14ce9134",
@@ -9749,7 +9516,7 @@
     "Creative production",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-27fe8537ce91",
@@ -9776,7 +9543,33 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "british_library-60816b77ec1e",
+   "title": "Inventors' Club",
+   "url": "https://events.bl.uk/events/inventors-club-",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-11-30T18:00:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 30 November 18.00",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Great ideas can change the world!",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "careers": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-f0f5d395388d",
@@ -9803,7 +9596,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_public-c70179d272e3",
@@ -9836,7 +9629,65 @@
     "Research & discovery"
    ],
    "provenance": "also listed by talks_cam_csar",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "british_library-2bfd9a151859",
+   "title": "Soul Trader: Build your business by heart",
+   "url": "https://events.bl.uk/events/soul-trader-build-your-business-by-heart",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-12-02T10:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 2 December 10.00",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Join leading life & business coach Rasheed Ogunlaru author of Soul Trader, to learn how to build an authentic, rewarding business.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Business & entrepreneurship"
+   ],
+   "work_styles": [
+    "Design & making",
+    "Enterprise & leadership"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "british_library-ccd2a4a06257",
+   "title": "Networking for Success – Express",
+   "url": "https://events.bl.uk/events/networking-for-success-express",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2026-12-02T14:00:00+00:00",
+   "all_day": false,
+   "time_text": "Wednesday 2 December 14.00",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Join Coach-Speaker-Author Rasheed Ogunlaru for this online event to help you learn to network effectively, strategically and authentically.",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Writing & communication"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-ebc036554bd3",
@@ -9900,7 +9751,7 @@
    "careers": [
     "Law & justice"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-c4d6fa6c395a",
@@ -9921,7 +9772,7 @@
    "lat": 51.5299,
    "lon": -0.1276,
    "online": false,
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-80da67245d01",
@@ -9991,7 +9842,7 @@
     "Writing & communication"
    ],
    "provenance": "the source gave an end (2026-12-06) before the start (2026-12-06), so it was dropped",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-82768ac3f04c",
@@ -10018,7 +9869,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-868010850a3a",
@@ -10084,7 +9935,7 @@
     "Psychology & neuroscience",
     "Biology, ecology & vets"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "royal_society-3b9f97dfacdf",
@@ -10109,7 +9960,7 @@
    "topics": [
     "Research science"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-ab197647c715",
@@ -10139,7 +9990,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-823ea775d352",
@@ -10205,7 +10056,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-8766a6a74e1b",
@@ -10270,7 +10121,7 @@
    "work_styles": [
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-77330ed2452b",
@@ -10379,7 +10230,7 @@
    "careers": [
     "Teaching & outreach"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-894fbb7137ce",
@@ -10457,7 +10308,7 @@
    "careers": [
     "Computing & AI"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-f42d96ef0713",
@@ -10504,7 +10355,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "rigb-f9921b43ba16",
@@ -10545,7 +10396,7 @@
    "careers": [
     "Chemistry & materials"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-07cef76ffa80",
@@ -10572,7 +10423,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-b1b3e9fcc8bf",
@@ -10687,7 +10538,7 @@
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-89faf41765c1",
@@ -10714,7 +10565,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_darwin-f119efc01440",
@@ -10743,7 +10594,7 @@
     "Politics & public service"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-b8276c880616",
@@ -10767,7 +10618,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-605bf757db33",
@@ -10842,7 +10693,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-5d7db1cd2ccb",
@@ -10908,7 +10759,7 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_darwin-47e5cd957554",
@@ -10923,6 +10774,7 @@
    "anytime": false,
    "exhibition": false,
    "status": "scheduled",
+   "summary": "Abstract I will explain why cooperation is an evolutionary problem, and the way this problem has been solved in the natural world. Biography I am an evolutionary biologist whose main interest is how natural selection has led to the diversity of life that we see around us. I am especially interested in the evolution of social behaviours, such as cooperation, altruism, spite, mutualism, and how these can influence major evolutionary transitions. I use a mixture of techniques including theory, experiment, genomics and across species comparative studies. My empirical work has utilised a range of organisms, especially bacteria (experimental), insects (experimental & comparative), birds (comparative) and mammals (comparative).",
    "venue_name": "Lady Mitchell Hall, Sidgwick Avenue",
    "city": "Cambridge",
    "lat": 52.1993,
@@ -10932,11 +10784,14 @@
     "Public lecture"
    ],
    "careers": [
-    "Medicine & health",
     "Biology, ecology & vets"
    ],
+   "work_styles": [
+    "Research & discovery",
+    "Writing & communication"
+   ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-51e2424adaa1",
@@ -10960,7 +10815,7 @@
    "is_free": false,
    "price_from": 7.5,
    "currency": "GBP",
-   "booking_url": "https://thephotographersgallery.ticketsolve.com/shows/1173695323/events",
+   "booking_url": "https://thephotographersgallery.ticketsolve.com/ticketbooth/shows/1173695323/events/428918079",
    "booking": "required",
    "topics": [
     "Talks & Events"
@@ -10971,7 +10826,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-a74b713953dd",
@@ -11015,6 +10870,34 @@
    "exhibition": false
   },
   {
+   "id": "british_library-b97024ed3213",
+   "title": "Mysteries, Murders, Muddles and Mayhem!",
+   "url": "https://events.bl.uk/events/mysteries-murders-muddles-and-mayhem",
+   "source": "british_library",
+   "source_name": "British Library",
+   "start": "2027-02-01T10:30:00+00:00",
+   "all_day": false,
+   "time_text": "Monday 1 February 10.30",
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Expect crime capers, plot twists and draw-along fun!",
+   "venue_name": "British Library, St Pancras",
+   "city": "London",
+   "lat": 51.5299,
+   "lon": -0.1276,
+   "online": false,
+   "price_text": "Free",
+   "is_free": true,
+   "price_from": 0.0,
+   "careers": [
+    "Film, animation & media",
+    "Writing & communication"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
    "id": "british_library-60e4472e2425",
    "title": "Teacher CPD: Shakespeare's Comedy in Context",
    "url": "https://events.bl.uk/events/teacher-cpd-shakespeares-comedy-in-context",
@@ -11042,7 +10925,7 @@
    "work_styles": [
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-07a7a0f58a34",
@@ -11079,7 +10962,7 @@
     "Working with people",
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-60de45f89362",
@@ -11103,7 +10986,7 @@
    "careers": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_darwin-80c80e7c862d",
@@ -11140,7 +11023,7 @@
     "Research & discovery"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-38901505f489",
@@ -11165,7 +11048,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-85a5e56705ac",
@@ -11189,14 +11072,14 @@
    "price_text": "Free",
    "is_free": true,
    "price_from": 0.0,
+   "careers": [
+    "Writing & communication"
+   ],
    "work_styles": [
     "Creative production",
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00",
-   "careers": [
-    "Writing & communication"
-   ]
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-38680da4b6df",
@@ -11229,7 +11112,7 @@
     "Design & making",
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_public-f87f5bf47243",
@@ -11260,7 +11143,7 @@
     "Research & discovery"
    ],
    "provenance": "the source gave an end (2017-02-10) before the start (2027-02-10), so it was dropped",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-3ba93f1a7c06",
@@ -11295,11 +11178,11 @@
     "Creative production",
     "Working with people"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_darwin-de3802741656",
-   "title": "Welfare Reform and the Imperative of Cooperation - Sir Andrew Dilnot, Nuffield College Oxford",
+   "title": "Cooperation in Welfare Reform - Sir Andrew Dilnot, Nuffield College Oxford",
    "url": "https://talks.cam.ac.uk/show/index/5358",
    "source": "talks_cam_darwin",
    "source_name": "Darwin College Lecture Series",
@@ -11320,9 +11203,9 @@
     "Public lecture"
    ],
    "careers": [
-    "Writing & communication",
-    "Law & justice",
-    "Finance & economics"
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
    ],
    "work_styles": [
     "Caring & clinical work",
@@ -11331,7 +11214,7 @@
     "Writing & communication"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_public-92697af5accc",
@@ -11362,7 +11245,7 @@
     "Design & making",
     "Enterprise & leadership"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-f628165706a5",
@@ -11429,7 +11312,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_darwin-86cdd5af41fb",
@@ -11463,7 +11346,7 @@
     "Research & discovery"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-3f0396d5f1ba",
@@ -11489,7 +11372,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "cam_museums-a4d31743bbbf",
@@ -11558,7 +11441,7 @@
    "work_styles": [
     "Research & discovery"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_darwin-25529e9f1a95",
@@ -11588,7 +11471,7 @@
     "Research & discovery"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-324147aa1cd3",
@@ -11618,7 +11501,7 @@
    "work_styles": [
     "Writing & communication"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_public-d0a444f55407",
@@ -11648,7 +11531,7 @@
    "work_styles": [
     "Data & quantitative analysis"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_darwin-fd29aedb6fcf",
@@ -11675,7 +11558,7 @@
     "Teaching & outreach"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-eb258c5d3a6e",
@@ -11699,7 +11582,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-004cb8535a75",
@@ -11728,7 +11611,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "photographers_gallery-fce849194b43",
@@ -11760,7 +11643,7 @@
    "work_styles": [
     "Creative production"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_darwin-0899cc4aa7d0",
@@ -11791,7 +11674,37 @@
     "Fieldwork & outdoors"
    ],
    "provenance": "also listed by talks_cam_public",
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
+  },
+  {
+   "id": "talks_cam_public-ea6b4b0ea5b0",
+   "title": "Through the lens of a bee: from the past to the future - Professor Mark Brown, Professor of Evolutionary Biology and Ecology and Director of the University Museum of Zoology",
+   "url": "https://talks.cam.ac.uk/show/index/5462",
+   "source": "talks_cam_public",
+   "source_name": "Major Public Lectures in Cambridge",
+   "start": "2027-03-15T17:30:00+00:00",
+   "end": "2027-03-15T18:30:00+00:00",
+   "all_day": false,
+   "ongoing": false,
+   "anytime": false,
+   "exhibition": false,
+   "status": "scheduled",
+   "summary": "Bumblebees have become flag-bearers for insect conservation. Their role as pollinators makes them a key ecosystem service provider, their global declines make them an exemplar of insect declines more broadly, and research to understand and reverse these declines shows us how to produce a better future for insects as a whole. In this talk I will start by introducing bumblebees and their biology, before presenting a series of related research projects from our group that aim to understand and reverse the declines of bumblebees populations. First I will show how, using museum collections and historical records, we can assess and understand the historical and ongoing declines of bumblebees. Agricultural intensification, particularly the use of pesticides, has been suggested as a major driver of insect declines. I will present studies from my group that demonstrate the impacts of pesticides on bumblebee health, why these are not captured by the risk assessment process, and how we can change policy and practice to make agricultural landscapes a healthier landscape for bumblebees. Pathogen spillover via shared floral resources from managed bees to wild bees is a more recently identified threat to bumblebees. I will present a series of studies from our group that demonstrate this spillover, and discuss how such spillover can be minimised and prevented. As well as being the locus for pathogen transfer, flowers might also act as a natural pharmacy for bumblebees. I will discuss pioneering work in our group that has identified the value of chemicals in floral nectar as anti-parasitic compounds, from in vitro to landscape-studies. I will conclude by looking at how we need to support bumblebees in the future against a background of global climate change.",
+   "venue_name": "Bristol-Myers Squibb Lecture Theatre, Department of Chemistry",
+   "city": "Cambridge",
+   "online": false,
+   "topics": [
+    "Public lecture"
+   ],
+   "careers": [
+    "Biology, ecology & vets"
+   ],
+   "work_styles": [
+    "Argument & advocacy",
+    "Fieldwork & outdoors",
+    "Research & discovery"
+   ],
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-3f41fff4695c",
@@ -11815,7 +11728,7 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-513bf4cb0bc2",
@@ -11841,7 +11754,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-a05e4b1698f0",
@@ -11867,7 +11780,7 @@
    "careers": [
     "Design, making & architecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-35cc7b8908ef",
@@ -11893,7 +11806,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "talks_cam_public-ed54bea9dc6d",
@@ -11914,7 +11827,7 @@
    "topics": [
     "Public lecture"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-4762cf7fcdca",
@@ -11940,7 +11853,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-88fb483741ce",
@@ -11966,7 +11879,7 @@
     "Engineering",
     "Physics & space"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-ace7e75d0567",
@@ -11992,7 +11905,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-b2c11aa2c15b",
@@ -12018,7 +11931,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-9b33d394a166",
@@ -12044,7 +11957,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "british_library-386dcb2154a6",
@@ -12073,7 +11986,7 @@
     "Creative production",
     "Design & making"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-5cd0b95dfbf8",
@@ -12099,7 +12012,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-1cc667f103fc",
@@ -12125,7 +12038,7 @@
    "careers": [
     "Arts & performance"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   },
   {
    "id": "tate-b9c050b24b73",
@@ -12151,12 +12064,12 @@
    "careers": [
     "History & archaeology"
    ],
-   "last_seen": "2026-10-26T12:59:59.768260+00:00"
+   "last_seen": "2026-10-27T12:09:42.569295+00:00"
   }
  ],
  "build_warnings": [
   "cam_museums: ConnectionError: HTTPSConnectionPool(host='www.museums.cam.ac.uk', port=443): Max retries exceeded with url: /whats-on (Caused by NewConnectionError(\"HTTPSConnection(host='www.museums.cam.ac.uk', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))",
-  "cam_engineering_outreach: ConnectTimeout: HTTPSConnectionPool(host='www.eng.cam.ac.uk', port=443): Max retries exceeded with url: /outreach (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.eng.cam.ac.uk', port=443) at 0x7faabbd89f70>, 'Connection to www.eng.cam.ac.uk timed out. (connect timeout=30)'))",
+  "cam_engineering_outreach: ConnectTimeout: HTTPSConnectionPool(host='www.eng.cam.ac.uk', port=443): Max retries exceeded with url: /outreach (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.eng.cam.ac.uk', port=443) at 0x7f2506bc1dc0>, 'Connection to www.eng.cam.ac.uk timed out. (connect timeout=30)'))",
   "british_museum: HTTPError: 403 Client Error: Forbidden for url: https://www.britishmuseum.org/exhibitions-events"
  ]
 }
