@@ -151,6 +151,15 @@
    "prompt_version": 6,
    "title": "Writing Climate Fiction That Changes Minds"
   },
+  "050b643f6a95b415": {
+   "at": "2026-10-28T12:57:18+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "America Now! This American Sporting Life"
+  },
   "05a3790aabada13a": {
    "at": "2026-10-22T11:56:25+00:00",
    "labels": [
@@ -660,6 +669,15 @@
    "prompt_version": 6,
    "title": "In Conversation: Sunil Gupta and Hal Fischer"
   },
+  "20d772d0bad385f5": {
+   "at": "2026-10-28T12:58:02+00:00",
+   "labels": [
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Through the Lens of a Bee: From the Past to the Future - Professor Mark Brown, Professor of Evolutionary Biology and Eco"
+  },
   "21a1513f8b9fa35e": {
    "at": "2026-10-24T11:02:03+00:00",
    "labels": [
@@ -1055,6 +1073,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Tea & Talk with Naja Hendriksen: Meeting Contemporary Greenland"
+  },
+  "362cf23e3d29d3d2": {
+   "at": "2026-10-28T12:57:36+00:00",
+   "labels": [
+    "Law & justice",
+    "Finance & economics",
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Social Insurance – cooperation that frees - Sir Andrew Dilnot, Nuffield College Oxford"
   },
   "363041575e790247": {
    "at": "2026-10-23T11:43:16+00:00",
@@ -1640,6 +1669,15 @@
    "prompt_version": 6,
    "title": "The Poetry Hour: The Poetry of The First World War"
   },
+  "558915f7f49ab3a4": {
+   "at": "2026-10-28T12:56:58+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Tino Stefanoni: Between Vision and Memory"
+  },
   "55a8de0afb0a109f": {
    "at": "2026-10-22T08:29:18+00:00",
    "labels": [
@@ -1648,6 +1686,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Ghost in the loop"
+  },
+  "55e60713763ca616": {
+   "at": "2026-10-28T12:57:05+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "State of the sovereign transition 2026: from national targets to sector signals"
   },
   "5625647088829d49": {
    "at": "2026-09-22T09:52:59+00:00",
@@ -1926,6 +1973,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Discourse: Physics and philosophy: On the equality of all things"
+  },
+  "640410218abd6b14": {
+   "at": "2026-10-28T12:57:22+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Comedians in conversation: Caroline McEvoy, Dane Buckley and Kyla Cobbler"
   },
   "64251de1a4c5f94a": {
    "at": "2026-10-23T11:41:52+00:00",
@@ -2771,6 +2825,17 @@
    "prompt_version": 6,
    "title": "Upstart Festival: Careers in Fashion"
   },
+  "980edbc2ecb18281": {
+   "at": "2026-10-28T12:57:43+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Film, animation & media",
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Deutsche Börse Photography Foundation Prize 2027"
+  },
   "98744949b051257c": {
    "at": "2026-09-22T09:54:50+00:00",
    "labels": [
@@ -3236,6 +3301,15 @@
    "prompt_version": 6,
    "title": "Coaching session 1: Is starting a business for me?"
   },
+  "ae90116e81368ead": {
+   "at": "2026-10-28T12:57:14+00:00",
+   "labels": [
+    "Psychology & neuroscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Sara Ahmed on Complaining, Again! Lecture"
+  },
   "af46d83e6b9a3c04": {
    "at": "2026-09-22T09:51:32+00:00",
    "labels": [
@@ -3545,6 +3619,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Design Club (11-14) - Friendship Bracelets"
+  },
+  "bdc19a83ccda0348": {
+   "at": "2026-10-28T12:57:09+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The harms of extreme wealth: launching the evidence review"
   },
   "be1779b9de725251": {
    "at": "2026-09-30T12:37:45+00:00",
@@ -4602,6 +4683,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Doctoral Open Day: Asian and African Collections"
+  },
+  "f2a8402755001473": {
+   "at": "2026-10-28T12:57:01+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Governing growth: the postwar transformations of capitalism and democracy"
   },
   "f2cdc2ac39b5e844": {
    "at": "2026-09-23T11:38:38+00:00",
