@@ -269,6 +269,15 @@
    "prompt_version": 6,
    "title": "Action on climate change and new approaches to growth: marking the 20th anniversary of the Stern Review"
   },
+  "099ae5d7a8aa69ab": {
+   "at": "2026-10-29T13:03:52+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Festival: Careers in Fashion V&A South Kensington"
+  },
   "09b4e8f290eb81eb": {
    "at": "2026-09-22T13:02:39+00:00",
    "labels": [
@@ -507,6 +516,17 @@
    "prompt_version": 6,
    "title": "David Hockney"
   },
+  "196373bb6eb68d73": {
+   "at": "2026-10-29T13:03:12+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Film, animation & media",
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Conversation Through Imagery Roundtable: Unconventional Fashion with Adobe Creative Resident Shanti Bell, Esme Marsh and"
+  },
   "19dcb2572e6a4688": {
    "at": "2026-09-22T09:53:34+00:00",
    "labels": [
@@ -545,6 +565,16 @@
    "prompt_version": 6,
    "title": "See Buildings Differently"
   },
+  "1a1de4b124a28517": {
+   "at": "2026-10-29T13:03:48+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Festival, Decorate a Hat: From Heritage to Streetwear V&A South Kensington"
+  },
   "1a3e786ed9b9eb06": {
    "at": "2026-09-25T11:54:51+00:00",
    "labels": [
@@ -571,6 +601,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Family Activity in Autumn"
+  },
+  "1b7475cfc7143dbb": {
+   "at": "2026-10-29T13:04:01+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Pattern Cutting: The Pattern Puzzle with London College of Fashion  V&A South Kensington"
   },
   "1b871df1e9812679": {
    "at": "2026-10-27T12:14:18+00:00",
@@ -1363,6 +1402,15 @@
    "prompt_version": 6,
    "title": "Launch of Somali Week Festival 2026"
   },
+  "45df77fb539fc806": {
+   "at": "2026-10-29T13:03:39+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Festival Stitched together with Ksenia Kazintseva V&A South Kensington"
+  },
   "466a4594d8c5fa5f": {
    "at": "2026-09-25T11:54:30+00:00",
    "labels": [
@@ -1451,6 +1499,16 @@
    "prompt_version": 6,
    "title": "Start-up Day 2026"
   },
+  "49f01a7b4d1c30c2": {
+   "at": "2026-10-29T13:03:25+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Film, animation & media"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Fashion Photography Masterclass with Jasprit Singh and Michael Akuagwu V&A South Kensington"
+  },
   "4b875d6ef23c188d": {
    "at": "2026-09-22T09:52:15+00:00",
    "labels": [
@@ -1466,6 +1524,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Immuno-cautious Openings of the 'Audrey Amiss' and 'Rudy Loewe' exhibitions"
+  },
+  "4cff6263ad5e3c68": {
+   "at": "2026-10-29T13:03:20+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Fashion Illustration Trail V&A South Kensington"
   },
   "4d1257447f026898": {
    "at": "2026-10-22T11:59:28+00:00",
@@ -1677,6 +1744,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Tino Stefanoni: Between Vision and Memory"
+  },
+  "559236a5138ef3b9": {
+   "at": "2026-10-29T13:03:16+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart CV Workshop with Chloe Levin V&A South Kensington"
   },
   "55a8de0afb0a109f": {
    "at": "2026-10-22T08:29:18+00:00",
@@ -2737,6 +2813,13 @@
    "prompt_version": 6,
    "title": "Once Upon An ... Invention"
   },
+  "93f86057c2e5d20d": {
+   "at": "2026-10-29T13:03:43+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Festival Talks V&A South Kensington"
+  },
   "940337f12d211820": {
    "at": "2026-09-22T09:51:58+00:00",
    "labels": [
@@ -2845,6 +2928,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Skeleton Science"
+  },
+  "98a98174e8ad864e": {
+   "at": "2026-10-29T13:03:35+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Festival Careers Fair V&A South Kensington"
   },
   "98de4c93907cf9dc": {
    "at": "2026-09-22T09:55:35+00:00",
@@ -2960,6 +3053,15 @@
    "prompt_version": 6,
    "title": "Preserving women's publishing histories: editing women in the archives"
   },
+  "9ec063f1db4f930d": {
+   "at": "2026-10-29T13:03:04+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The conservative tradition in sociological thought"
+  },
   "a0912ef4ef7ec4a7": {
    "at": "2026-10-23T11:43:08+00:00",
    "labels": [
@@ -3035,6 +3137,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Art Now: Mohammed Z Rahman"
+  },
+  "a3d753fe7a6879ee": {
+   "at": "2026-10-29T13:04:19+00:00",
+   "labels": [
+    "Business & entrepreneurship",
+    "Law & justice",
+    "Finance & economics"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Social Insurance – Cooperation That Frees - Sir Andrew Dilnot, Nuffield College Oxford"
   },
   "a40e34747676b72f": {
    "at": "2026-09-22T09:55:00+00:00",
@@ -3343,6 +3456,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "EPICo Conference 2026"
+  },
+  "b0b9c665d8fd6e06": {
+   "at": "2026-10-29T13:04:05+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Portfolio Clinic V&A South Kensington"
   },
   "b12bd7b61e13a27e": {
    "at": "2026-10-23T11:43:38+00:00",
@@ -3735,6 +3857,15 @@
    "prompt_version": 6,
    "title": "The Pen: Simon Garfield in Conversation with Jeremy Deller"
   },
+  "c40b451935c60105": {
+   "at": "2026-10-29T13:03:57+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Group  Mentorship Sessions V&A South Kensington"
+  },
   "c43982b1b260de35": {
    "at": "2026-10-23T11:43:44+00:00",
    "labels": [],
@@ -4026,6 +4157,15 @@
    "prompt_version": 6,
    "title": "Cecilia Vicuña: Foraging Quipu"
   },
+  "d2d6d01ba4212897": {
+   "at": "2026-10-29T13:03:01+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Making sense of the US midterms 2026"
+  },
   "d31e59a97300fcfc": {
    "at": "2026-09-22T09:51:48+00:00",
    "labels": [
@@ -4133,6 +4273,15 @@
    "prompt_version": 6,
    "title": "Petar Pejčić (cello) and Nour Ayadi (piano)"
   },
+  "d64ce5e6fc60dc4a": {
+   "at": "2026-10-29T13:02:57+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Design Club (11-14),  October Half Term"
+  },
   "d6fdef1d626e2379": {
    "at": "2026-09-22T09:52:39+00:00",
    "labels": [
@@ -4234,6 +4383,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Holiday workshops: Smart trains and smart tracks (Year 7, 8 and 9)"
+  },
+  "ddbce7fbabe2ef6c": {
+   "at": "2026-10-29T13:03:30+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Festival  Fashion Futures: From garment to virtual world V&A South Kensington"
   },
   "dfb007a3adb808c9": {
    "at": "2026-10-23T11:42:38+00:00",
