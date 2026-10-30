@@ -84,6 +84,13 @@
    "prompt_version": 6,
    "title": "Soul Trader: Build your business by heart"
   },
+  "02e07e5c1719c660": {
+   "at": "2026-10-30T12:55:31+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Paddington Trio"
+  },
   "033ee797ce3b5be3": {
    "at": "2026-09-22T09:51:09+00:00",
    "labels": [
@@ -904,6 +911,13 @@
    "prompt_version": 6,
    "title": "Holiday workshops: Electrical and electronic control (Year 7, 8 and 9)"
   },
+  "2d85e1b45ff76320": {
+   "at": "2026-10-30T12:55:28+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "In conversation with Sri Mulyani Indrawati"
+  },
   "2dd637fe55884fe4": {
    "at": "2026-09-22T09:51:07+00:00",
    "labels": [],
@@ -1227,6 +1241,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Design Club (11-14),  October Half Term"
+  },
+  "3a6bbb8854bb18c5": {
+   "at": "2026-10-30T12:55:45+00:00",
+   "labels": [
+    "Medicine & health"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "World AIDS Day: Connected Threads"
   },
   "3bd91034e9584a71": {
    "at": "2026-09-22T09:51:52+00:00",
@@ -2300,6 +2323,15 @@
    "prompt_version": 6,
    "title": "Open Call | Future of Archives: Whose Archive is it Anyway?"
   },
+  "728d05431b4e7c97": {
+   "at": "2026-10-30T12:55:43+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The Agatha Cure"
+  },
   "72a55e66522a566d": {
    "at": "2026-09-25T11:54:55+00:00",
    "labels": [
@@ -2603,6 +2635,15 @@
    "prompt_version": 6,
    "title": "Rudy Loewe: Intimacies of Care – Spaces of Grief and Possibility"
   },
+  "87157b3b184b8c65": {
+   "at": "2026-10-30T12:55:24+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Agatha Christie: In your local library"
+  },
   "872a8ccc3d130677": {
    "at": "2026-09-22T09:55:20+00:00",
    "labels": [
@@ -2629,6 +2670,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How to Start and Run a Successful Restaurant, Coffee Bar or Food Business"
+  },
+  "88698b479834567d": {
+   "at": "2026-10-30T12:55:49+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Linocut printing workshop"
   },
   "8877d8dd0b916311": {
    "at": "2026-09-24T11:47:51+00:00",
@@ -2812,6 +2862,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Once Upon An ... Invention"
+  },
+  "932b9f2831ee8920": {
+   "at": "2026-10-30T12:55:40+00:00",
+   "labels": [
+    "Environment & climate"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Sustainability and behavioural change: a discussion"
   },
   "93f86057c2e5d20d": {
    "at": "2026-10-29T13:03:43+00:00",
@@ -3541,6 +3600,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "LATE at Kettle's Yard"
+  },
+  "b38aea62344a4b19": {
+   "at": "2026-10-30T12:55:36+00:00",
+   "labels": [
+    "Computing & AI",
+    "Law & justice",
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Tech sovereignty, security and democracy: a conversation with Henna Virkkunen"
   },
   "b46244a198830254": {
    "at": "2026-09-22T09:53:48+00:00",
