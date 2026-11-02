@@ -305,6 +305,15 @@
    "prompt_version": 6,
    "title": "In conversation with Alberto Musalem, President of the Federal Reserve Bank of St. Louis"
   },
+  "0b1595974287823a": {
+   "at": "2026-11-02T15:50:30+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Museum Shop Sunday 2026"
+  },
   "0b3acc30cc24c758": {
    "at": "2026-09-22T09:54:51+00:00",
    "labels": [
@@ -2541,6 +2550,15 @@
    "prompt_version": 6,
    "title": "Evolution Expedition"
   },
+  "7ef63079fa534b29": {
+   "at": "2026-11-02T15:50:26+00:00",
+   "labels": [
+    "Environment & climate"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The economics of transitioning away from fossil fuels"
+  },
   "7f0f4030c0fd7bc3": {
    "at": "2026-10-22T08:32:08+00:00",
    "labels": [],
@@ -3582,6 +3600,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Irish Writers' Weekend: Altered States"
+  },
+  "b291edc8c31340d2": {
+   "at": "2026-11-02T15:50:28+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members' Tour: William Eggleston and Sanlé Sory"
   },
   "b3302834f9691a60": {
    "at": "2026-09-22T09:57:01+00:00",
