@@ -4392,6 +4392,13 @@
    "prompt_version": 6,
    "title": "How to harness marketplace opportunities"
   },
+  "d55fb8f459200127": {
+   "at": "2026-11-04T14:33:06+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Blockers: rebels in the deep state"
+  },
   "d5db7be5defa7f2a": {
    "at": "2026-09-29T12:54:45+00:00",
    "labels": [],
@@ -5219,6 +5226,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Holiday workshops: Kitchen Lab (Year 1 and 2)"
+  },
+  "fe50a42cb1e303e0": {
+   "at": "2026-11-04T14:33:08+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The challenges to peace and democracy in the Middle East"
   },
   "ff6b1f6cd5f77ee2": {
    "at": "2026-09-22T09:56:23+00:00",
