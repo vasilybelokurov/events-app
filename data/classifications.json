@@ -9,6 +9,15 @@
    "prompt_version": 6,
    "title": "How to master the art of grant fundraising"
   },
+  "0022a85f341e94c0": {
+   "at": "2026-11-05T14:42:30+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members Hours: Light and Magic: The Birth of Art Photography"
+  },
   "0096b255cf1415ea": {
    "at": "2026-09-22T09:51:38+00:00",
    "labels": [
@@ -63,6 +72,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "CSAR lecture: Looking inside the box: PET imaging and blood tests as windows into brain biology in dementia - Dr. Maura "
+  },
+  "01bd98017d6d606b": {
+   "at": "2026-11-05T14:42:03+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Structural change and development"
   },
   "020a823773051a4d": {
    "at": "2026-10-23T11:43:35+00:00",
@@ -902,6 +918,13 @@
    "prompt_version": 6,
    "title": "Lights Up and Audio Described Tours of The Coming of Age"
   },
+  "2c1787d3b2147bb1": {
+   "at": "2026-11-05T14:42:27+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "These Dreams Are Made of Blue"
+  },
   "2c2762f99de8ec88": {
    "at": "2026-11-03T14:13:49+00:00",
    "labels": [
@@ -1128,6 +1151,15 @@
    "prompt_version": 6,
    "title": "Teacher CPD: Oscar Wilde in Context"
   },
+  "358d261b4fb1a2c8": {
+   "at": "2026-11-05T14:42:24+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "BSL Tour: The 90 s : Art and Fashion"
+  },
   "359a33cd33f33cf4": {
    "at": "2026-09-22T09:52:04+00:00",
    "labels": [
@@ -1329,6 +1361,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Holiday workshops: Intro to coding (Year 3 and 4)"
+  },
+  "3dd466292d71dd7d": {
+   "at": "2026-11-05T14:42:39+00:00",
+   "labels": [
+    "Computing & AI",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Speech-to-text and BSL Tour: Agatha Christie: A World of Mystery"
   },
   "3dd6fe0e9e9dc34c": {
    "at": "2026-10-26T13:04:07+00:00",
@@ -1550,6 +1592,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Start-up Day 2026"
+  },
+  "49e89cc617f6cb7e": {
+   "at": "2026-11-05T14:42:33+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members Hours: Frida: The Making of an Icon"
   },
   "49f01a7b4d1c30c2": {
    "at": "2026-10-29T13:03:25+00:00",
@@ -1871,6 +1922,15 @@
    "prompt_version": 6,
    "title": "Discourse: How to get a molecule to obey you"
   },
+  "587e033736b1b1e7": {
+   "at": "2026-11-05T14:42:00+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Emmanuel Bach (violin) and Jennifer Stern (piano)"
+  },
   "58f2fbb571a494de": {
    "at": "2026-09-22T09:52:02+00:00",
    "labels": [
@@ -2180,6 +2240,15 @@
    "prompt_version": 6,
    "title": "The 90 s : Art and Fashion"
   },
+  "69e4c77a5212b8ef": {
+   "at": "2026-11-05T14:42:07+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Relaxed Hours: Ana Mendieta"
+  },
   "6a06fc6bb9ae1d02": {
    "at": "2026-09-30T12:37:52+00:00",
    "labels": [
@@ -2188,6 +2257,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Illumination Masterclass"
+  },
+  "6b0c1c25c003a2d5": {
+   "at": "2026-11-05T14:42:46+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Relaxed Hours: Monet: Painting Time"
   },
   "6b86006a0b8a747f": {
    "at": "2026-10-22T12:00:01+00:00",
@@ -2245,6 +2323,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Tudors"
+  },
+  "6d5c2dd20a38d7c4": {
+   "at": "2026-11-05T14:42:14+00:00",
+   "labels": [
+    "Film, animation & media"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Relaxed Hours: Light and Magic"
   },
   "6d8def5ea2740c9f": {
    "at": "2026-10-23T11:41:50+00:00",
@@ -2403,6 +2490,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Security Cooperation within Government and between Governments - Ms Suzanne Raine, Selwyn College Cambridge"
+  },
+  "74d7d8e0beb71d7f": {
+   "at": "2026-11-05T14:41:49+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Rewiring the state and the future civil service"
   },
   "75469a8cc8d4791d": {
    "at": "2026-09-22T09:57:05+00:00",
@@ -2569,6 +2665,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Evolution Expedition"
+  },
+  "7ee9655204b53f62": {
+   "at": "2026-11-05T14:42:42+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members Hours: Monet: Painting Time"
   },
   "7ef63079fa534b29": {
    "at": "2026-11-02T15:50:26+00:00",
@@ -2871,6 +2976,16 @@
    "prompt_version": 6,
    "title": "BSL Tours of ‘The Coming of Age’ with Rubbena Aurangzeb-Tariq"
   },
+  "901bcc72f153673d": {
+   "at": "2026-11-05T14:41:45+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Engineering"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Cambridge Engineering outreach"
+  },
   "90489db58ec9628e": {
    "at": "2026-09-22T09:54:43+00:00",
    "labels": [
@@ -2899,6 +3014,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Operating Theatre: 250 Years of Surgery in Hospitals"
+  },
+  "9190d5413a89a717": {
+   "at": "2026-11-05T14:41:52+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How social media changed politics globally"
   },
   "91c9592be3c7cd8b": {
    "at": "2026-10-22T11:56:00+00:00",
@@ -3158,6 +3282,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Preserving women's publishing histories: editing women in the archives"
+  },
+  "9e74fb6db713fdb3": {
+   "at": "2026-11-05T14:42:10+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Relaxed Hours: Julio Le Parc"
   },
   "9ec063f1db4f930d": {
    "at": "2026-10-29T13:03:04+00:00",
@@ -4176,6 +4309,15 @@
    "prompt_version": 6,
    "title": "Holiday workshops: Crash testing (Year 7 - 9)"
   },
+  "cc8e85a99ea1dc57": {
+   "at": "2026-11-05T14:41:56+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Tate Collective After Hours: Frida: The Making of an Icon"
+  },
   "cd0578f4fcb99034": {
    "at": "2026-09-22T09:51:56+00:00",
    "labels": [
@@ -4221,6 +4363,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Family Workshop: Little Miss Marple"
+  },
+  "ce688a016cfb05e1": {
+   "at": "2026-11-05T14:42:20+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Chemistry & materials",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Relaxed Hours: Vanessa Bell and Duncan Grant"
   },
   "ceaaf87d0ee276d4": {
    "at": "2026-09-22T09:54:48+00:00",
