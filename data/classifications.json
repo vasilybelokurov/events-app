@@ -1453,6 +1453,13 @@
    "prompt_version": 6,
    "title": "Meet the Designer, Christie Swallow"
   },
+  "418aa96c682aa6ed": {
+   "at": "2026-11-06T14:16:55+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Act of Remembrance"
+  },
   "419aa2c96131da47": {
    "at": "2026-09-23T11:38:08+00:00",
    "labels": [
@@ -2176,6 +2183,15 @@
    "prompt_version": 6,
    "title": "Celebrating 25 years of Wikipedia"
   },
+  "6452441c3eeae017": {
+   "at": "2026-11-06T14:16:59+00:00",
+   "labels": [
+    "Business & entrepreneurship"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "1926 and 2026 industrial relations: where are we headed?"
+  },
   "64f937475c590052": {
    "at": "2026-09-29T12:54:35+00:00",
    "labels": [
@@ -2728,6 +2744,15 @@
    "prompt_version": 6,
    "title": "An introduction to particle physics 2026 (short course)"
   },
+  "82dc3c0446818d11": {
+   "at": "2026-11-06T14:17:05+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Online Masterclass: Writing Memories"
+  },
   "82eb3ed95d09f68e": {
    "at": "2026-09-22T13:02:54+00:00",
    "labels": [],
@@ -3244,6 +3269,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Open and Engaged Conference 2026"
+  },
+  "9c6f63584b36e3ec": {
+   "at": "2026-11-06T14:17:03+00:00",
+   "labels": [
+    "Finance & economics"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "From values to impact: what can sustainable investing achieve?"
   },
   "9d4701f1ea746d93": {
    "at": "2026-10-23T11:41:59+00:00",
@@ -3962,6 +3996,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Start using social media for my small business"
+  },
+  "bb4c7825e32024ac": {
+   "at": "2026-11-06T14:16:52+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Hyundai Commission: Tarek Atoui: Hold"
   },
   "bb8f20bc8c92718d": {
    "at": "2026-09-22T09:56:17+00:00",
