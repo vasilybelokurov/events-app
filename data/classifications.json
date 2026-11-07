@@ -2507,6 +2507,13 @@
    "prompt_version": 6,
    "title": "Security Cooperation within Government and between Governments - Ms Suzanne Raine, Selwyn College Cambridge"
   },
+  "74c760ee1da711d1": {
+   "at": "2026-11-07T13:00:03+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Against fire and ICE: the lifehouse as community defence"
+  },
   "74d7d8e0beb71d7f": {
    "at": "2026-11-05T14:41:49+00:00",
    "labels": [
