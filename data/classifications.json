@@ -203,6 +203,15 @@
    "prompt_version": 6,
    "title": "Stephen Hawking: His life and work"
   },
+  "0632a9e12362daed": {
+   "at": "2026-11-09T16:18:34+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Book Launch, Talk & Signing, Tiggy Maconochie: All the Pretty Horses in Art and Photography,"
+  },
   "06bf85e7dad3b539": {
    "at": "2026-09-29T12:54:52+00:00",
    "labels": [
@@ -2733,6 +2742,13 @@
    "prompt_version": 6,
    "title": "Making Sense of the Mid-Term Elections"
   },
+  "813ecc07390dc6be": {
+   "at": "2026-11-09T16:18:36+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Title to be confirmed -"
+  },
   "81854c21e555dffc": {
    "at": "2026-09-22T13:02:42+00:00",
    "labels": [
@@ -3370,6 +3386,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How to apply sustainable strategies to your business"
+  },
+  "a1c3870ba1f6edd8": {
+   "at": "2026-11-09T16:18:31+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How To Use The Library For Your Research"
   },
   "a266e639d1133f30": {
    "at": "2026-10-23T11:42:47+00:00",
@@ -4460,6 +4485,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Global Stories with Michael Rosen and Friends"
+  },
+  "d0f01a68d9c77a87": {
+   "at": "2026-11-09T16:18:28+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Low-stim Openings of the 'Audrey Amiss' and 'Rudy Loewe' exhibitions"
   },
   "d14e2bb9ba3ebe27": {
    "at": "2026-10-23T11:42:18+00:00",
