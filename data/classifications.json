@@ -393,6 +393,15 @@
    "prompt_version": 6,
    "title": "Putting AI to Work in Your Business"
   },
+  "0d6ee38adca69640": {
+   "at": "2026-11-10T14:53:24+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Grants for Authors"
+  },
   "0dba3e35af5a6fb7": {
    "at": "2026-10-22T11:56:39+00:00",
    "labels": [
@@ -419,6 +428,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How to raise capital for business growth"
+  },
+  "0ed1ae933b42433e": {
+   "at": "2026-11-10T14:53:21+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Book Marketing in Layers"
   },
   "0edd9ebf5b1e5441": {
    "at": "2026-09-28T13:56:19+00:00",
@@ -4518,6 +4536,16 @@
    "prompt_version": 6,
    "title": "Cecilia Vicuña: Foraging Quipu"
   },
+  "d2845b9c0b048bfd": {
+   "at": "2026-11-10T14:53:14+00:00",
+   "labels": [
+    "Computing & AI",
+    "Law & justice"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "AI, the Law and your Business"
+  },
   "d2d6d01ba4212897": {
    "at": "2026-10-29T13:03:01+00:00",
    "labels": [
@@ -5347,6 +5375,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Social Enterprise Day"
+  },
+  "f7024af5f96b155f": {
+   "at": "2026-11-10T14:53:18+00:00",
+   "labels": [
+    "Psychology & neuroscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Non-binary lives"
   },
   "f718835436464ef8": {
    "at": "2026-09-22T09:52:41+00:00",
