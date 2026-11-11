@@ -776,6 +776,15 @@
    "prompt_version": 6,
    "title": "In Conversation: Sunil Gupta and Hal Fischer"
   },
+  "20d58c8a12ec32dd": {
+   "at": "2026-11-11T14:21:48+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "CHRISTMAS LECTURES rehearsal night"
+  },
   "20d772d0bad385f5": {
    "at": "2026-10-28T12:58:02+00:00",
    "labels": [
@@ -1122,6 +1131,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Antarctica is Changing Faster Than Expected – Why You Should Care - Professor Dame Jane Francis DCMG FRS, Director of th"
+  },
+  "325e528caaa680ca": {
+   "at": "2026-11-11T14:21:50+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members Private View: Frida: The Making of an Icon"
   },
   "340f916ae4bb9706": {
    "at": "2026-09-24T11:48:19+00:00",
@@ -2283,6 +2301,15 @@
    "prompt_version": 6,
    "title": "The 90 s : Art and Fashion"
   },
+  "6847b6cd5525ef00": {
+   "at": "2026-11-11T14:22:00+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The Magic of Magnetism - Professor Russell Cowburn, University of Cambridge"
+  },
   "69e4c77a5212b8ef": {
    "at": "2026-11-05T14:42:07+00:00",
    "labels": [
@@ -2475,6 +2502,13 @@
    "prompt_version": 6,
    "title": "Fashion Illustration Trail"
   },
+  "71b95c351db0cac1": {
+   "at": "2026-11-11T14:21:42+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "EVENT CANCELLED: Challenging inequalities"
+  },
   "7226805761d0d383": {
    "at": "2026-10-22T08:29:31+00:00",
    "labels": [],
@@ -2508,6 +2542,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "O Chemis-tree, O Chemis-tree! (family)"
+  },
+  "7344a3507fdea390": {
+   "at": "2026-11-11T14:21:51+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members Private View: Light and Magic: The Birth of Art Photography"
   },
   "73540f6ae533784c": {
    "at": "2026-09-22T09:55:26+00:00",
@@ -3601,6 +3644,15 @@
    "prompt_version": 6,
    "title": "Cooperation for Nature - Dr Mike Rands, Cambridge Conservation Initiative"
   },
+  "aa1a905caf67ed18": {
+   "at": "2026-11-11T14:21:47+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Pride and Prejudice"
+  },
   "aa357ba13b7e796d": {
    "at": "2026-09-22T09:53:33+00:00",
    "labels": [
@@ -3673,6 +3725,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "John Berger: Do You Know What I Watch?"
+  },
+  "ac156860368d405a": {
+   "at": "2026-11-11T14:21:41+00:00",
+   "labels": [
+    "Finance & economics"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "How should we tax the wealthy?"
   },
   "ac58a690704c0065": {
    "at": "2026-09-22T09:52:14+00:00",
@@ -3826,6 +3887,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Book Presentation, Talk & Signing, Carol Allen Storey: Defying the Myth"
+  },
+  "b1bc59b37b47623e": {
+   "at": "2026-11-11T14:21:45+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members Private View: The 90 s : Art and Fashion"
   },
   "b2037fa681437172": {
    "at": "2026-09-22T09:54:46+00:00",
@@ -4511,6 +4581,17 @@
    "prompt_version": 6,
    "title": "Low-stim Openings of the 'Audrey Amiss' and 'Rudy Loewe' exhibitions"
   },
+  "d0fad53151cc9d6d": {
+   "at": "2026-11-11T14:21:54+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Photobooth workshop: Hand Colouring"
+  },
   "d14e2bb9ba3ebe27": {
    "at": "2026-10-23T11:42:18+00:00",
    "labels": [
@@ -5123,6 +5204,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The road to COP32: an African agenda for climate action and economic development"
+  },
+  "ee37395cdd30e7a3": {
+   "at": "2026-11-11T14:21:44+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Power and the people: a history of British energy since 1810"
   },
   "ef8f93c1b90454e4": {
    "at": "2026-09-22T09:55:11+00:00",
