@@ -100,6 +100,13 @@
    "prompt_version": 6,
    "title": "Soul Trader: Build your business by heart"
   },
+  "02244cc7a25015d9": {
+   "at": "2026-11-12T15:14:39+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Gazing Back at the Gaze"
+  },
   "02e07e5c1719c660": {
    "at": "2026-10-30T12:55:31+00:00",
    "labels": [],
@@ -1195,6 +1202,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Teacher CPD: Oscar Wilde in Context"
+  },
+  "35459f6123a89c86": {
+   "at": "2026-11-12T15:14:30+00:00",
+   "labels": [
+    "Environment & climate",
+    "Business & entrepreneurship",
+    "Finance & economics"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Can global value chains go green? Trade, investment and the net-zero development challenge"
   },
   "358d261b4fb1a2c8": {
    "at": "2026-11-05T14:42:24+00:00",
@@ -2356,6 +2374,15 @@
    "prompt_version": 6,
    "title": "In Conversation: Sunil Gupta and Charan Singh"
   },
+  "6bfe2693a594f4bd": {
+   "at": "2026-11-12T15:14:45+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Book Launch, Talk & Signing, Tiggy Maconochie: All the Pretty Horses in Art and Photography, in conversation with Mauree"
+  },
   "6c2818202ae74bb9": {
    "at": "2026-09-22T09:51:50+00:00",
    "labels": [
@@ -2652,6 +2679,16 @@
    "prompt_version": 6,
    "title": "Holiday workshops: Kitchen Lab (Year 5 and 6)"
   },
+  "79b4558264f3692d": {
+   "at": "2026-11-12T15:14:35+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Book Launch, Talk & Signing: Void at 10 years"
+  },
   "7a702b270f610b03": {
    "at": "2026-09-22T09:56:18+00:00",
    "labels": [
@@ -2740,6 +2777,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "US Politics Today"
+  },
+  "7dd2e49518fd87d1": {
+   "at": "2026-11-12T15:14:24+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members Private View: Vanessa Bell and Duncan Grant: Inside Bloomsbury"
   },
   "7e487b6aff2168e3": {
    "at": "2026-09-22T09:56:26+00:00",
@@ -4518,6 +4564,15 @@
    "prompt_version": 6,
    "title": "Holiday workshops: How things get carried away (Year 10 - 13)"
   },
+  "cd46d91b13105c38": {
+   "at": "2026-11-12T15:14:17+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Upstart Festival at V&A Dundee"
+  },
   "ce3777c1081a4cb8": {
    "at": "2026-10-22T11:57:07+00:00",
    "labels": [
@@ -5606,6 +5661,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Guided House Tour"
+  },
+  "ffe38418598d8b55": {
+   "at": "2026-11-12T15:14:21+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Hope or despair: transatlantic relations at the crossroads"
   }
  },
  "model": "qwen3:4b",
