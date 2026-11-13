@@ -2121,6 +2121,15 @@
    "prompt_version": 6,
    "title": "Science narratives and the public"
   },
+  "5dc88c6f1606aaf9": {
+   "at": "2026-11-13T14:35:00+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Backsliders of democracy: global politics after Brazil's election and the US midterms"
+  },
   "5dd03dc5e0eaeaa8": {
    "at": "2026-09-22T09:53:06+00:00",
    "labels": [
@@ -2637,6 +2646,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Film London Jarman Award 2026"
+  },
+  "777d06481450a3ed": {
+   "at": "2026-11-13T14:34:58+00:00",
+   "labels": [
+    "Psychology & neuroscience",
+    "Law & justice",
+    "Environment & climate"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Whose childhood, whose safety? Marginalised youth and social media bans"
   },
   "778798a1175085ba": {
    "at": "2026-09-22T09:51:01+00:00",
@@ -3408,6 +3428,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "From values to impact: what can sustainable investing achieve?"
+  },
+  "9cfb35ad68638674": {
+   "at": "2026-11-13T14:34:51+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Kasparas Mikužis (piano)"
   },
   "9d4701f1ea746d93": {
    "at": "2026-10-23T11:41:59+00:00",
@@ -4858,6 +4885,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Irish Writers' Weekend: The Art of the Memoir"
+  },
+  "d9122db4e8566fbf": {
+   "at": "2026-11-13T14:34:54+00:00",
+   "labels": [
+    "Environment & climate",
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The international politics of energy transitions, climate battles, and 21st century power rivalry"
   },
   "da98d2fca23e3889": {
    "at": "2026-09-22T09:57:13+00:00",
