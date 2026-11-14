@@ -1725,6 +1725,13 @@
    "prompt_version": 6,
    "title": "Creative Connections"
   },
+  "4dec79cb163970ca": {
+   "at": "2026-11-14T13:31:06+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Title to be confirmed - Dr Gillian Tett, University of Cambridge"
+  },
   "4df2e6e631ac84a4": {
    "at": "2026-10-22T08:30:53+00:00",
    "labels": [
@@ -3051,6 +3058,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How Cobra can help your business journey"
+  },
+  "8a0872bf7f819844": {
+   "at": "2026-11-14T13:31:04+00:00",
+   "labels": [
+    "Finance & economics"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The China contract - how the world’s biggest financial scandal was covered up"
   },
   "8ad83203aafe8679": {
    "at": "2026-09-22T09:52:17+00:00",
