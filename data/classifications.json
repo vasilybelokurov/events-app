@@ -80,6 +80,15 @@
    "prompt_version": 6,
    "title": "Structural change and development"
   },
+  "01bf4cd87e29806c": {
+   "at": "2026-11-16T15:44:15+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members Private View: Ana Mendieta"
+  },
   "020a823773051a4d": {
    "at": "2026-10-23T11:43:35+00:00",
    "labels": [
@@ -180,6 +189,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Writing Climate Fiction That Changes Minds"
+  },
+  "04f6eec642976e8b": {
+   "at": "2026-11-16T15:44:12+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Juno Calypso: Empty Pleasures"
   },
   "050b643f6a95b415": {
    "at": "2026-10-28T12:57:18+00:00",
@@ -694,6 +712,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Routes To Market"
+  },
+  "1c26a106c343eb2c": {
+   "at": "2026-11-16T15:44:30+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Croonian Prize Lecture delivered by Dame Janet Thornton"
   },
   "1c359be6f6c02c2d": {
    "at": "2026-09-22T09:53:43+00:00",
@@ -1457,6 +1486,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Family Workshop: Spooky Characters Mix and Match"
+  },
+  "3f5174dbe23fe20e": {
+   "at": "2026-11-16T15:44:22+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Ferrier Prize Lecture delivered by Professor Kenneth Harris"
   },
   "3f713f1bc96afbcd": {
    "at": "2026-09-22T09:52:53+00:00",
@@ -2248,6 +2284,15 @@
    "prompt_version": 6,
    "title": "Discourse: Physics and philosophy: On the equality of all things"
   },
+  "63384ccdd2459a3a": {
+   "at": "2026-11-16T15:44:18+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Members Private View: Julio Le Parc"
+  },
   "640410218abd6b14": {
    "at": "2026-10-28T12:57:22+00:00",
    "labels": [],
@@ -2516,6 +2561,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Conquest of Knowledge: Translation and Civilization from Antiquity to the Renaissance"
+  },
+  "706cc7920cd7206c": {
+   "at": "2026-11-16T15:44:37+00:00",
+   "labels": [
+    "Environment & climate"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Environment Prize Lecture delivered by Professor Paul Bates"
   },
   "7070e2de9c984b35": {
    "at": "2026-09-22T09:54:54+00:00",
@@ -2926,6 +2980,13 @@
    "prompt_version": 6,
    "title": "American Writers’ Week: Armistead Maupin"
   },
+  "84eb086d5f3bfa89": {
+   "at": "2026-11-16T15:44:45+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Milner Prize Lecture delivered by Professor Monika Henzinger"
+  },
   "84f3e38176daaf93": {
    "at": "2026-09-22T09:53:54+00:00",
    "labels": [
@@ -3214,6 +3275,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How social media changed politics globally"
+  },
+  "91a3db3b18a54e85": {
+   "at": "2026-11-16T15:44:42+00:00",
+   "labels": [
+    "Medicine & health",
+    "Physics & space",
+    "Chemistry & materials"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Francis Crick Prize Lecture delivered by Dr Kelly Nguyen"
   },
   "91c9592be3c7cd8b": {
    "at": "2026-10-22T11:56:00+00:00",
@@ -3516,6 +3588,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "BSL Exhibition Tour | William Eggleston: All that goes unnoticed"
+  },
+  "a09e155a34de9d16": {
+   "at": "2026-11-16T15:44:26+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Royal Society Africa Prize Lecture delivered by Professor Clive Gray"
   },
   "a0ecbaffa858d20a": {
    "at": "2026-09-22T09:55:17+00:00",
@@ -4252,6 +4335,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Design Club (11-14) - Friendship Bracelets"
+  },
+  "bd72f0554345a5b9": {
+   "at": "2026-11-16T15:44:35+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Bakerian Prize Lecture delivered by Professor Karen Heywood"
   },
   "bdc19a83ccda0348": {
    "at": "2026-10-28T12:57:09+00:00",
