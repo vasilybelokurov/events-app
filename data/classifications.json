@@ -2352,6 +2352,15 @@
    "prompt_version": 6,
    "title": "Irish Writers' Weekend: Crimes, Secrets and Lies"
   },
+  "675685e6d7906bcc": {
+   "at": "2026-11-18T15:40:29+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Anti-fascist economics"
+  },
   "6756a4d8585f899e": {
    "at": "2026-09-22T09:56:31+00:00",
    "labels": [
@@ -3183,6 +3192,15 @@
    "prompt_version": 6,
    "title": "The Magic of Magnetism - Professor Russell Cowburn, University of Cambridge"
   },
+  "8eb83539ca3274ee": {
+   "at": "2026-11-18T15:40:22+00:00",
+   "labels": [
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "From AlphaGo to general reasoning: the future of artificial intelligence and what it means"
+  },
   "8ec30ce2601f5540": {
    "at": "2026-09-22T09:56:16+00:00",
    "labels": [
@@ -4012,6 +4030,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "EPICo Conference 2026"
+  },
+  "b062296f8a45415a": {
+   "at": "2026-11-18T15:40:26+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "What Europeans think about immigration and why it matters"
   },
   "b0b9c665d8fd6e06": {
    "at": "2026-10-29T13:04:05+00:00",
@@ -5238,6 +5265,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "America as a revisionist power (and what it means for the rest of the world)"
+  },
+  "e75ec1b0217c2bb2": {
+   "at": "2026-11-18T15:40:18+00:00",
+   "labels": [
+    "Psychology & neuroscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Investigating moral status"
   },
   "e77f996eafe476c7": {
    "at": "2026-10-22T08:31:44+00:00",
