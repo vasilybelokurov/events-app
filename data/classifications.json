@@ -1602,6 +1602,13 @@
    "prompt_version": 6,
    "title": "Launch of Somali Week Festival 2026"
   },
+  "43aa6cec30933f95": {
+   "at": "2026-11-19T15:45:53+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Sonas String Quartet"
+  },
   "45df77fb539fc806": {
    "at": "2026-10-29T13:03:39+00:00",
    "labels": [
@@ -4746,6 +4753,13 @@
    "prompt_version": 6,
    "title": "Family Workshop: Little Miss Marple"
   },
+  "ce58f95d458c12dd": {
+   "at": "2026-11-19T15:45:49+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Addressing the adverse consequences of inequality"
+  },
   "ce688a016cfb05e1": {
    "at": "2026-11-05T14:42:20+00:00",
    "labels": [
@@ -4774,6 +4788,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Lecture: Sara Ahmed on Complaining, Again!"
+  },
+  "cf9235291fdaae3e": {
+   "at": "2026-11-19T15:45:45+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Research, archives and inspiration: reflections on The Women's Library"
   },
   "cfc6e66a2fc248ca": {
    "at": "2026-09-24T11:48:49+00:00",
@@ -4977,6 +4998,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Design Club (11-14),  October Half Term"
+  },
+  "d6a2398cedb8f973": {
+   "at": "2026-11-19T15:46:01+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Book Launch, Talk & Signing: Journal du Thé – Picture Book"
   },
   "d6fdef1d626e2379": {
    "at": "2026-09-22T09:52:39+00:00",
