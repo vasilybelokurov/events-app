@@ -2755,6 +2755,13 @@
    "prompt_version": 6,
    "title": "Summer Science Exhibits on Tour at Swansea Science Festival"
   },
+  "78c60dfaa81832f7": {
+   "at": "2026-11-20T15:27:25+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "LSE Chill"
+  },
   "78fa3d7f45afc277": {
    "at": "2026-10-22T11:58:10+00:00",
    "labels": [
@@ -4857,6 +4864,13 @@
    "prompt_version": 6,
    "title": "Cecilia Vicuña: Foraging Quipu"
   },
+  "d2279e08ebddaff4": {
+   "at": "2026-11-20T15:27:29+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Who builds world order when the hegemon won't?"
+  },
   "d2845b9c0b048bfd": {
    "at": "2026-11-10T14:53:14+00:00",
    "labels": [
@@ -5186,6 +5200,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Inwrds: The Gothic and Grotesque"
+  },
+  "e19cf3be3a57eb01": {
+   "at": "2026-11-20T15:27:22+00:00",
+   "labels": [
+    "Medicine & health",
+    "Finance & economics"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The economics of chance: what random events reveal about forces shaping health"
   },
   "e1d41513d89c98b2": {
    "at": "2026-10-22T11:56:19+00:00",
