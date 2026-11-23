@@ -803,6 +803,15 @@
    "prompt_version": 6,
    "title": "Capture your portrait with Jasprit Singh"
   },
+  "1ffdcacdc8a50ae4": {
+   "at": "2026-11-23T18:06:32+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Art Now: Clara Hastrup"
+  },
   "2039fffd647b99aa": {
    "at": "2026-09-22T09:56:00+00:00",
    "labels": [
@@ -926,6 +935,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Martino Tirimo (piano)"
+  },
+  "25dbc87bab9f6ae5": {
+   "at": "2026-11-23T18:06:39+00:00",
+   "labels": [
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "David Attenborough Prize Lecture: Future histories of space"
   },
   "25e185f3802e2d26": {
    "at": "2026-10-22T11:57:51+00:00",
@@ -2300,6 +2318,16 @@
    "prompt_version": 6,
    "title": "Members Private View: Julio Le Parc"
   },
+  "63833bd4c20c6fa9": {
+   "at": "2026-11-23T18:06:36+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Second Helpings: A Zine-Making Workshop for Christmas Leftovers"
+  },
   "640410218abd6b14": {
    "at": "2026-10-28T12:57:22+00:00",
    "labels": [],
@@ -2615,6 +2643,15 @@
    "prompt_version": 6,
    "title": "Fashion Illustration Trail"
   },
+  "719ca456b2d2fd74": {
+   "at": "2026-11-23T18:06:44+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The Sound of Us Workshop with Amrit Kaur"
+  },
   "71b95c351db0cac1": {
    "at": "2026-11-11T14:21:42+00:00",
    "labels": [],
@@ -2835,6 +2872,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Women’s Library at 100: celebrating a century of collections"
+  },
+  "7b790bb53f4fdf1e": {
+   "at": "2026-11-23T18:06:40+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "A Moment in Time Photography Display"
   },
   "7c30a53800442ccc": {
    "at": "2026-09-22T09:51:08+00:00",
@@ -3185,6 +3231,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Innovation and energy for a sustainable future"
+  },
+  "8d75a7f5962cf218": {
+   "at": "2026-11-23T18:06:42+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Fragments into Form - Assembling a sculpture from wood off cuts."
   },
   "8d85c0f7256edeca": {
    "at": "2026-09-24T11:47:56+00:00",
@@ -4045,6 +4100,15 @@
    "prompt_version": 6,
    "title": "EPICo Conference 2026"
   },
+  "b025b189264af809": {
+   "at": "2026-11-23T18:06:34+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Design Challenge, Term Time"
+  },
   "b062296f8a45415a": {
    "at": "2026-11-18T15:40:26+00:00",
    "labels": [
@@ -4129,6 +4193,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Irish Writers' Weekend: Altered States"
+  },
+  "b275a379fcdca13a": {
+   "at": "2026-11-23T18:06:38+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Design Challenge, Winter Holiday"
   },
   "b291edc8c31340d2": {
    "at": "2026-11-02T15:50:28+00:00",
