@@ -2060,6 +2060,15 @@
    "prompt_version": 6,
    "title": "Discourse: How to get a molecule to obey you"
   },
+  "58506262ecb1d5db": {
+   "at": "2026-11-24T17:44:35+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "British progress and the centre-right"
+  },
   "587e033736b1b1e7": {
    "at": "2026-11-05T14:42:00+00:00",
    "labels": [
@@ -2386,6 +2395,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Irish Writers' Weekend: Crimes, Secrets and Lies"
+  },
+  "66f8891be24ff8fd": {
+   "at": "2026-11-24T17:44:33+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Irish Writers' Weekend: The Art of the Memoir"
   },
   "675685e6d7906bcc": {
    "at": "2026-11-18T15:40:29+00:00",
@@ -2727,6 +2745,13 @@
    "prompt_version": 6,
    "title": "Security Cooperation within Government and between Governments - Ms Suzanne Raine, Selwyn College Cambridge"
   },
+  "749cae5151f8018f": {
+   "at": "2026-11-24T17:44:31+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "EVENT CANCELLED: Addressing the adverse consequences of inequality"
+  },
   "74c760ee1da711d1": {
    "at": "2026-11-07T13:00:03+00:00",
    "labels": [],
@@ -2760,6 +2785,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Film London Jarman Award 2026"
+  },
+  "76293944fdd7f000": {
+   "at": "2026-11-24T17:44:38+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Make-Lab Masterclass: Build a Birdhouse"
   },
   "777d06481450a3ed": {
    "at": "2026-11-13T14:34:58+00:00",
@@ -3867,6 +3901,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Studio Sunday Relaxed Session"
+  },
+  "a81e875f568a36ea": {
+   "at": "2026-11-24T17:44:36+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Relaxed Hours: Frida: The Making of an Icon"
   },
   "a89c1b4f977c7025": {
    "at": "2026-09-22T09:51:24+00:00",
@@ -5859,6 +5902,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Exhibition Tour: Snap Happy!"
+  },
+  "f7457aba3472480d": {
+   "at": "2026-11-24T17:44:40+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Relaxed Hours: Sonia Boyce"
   },
   "f77eac142467a9ca": {
    "at": "2026-09-22T09:56:29+00:00",
