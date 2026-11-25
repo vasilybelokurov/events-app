@@ -89,6 +89,15 @@
    "prompt_version": 6,
    "title": "Members Private View: Ana Mendieta"
   },
+  "01da4d87a5b69130": {
+   "at": "2026-11-25T17:15:44+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "The good, the bad, and the ugly: civil-military relations under Trump"
+  },
   "020a823773051a4d": {
    "at": "2026-10-23T11:43:35+00:00",
    "labels": [
@@ -391,6 +400,15 @@
    "prompt_version": 6,
    "title": "Offcut Afternoons"
   },
+  "0c467ada240ef2e2": {
+   "at": "2026-11-25T17:16:28+00:00",
+   "labels": [
+    "Teaching & outreach"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Studio Sunday: Relaxed Session"
+  },
   "0c7acb23b25efe0b": {
    "at": "2026-09-22T09:53:39+00:00",
    "labels": [
@@ -519,6 +537,17 @@
    "prompt_version": 6,
    "title": "A Mughal Songbook: Art, Music and Empire"
   },
+  "1223208d90b32906": {
+   "at": "2026-11-25T17:15:11+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Tea & Talk: Making the Worst Journey"
+  },
   "12ff5288e44bb1c0": {
    "at": "2026-10-22T11:59:17+00:00",
    "labels": [
@@ -545,6 +574,24 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Agatha Christie: A World of Mystery Relaxed Hours"
+  },
+  "142f9467e6f90a47": {
+   "at": "2026-11-25T17:15:26+00:00",
+   "labels": [
+    "Environment & climate"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "What makes cities sustainable? Soft infrastructures for sustainable urban societies"
+  },
+  "1579afb8c0c41436": {
+   "at": "2026-11-25T17:16:44+00:00",
+   "labels": [
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Agatha and Me: Inside A Life of Crime"
   },
   "159827e6f973473f": {
    "at": "2026-09-22T09:55:50+00:00",
@@ -928,6 +975,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "God Save the Queens!"
+  },
+  "2562c270ab88924b": {
+   "at": "2026-11-25T17:16:48+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Illustration Scavenger Hunt with Isabel Greenberg"
   },
   "25d2770f559816c3": {
    "at": "2026-09-22T09:52:29+00:00",
@@ -1404,6 +1460,15 @@
    "prompt_version": 6,
    "title": "Gathering Ground"
   },
+  "395ad5ddbc20c3f4": {
+   "at": "2026-11-25T17:16:41+00:00",
+   "labels": [
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Reading the Earth: How Geologists See Beyond the Surface"
+  },
   "39f1b9606334f2ed": {
    "at": "2026-10-22T08:33:14+00:00",
    "labels": [
@@ -1743,6 +1808,15 @@
    "prompt_version": 6,
    "title": "Upstart Fashion Photography Masterclass with Jasprit Singh and Michael Akuagwu V&A South Kensington"
   },
+  "4a96dd98ff48a481": {
+   "at": "2026-11-25T17:16:31+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Meet & Make: Festive Watercolours"
+  },
   "4b875d6ef23c188d": {
    "at": "2026-09-22T09:52:15+00:00",
    "labels": [
@@ -2050,6 +2124,15 @@
    "prompt_version": 6,
    "title": "Teachers' Session | Reworking Photographs by Hand"
   },
+  "57c55f40f09034c9": {
+   "at": "2026-11-25T17:17:10+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Constable: Mindscapes"
+  },
   "580bc5e16c3145ef": {
    "at": "2026-09-22T09:55:08+00:00",
    "labels": [
@@ -2133,6 +2216,16 @@
    "prompt_version": 6,
    "title": "National Network: Start-up Day 2026"
   },
+  "5a7033fa4a7fc62d": {
+   "at": "2026-11-25T17:15:22+00:00",
+   "labels": [
+    "Medicine & health",
+    "Biology, ecology & vets"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "CSAR lecture: Looking inside the box: PET imaging and blood tests as windows into brain biology in dementia - Dr. Maura "
+  },
   "5ac7aa7be3fe4998": {
    "at": "2026-09-28T13:56:30+00:00",
    "labels": [
@@ -2190,6 +2283,16 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How to develop your business strategy – Business Model Canvas"
+  },
+  "5d21f84c327ff70d": {
+   "at": "2026-11-25T17:16:07+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Friends Event: Visit to ING UK Art Collection in London"
   },
   "5d92b919a9b48832": {
    "at": "2026-09-25T11:55:05+00:00",
@@ -2261,6 +2364,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Artist’s Film Picks: Persepolis"
+  },
+  "60761c1ec31e42c5": {
+   "at": "2026-11-25T17:15:41+00:00",
+   "labels": [
+    "History & archaeology"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Women's suffrage, the Women's Library and me"
   },
   "60f86807f1851ccf": {
    "at": "2026-09-22T09:51:57+00:00",
@@ -2543,6 +2655,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Tudors"
+  },
+  "6d25ab791abeebd8": {
+   "at": "2026-11-25T17:15:06+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Museum Shop Sunday"
   },
   "6d5c2dd20a38d7c4": {
    "at": "2026-11-05T14:42:14+00:00",
@@ -3024,6 +3145,15 @@
    "prompt_version": 6,
    "title": "Start-up Stars: From purpose to profit"
   },
+  "805ee929f927de8c": {
+   "at": "2026-11-25T17:17:07+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "All Together Now: Cooperation and Collaboration in Social Art Practice - Mr Harold Offeh, Royal College of Art"
+  },
   "80850dee1592da87": {
    "at": "2026-10-22T11:57:25+00:00",
    "labels": [
@@ -3090,6 +3220,17 @@
    "prompt_version": 6,
    "title": "Milner Prize Lecture delivered by Professor Monika Henzinger"
   },
+  "84f29ba853f36f91": {
+   "at": "2026-11-25T17:16:37+00:00",
+   "labels": [
+    "Medicine & health",
+    "Engineering",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Globes Gallery: Mapping Places and People in the Classroom"
+  },
   "84f3e38176daaf93": {
    "at": "2026-09-22T09:53:54+00:00",
    "labels": [
@@ -3098,6 +3239,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Pride in Nature LGBTQ+ tour"
+  },
+  "860197257ab4bc02": {
+   "at": "2026-11-25T17:14:41+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Biology, ecology & vets",
+    "Medicine & health"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Museum Boost (Autumn 2026)"
   },
   "866449e157345858": {
    "at": "2026-11-03T14:13:31+00:00",
@@ -3214,6 +3366,15 @@
    "prompt_version": 6,
    "title": "WiFi Wars Debug XXII"
   },
+  "89ecefe3537f8034": {
+   "at": "2026-11-25T17:15:29+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Family Friendly Drop In December"
+  },
   "89fe780cc84ccad6": {
    "at": "2026-10-22T11:57:41+00:00",
    "labels": [
@@ -3265,6 +3426,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Innovation and energy for a sustainable future"
+  },
+  "8c527be9e9cdd962": {
+   "at": "2026-11-25T17:14:45+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "No Provenance - An Artist Project"
   },
   "8d75a7f5962cf218": {
    "at": "2026-11-23T18:06:42+00:00",
@@ -3417,6 +3587,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Once Upon An ... Invention"
+  },
+  "928f8759a3ac971c": {
+   "at": "2026-11-25T17:15:38+00:00",
+   "labels": [
+    "Politics & public service"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Of Trojans and Turks: the politics of retelling a myth"
   },
   "932b9f2831ee8920": {
    "at": "2026-10-30T12:55:40+00:00",
@@ -4328,6 +4507,17 @@
    "prompt_version": 6,
    "title": "Pure Poison"
   },
+  "b4cae3bcff63d233": {
+   "at": "2026-11-25T17:14:58+00:00",
+   "labels": [
+    "Biology, ecology & vets",
+    "Chemistry & materials",
+    "Physics & space"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Songs in Translation: Love, Longing and Lament across South Asia's Religious Borderlines"
+  },
   "b5aa3c222d519afc": {
    "at": "2026-09-22T09:54:21+00:00",
    "labels": [
@@ -4538,6 +4728,16 @@
    "prompt_version": 6,
    "title": "Autumn Knight: I Can't Complain"
   },
+  "c0d4c9624796a3a0": {
+   "at": "2026-11-25T17:15:34+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Friends Event: Exhibition Tour at CORPUS with Artist CJ Mahony and Gallerist Jeremy Parker"
+  },
   "c12b0df55d185ec6": {
    "at": "2026-10-23T11:41:45+00:00",
    "labels": [],
@@ -4643,6 +4843,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "How do I research my market?"
+  },
+  "c57d5af69182d7cc": {
+   "at": "2026-11-25T17:14:48+00:00",
+   "labels": [
+    "Design, making & architecture"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Make Space (December 2026)"
   },
   "c5dddc742f8fb1d9": {
    "at": "2026-09-22T09:54:10+00:00",
@@ -4802,6 +5011,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Family Festival: Stories, Sign and Shine"
+  },
+  "cc64964c5332a43a": {
+   "at": "2026-11-25T17:16:11+00:00",
+   "labels": [
+    "Earth & geoscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Staff Favourites Tour at the Sedgwick Museum of Earth Sciences"
   },
   "cc67d4abc470561f": {
    "at": "2026-09-24T11:48:32+00:00",
@@ -5400,6 +5618,17 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "The Magpies Magic Forest Trail"
+  },
+  "e561cef2351f3c78": {
+   "at": "2026-11-25T17:15:51+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Film, animation & media",
+    "Writing & communication"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "New Music: Bozzini Quartet"
   },
   "e5bc0b13a0c76d5d": {
    "at": "2026-10-22T11:58:18+00:00",
