@@ -355,6 +355,16 @@
    "prompt_version": 6,
    "title": "Family Friendly Drop In"
   },
+  "0a51cf61de97c8b4": {
+   "at": "2026-11-26T16:54:57+00:00",
+   "labels": [
+    "Design, making & architecture",
+    "Film, animation & media"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Cyanotype Portraits with Michael Akuagwu & Jude Amponsah"
+  },
   "0a5f0633ba0d6e36": {
    "at": "2026-09-22T09:52:19+00:00",
    "labels": [
@@ -1064,6 +1074,16 @@
    "prompt_version": 6,
    "title": "Lights Up and Audio Described Tours of The Coming of Age"
   },
+  "2ae3623dc9fa7af5": {
+   "at": "2026-11-26T16:54:45+00:00",
+   "labels": [
+    "Environment & climate",
+    "Computing & AI"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Discussion and Book Launch: Green Archiving - Imaginaries of Archival Futures"
+  },
   "2c1787d3b2147bb1": {
    "at": "2026-11-05T14:42:27+00:00",
    "labels": [],
@@ -1659,6 +1679,15 @@
    "prompt_version": 6,
    "title": "Sarah Williamson (clarinet) and Simon Callaghan (piano)"
   },
+  "427e89c5ec2008ea": {
+   "at": "2026-11-26T16:54:51+00:00",
+   "labels": [
+    "Psychology & neuroscience"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "When is it acceptable to lie? The ethics of negotiation"
+  },
   "429ca7ca7d7053a6": {
    "at": "2026-10-22T08:32:00+00:00",
    "labels": [
@@ -2104,6 +2133,15 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Fashion Photography Masterclass with Jasprit Singh and Michael Akuagwu"
+  },
+  "56b883ca2ba12b0e": {
+   "at": "2026-11-26T16:55:00+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Inwrds: The Gothic and Grotesque"
   },
   "57095fc8b3bb9efe": {
    "at": "2026-09-22T09:55:55+00:00",
@@ -3880,6 +3918,15 @@
    "prompt_version": 6,
    "title": "The conservative tradition in sociological thought"
   },
+  "9ef32bd3f8ace6fd": {
+   "at": "2026-11-26T16:54:53+00:00",
+   "labels": [
+    "Arts & performance"
+   ],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "NINAGAWA Mika: Book signing and meet & greet"
+  },
   "a0912ef4ef7ec4a7": {
    "at": "2026-10-23T11:43:08+00:00",
    "labels": [
@@ -4330,6 +4377,13 @@
    "model": "qwen3:4b",
    "prompt_version": 6,
    "title": "Family Design Challenge, Term Time"
+  },
+  "b054b7067c293558": {
+   "at": "2026-11-26T16:54:48+00:00",
+   "labels": [],
+   "model": "qwen3:4b",
+   "prompt_version": 6,
+   "title": "Tim Horton (piano)"
   },
   "b062296f8a45415a": {
    "at": "2026-11-18T15:40:26+00:00",
